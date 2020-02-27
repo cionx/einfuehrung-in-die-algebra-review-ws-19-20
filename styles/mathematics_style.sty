@@ -1,0 +1,89 @@
+% text shortcuts
+\newcommand{\defemph}{\emph}
+
+
+
+% math shortcuts
+\newcommand{\defined}{\coloneqq}
+\newcommand{\defines}{\eqqcolon}
+
+
+
+% arrows
+\newcommand{\xto}{\xrightarrow}
+\newcommand{\xlongto}{\xlongrightarrow}
+
+
+
+% number fields
+\newcommand{\numname}{\mathbb}
+\newcommand{\Natural}{\numname{N}}
+\newcommand{\Integer}{\numname{Z}}
+\newcommand{\Rational}{\numname{Q}}
+\newcommand{\Finite}{\numname{F}}
+\newcommand{\Real}{\numname{R}}
+\newcommand{\Complex}{\numname{C}}
+
+
+
+% delimiters and decoration
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\card}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\class}{[}{]}
+
+
+
+
+
+% restrict
+\DeclarePairedDelimiter{\rline}{.}{\rvert}
+\NewDocumentCommand%
+  {\restrict}%
+  {s o m o m}%
+  {%
+    \IfBooleanTF{#1}
+    {%
+      \rline*{#3}
+    }
+    {%
+      \IfValueTF{#2}
+      {%
+        \rline[#2]{#3}
+      }
+      {%
+        #3\rvert
+      }
+    }
+    \IfValueTF{#4}
+    {%
+      ^{#4}
+    }
+    {
+    }
+    _{#5}
+  }
+
+
+
+
+% suchthat
+\NewDocumentCommand{\suchthat}{so}{
+  \IfValueTF{#2}
+  {
+    \:#2|\:
+  }
+  {
+    \IfBooleanTF{#1}
+    {
+      \:\middle|\:
+    }
+    {
+      \mathrel{|}      
+    }
+  }
+}
+
+
+
+
+

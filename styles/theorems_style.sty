@@ -1,0 +1,19 @@
+% theorem-like environments
+\newcounter{everything}[chapter]
+\renewcommand{\theeverything}{\arabic{chapter}.\arabic{everything}}
+
+\theoremstyle{definition}
+\newtheorem{corollary}[everything]{Korollar}
+\newtheorem{definition}[everything]{Definition}
+\newtheorem{example}[everything]{Beispiel}
+\newtheorem{fact}[everything]{Fact}
+\newtheorem{lemma}[everything]{Lemma}
+\newtheorem{proposition}[everything]{Proposition}
+\newtheorem{remark}[everything]{Bemerkung}
+\newtheorem{theorem}[everything]{Satz}
+\newtheorem{warning}[everything]{Warnung}
+
+
+
+
+
