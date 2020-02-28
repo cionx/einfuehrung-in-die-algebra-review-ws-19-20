@@ -15,3 +15,5 @@
 *.synctex(busy)
 *.synctex.gz
 *.toc
+
+*-exercise-body.tex

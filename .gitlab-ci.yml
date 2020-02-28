@@ -15,12 +15,11 @@ pages:
   - ./generate_gitinfo2
     # building with latexmk
     # uses settings from .latexmkrc
-  - cd notes
-  - latexmk main.tex
+  - latexmk notes.tex
   - cd ..
     # extract the results
   - mkdir public
-  - mv notes/main.pdf public/einfalg1920.pdf
+  - mv notes.pdf public/einfalg1920.pdf
   artifacts:
     paths:
     - public
