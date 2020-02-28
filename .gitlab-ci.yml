@@ -9,17 +9,18 @@ pages:
   - fc-cache
   - cd ..
   script:
+  - cd notes
     # gitinfo2 for git information in the document
   - wget "https://raw.githubusercontent.com/Hightor/gitinfo2/CTAN/post-xxx-sample.txt" -O generate_gitinfo2
   - chmod +x generate_gitinfo2
   - ./generate_gitinfo2
     # building with latexmk
     # uses settings from .latexmkrc
-  - xelatex main.tex
-  - xelatex main.tex
+  - latexmk main.tex
+  - cd ..
     # extract the results
   - mkdir public
-  - mv main.pdf public/einfalg1920.pdf
+  - mv notes/main.pdf public/einfalg1920.pdf
   artifacts:
     paths:
     - public
