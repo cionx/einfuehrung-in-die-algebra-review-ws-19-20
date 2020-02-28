@@ -9,13 +9,13 @@ pages:
   - fc-cache
   - cd ..
   script:
-  - cd notes
     # gitinfo2 for git information in the document
   - wget "https://raw.githubusercontent.com/Hightor/gitinfo2/CTAN/post-xxx-sample.txt" -O generate_gitinfo2
   - chmod +x generate_gitinfo2
   - ./generate_gitinfo2
     # building with latexmk
     # uses settings from .latexmkrc
+  - cd notes
   - latexmk main.tex
   - cd ..
     # extract the results
