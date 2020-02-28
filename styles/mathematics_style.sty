@@ -1,6 +1,10 @@
 % text shortcuts
-\newcommand{\defemph}{\emph}
+\newcommand{\defemph}{\textbf}
 
+\newcommand{\Bahn}[1]{#1\nobreakdash-\hspace{0pt}Bahn}
+\newcommand{\Bahnen}[1]{#1\nobreakdash-\hspace{0pt}Bahnen}
+\newcommand{\Homomorphismus}[1]{#1\nobreakdash-\hspace{0pt}Homomorphismus}
+\newcommand{\Menge}[1]{#1\nobreakdash-Menge}
 
 
 % math shortcuts
@@ -10,6 +14,40 @@
 
 
 % arrows
+\renewcommand{\to}{
+  \mathchoice
+  {\longrightarrow}
+  {\rightarrow}
+  {\rightarrow}
+  {\rightarrow}
+}
+\AtBeginDocument{
+  \let\oldmapsto\mapsto
+  \renewcommand{\mapsto}{
+    \mathchoice
+    {\longmapsto}
+    {\oldmapsto}
+    {\oldmapsto}
+    {\oldmapsto}
+  }
+}
+\AtBeginDocument{
+  \let\oldmapsfrom\mapsfrom
+  \renewcommand{\mapsfrom}{
+    \mathchoice
+    {\longmapsfrom}
+    {\oldmapsfrom}
+    {\oldmapsfrom}
+    {\oldmapsfrom}
+  }
+}
+\newcommand{\onetoone}{
+  \mathchoice
+  {\longleftrightarrow}
+  {\leftrightarrow}
+  {\leftrightarrow}
+  {\leftrightarrow}
+}
 \newcommand{\xto}{\xrightarrow}
 \newcommand{\xlongto}{\xlongrightarrow}
 
@@ -26,13 +64,37 @@
 
 
 
+% spaces and such
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\normalizer}{N}
+\DeclareMathOperator{\Sym}{Sym}
+\DeclareMathOperator{\zenter}{Z}
+\DeclareMathOperator{\zentralizer}{Z}
+
+
+
+% relation symbols
+\newcommand{\divides}{\mathrel{\vert}}
+\newcommand{\subgroupeq}{\leq}
+\newcommand{\normgroupeq}{\trianglelefteq}
+
+
+
+% functions
+\DeclareMathOperator{\ord}{ord}
+
+
+
 % delimiters and decoration
 \DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
 \DeclarePairedDelimiter{\card}{\lvert}{\rvert}
 \DeclarePairedDelimiter{\class}{[}{]}
+\DeclarePairedDelimiter{\gen}{\langle}{\rangle}
 
 
 
+% decorations
+\newcommand{\induced}{\overline}
 
 
 % restrict

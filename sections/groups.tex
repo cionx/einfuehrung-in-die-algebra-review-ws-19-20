@@ -1,0 +1,917 @@
+\chapter{Gruppentheorie}
+
+\begin{convention}
+  Im Folgenden ist~$G$, sofern nicht anders angegeben, eine Gruppe.
+\end{convention}
+
+\begin{definition}
+  Eine Teilmenge~$H$ von~$G$ ist eine \defemph{Untergruppe} falls die folgenden drei Bedingungen erfüllt sind.
+  \begin{enumerate}
+    \item
+      Es gilt~$1 \in H$.
+    \item
+      Für je zwei Elemente~$h_1, h_2 \in H$ gilt auch~$h_1 h_2 \in H$.
+    \item
+      Für jedes Element~$h \in H$ gilt auch~$h^{-1} \in H$.
+  \end{enumerate}
+  Dass~$H$ eine Untergruppe von~$G$ ist, wird mit~$H \subgroupeq G$ notiert.
+\end{definition}
+
+\begin{convention}
+  Im Folgenden ist~$H$, sofern nicht anders angegeben, eine Untergruppe von~$G$.
+\end{convention}
+
+
+
+
+
+\section{Ordnungen und Indizes}
+
+\begin{definition}
+  Die \defemph{Ordnung} von~$G$ ist~$\card{G} \in \Natural_{1} \cup \{ \infty \}$.
+\end{definition}
+
+
+
+\subsection{Nebenklassen}
+
+\begin{definition}
+  Es sei~$g$ ein Element von~$G$.
+  \begin{enumerate}
+    \item
+      Die \defemph{Linksnebenklasse} von~$g$ bzgl.~$H$ ist die Teilmenge~$gH$ von~$G$.
+    \item
+      Die \defemph{Linksnebenklasse} von~$g$ bzgl.~$H$ ist die Teilmenge~$gH$ von~$G$.
+    \item
+      Die Menge der Links- bzw. Rechtsnebenklassen in~$G$ bzgl.~$H$ sind
+      \[
+        G/H \defined \{ gH \suchthat g \in G \}
+        \quad\text{und}\quad
+        H \backslash G \defined \{ Hg \suchthat g \in G \} \,.
+      \]
+  \end{enumerate}
+\end{definition}
+
+\begin{proposition}
+  Die Abbildung
+  \[
+    G/H
+    \to
+    H \backslash G \,,
+    \quad
+    gH
+    \mapsto
+    (gH)^{-1}
+    =
+    Hg^{1}
+  \]
+  ist eine wohldefinierte Bijektion.
+\end{proposition}
+
+\begin{corollary}
+  Die beiden Mengen~$G/H$ und~$H \backslash G$ sind gleichmächtig.
+\end{corollary}
+
+\begin{definition}
+  Die Kardinalität der Menge~$G/H$, bzw.~$H \backslash G$ ist der \defemph{Index} von~$H$ in~$G$.
+  Er wird mit~$[G : H]$ bezeichnet, d.h.
+  \[
+    [G : H]
+    \defined
+    \card{ G/H }
+    =
+    \card{ H \backslash G } \,.
+  \]
+\end{definition}
+
+\begin{lemma}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Jedes Element~$g \in G$ ist in seiner jeweiligen Nebenklasse~$gH$ enthalten.
+    \item
+      Für je zwei Element~$g_1, g_2 \in G$ sind die Nebenklassen~$g_1 H$ und~$g_2 H$ entweder gleich oder disjunkt.
+      Dabei gilt genau dann~$g_1 H = g_2 H$ wenn~$g_2^{-1} g_1 \in H$, genau dann wenn~$g_1^{-1} g_2 \in H$.
+    \item
+      Für jedes ELement~$g \in G$ die Abbildung
+      \[
+        H \to gH \,,
+        \quad
+        h \mapsto gh
+      \]
+      bijektiv.
+      Insbesondere gilt~$\card{gH} = \card{H}$.
+  \end{enumerate}
+\end{lemma}
+
+\begin{corollary}
+  Die Gruppe~$G$ ist die disjunkte Vereinigung der Linksnebenklassen bzgl.~$H$, und es gilt
+  \[
+    \card{G} = \card{H} \cdot [G : H] \,.
+  \]
+\end{corollary}
+
+\begin{theorem}[Lagrange]
+  Ist~$G$ endlich, so sind~$\card{H}$ und~$[G : H]$ jeweils Teiler von~$\card{G}$.
+\end{theorem}
+
+
+
+\subsection{Erzeugte Untergruppen}
+
+\begin{convention}
+  Im Folgenden ist~$S$, sofern nicht anders angegeben, eine Teilmenge von~$G$.
+\end{convention}
+
+\begin{definition}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Die von~$S$ \defemph{erzeugte Untergruppe} von~$G$ ist die Menge
+      \[
+        \gen{S}
+        \defined
+        \bigl\{
+          s_1^{\varepsilon_1} \dotsm s_n^{\varepsilon_n}
+        \suchthat[\big]
+          n \in \Natural,
+          s_1, \dotsc, s_n \in S,
+          \varepsilon_1, \dotsc, \varepsilon_n \in \{1, -1\}
+        \bigr\}
+      \]
+    \item
+      Die Menge~$S$ ist ein \defemph{Erzeugendensystem} von~$G$ falls~$G = \gen{S}$.
+  \end{enumerate}
+\end{definition}
+
+\begin{proposition}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Die von~$S$ erzeugte Untegruppe~$\gen{S}$ ist eine Untergruppe von~$G$.
+    \item
+      Es ist~$\gen{S}$ die kleinste Untergrupe von~$G$, die~$S$ enthält:
+      Es gilt~$S \subseteq \gen{S}$, und für jede Untergruppe~$H$ von~$G$ mit~$S \subseteq H$ gilt auch~$\gen{S} \subseteq H$.
+    \item
+      Es gilt~$\gen{S} = \bigcap \{ H \suchthat H \subgroupeq G, S \subseteq H \}$.
+  \end{enumerate}
+\end{proposition}
+
+
+
+\subsection{Zyklische Gruppen}
+
+\begin{definition}
+  Die Gruppe~$G$ ist \defemph{zyklisch} wenn sie von einem einzelnen Element erzeugt wird, d.h. es gibt ein Element~$g \in G$ mit~$G = \gen{g}$.
+\end{definition}
+
+\begin{theorem}[Klassifikation zyklischer Gruppen]
+  Die Gruppe~$G$ sei zyklisch.
+  Es gilt
+  \[
+    G
+    \cong
+    \begin{cases*}
+        \Integer
+        &
+        falls~$\card{G} = \infty$,
+        \\
+        \Integer_n
+        &
+        falls~$\card{G} = n < \infty$.
+    \end{cases*}
+  \]
+\end{theorem}
+
+\begin{proposition}
+  Die Gruppe~$G$ sei endlich und~$p \defined \card{G}$
+  Dann ist~$G$ zyklisch, und jedes Element~$g \in G$ mit~$g \neq e$ ist ein Erzeuger für~$G$.
+\end{proposition}
+
+\begin{corollary}
+  Für jede Primzahl~$p$ ist~$\Integer_p$ die bis auf Isomorphie eindeutige Gruppe von Ordnung~$p$.
+\end{corollary}
+
+
+
+\subsection{Die Ordnung eines Elements}
+
+\begin{definition}
+  Es sei~$g \in G$.
+  Die \defemph{Ordnung} von~$g$ ist
+  \[
+    \ord(g)
+    \defined
+    \inf
+    {}
+    \{
+      n \in \Natural
+    \suchthat
+      n \geq 1,
+      g^n = 1
+    \}
+    \in
+    \Natural_1 \cup \{ \infty \} \,.
+  \]
+\end{definition}
+
+\begin{proposition}
+  Für jedes Gruppenelement~$g \in G$ gilt~$\ord(g) = \card{\gen{g}}$.
+\end{proposition}
+
+\begin{corollary}
+  Ist~$G$ endlich, so gilt~$\ord(g) \divides \card{G}$ für jedes~$g \in G$;
+  insbesondere ist~$\ord(g)$ endlich.
+\end{corollary}
+
+\begin{corollary}
+  Ist~$G$ endlich, so gilt für~$n \defined \card{G}$, dass~$g^n = 1$ für jedes~$g \in G$.
+\end{corollary}
+
+
+
+
+
+\section{Gruppenaktionen}
+
+
+
+\subsection{Grundlegendes}
+
+\begin{definition}
+  Es sei~$G$ eine Gruppe.
+  \begin{enumerate}
+    \item
+      Eine \defemph{Aktion} von~$G$ auf einer Menge~$X$  ist eine Abbildung
+      \[
+        G \times X \to X \,,
+        \quad
+        (g,x)
+        \mapsto
+        g.x
+      \]
+      welche die folgenden beiden Eigenschaften erfüllt:
+      \begin{enumerate}
+        \item
+          Es gilt~$1.x = x$ für jedes Element~$x \in X$.
+        \item
+          Es gilt~$g.(h.x) = (gh).x$ für alle Gruppenelemente~$g, h \in G$ und jedes Element~$x \in X$. 
+      \end{enumerate}
+    \item
+      Eine~\defemph{\Menge{$G$}} ist eine Menge~$X$ zusammen mit einer Aktion von~$G$ auf~$X$.
+  \end{enumerate}
+\end{definition}
+
+\begin{convention}
+  Im Folgenden ist~$X$, sofern nicht anders angegeben, eine~\Menge{$G$}.
+\end{convention}
+
+\begin{definition}
+  Es sei~$Y$ eine weitere~\Menge{$G$}.
+  Eine Abbildung~$\varphi \colon X \to Y$ ist ein~\defemph{\Homomorphismus{$G$}} falls
+  \[
+    \varphi(g.x) = g.\varphi(x)
+    \qquad
+    \text{für alle~$g \in G$,~$x \in X$.}
+  \]
+\end{definition}
+
+
+
+\subsection{Bahnen und Stabilisatoren}
+
+\begin{definition}
+  Es sei~$x \in X$.
+  \begin{enumerate}
+    \item
+      Die \defemph{Bahn} von~$x$ ist die Teilmenge~$G.x$ von~$X$ gegeben durch~$G.x \defined \{ g.x \suchthat g \in G \}$.
+    \item
+      Der \defemph{Stabilisator} von~$x$ ist die Teilmenge~$G_x$ von~$G$ gegeben durch~$G_x \defined \{ g \in G \suchthat g.x = x \}$.
+  \end{enumerate}
+\end{definition}
+
+\begin{proposition}
+  Für jedes Element~$x \in X$ ist der Stabilisator~$G_x$ eine Untergruppe von~$G$.
+\end{proposition}
+
+% TODO: Exercise: Konjugierte Stabilisatoren.
+
+%Ist~$X$ eine~\Menge{$G$}, so ist für jedes Gruppenelement~$g \in G$ die Abbildung
+%\[
+%  \lambda_g
+%  \colon
+%  X \to X \,,
+%  \quad
+%  x \mapsto g.x
+%\]
+%eine Bijektion (mit~$\lambda_g^{-1} = \lambda_{g^{-1}}$).
+%Die entstehende Abbildung
+%\[
+%  \lambda
+%  \colon
+%  G \to \Sym(X) \,,
+%  \quad
+%  g \mapsto \lambda_g
+%\]
+%ist ein Gruppenhomomorphismus.
+%Ist umgekehrt~$\phi \colon G \to \Sym(X)$ ein Gruppenhomomorphismus, so wird durch
+%\[
+%  g.x \defined \phi(g)(x)
+%  \qquad
+%  \text{für alle~$g \in G$,~$x \in X$}
+%\]
+%eine Aktion von~$G$ auf~$X$ definiert.
+%Diese beiden Konstruktionen sind inverse zueinander, und wir erhalten das folgende Resultat.
+%
+%\begin{proposition}
+%  Es sei~$G$ eine Gruppe und~$X$ eine Menge.
+%  Dann gibt es eine Eins-zu-eins-Korrespondenz gegeben durch
+%  \begin{align*}
+%    \{
+%      \text{Aktionen von~$G$ auf~$X$}
+%    \}
+%    &\longonetoone
+%    \left\{
+%      \begin{tabular}{@{}c@{}}
+%        Gruppenhomomorphismen\\
+%        $G \to \Sym(X)$
+%      \end{tabular}
+%    \right\} \,,
+%    \\
+%    *
+%    &\longmapsto
+%    [g \mapsto [x \mapsto g*x]]
+%    \\
+%    [(g,x) \mapsto \phi(g)(x)]
+%    &\longmapsfrom
+%    \phi \,.
+%  \end{align*}
+%\end{proposition}
+
+Für je zwei Gruppenelement~$g_1, g_2 \in G$ und ein Element~$x \in X$ gilt
+\[
+  g_1.x = g_2.x
+  \iff
+  g_2^{-1} g_1.x = x
+  \iff
+  g_2^{-1} g_1 \in G_x
+  \iff
+  g_1 G_x = g_2 G_x \,.
+\]
+Hieraus erhalten wir das folgende Resultat.
+
+\begin{corollary}
+  \label{isomorphism theorem for G-sets}
+  Für jedes Element~$x \in X$ ist die Abbildung
+  \[
+    G/G_x \to G.x \,,
+    \quad
+    g G_x \mapsto g.x
+  \]
+  ein wohldefinierter, bijektiver~\Homomorphismus{$G$}.
+\end{corollary}
+
+\begin{corollary}
+  Für jedes Element~$x \in X$ gilt~$\card{G.x} = [G : G_x]$.
+\end{corollary}
+
+\begin{corollary}
+  Ist~$G$ endlich, so ist für jedes Element~$x \in X$ die Kardinalität~$\card{G.x}$ ein Teiler der Gruppenordnung~$\card{G}$.
+\end{corollary}
+
+% TODO: Beispiele.
+
+
+
+\subsection{Transitivität}
+
+\begin{proposition}
+  \label{characterizations of transitive actions}
+  Es sei~$X \neq \emptyset$.
+  Die folgenden Bedingungen für~$X$ sind äquivalent.
+  \begin{enumerate}
+    \item
+      Es gibt für alle Elemente~$x_1, x_2 \in X$ ein Gruppenelement~$g \in G$ mit~$g.x_1 = x_2$.
+    \item
+      Für jedes Element~$x \in X$ gilt~$G.x = X$.
+    \item
+      Es gibt ein Element~$x \in X$ mit~$G.x = X$.
+    \item
+      Die Menge~$X$ besteht aus genau einer~\Bahn{$G$}.
+  \end{enumerate}
+\end{proposition}
+
+\begin{definition}
+  Eine Gruppenaktion von~$G$ auf~$X$ ist \defemph{transitiv}, falls sie die äquivalenten Bedingungen aus \cref{characterizations of transitive actions} erfüllt.
+\end{definition}
+
+\begin{warning}
+  Ob die eindeutige Gruppenaktion von~$G$ auf der leeren Menge transitiv ist, ist Geschmackssache.
+  In dieser Vorlesung ist diese Wirkung \emph{nicht} transitiv.
+\end{warning}
+
+
+
+\subsection{Fixpunkte}
+
+\begin{definition}
+  Ein Element~$x \in X$ ist ein \defemph{Fixpunkt}, falls~$g.x = x$ für jedes Gruppenelement~$g \in G$.
+  Die Menge der Fixpunkte wird mit~$X^G$ bezeichnet.
+\end{definition}
+
+\begin{proposition}
+  Für ein Element~$x \in X$ sind die folgenden Bedingungen äquivalent.
+  \begin{equivlist}
+    \item
+      Das Element~$x$ ist ein Fixpunkt.
+    \item
+      Die Bahn~$G.x$ ist gegeben durch~$G.x = \{ x \}$.
+    \item
+      Der Stabilisator~$G_x$ ist gegeben durch~$G_x = G$.
+  \end{equivlist}
+  Insbesondere sind Fixpunkte durch ihre Bahnen, und auch durch ihre Stabilisatoren charakterisiert.
+\end{proposition}
+
+
+
+\subsection{Die Bahnenformel}
+
+\begin{proposition}
+  Die~\Menge{$G$}~$X$ ist die disjunkte Vereinigung ihrer~\Bahnen{$G$}.
+\end{proposition}
+
+\begin{corollary}
+  Die~\Menge{$G$}~$X$ sei endlich, und es seien~$x_1, \dotsc, x_n$ ein Repräsentatensystem der~\Bahnen{$G$} von~$X$.
+  Es gilt
+  \[
+    \card{X}
+    =
+    \sum_{i=1}^n \card{G.x_i}
+    =
+    \card*{X^G}
+    +
+    \sum_{\substack{i=1, \dotsc, n \\ x_i \notin X^G}}
+    \card{G.x_i}
+  \]
+\end{corollary}
+
+\begin{theorem}[Bahnenformel]
+  Die~\Menge{$G$}~$X$ sei endlich, und es seien~$x_1, \dotsc, x_n$ ein Repräsentatensystem der~\Bahnen{$G$} von~$X$.
+  Es gilt
+  \[
+    \card{X}
+    =
+    \sum_{i=1}^n [G : G_{x_i}]
+    =
+    \card*{X^G}
+    +
+    \sum_{\substack{i=1, \dotsc, n \\ x_i \notin X^G}}
+    [G : G_{x_i}] \,.
+  \]
+\end{theorem}
+
+
+
+\section{Konjugation}
+
+\begin{definition}
+  Es sei~$g \in G$.
+  \begin{enumerate}
+    \item
+      Die Abbildung~$G \to G$,~$x \mapsto g x g^{-1}$ ist die \defemph{Konjugation} mit~$g$.
+    \item
+      Die \defemph{Konjugationsklasse} eines Gruppenelements~$x \in G$ ist die Menge~$x^G \defined \{ g x g^{-1} \suchthat g \in G \}$.
+    \item
+      Die \defemph{Konjugationsklasse} einer Untergruppe~$H$ von~$G$ ist die Menge~$\{ g H g^{-1} \suchthat g \in G \}$.
+  \end{enumerate}
+\end{definition}
+
+\begin{proposition}
+  Für jedes Grupenelement~$g \in G$ ist die Konjugationsabbildung
+  \[
+    c_g
+    \colon
+    G \to G \,
+    \quad
+    x \mapsto g x g^{-1}
+  \]
+  ein Gruppenautomorphismus.
+  Es gilt~$c_g^{-1} = c_{g^{-1}}$.
+\end{proposition}
+
+\begin{proposition}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Die Gruppe~$G$ ist die disjunkte Vereinigung ihrer Konjugationsklassen.
+    \item
+      Die Menge~$\{ \text{Untergruppen von~$G$} \}$ ist die disjunkte Vereinigung der Konjugationsklassen.
+  \end{enumerate}
+\end{proposition}
+
+\begin{definition}
+  Zwei Gruppenelemente von~$G$, bzw.\ Untegruppen von~$G$, sind \defemph{konjugiert} zueinander, falls sie in der gleichen Konjugationsklasse liegen.
+  (Mit anderen Worten, zwei Gruppenelemente~$x_1, x_2 \in G$, bzw. zwei Untergruppen~$H_1, H_2 \subgroupeq G$ sind konjugiert zueinander, falls es ein Element~$g \in G$ mit~$x_2 = g x_1 g^{-1}$, bzw.\ mit~$H_2 = g H_1 g^{-1}$ gibt.)
+\end{definition}
+
+
+
+\subsection{Zentrum und Zentralisatioren}
+
+\begin{definition}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Das \defemph{Zentrum} von~$G$ ist die Menge~$\zenter(G) \defined \{ g \in G \suchthat \text{$g h = h g$ für alle~$h \in G$} \}$.
+    \item
+      Der \defemph{Zentralisator} eines Gruppenenelements~$g \in G$ ist die Menge~$\zentralizer_G(g) \defined \{ h \in G \suchthat gh = hg \}$.
+  \end{enumerate}
+\end{definition}
+
+\begin{proposition}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Das Zentrum~$\zenter(G)$ ist eine Untergruppe von~$G$.
+    \item
+      Für jedes Gruppenelement~$g \in G$ ist sein Zentralisator~$\zentralizer_G(g)$ eine Untergruppe von~$G$.
+    \item
+      Es gilt~$\zenter(G) = \bigcap_{g \in G} \zentralizer_G(g)$.
+  \end{enumerate}
+\end{proposition}
+
+
+
+\subsection{Anwendung der Bahnenformel}
+
+Die Gruppe~$G$ operiert auf sich selbst durch Konjugation, d.h. vermöge
+\[
+  g.x = g x g^{-1}
+  \qquad
+  \text{für alle~$g \in G$,~$x \in G$.}
+\]
+Die Bahnen dieser Gruppenaktion sind genau die Konjugationsklassen von~$G$.
+Der Stabilisator eines Elements~$x \in G$ ist genau der Zentralisator~$\zentralizer_G(x)$.
+Die Fixpunkte sind genau die Element des Zentrums.
+Aus der Bahnenformel ergibt sich somit das folgende Resultat.
+
+\begin{theorem}
+  Die Gruppe~$G$ sei endlich, und seien~$x_1, \dotsc, x_n$ ein Repräsentantensystem der Konjugationsklassen von~$G$.
+  Es gilt
+  \[
+    \card{G}
+    =
+    \sum_{i=1}^n [G : \zentralizer_G(x_i)]
+    =
+    \card{ \zenter(G) }
+    +
+    \sum_{\substack{i = 1, \dotsc, n \\ x_i \notin \zenter(G)}}
+    [G : \zentralizer_G(x_i)] \,.
+  \]
+\end{theorem}
+
+
+
+
+\section{Normalteiler}
+
+\begin{proposition}
+  \label{characterizations of normal subgroups}
+  Für eine Untergruppe~$N$ von~$G$ sind die folgenden Bedingungen äquivalent:
+  \begin{equivlist}
+    \item
+      Es gilt~$g N g^{-1} = N$ für jedes Gruppenelement~$g \in G$.
+    \item
+      Es gilt~$g N g^{-1} \subseteq N$ für jedes Gruppenelement~$g \in G$.
+    \item
+      Es gilt~$gN = Ng$ für jedes Gruppenelement~$g \in G$.
+    \item
+      Für jedes Gruppenelement~$g_1 \in G$ gibt es ein Gruppenelement~$g_2 \in G$ mit~$g_1 N = N g_2$.
+    \item
+      Für jedes Gruppenelement~$g_1 \in G$ gibt es ein Gruppenelement~$g_2 \in G$ mit~$N g_1 = g_2 N$.
+  \end{equivlist}
+\end{proposition}
+
+\begin{definition}
+  Es sei~$H$ eine Untergruppe von~$G$.
+  Die Untergruppe~$N$ ist \defemph{normal}, bzw. ein \defemph{Normalteiler}, falls sie die äquivalenten Bedingungen aus \cref{characterizations of normal subgroups} erfüllt.
+  Dass~$N$ ein Normalteiler ist, wird mit~$N \normgroupeq G$ notiert.
+\end{definition}
+
+\begin{example}[Kerne]
+  Ist~$\varphi \colon G \to G'$ ein Gruppenhomomorphsimus, so ist
+  \[
+    \ker(\varphi)
+    \defined
+    \{
+      g \in G
+    \suchthat
+      \varphi(g) = 1
+    \}
+  \]
+  eine normale Untergruppe von~$G$.
+  Dabei ist der Homomorphismus~$\varphi$ genau dann injektiv, wenn~$\ker(\varphi) = 1$ gilt.
+\end{example}
+
+\begin{convention}
+  Im Folgenden ist~$N$, sofern nicht anders angegeben, eine normale Untergruppe von~$G$.
+\end{convention}
+
+
+
+
+\subsection{Normalisatoren}
+
+\begin{definition}
+  Der \defemph{Normalisator} von~$H$ (in~$G$) ist die Menge~$\normalizer_G(H) \defined \{ g \in G \suchthat g H g^{-1} = H \}$.
+\end{definition}
+
+\begin{proposition}
+  Es seien~$H$,~$K$ zwei Untergruppen von~$G$.
+  Es ist~$H$ genau dann einen normale Untergruppe von~$K$, wenn~$H \subgroupeq K \subgroupeq \normalizer_G(H)$.
+\end{proposition}
+
+\begin{corollary}
+  
+\end{corollary}
+
+Es sei~$X$ die Menge der zu $H$ konjugierten Untergruppen.
+Die Gruppe~$G$ operiert auf der Menge~$X$ vermöge
+\[
+  g.H' \defined g H g^{-1} \,.
+\]
+Es gilt~$H \in X$, und die Bahn von~$H$ ist ganz~$X$.
+Der Stabilisator von~$H$ ist genau der Normalisator~$\normalizer_G(H)$.
+Wir erhalten somit aus \cref{isomorphism theorem for G-sets} das folgende Resultat.
+
+\begin{corollary}
+  Die Abbildung
+  \[
+    G / {\normalizer_G(H)}
+    \to
+    \{
+      \text{zu~$H$ konjugierte Untergruppen von~$G$}
+    \} \,,
+    \quad
+    g {\normalizer_G(H)}
+    \mapsto
+    g H g^{-1}
+  \]
+  ist eine wohldefinierte Bijektion.
+\end{corollary}
+
+\begin{corollary}
+  Ist~$G$ endlich, so gilt die Anzahl der zu~$H$ konjugierten Untergruppen von~$G$ durch den Index~$[G : \normalizer_G(H)]$ gegeben.
+\end{corollary}
+
+
+
+
+
+\section{Faktorgruppen}
+
+
+
+\subsection{Konstruktion}
+
+\begin{proposition}
+  \label{construction of quotient group}
+  Für jedes Gruppenelement~$g \in G$ sei~$\class{g} \defined gN$.
+  \begin{enumerate}
+    \item
+      Die Multiplikation~$\class{g_1} \cdot \class{g_2} \defined \class{g_1 g_2}$ ist eine wohldefinierte Gruppenstruktur auf~$G/N$.
+    \item
+      Dies ist die eindeutige Gruppenstruktur auf~$G/N$, für welche die Abbildung
+      \[
+        \rho
+        \colon
+        G \to G/N \,,
+        g \mapsto \class{g}
+      \] ein Gruppenhomomorphismus ist.
+  \end{enumerate}
+\end{proposition}
+
+\begin{definition}
+  In der Situation von \cref{construction of quotient group} ist~$G/N$ die \defemph{Faktorgruppe} von~$G$ nach~$N$, und die Abbildung~$\rho$ ist die \defemph{kanonische Projektion}.
+\end{definition}
+
+
+
+\subsection{Korrespondenz von Untergruppen}
+
+\begin{theorem}
+  Es sei~$\rho \colon G \to G/N$ die kanonische Projektion.
+  \begin{enumerate}
+    \item
+      Es gibt eine Eins-zu-eins-Korrespondenz von Untergruppen, gegeben durch
+      \begin{align*}
+        \left\{
+          \begin{tabular}{@{}c@{}}
+            Untergruppen von~$G$,\\
+            die~$N$ enthalten
+          \end{tabular}
+        \right\}
+        &\onetoone
+        \{ \text{Untergruppen von~$G/N$} \}
+        \\
+        H
+        &\mapsto
+        H/N \,,
+        \\
+        \rho^{-1}(H')
+        &\mapsfrom
+        H' \,.
+      \end{align*}
+    \item
+      In der obigen Korrespondenz ist eine Untergruppe~$H$ von~$G$ genau dann ein Normalteiler, wenn~$H/N$ ein Normalteiler von~$G/N$ ist.
+      Durch Einschränkung der obigen Korrespondenz ergibt sich daher die Eins-zu-eins-Korrespondenz
+      \[
+        \left\{
+          \begin{tabular}{@{}c@{}}
+            normale Untergruppen von~$G$,\\
+            die~$N$ enthalten
+          \end{tabular}
+        \right\}
+        \onetoone
+        \{ \text{normale Untergruppen von~$G/N$} \} \,.
+      \]
+  \end{enumerate}
+\end{theorem}
+
+
+
+\subsection{Homomorphiesatz und Isomorphiesätze}
+
+\begin{theorem}[Homomorphiesatz]
+  Es sei~$\rho \colon G \to G/N$ die kanonische Projektion, und es sei~$H$ eine weitere Gruppe.
+  \begin{enumerate}
+    \item
+      Es gilt~$\ker(\rho) = N$.
+    \item
+      Ist~$\psi \colon G/N \to H$ ein Gruppenhomomorphismus, so gilt für den Gruppenhomomorphismus~$\psi \circ \rho \colon G \to H$, dass~$N \subseteq \ker(\psi \circ \rho)$.
+    \item
+      Ist andererseits~$\varphi \colon G \to H$ ein Gruppenhomomorphismus mit~$N \subseteq \ker(\varphi)$, so ist
+      \[
+        \induced{\varphi}
+        \colon
+        G/N \to H \,,
+        \quad
+        \class{g} \mapsto \varphi(g)
+      \]
+      ein wohldefinierter Gruppenhomorphisms.
+      Dies ist der eindeutige Gruppenhomomorphismus, der das folgende Diagramm zum kommutieren bringt:
+      \[
+        \begin{tikzcd}
+          G
+          \arrow{r}[above]{\varphi}
+          \arrow{d}[left]{\rho}
+          &
+          H
+          \\
+          G/N
+          \arrow[dashed]{ur}[below right]{\induced{\varphi}}
+          &
+          {}
+        \end{tikzcd}
+      \]
+      Dabei gilt~$\im(\induced{\varphi}) = \im(\varphi)$ sowie~$\ker(\induced{\varphi}) = \ker(\varphi)/N$.
+    \item
+      Die beiden obigen Konstruktionen sind invers zueinander, und liefern somit eine Eins-zu-eins-Korrespondenz gegeben durch
+      \begin{align*}
+        \left\{
+          \begin{tabular}{@{}c@{}}
+            Gruppenhomomorphismen \\
+            $\varphi \colon G \to H$ mit~$N \subseteq \ker(\varphi)$
+          \end{tabular}
+        \right\}
+        &\onetoone
+        \left\{
+          \begin{tabular}{@{}c@{}}
+            Gruppenhomomorphismen \\
+            $\psi \colon G/N \to H$
+          \end{tabular}
+        \right\}
+        \\
+        \varphi
+        &\mapsto
+        \induced{\varphi} \,,
+        \\
+        \psi \circ \rho
+        &\mapsfrom
+        \psi \,.
+      \end{align*}
+  \end{enumerate}
+\end{theorem}
+
+\begin{corollary}
+  Es sei~$H$ eine weiter Gruppe und~$\varphi \colon G \to H$ ein Gruppenhomomorphismus.
+  Dann induziert~$\varphi$ einen Gruppenisomorphismus
+  \[
+    \induced{\varphi}
+    \colon
+    G/\ker(\varphi) \to \im(\varphi) \,,
+    \quad
+    \class{g}
+    \mapsto
+    \varphi(g) \,.
+  \]
+  Der Homomorphismus~$\varphi$ lässt sich also wie folgt in einen Epimorphismus, Isomorphismus und Monomorphismus zerlegen.
+  \[
+    \begin{tikzcd}
+      G
+      \arrow{r}[above]{\varphi}
+      \arrow[two heads]{d}[left]{\rho}
+      &
+      H
+      \\
+      G/\ker(\varphi)
+      \arrow{r}[above]{\induced{\rho}}
+      &
+      \im(\varphi)
+      \arrow[hook]{u}
+    \end{tikzcd}
+  \]
+\end{corollary}
+
+\begin{corollary}[Noethersche Isomorphiesätze]
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Es seien~$H$,~$N$ Untergruppen von~$G$, wobei~$N$ ein Normalteiler in~$G$ ist.
+      \begin{enumerate}
+        \item
+          Das Produkt~$HN = \{ hn \suchthat h \in H, n \in N \}$ ist eine Untergruppe von~$G$.
+        \item
+          Es ist~$N$ ein Normalteiler in~$HN$ und~$H \cap N$ ein Normalteiler in~$H$.
+        \item
+          Die Inklusion~$H \to HN$ induziert einen Gruppenisomorphismus
+          \[
+            H / (H \cap N)
+            \mapsto
+            HN / N \,,
+            \quad
+            \class{h}
+            \mapsto
+            \class{h} \,.
+          \]
+          Dies lässt sich grafisch wie folgt veranschaulichen.
+          \[
+            \begin{tikzcd}
+              {}
+              &
+              HN
+              &
+              {}
+              \\
+              N
+              \arrow[very thick, dash]{ur}
+              &
+              {}
+              &
+              H
+              \arrow[dash]{ul}
+              \\
+              {}
+              &
+              H \cap N
+              \arrow[dash]{ul}
+              \arrow[very thick, dash]{ur}
+              &
+              {}
+            \end{tikzcd}
+          \]
+      \end{enumerate}
+    \item
+      Es seien~$N$,~$K$ zwei Normalteiler in~$G$ mit~$N \subgroupeq K \subgroupeq G$.
+      \begin{enumerate}
+        \item
+          Es ist~$N$ normal in~$K$, und es ist~$K/N$ normal in~$G/N$.
+        \item
+          Die Identität~$G \to G$ induziert einen wohldefinierten Gruppenisomorphismus
+          \[
+            (G/N) / (K/N)
+            \to
+            G / K \,,
+            \quad
+            \class{ \class{g} }
+            \mapsto
+            \class{g} \,.
+          \]
+          Beide Gruppen beschreiben im folgenden Diagram den obersten Teil.
+          \[
+            \begin{tikzcd}
+              G
+              \\
+              K
+              \arrow[very thick, dash]{u}
+              \\
+              N
+              \arrow[dash]{u}
+              \\
+              1
+              \arrow[dash]{u}
+            \end{tikzcd}
+          \]
+      \end{enumerate}
+  \end{enumerate}
+\end{corollary}
