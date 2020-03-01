@@ -4,6 +4,18 @@
   Im Folgenden ist~$G$, sofern nicht anders angegeben, eine Gruppe.
 \end{convention}
 
+\section{Allgemeines}
+
+\begin{definition}
+  Es seien~$G$,~$H$ zwei Gruppen.
+  Eine Abbildung~$\varphi \colon G \to H$ ist ein \defemph{Gruppenhomomorphismus} falls
+  \[
+    \varphi(g_1 g_2) = \varphi(g_1) \varphi(g_2)
+    \qquad
+    \text{für alle~$g_1, g_2 \in G$} \,.
+  \]
+\end{definition}
+
 \begin{definition}
   Eine Teilmenge~$H$ von~$G$ ist eine \defemph{Untergruppe} falls die folgenden drei Bedingungen erfüllt sind.
   \begin{enumerate}
@@ -16,6 +28,46 @@
   \end{enumerate}
   Dass~$H$ eine Untergruppe von~$G$ ist, wird mit~$H \subgroupeq G$ notiert.
 \end{definition}
+
+Ist~$H$ eine Untergruppe von~$G$, so lässt sich die Multiplikation von~$G$ zu einer Multiplikation auf~$H$ einschränken.
+Hierdurch wird~$H$ ebenfalls zu einer Gruppe.
+
+\begin{example}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Sowohl~$G$ also auch~$1$ sind Untergruppen von~$G$.%
+      \footnote{
+        Wir bezeichnen mit~$1$ die triviale Gruppe, bzw. die triviale Untergruppe.
+      }
+    \item
+      Die Untergruppen von~$\Integer$ sind genau~$n \Integer = \{na \suchthat a \in \Integer\}$ für~$n \in \Integer$.
+    \item
+      Es sei~$\varphi \colon G \to H$ ein Gruppenhomomorphismus.
+      Der~\defemph{Kern} von~$\varphi$ ist
+      \[
+        \ker(\varphi)
+        \defined
+        \{
+          g \in G
+        \suchthat
+          \varphi(g) = 1
+        \} \,,
+      \]
+      und das \defemph{Bild} von~$\varphi$ ist
+      \[
+        \im(\varphi)
+        \defined
+        \{
+          \varphi(g)
+        \suchthat
+          g \in G
+        \} \,.
+      \]
+      Es ist~$\im(\varphi)$ eine Untergruppe von~$H$ und~$\ker(\varphi)$ eine Untergruppe von~$G$.
+      Der Homomorphismus~$\varphi$ ist genau dann surjektiv, wenn~$\im(\varphi) = H$, und genau dann injektiv, wenn~$\ker(\varphi) = 1$.
+  \end{enumerate}
+\end{example}
 
 \begin{convention}
   Im Folgenden ist~$H$, sofern nicht anders angegeben, eine Untergruppe von~$G$.
@@ -33,7 +85,7 @@
 
 
 
-\subsection{Nebenklassen}
+\subsection{Nebenklassen und der Satz von Lagrange}
 
 \begin{definition}
   Es sei~$g$ ein Element von~$G$.
@@ -41,7 +93,7 @@
     \item
       Die \defemph{Linksnebenklasse} von~$g$ bzgl.~$H$ ist die Teilmenge~$gH$ von~$G$.
     \item
-      Die \defemph{Linksnebenklasse} von~$g$ bzgl.~$H$ ist die Teilmenge~$gH$ von~$G$.
+      Die \defemph{Rechtsnebenklasse} von~$g$ bzgl.~$H$ ist die Teilmenge~$Hg$ von~$G$.
     \item
       Die Menge der Links- bzw. Rechtsnebenklassen in~$G$ bzgl.~$H$ sind
       \[
@@ -91,9 +143,16 @@
       Jedes Element~$g \in G$ ist in seiner jeweiligen Nebenklasse~$gH$ enthalten.
     \item
       Für je zwei Element~$g_1, g_2 \in G$ sind die Nebenklassen~$g_1 H$ und~$g_2 H$ entweder gleich oder disjunkt.
-      Dabei gilt genau dann~$g_1 H = g_2 H$ wenn~$g_2^{-1} g_1 \in H$, genau dann wenn~$g_1^{-1} g_2 \in H$.
+      Dabei gilt
+      \[
+        g_2^{-1} g_1 \in H
+        \iff
+        g_1 H = g_2 H
+        \iff
+        g_1 g_2^{-1} \in H \,.
+      \]
     \item
-      Für jedes ELement~$g \in G$ die Abbildung
+      Für jedes Element~$g \in G$ ist die Abbildung
       \[
         H \to gH \,,
         \quad
@@ -150,7 +209,7 @@
     \item
       Die von~$S$ erzeugte Untegruppe~$\gen{S}$ ist eine Untergruppe von~$G$.
     \item
-      Es ist~$\gen{S}$ die kleinste Untergrupe von~$G$, die~$S$ enthält:
+      Es ist~$\gen{S}$ die kleinste Untergruppe von~$G$, die~$S$ enthält:
       Es gilt~$S \subseteq \gen{S}$, und für jede Untergruppe~$H$ von~$G$ mit~$S \subseteq H$ gilt auch~$\gen{S} \subseteq H$.
     \item
       Es gilt~$\gen{S} = \bigcap \{ H \suchthat H \subgroupeq G, S \subseteq H \}$.
@@ -158,12 +217,56 @@
 \end{proposition}
 
 
+\begin{example}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Die symmetrische Gruppe wird von der Menge der Transpositionen erzeugt, also von
+      \[
+        S_1
+        \defined
+        \{
+          (i, j)
+        \suchthat
+          1 \leq i < j \leq n
+        \}
+      \]
+      Die Menge der einfachen Transpositionen ist ebenfalls ein Erzeugendensystem, also
+      \[
+        S_2
+        \defined
+        \{
+          (i, i+1)
+        \suchthat
+          1 \leq i < j \leq n
+        \} \,.
+      \]
+    \item
+      Ist~$K$ ein Körper und~$n \in \Natural$, so wird die Gruppe~$\GL(n,K)$ von der Menge der Elementarmatrizen erzeugt.
+  \end{enumerate}
+\end{example}
+
 
 \subsection{Zyklische Gruppen}
 
 \begin{definition}
   Die Gruppe~$G$ ist \defemph{zyklisch} wenn sie von einem einzelnen Element erzeugt wird, d.h. es gibt ein Element~$g \in G$ mit~$G = \gen{g}$.
 \end{definition}
+
+\begin{example}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Die Gruppe~$\Integer$ ist zyklisch.
+      Die möglichen Erzeuger sind~$1$ und~$-1$.
+    \item
+      Für jedes~$n \in \Natural_1$ ist die Gruppe~$\Integer_n$ zyklisch.
+      Das Element~$\class{1}$ ist ein zyklischer Erzeuger.
+    \item
+      Ist~$K$ ein Körper, so ist jede endliche Untergruppe der multiplikativen Gruppe~$K^\times$ zyklisch.
+      Inbesondere ist~$K^\times$ zyklisch, falls~$K$ endlich ist.
+  \end{enumerate}
+\end{example}
 
 \begin{theorem}[Klassifikation zyklischer Gruppen]
   Die Gruppe~$G$ sei zyklisch.
@@ -183,9 +286,13 @@
   \]
 \end{theorem}
 
+\begin{corollary}
+  Ist~$K$ ein endlicher Körper mit~$\card{K} = q$, so gilt~$K^\times \cong \Integer_{q-1}$.
+\end{corollary}
+
 \begin{proposition}
   Die Gruppe~$G$ sei endlich und~$p \defined \card{G}$
-  Dann ist~$G$ zyklisch, und jedes Element~$g \in G$ mit~$g \neq e$ ist ein Erzeuger für~$G$.
+  Dann ist~$G$ zyklisch, und jedes Element~$g \in G$ mit~$g \neq 1$ ist ein Erzeuger für~$G$.
 \end{proposition}
 
 \begin{corollary}
@@ -278,6 +385,62 @@
 
 
 
+\subsection{Gruppenaktionen und Gruppenhomomorphismen}
+
+Ist~$X$ eine~\Menge{$G$}, so ist für jedes Gruppenelement~$g \in G$ die Abbildung
+\[
+  \lambda_g
+  \colon
+  X \to X \,,
+  \quad
+  x \mapsto g.x
+\]
+eine Bijektion (mit~$\lambda_g^{-1} = \lambda_{g^{-1}}$).
+Die entstehende Abbildung
+\[
+  \lambda
+  \colon
+  G \to \Sym(X) \,,
+  \quad
+  g \mapsto \lambda_g
+\]
+ist ein Gruppenhomomorphismus.
+Ist umgekehrt~$\phi \colon G \to \Sym(X)$ ein Gruppenhomomorphismus, so wird durch
+\[
+  g.x \defined \phi(g)(x)
+  \qquad
+  \text{für alle~$g \in G$,~$x \in X$}
+\]
+eine Aktion von~$G$ auf~$X$ definiert.
+Diese beiden Konstruktionen sind inverse zueinander, und wir erhalten das folgende Resultat.
+
+\begin{proposition}
+  Es sei~$G$ eine Gruppe und~$X$ eine Menge.
+  Dann gibt es eine Eins-zu-eins-Korrespondenz gegeben durch
+  \begin{align*}
+    \{
+      \text{Aktionen von~$G$ auf~$X$}
+    \}
+    &\onetoone
+    \left\{
+      \begin{tabular}{@{}c@{}}
+        Gruppenhomomorphismen\\
+        $G \to \Sym(X)$
+      \end{tabular}
+    \right\} \,,
+    \\
+    *
+    &\mapsto
+    [g \mapsto [x \mapsto g*x]]
+    \\
+    [(g,x) \mapsto \phi(g)(x)]
+    &\mapsfrom
+    \phi \,.
+  \end{align*}
+\end{proposition}
+
+
+
 \subsection{Bahnen und Stabilisatoren}
 
 \begin{definition}
@@ -295,58 +458,6 @@
 \end{proposition}
 
 % TODO: Exercise: Konjugierte Stabilisatoren.
-
-%Ist~$X$ eine~\Menge{$G$}, so ist für jedes Gruppenelement~$g \in G$ die Abbildung
-%\[
-%  \lambda_g
-%  \colon
-%  X \to X \,,
-%  \quad
-%  x \mapsto g.x
-%\]
-%eine Bijektion (mit~$\lambda_g^{-1} = \lambda_{g^{-1}}$).
-%Die entstehende Abbildung
-%\[
-%  \lambda
-%  \colon
-%  G \to \Sym(X) \,,
-%  \quad
-%  g \mapsto \lambda_g
-%\]
-%ist ein Gruppenhomomorphismus.
-%Ist umgekehrt~$\phi \colon G \to \Sym(X)$ ein Gruppenhomomorphismus, so wird durch
-%\[
-%  g.x \defined \phi(g)(x)
-%  \qquad
-%  \text{für alle~$g \in G$,~$x \in X$}
-%\]
-%eine Aktion von~$G$ auf~$X$ definiert.
-%Diese beiden Konstruktionen sind inverse zueinander, und wir erhalten das folgende Resultat.
-%
-%\begin{proposition}
-%  Es sei~$G$ eine Gruppe und~$X$ eine Menge.
-%  Dann gibt es eine Eins-zu-eins-Korrespondenz gegeben durch
-%  \begin{align*}
-%    \{
-%      \text{Aktionen von~$G$ auf~$X$}
-%    \}
-%    &\longonetoone
-%    \left\{
-%      \begin{tabular}{@{}c@{}}
-%        Gruppenhomomorphismen\\
-%        $G \to \Sym(X)$
-%      \end{tabular}
-%    \right\} \,,
-%    \\
-%    *
-%    &\longmapsto
-%    [g \mapsto [x \mapsto g*x]]
-%    \\
-%    [(g,x) \mapsto \phi(g)(x)]
-%    &\longmapsfrom
-%    \phi \,.
-%  \end{align*}
-%\end{proposition}
 
 Für je zwei Gruppenelement~$g_1, g_2 \in G$ und ein Element~$x \in X$ gilt
 \[
@@ -409,6 +520,31 @@ Hieraus erhalten wir das folgende Resultat.
   Ob die eindeutige Gruppenaktion von~$G$ auf der leeren Menge transitiv ist, ist Geschmackssache.
   In dieser Vorlesung ist diese Wirkung \emph{nicht} transitiv.
 \end{warning}
+
+\begin{example}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Die Symmetrische Gruppe~$\Sym_n$ wirkt transitiv auf der Menge~$\{1, \dotsc, n\}$ vermöge~$\sigma.i \defined \sigma(i)$.
+    \item
+      Es gelte~$\card{G} = 40$ und~$\card{X} = 25$.
+      Es sei~$x \in X$.
+      Wäre die Aktion von~$G$ auf~$X$ transitiv, so würde
+      \[
+        25
+        =
+        \card{X}
+        =
+        \card{G.x}
+        \divides
+        \card{G}
+        =
+        40
+      \]
+      gelten.
+      Dies ist nicht der Fall.
+  \end{enumerate}
+\end{example}
 
 
 
@@ -598,23 +734,31 @@ Aus der Bahnenformel ergibt sich somit das folgende Resultat.
   Dass~$N$ ein Normalteiler ist, wird mit~$N \normgroupeq G$ notiert.
 \end{definition}
 
-\begin{example}[Kerne]
-  Ist~$\varphi \colon G \to G'$ ein Gruppenhomomorphsimus, so ist
-  \[
-    \ker(\varphi)
-    \defined
-    \{
-      g \in G
-    \suchthat
-      \varphi(g) = 1
-    \}
-  \]
-  eine normale Untergruppe von~$G$.
-  Dabei ist der Homomorphismus~$\varphi$ genau dann injektiv, wenn~$\ker(\varphi) = 1$ gilt.
+\begin{example}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Ist~$\varphi \colon G \to G'$ ein Gruppenhomomorphsimus, so~$\ker(\varphi)$ ein Normalteiler in~$G$.
+      Hiedurch ergeben sich die folgenden Sonderfälle, wobei~$K$ jeweils ein Körper ist.
+      \begin{enumerate}
+        \item
+          Die alternierende Gruppe~$\Alt_n \defined \{ \sigma \in S_n \suchthat \sgn(\sigma) = 1 \}$ ist eine normale Untergruppe der symmetrischen Gruppe~$\Sym_n$.
+        \item
+          Die spezielle lineare Gruppe~$\SL(n,K) \defined \{ A \in \GL(n,K) \suchthat \det(A) = 1 \}$ ist eine normale Untergruppe der allgemeinen linearen Gruppe~$\GL(n,K)$.
+        \item
+          Die spezielle orthogonale Gruppe~$\SOrth(n,K) \defined \{ A \in \Orth(n,K) \suchthat \det(A) = 1 \}$ ist eine normale Untergruppe der orthogonalen Gruppe~$\Orth(n,K) \defined \{ A \in \GL(n,K) \suchthat A^{-1} = A^T \}$.
+      \end{enumerate}
+    \item
+      Ist~$N$ eine Untergruppe von~$G$ mit~$[G : N] = 2$, so ist~$N$ ein Normalteiler in~$G$.%
+      \footnote{
+        Es sei allgemeiner~$G$ eine endliche Grupe und~$N$ eine Untergruppe von~$G$, so dass der Index~$[G : N]$ der kleinste Primfaktor von~$\card{G}$ ist.
+        Dann ist~$N$ normal in~$G$.
+      }
+  \end{enumerate}
 \end{example}
 
 \begin{convention}
-  Im Folgenden ist~$N$, sofern nicht anders angegeben, eine normale Untergruppe von~$G$.
+  Im Folgenden ist~$N$, sofern nicht anders angegeben, ein Normalteiler in~$G$.
 \end{convention}
 
 
@@ -683,7 +827,7 @@ Wir erhalten somit aus \cref{isomorphism theorem for G-sets} das folgende Result
     \item
       Dies ist die eindeutige Gruppenstruktur auf~$G/N$, für welche die Abbildung
       \[
-        \rho
+        \pi
         \colon
         G \to G/N \,,
         g \mapsto \class{g}
@@ -692,7 +836,7 @@ Wir erhalten somit aus \cref{isomorphism theorem for G-sets} das folgende Result
 \end{proposition}
 
 \begin{definition}
-  In der Situation von \cref{construction of quotient group} ist~$G/N$ die \defemph{Faktorgruppe} von~$G$ nach~$N$, und die Abbildung~$\rho$ ist die \defemph{kanonische Projektion}.
+  In der Situation von \cref{construction of quotient group} ist~$G/N$ die \defemph{Faktorgruppe} von~$G$ nach~$N$, und die Abbildung~$\pi$ ist die \defemph{kanonische Projektion}.
 \end{definition}
 
 
@@ -700,7 +844,7 @@ Wir erhalten somit aus \cref{isomorphism theorem for G-sets} das folgende Result
 \subsection{Korrespondenz von Untergruppen}
 
 \begin{theorem}
-  Es sei~$\rho \colon G \to G/N$ die kanonische Projektion.
+  Es sei~$\pi \colon G \to G/N$ die kanonische Projektion.
   \begin{enumerate}
     \item
       Es gibt eine Eins-zu-eins-Korrespondenz von Untergruppen, gegeben durch
@@ -718,7 +862,7 @@ Wir erhalten somit aus \cref{isomorphism theorem for G-sets} das folgende Result
         &\mapsto
         H/N \,,
         \\
-        \rho^{-1}(H')
+        \pi^{-1}(H')
         &\mapsfrom
         H' \,.
       \end{align*}
@@ -743,12 +887,12 @@ Wir erhalten somit aus \cref{isomorphism theorem for G-sets} das folgende Result
 \subsection{Homomorphiesatz und Isomorphiesätze}
 
 \begin{theorem}[Homomorphiesatz]
-  Es sei~$\rho \colon G \to G/N$ die kanonische Projektion, und es sei~$H$ eine weitere Gruppe.
+  Es sei~$\pi \colon G \to G/N$ die kanonische Projektion, und es sei~$H$ eine weitere Gruppe.
   \begin{enumerate}
     \item
-      Es gilt~$\ker(\rho) = N$.
+      Es gilt~$\ker(\pi) = N$.
     \item
-      Ist~$\psi \colon G/N \to H$ ein Gruppenhomomorphismus, so gilt für den Gruppenhomomorphismus~$\psi \circ \rho \colon G \to H$, dass~$N \subseteq \ker(\psi \circ \rho)$.
+      Ist~$\psi \colon G/N \to H$ ein Gruppenhomomorphismus, so gilt für den Gruppenhomomorphismus~$\psi \circ \pi \colon G \to H$, dass~$N \subseteq \ker(\psi \circ \pi)$.
     \item
       Ist andererseits~$\varphi \colon G \to H$ ein Gruppenhomomorphismus mit~$N \subseteq \ker(\varphi)$, so ist
       \[
@@ -764,7 +908,7 @@ Wir erhalten somit aus \cref{isomorphism theorem for G-sets} das folgende Result
         \begin{tikzcd}
           G
           \arrow{r}[above]{\varphi}
-          \arrow{d}[left]{\rho}
+          \arrow{d}[left]{\pi}
           &
           H
           \\
@@ -796,7 +940,7 @@ Wir erhalten somit aus \cref{isomorphism theorem for G-sets} das folgende Result
         &\mapsto
         \induced{\varphi} \,,
         \\
-        \psi \circ \rho
+        \psi \circ \pi
         &\mapsfrom
         \psi \,.
       \end{align*}
@@ -809,7 +953,7 @@ Wir erhalten somit aus \cref{isomorphism theorem for G-sets} das folgende Result
   \[
     \induced{\varphi}
     \colon
-    G/\ker(\varphi) \to \im(\varphi) \,,
+    G/{\ker(\varphi)} \to \im(\varphi) \,,
     \quad
     \class{g}
     \mapsto
@@ -820,12 +964,12 @@ Wir erhalten somit aus \cref{isomorphism theorem for G-sets} das folgende Result
     \begin{tikzcd}
       G
       \arrow{r}[above]{\varphi}
-      \arrow[two heads]{d}[left]{\rho}
+      \arrow[two heads]{d}[left]{\pi}
       &
       H
       \\
       G/\ker(\varphi)
-      \arrow{r}[above]{\induced{\rho}}
+      \arrow{r}[above]{\induced{\varphi}}
       &
       \im(\varphi)
       \arrow[hook]{u}
@@ -897,7 +1041,7 @@ Wir erhalten somit aus \cref{isomorphism theorem for G-sets} das folgende Result
             \mapsto
             \class{g} \,.
           \]
-          Beide Gruppen beschreiben im folgenden Diagram den obersten Teil.
+          Beide Gruppen beschreiben im folgenden Diagramm den obersten Teil.
           \[
             \begin{tikzcd}
               G
@@ -934,7 +1078,51 @@ Wir erhalten somit aus \cref{isomorphism theorem for G-sets} das folgende Result
   Es sei~$G$ eine~\Gruppe{$p$} und~$X$ eine endliche~\Menge{$G$}.
   Es gilt
   \[
-    \card{X} \equiv \card*{X^G} \pmod{p} \,.  
+    \card{X} \equiv \card{X^G} \pmod{p} \,.  
   \]
 \end{proposition}
+
+\begin{corollary}
+  Ist~$G$ eine nicht-triviale~\Gruppe{$p$}, so gilt~$\zenter(G) \neq 1$.
+\end{corollary}
+
+\begin{definition}
+  Es sei~$G$ eine endliche Gruppe, und es sei~$\card{G} = p^r m$ mit~$p \ndivides m$.
+  Eine Untergruppe~$P$ von~$G$ der Ordnung~$\card{P} = p^r$ ist eine~\defemph{\Sylow{$p$}-Untergruppe}.
+\end{definition}
+
+\begin{theorem}[Erster Sylowsatz]
+  Es sei~$G$ eine endliche Gruppe und~$\card{G} = p^r m$ mit~$p \ndivides m$.
+  \begin{enumerate}
+    \item
+      Für jede Potenz~$s = 0, \dotsc, r$ enthält~$G$ eine Untergruppe der Ordnung~$p^s$.
+      Insbesondere (für~$s = r$) enthält~$G$ eine~\Sylow{$p$}-Untergruppe.
+    \item
+      Für jede Untergruppe~$H$ von~$G$ der Ordnung~$p^s$ mit~$0 \leq s \leq r+1$ gibt es eine Untergruppe~$K$ von~$G$ der Ordnung~$p^{s+1}$, so dass~$H$ eine normale Untergruppe von~$K$ ist.
+  \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Zweiter Sylowsatz]
+  Es sei~$G$ eine endliche Gruppe.
+  \begin{enumerate}
+    \item
+      Es sei~$H$ eine~\Untergruppe{$p$} von~$G$ und~$P$ eine~\Sylow{$p$}-Untergruppe von~$G$.
+      Dann gibt es ein Gruppenelement~$g \in G$, so dass~$g H g^{-1} \subseteq P$.
+    \item
+      Je zwei~\Sylow{$p$}-Untergruppen von~$G$ sind konjugiert zueinander.
+  \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Dritter Sylowsatz]
+  Es sei~$G$ eine endliche Gruppe, und es sei~$\card{G} = p^r m$ mit~$p \ndivides m$.
+  Es sei~$n_p$ die Anzahl der~\Sylow{$p$}-Untergruppen von~$G$.
+  \begin{enumerate}
+    \item
+      Es gilt~$n_p \divides \card{G}$.
+    \item
+      Es gilt~$n_p \equiv 1 \Mod{p}$.
+  \end{enumerate}
+\end{theorem}
+
+
 

@@ -1,0 +1,107 @@
+\documentclass{scrartcl}
+
+\usepackage{style_general}
+\usepackage{style_sheets}
+
+
+
+\titlehead{
+  \textbf{Repetitorium: Einführung in die Algebra}%
+%  \footnote{
+%    Online verfügbar unter \url{https://gitlab.com/cionx/einfuehrung-in-die-algebra-review-ws-19-20}.
+%  }
+  \hfill
+  3. März 2020
+}
+\title{Tag 2}
+\author{}
+\date{}
+
+
+
+\begin{document}
+
+\maketitle
+\vspace{-6em}
+
+\begin{exercise}
+  Es sei~$p$ eine Primzahl es sei~$n \in \Natural_1$.
+  Es sei~$\Borel(n, \Finite_p)$ die Untergruppe von~$\GL(n, \Finite_p)$ der den invertierbaren oberen Dreiecksmatrizen.
+  Bestimmen Sie eine~\Sylow{$p$}-Untergruppe von~$\Borel(n, \Finite_p)$.
+\end{exercise}
+
+\begin{exercise}
+  Es sei~$G$ eine endliche Gruppe mit~$\card{G} = 231$.
+  Zeigen Sie, dass~$G$ mindestens zwei echte, nicht-triviale Normalteiler besitzt.
+\end{exercise}
+
+\begin{exercise}
+  Es sei~$G$ eine endliche Menge mit~$\card{G} = 24$.
+\end{exercise}
+
+\begin{exercise}
+  Es sei~$R$ ein koummtativer Ring.
+  Es sei~$r$ ein Element von~$R$ und es sei~$\lambda_r \colon R \to R$ die Multiplikation mit~$r$, d.h. es gelte~$\lambda_r(x) = rx$ für jedes Element~$x \in R$.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass die folgenden Bedingungen äquivalent sind.
+      \begin{equivlist}
+        \item
+          Das Element~$r$ ist eine Einheit in~$R$.
+        \item
+          Die Abbildung~$\lambda_r$ ist bijektiv.
+        \item
+          Die Abbildung~$\lambda_r$ ist surjektiv.
+      \end{equivlist}
+    \item
+      Zeigen Sie, dass das Element~$r$ genau dann ein Nullteiler ist, wenn die Abbildung~$\lambda_r$ nicht injektiv ist.
+  \end{enumerate}
+  Der kommutative Ring~$R$ sei nun endlich.
+  \begin{enumerate}[resume*]
+    \item
+      Folgern Sie, dass jedes Element von~$R$ entweder eine Einheit oder ein Nullteiler ist.
+    \item
+      Folgern Sie ferner, dass jeder endliche Integritätsbereich ein Körper ist.
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+  Es sei~$R$ ein kommutativer Ring.
+  \begin{enumerate}
+    \item
+      Es sei~$I$ ein Ideal in~$R$.
+      Zeigen Sie, dass
+      \[
+        I[X]
+        \defined
+        \biggl\{
+          \sum_i a_i X^i \in R[X]
+        \suchthat[\bigg]
+          \text{$a_i \in I$ für jeden Index~$i$}
+          \spacing
+        \biggr\}
+      \]
+      ein Ideal in~$R[X]$ ist, so dass~$R[X] / I[X] \cong (R/I)[X]$ gilt.
+    \item
+      Entscheiden Sie, ob~$\pideal[X]$ ein Primideal ist, wenn~$\pideal$ ein Primideal in~$R$ ist.
+    \item
+      Entscheiden Sie, ob~$\mideal[X]$ ein maximales Ideal ist, wenn~$\mideal$ ein maximales Ideal in~$R$ ist.
+  \end{enumerate}
+\end{exercise}
+
+
+\begin{exercise}
+  Zeigen Sie, dass der Ring~$\Integer\bigl[ \sqrt{-2} \bigr] \defined \{ a + i b \sqrt{2} \suchthat a, b \in \Integer \}$ euklidisch ist.
+\end{exercise}
+
+\begin{exercise}
+  Es sei~$I$ ein Ideal in einem kommutativen Ring~$R$, und es sei~$S \defined R \setminus I$ das Komplement von~$I$.
+  Zeigen Sie, dass das Ideal~$I$ genau dann prim ist, wenn die Menge~$S$ multiplikativ abgeschlossen ist.
+\end{exercise}
+
+\begin{exercise}
+  Es sei~$R$ ein kommutativer Ring und es sei~$\pideal$ ein Ideal in~$R$.
+  Zeigen Sie, dass das Ideal~$\pideal$ genau dann prim ist, wenn es einen Körper~$K$ und einen Ringhomomorphismus~$\varphi \colon R \to K$ gibt, so dass~$\pideal = \ker(\varphi)$ gilt.
+\end{exercise}
+
+\end{document}

@@ -7,6 +7,8 @@
 \newcommand{\Gruppen}[1]{#1\nobreakdash-\hspace{0pt}Gruppen}
 \newcommand{\Homomorphismus}[1]{#1\nobreakdash-\hspace{0pt}Homomorphismus}
 \newcommand{\Menge}[1]{#1\nobreakdash-Menge}
+\newcommand{\Sylow}[1]{#1\nobreakdash-Sylow}
+\newcommand{\Untergruppe}[1]{#1\nobreakdash-\hspace{0pt}Untergruppe}
 
 
 % math shortcuts
@@ -67,23 +69,41 @@
 
 
 % spaces and such
+\DeclareMathOperator{\Alt}{A}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Borel}{B}
+\DeclareMathOperator{\GL}{GL}
 \DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\Mat}{M}
 \DeclareMathOperator{\normalizer}{N}
+\DeclareMathOperator{\Orth}{O}
+\DeclareMathOperator{\Quot}{Quot}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\SOrth}{SO}
 \DeclareMathOperator{\Sym}{S}
 \DeclareMathOperator{\zenter}{Z}
 \DeclareMathOperator{\zentralizer}{Z}
 
 
+% ideals
+\newcommand{\pideal}{\mathfrak{p}}
+\newcommand{\qideal}{\mathfrak{q}}
+\newcommand{\mideal}{\mathfrak{m}}
+
 
 % relation symbols
-\newcommand{\divides}{\mathrel{\vert}}
+\newcommand{\divides}{\mid}
+\newcommand{\ndivides}{\nmid}
 \newcommand{\subgroupeq}{\leq}
 \newcommand{\normgroupeq}{\trianglelefteq}
 
 
 
 % functions
+\newcommand{\Mod}[1]{\,(\operatorname{mod} #1)}
 \DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\sgn}{sgn}
 
 
 
@@ -92,6 +112,7 @@
 \DeclarePairedDelimiter{\card}{\lvert}{\rvert}
 \DeclarePairedDelimiter{\class}{[}{]}
 \DeclarePairedDelimiter{\gen}{\langle}{\rangle}
+\DeclarePairedDelimiter{\genideal}{(}{)}
 
 
 
