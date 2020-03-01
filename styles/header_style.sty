@@ -5,13 +5,10 @@
 % pagenumber in bold
 %\addtokomafont{pagenumber}{\bfseries}
 
-\lehead{\pagemark}
-\rohead{\pagemark}
-
-\lohead{\upshape{\headmark}}
-\rehead{\upshape{\headmark}}
+\automark{section}
+\chead{\upshape{\headmark}}
 
 % make foot empty
 \ofoot{}
-\cfoot{}
+\cfoot{\pagemark}
 \ifoot{}

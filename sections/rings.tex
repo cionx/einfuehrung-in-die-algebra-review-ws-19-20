@@ -20,7 +20,7 @@
 
 \begin{definition}
   Eine Teilmenge~$S$ von~$R$ ist ein Unterring, falls sie die folgenden Bedingungen erfüllt.
-  \begin{enumerate}
+  \begin{itemize}
     \item
       Es gilt~$0 \in S$.
     \item
@@ -29,7 +29,7 @@
       Für jedes Element~$s \in S$ gilt auch~$-s \in S$.
     \item
       Für alle Element~$s_1, s_2 \in S$ gilt auch~$s_1 s_2 \in S$.
-  \end{enumerate}
+  \end{itemize}
 \end{definition}
 
 \begin{example}
@@ -122,6 +122,15 @@
 
 \begin{proposition}
   Ist~$R$ ein Integritätsberich, so für jede Indexmenge~$A$ auch der Polynomring~$R[X_\alpha \suchthat \alpha \in A]$ ein Integritätsbereich.
+\end{proposition}
+
+\begin{proposition}
+  Ist~$R$ ein Integritätsbereich, so gilt~$R[X]^\times = R^\times$.%
+  \footnote{
+    Ist allgemeiner~$R$ ein beliebiger kommutativer Ring, so ist ein Polynom~$f \in R[X]$ mit~$f = a_n X^n + \dotsb + a_1 X + a_0$ genau dann eine Einheit in~$R[X]$, wenn~$a_0$ eine Einheit in~$R$ ist und die restlichen Koeffizienten~$a_1, \dotsc, a_n$ nilpotent in~$R$ sind.
+    Für einen kommutativen Ring~$R$ gilt somit genau dann~$R[X]^\times = R^\times$ wenn~$R$ außer~$0$ keine nilpotenen Elemente besitzt.
+  }
+  
 \end{proposition}
 
 
@@ -324,7 +333,7 @@
 \end{convention}
 
 \begin{definition}
-  Ein Ideal~$\pideal$ in~$R$ ist ein \defemph{Primideal} falls~$\pideal$ ein echtes Ideal ist, und für je zwei ELement~$r_1, r_2 \in R$ mit~$r_1 r_2 \in \pideal$ bereits~$r_1 \in \pideal$ oder~$r_2 \in \pideal$ gilt.
+  Ein Ideal~$\pideal$ in~$R$ ist ein \defemph{Primideal} falls~$\pideal$ ein echtes Ideal ist, und für je zwei Element~$r_1, r_2 \in R$ mit~$r_1 r_2 \in \pideal$ bereits~$r_1 \in \pideal$ oder~$r_2 \in \pideal$ gilt.
 \end{definition}
 
 \begin{proposition}
@@ -730,6 +739,12 @@
   \end{enumerate}
 \end{proposition}
 
+\begin{example}
+  Es sei~$K$ ein Körper.
+  Dann ist der Polynomring~$K[X]$ ein Hauptidealring und es gilt~$K[X]^\times = K^\times = K \setminus \{0\}$.
+  Jedes Ideal in~$K[X]$ ist deshalb von der Form~$\genideal{f}$ für~$f = 0$ oder ein eindeutiges normiertes Polynom~$f \in K[X]$.
+\end{example}
+
 
 
 \subsection{Primelemente und Irreduzible Elemente}
@@ -780,7 +795,7 @@
 
 \begin{definition}
   Der Integritätsbereich~$R$ ist \defemph{faktoriell} falls die folgenden beiden Bedingungen gelten.
-  \begin{enumerate}
+  \begin{itemize}
     \item
       Jedes Element~$r \in R$ mit~$r \neq 0$ besitzt eine Zerlegung
       \begin{equation}
@@ -800,7 +815,7 @@
         p'_i = \delta_i p_{\sigma(i)} \,.
       \]
       (Es gilt dann notwendigerweise~$\epsilon = \delta_1 \dotsm \delta_n \varepsilon'$.)
-  \end{enumerate}
+  \end{itemize}
   Ist~$R$ faktoriell, so ist die Zerlegung~\eqref{prime decomposition} die \defemph{Primfaktorzerlegung} von~$r$.
 \end{definition}
 

@@ -1,0 +1,705 @@
+\chapter{Körpertheorie}
+
+\begin{definition}
+  Es sei~$L$ ein Körper.
+  \begin{enumerate}
+    \item
+      Eine Teilmenge~$K$ von~$L$ ist ein \defemph{Unterkörper} falls~$K$ ein Unterring von~$L$ ist, der ebenfalls ein Körper ist.
+      Es ist dann~$L$ eine \defemph{Körpererweiterung} von~$K$.
+      Diese Körpererweiterung wird mit~$L/K$ notiert.
+    \item
+      Ist ferner~$Z$ ein Unterkörper von~$L$ mit~$K \subseteq Z$, so ist~$Z$ ein \defemph{Zwischenkörper} der Körpererweiterung~$L/K$.
+  \end{enumerate}
+\end{definition}
+
+\begin{convention}
+  Im Folgenden sei, sofern nicht anders angegeben,~$L/K$ eine Körpererweiterung.
+\end{convention}
+
+
+
+
+
+\section{Allgemeines}
+
+
+
+\subsection{Grad einer Körpererweiterung}
+
+\begin{definition}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Der \defemph{Grad} der Körpererweiterung~$L/K$ ist~$[L : K] \defined \dim_K(L) \in \Natural_1 \cup \{ \infty \}$.
+    \item
+      Die Körpererweiterung~$L/K$ ist \defemph{endlich} wenn~$[L : K]$ endlich ist.
+  \end{enumerate}
+\end{definition}
+
+\begin{example}
+  Es gelten
+  \[
+    [\Complex : \Real] = 2 \,,
+    \quad
+    [\Real : \Rational] = \infty \,,
+    \quad
+    [\Complex : \Rational] = \infty \,.
+  \]
+\end{example}
+
+\begin{theorem}[Gradformel]
+  Für Körpererweiterungen~$M/L/K$ gilt~$[M : K] = [M : L] [L : K]$.
+\end{theorem}
+
+\begin{corollary}
+  Die Erweiterung~$L/K$ sei endlich und~$Z$ sei ein Zwischenkörper der Erweiterung~$L/K$.
+  Die beiden Grade~$[L : Z]$ und~$[Z : K]$ sind Teiler des Grades~$[L : K]$.
+\end{corollary}
+
+\begin{example}
+  Ist~$L/K$ endlich und~$[L : K]$ prim ist, so gilt für jeden Zwischenkörper~$Z$ dieser Körpererweiterung bereits~$Z = K$ oder~$Z = L$.
+\end{example}
+
+
+
+\subsection{Erzeugte Zwischenkörper}
+
+\begin{definition}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Es sei~$A$ eine Teilmenge von~$L$.
+      Dann ist
+      \[
+        K(A)
+        \defined
+        \bigcap
+        \{
+          Z
+        \suchthat
+          \text{$Z$ ist ein Zwischenkörper der Körpererweiterung~$L/K$ mit~$A \subseteq Z$}
+        \}
+      \]
+      der von~$A$ \defemph{erzeugte Zwischenkörper} der Körpererweiterung~$L/K$.
+    \item
+      Für jede Familie~$(\alpha_i)_{i \in I}$ von Elementen~$\alpha_i \in L$ sei~$K(\alpha_i \suchthat i \in I) \defined K( \{ \alpha_i \suchthat i \in I \})$.
+  \end{enumerate}
+\end{definition}
+
+\begin{proposition}
+  Es sei~$A$ eine Teilmenge von~$L$.
+  \begin{enumerate}
+    \item
+      
+  \end{enumerate}
+\end{proposition}
+
+\begin{definition}
+  Die Körperweiterung~$L/K$ ist \defemph{einfach}, falls es ein Element~$\alpha \in L$ gibt, so dass~$L = K(\alpha)$ gilt.
+\end{definition}
+
+
+
+
+
+\section{Primkörper}
+
+% TODO: Write this.
+
+
+
+
+
+\section{Algebraizität}
+
+
+
+\subsection{Algebraische Elemente}
+
+\begin{proposition}
+  \label{characterizations of algebraic elements}
+  Für jedes Element~$\alpha$ von~$L$ sind die folgenden Bedingungen äquivalent.
+  \begin{equivlist}
+    \item
+      Die Körpereweiterung~$K(\alpha)/K$ ist endlich.
+    \item
+      Es gilt~$K[\alpha] = K(\alpha)$.
+    \item
+      Es gilt~$\alpha^{-1} \in K[\alpha]$.
+    \item
+      Es gibt ein Polynom~$f \in K[X]$ mit~$f \neq 0$, so dass~$f(\alpha) = 0$.
+  \end{equivlist}
+\end{proposition}
+
+\begin{definition}
+  Es sei~$\alpha$ ein Element von~$\alpha$.
+  \begin{enumerate}
+    \item
+      Das Element~$\alpha$ ist \defemph{algebraisch} über~$K$ falls es die Bedingungen von \cref{characterizations of algebraic elements} erfüllt.
+    \item
+      Ist das Element~$\alpha$ nicht algebraisch über~$K$, so ist es \defemph{transzendent} über~$K$.
+  \end{enumerate}
+\end{definition}
+
+Es sei~$\alpha$ ein Element von~$L$, das algebraisch über~$K$ ist.
+Dann ist der Einsetzhomomorphisums
+\[
+  \ev_\alpha
+  \colon
+  K[X] \to K(\alpha) \,,
+  \quad
+  f \mapsto f(\alpha)
+\]
+ein surjektiver Ringhomomorphismus.
+Aus der Endlichkeit der Körpererweiterung~$K(\alpha)/K$ folgt, dass~$\ev_\alpha$ nicht injektiv ist, und somit~$\ker(\ev_\alpha) \neq 0$ gilt.
+Da~$K[X]$ ein Hauptidealring ist, gibt es ein eindeutiges normiertes Polynom~$\mu_\alpha \in K[X]$ mit~$\ker(\ev_\alpha) = \genideal{ \mu_\alpha }$.
+(Insbesondere gilt~$\mu_\alpha \neq 0$.)
+
+\begin{definition}
+  In der obigen Situation ist~$\mu_\alpha$ das \defemph{Minimalpolynom} von~$\alpha$ über~$K$.
+\end{definition}
+
+\begin{proposition}
+  Es sei~$\alpha$ ein Element von~$\alpha$, das algebraisch über~$K$ ist.
+  Es sei~$n \defined \deg(\mu_\alpha)$.
+  \begin{enumerate}
+    \item
+      Der Einsetzhomomorphismus~$\ev_\alpha \colon K[X] \to K(\alpha)$ induziert einen wohldefinierten Ringisomorphismus~$K[X] / \genideal{\mu_\alpha} \to K(\alpha)$ gegeben durch~$\class{f} \mapsto f(\alpha)$.
+    \item
+      Das Minimalpolynom~$\mu_\alpha$ ist irreduzibel.
+    \item
+      Es ist~$\mu_\alpha$ das eindeutige normierte, irreduzible Polynom in~$K[X]$, das~$\alpha$ als Nullstelle hat.
+    \item
+      Die Elemente~$1, \alpha, \dotsc, \alpha^{n-1}$ sind eine~\Basis{$K$} von~$K(\alpha)$.
+  \end{enumerate}
+\end{proposition}
+
+\begin{proposition}
+  Es seien~$M/L/K$ Körpererweiterungen und es sei~$\alpha$ ein Element von~$M$.
+  Ist das Element~$\alpha$ algebraisch über~$L$ und die Erweiterung~$L/K$ algebraisch, so ist das Element~$\alpha$ auch algebraisch über~$K$.
+\end{proposition}
+
+
+\subsection{Algebraische Körpererweiterungen}
+
+\begin{definition}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Die Erweiterung~$L/K$ ist \defemph{algebraisch} falls jedes Element von~$L$ algebraisch über~$K$ ist.
+    \item
+      Ist die Erweiterung~$L/K$ nicht algebraisch, so ist sie \defemph{transzendent}.
+  \end{enumerate}
+\end{definition}
+
+\begin{proposition}
+  Für Körpererweiterungen~$M/L/K$ ist die Erweiterung~$M/K$ genau dann algebraisch, wenn die Erweiterungen~$M/L$ und~$L/K$ beide algebraisch sind.
+\end{proposition}
+
+\begin{proposition}
+  Für die Körpererweiterung~$L/K$ sind die folgenden Bedingungen äquivalent.
+  \begin{enumerate}
+    \item
+      Die Erweiterung~$L/K$ ist endlich.
+    \item
+      Die Erweiterung ist algebraisch und wird von endlich vielen Elementen erzeugt.
+    \item
+      Die Erweiterung~$L/K$ wird von endlich vielen algebraischen Elementen erzeugt.
+  \end{enumerate}
+\end{proposition}
+
+\begin{corollary}
+  Es ist~$\Alg_{L/K}$ ein Zwischenkörper der Erweiterung~$L/K$.
+\end{corollary}
+
+\begin{corollary}
+  Die Körpererweiterung~$L/K$ ist genau dann algebraisch, wenn sie von algebraischen Elementen erzeugt wird.
+\end{corollary}
+
+
+
+\subsection{Algebraische Abschlüsse}
+
+\begin{proposition}
+  \label{characterizations of algebraically closed field}
+  Für einen Körper~$K$ sind die folgenden Bedingungen äquivalent.
+  \begin{equivlist}
+    \item
+      Jedes nicht-konstante Polynom~$f \in K[X]$ hat eine Nullstelle in~$K$.
+    \item
+      Die irreduziblen Polynome in~$K[X]$ sind genau die Polynome vom Grad~$1$.
+    \item
+      Jedes normierte Polynom~$f \in K[X]$ perfällt in Linearfaktoren.
+    \item
+      Für jede algebraische Körpererweiterung~$L/K$ gilt~$L = K$.
+  \end{equivlist}
+\end{proposition}
+
+\begin{definition}
+  Es sei~$K$ ein Körper.
+  \begin{enumerate}
+    \item
+      Ein Körper ist \defemph{algebraisch abgeschlossen} wenn er die Bedingungen aus \cref{characterizations of algebraically closed field} erfüllt.
+    \item
+      Ein \defemph{algebraischer Abschluss} von~$K$ ist ein algebraisch abgeschlossener Körper~$\closure{K}$, so dass~$\closure{K}$ eine algebraische Körpererweiterung von~$K$ ist.
+  \end{enumerate}
+\end{definition}
+
+Ist~$f \in K[X]$ ein irreduzibles Polynom, so ist~$L \defined K[X]/\genideal{f}$ eine Körpererweiterung, in der~$f$ eine Nullstelle hat (nämlich die Restklasse~$\class{X}$).
+Auf diese Weise lassen sich zu dem Körper~$K$ Nullstelllen von (irreduziblen) Polynomen \defemph{dazuadjungieren}.
+
+Durch ein geschicktes, gleichzeitiges Dazuadjungieren von unendlichen vielen Wurzeln ergibt sich das folgende Resultat.
+
+\begin{theorem}[Steinitz]
+  Für jeden Körper~$K$ gibt einen algebraischen Abschluss~$\closure{K}$ von~$K$.
+\end{theorem}
+
+
+
+
+
+\section{\texorpdfstring{$K$}{K}-Homomorphismen}
+
+\begin{proposition}
+  Jeder Körperhomomorphismus ist injektiv.
+\end{proposition}
+
+\begin{remark}
+  Ist~$\varphi \colon K \to L$ ein Körperhomomorphismus, so können wir also~$K$ als Unterkörper von~$L$ auffassen.
+\end{remark}
+
+
+
+\subsection{Definitionen}
+
+\begin{convention}
+  Im Folgende sind~$L$,~$L_1$,~$L_2$, sofern nicht anders angegeben, jeweils Körpererweiterungen von~$K$.
+\end{convention}
+
+\begin{definition}
+  Ein~\linearer{$K$} Körperhomomorphismus~$\varphi \colon L_1 \to L_2$ ist ein~\defemph{\Homomorphismus{$K$}}.
+\end{definition}
+
+\begin{remark}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Ein Körperhomomorphismus~$\varphi \colon L_1 \to L_2$ ist genau dann ein~\Homomorphismus{$K$} (also~\linear{$K$}), wenn~$\restrict{\varphi}{K} = \id_K$ gilt.
+      Dies ist außerdem äquivalent dazu, dass~$\varphi$ das folgende Diagramm zum kommutieren bringt:
+      \[
+        \begin{tikzcd}[column sep = small]
+          {}
+          &
+          {}
+          &
+          L_2
+          \\
+          L_1
+          \arrow[dashed]{urr}[above]{\varphi}
+          &
+          {}
+          &
+          {}
+          \\
+          {}
+          &
+          K
+          \arrow{ul}
+          \arrow{uur}
+          &
+          {}
+        \end{tikzcd}
+      \]
+    \item
+      Wenn es einen~\Homomorphismus{$K$}~$L_1 \to L_2$ gibt, so können wir~$L_1$ als einen Unterkörper von~$L_2$ auffassen, und erhalten somit Körpererweiterungen~$L_2/L_1/K$.
+  \end{enumerate}
+\end{remark}
+
+\begin{lemma}
+  Es sei~$\varphi \colon L_1 \to L_2$ ein~\Homomorphismus{$K$}.
+  Ist~$\alpha \in L_1$ eine Nullstelle eines Polynoms~$f \in K[X]$, so ist auch~$\varphi(\alpha)$ eine Nullstelle von~$f$.
+\end{lemma}
+
+\begin{corollary}
+  Es sei~$\alpha \in L_1$ algebraisch über~$K$ mit Minimalpolynom~$\mu_\alpha$.
+  Ist~$\varphi \colon L_1 \to L_2$ ein~\Homomorphismus{$K$}, so ist~$\varphi(\alpha)$ eine Nullstelle on~$\mu_\alpha$.
+\end{corollary}
+
+\begin{proposition}
+  \label{homos are autos for finite extension}
+  Ist die Erweiterung~$L/K$ endlich, so ist jeder~\Homomorphismus{$K$}~$L \to L$ bereits ein~\Automorphismus{$K$}.
+\end{proposition}
+
+\begin{remark}
+  \Cref{homos are autos for finite extension} gilt auch dann noch, wenn~$L/K$ nur algebraisch ist.
+\end{remark}
+
+
+
+\subsection{Fortsetzungssätze}
+
+\begin{theorem}[Artinscher Fortsetzungssatz]
+  Es sei~$\varphi \colon K \to L$ ein Körperhomomorphismus.
+  Es sei~$K(\alpha)/K$ eine einfache, algebraische Körpererweiterung, und es~$\mu_\alpha$ das Minimalpolynom von~$\alpha$ über~$K$.
+  Dann gibt es für jede Nullstelle~$\beta$ von~$\mu_\alpha$ in~$L$ eine Fortsetzung von~$\varphi$ zu einem Körperhomomorphismus~$\varphi' \colon K(\alpha) \to L$ mit~$\varphi'(\alpha) = \beta$.
+  \[
+    \begin{tikzcd}
+      K(\alpha)
+      \arrow[dashed]{r}[above]{\varphi'}
+      &
+      L
+      \\
+      K
+      \arrow{u}
+      \arrow{ur}[below right]{\varphi}
+      &
+      {}
+    \end{tikzcd}
+  \]
+\end{theorem}
+
+\begin{remark}
+  Eine äquivalente Formulierung des Artinsches Fortsetzungssatzes ist die folgende:
+  Es sei~$K(\alpha)/K$ eine einfache, algebraische Körpererweiterung und~$L/K$ eine beliebige Körpererweiterung.
+  Dann gibt es für jede Nullstelle~$\beta$ von~$\mu_\alpha$ in~$L$ einen eindeutigen~\Homomorphismus{$K$}~$\psi \colon K(\alpha) \to L$ mit~$\psi(\alpha) = \beta$.
+  \[
+    \begin{tikzcd}
+      K(\alpha)
+      \arrow[dashed]{r}[above]{\psi}
+      &
+      L
+      \\
+      K
+      \arrow{u}
+      \arrow{ur}
+      &
+      {}
+    \end{tikzcd}
+  \]
+\end{remark}
+
+\begin{theorem}
+  Die Körpererweiterung~$L/K$ sei algebraisch, und es sei~$\closure{K}$ ein algebraischer Abschluss von~$K$.
+  Ist~$Z$ ein Zwischenkörper von~$L/K$ und ist~$\varphi \colon Z \to \overline{K}$ ein~\Homomorphismus{$K$}, so gibt es eine Fortsetzung von~$\varphi$ zu einem~\Homomorphismus{$K$}~$\varphi' \colon L \to \overline{K}$.
+  \[
+    \begin{tikzcd}
+      L
+      \arrow[dashed]{r}[above]{\varphi'}
+      &
+      \closure{K}
+      \\
+      Z
+      \arrow{u}
+      \arrow{ur}[below right]{\varphi}
+      &
+      {}
+      \\
+      K
+      \arrow{u}
+      \arrow[bend right]{uur}
+      &
+      {}
+    \end{tikzcd}
+  \]
+\end{theorem}
+
+\begin{corollary}
+  Ist~$\closure{K}$ ein algebraischer Abchluss von~$K$ und~$L/K$ eine algebraische Körpererweiterung, so gibt es einen~\Homomorphismus{$K$}~$L \to \closure{K}$.
+\end{corollary}
+
+\begin{corollary}
+  Sind~$L_1$ und~$L_2$ zwei algebraische Abschlusse von~$K$, so gibt es einen~\Isomorphismus{$K$}~$L_1 \to L_2$.
+\end{corollary}
+
+
+
+\subsection{Galois-Gruppen}
+
+\begin{definition}
+  Die \defemph{Galois-Gruppe} der Körpererweiterung~$L/K$ ist die Gruppe der~\Automorphismen{$K$} von~$L$ und sie wird mit~$\Gal(L/K)$ notiert.
+\end{definition}
+
+\begin{proposition}
+  \label{galois inequality}
+  Ist die Körperereiterung~$L/K$ endlich, so gilt~$\card{ \Gal(L/K) } \leq [L : K]$.
+\end{proposition}
+
+Um \cref{galois inequality} besser zu verstehen sei~$L = K(\alpha)$ eine einfache Körpererweiterung.
+Es sei~$\mu_\alpha$ das Minimalpolynom von~$\alpha$ über~$K$, es sei~$n \defined \deg(\mu_\alpha)$ es seien~$\beta_1, \dotsc, \beta_m$ die Nullstellen von~$\mu_\alpha$ in~$L$.
+Dann haben wir eine Eins-zu-eins-Korrespondenz
+\[
+  \Gal(L/K)
+  \to
+  \{ \beta_1, \dotsc, \beta_m \} \,,
+  \quad
+  \varphi
+  \mapsto
+  \varphi(\alpha) \,.
+\]
+Es ist also~$\card{\Gal(L/K)}$ die Anzahl der paarweise verschiedenen Nullstellen von~$\mu_\alpha$ in~$L$.
+Andererseits ist
+\[
+  [L : K] = [K(\alpha) : K] = \deg(\mu_\alpha) = n \,.
+\]
+Die Gleichheit~$\card{\Gal(L/K)} = [L : K]$ gilt also genau dann, wenn das Minimalpolynom~$\mu_\alpha$ über~$L$ maximal viele Nulstellen hat, d.h. wenn~$\mu_\alpha$ über~$L$ in Linearfaktoren zerfällt und alle Nullstellen paarweise verschieden sind.
+
+Diese Bedingung führt zu den Konzepten von normalen und seperablen Körperweiterungen.
+
+
+
+
+\section{Normale Körpererweiterungen}
+
+
+
+\subsection{Zerfällungskörper}
+
+\begin{definition}
+  Es sei~$(f_i)_{i \in I}$ eine Familie von Polynomen~$f_i \in K[X]$.
+  Der Erweiterungskörper~$L$ von~$K$ ist ein \defemph{Zerfällungskörper} der~$f_i$, falls jedes~$f_i$ über~$L$ in Linearfaktoren zerfällt, und die Erweiterung~$L/K$ von den Nullstellen der~$f_i$ erzeugt wird.
+\end{definition}
+
+\begin{proposition}
+  Es sei~$(f_i)_{i \in I}$ eine Familie von Polynomen~$f_i \in K[X]$.
+  \begin{enumerate}
+    \item
+      Die Familie~$(f_i)_{i \in I}$ besitzt einen Zerfällungskörper.
+    \item
+      Je zwei Zerfällungskörper der Familie~$(f_i)_{i \in I}$ sind~\isomorph{$K$}.
+  \end{enumerate}
+\end{proposition}
+
+
+
+\subsection{Normale Erweiterungen}
+
+\begin{proposition}
+  \label{characterizations of normal field extensions}
+  Ist die Körpererweiterung~$L/K$ algebraisch, so sind die folgenden Bedingungen äquivalent:
+  \begin{equivlist}
+    \item
+      Es gibt eine Familie~$(f_i)_{i \in I}$ von Polynomen~$f_i \in K[X]$, so dass~$L$ ein Zerfällungskörper der~$f_i$ ist.
+    \item
+      Jedes irreduzible Polynom~$f \in K[X]$, das in~$L$ ein Nullstelle hat, zerfällt über~$L$ bereits in Linearfaktoren.
+    \item
+      Jeder~\Homomorphismus{$K$}~$L \to \closure{L}$ hat das gleiche Bild, nämlich~$L$.
+  \end{equivlist}
+\end{proposition}
+
+\begin{definition}
+  Eine algebraische Körpererweiterung~$L/K$, welche die äquivalenten Bedingungen aus \cref{characterizations of normal field extensions} erfüllt, ist \defemph{normal}.
+\end{definition}
+
+\begin{proposition}
+  \label{restriction of normal}
+  Ist die Körpererweiterung~$L/K$ normal und ist~$Z$ ein Zwischenkörper dieser Erweiterung, so ist auch die Erweiterung~$L/Z$ normal.
+\end{proposition}
+
+\begin{warning}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      In der Situation von \cref{restriction of normal} ist die Erweiterung~$Z/K$ im Allgemeinen nicht normal.
+    \item
+      Sind~$M/L$ und~$L/K$ zwei normal Körpererweiterungen, so ist die Erweiterung~$M/K$ im Allgemeinen nicht normal.
+  \end{enumerate}
+\end{warning}
+
+
+
+\subsection{Normale Hüllen}
+
+Ist die Körpererweiterung~$L/K$ nicht normal, so liegt dies zwangsweise daran, dass gewisse Polynome aus~$K[X]$ nicht genügend Nullstellen in~$L$ haben.
+Dies lässt sich durch Hinzufügen dieser Nullstelen lösen.
+Hierdurch lässt sich die Erweiterung~$L/K$ auf möglichst kleine Weise durch einer normalen Erweiterung ergänzen, der sogennanten normalen Hülle von~$L/K$.
+
+\begin{definition}
+  Die Körpererweiterung~$L/K$ sei algebraisch.
+  Eine \defemph{normale Hülle} der Erweiterung~$L/K$ ist ein Erweiterungskörper~$M$ von~$L$, so dass die folgenden beiden Bedingungen gelten.
+  \begin{itemize}
+    \item
+      Die Erweiterung~$M/K$ ist normal.
+    \item
+      Ist~$Z$ ein Zwischnkörper der Erweiterung~$M/L$, so dass~$Z/K$ normal ist, so gilt bereits~$Z = M$.
+  \end{itemize}
+\end{definition}
+
+\begin{proposition}
+  Die Erweiterung~$L/K$ sei algebraisch.
+  Je zwei normale Hüllen der Erweiterung~$L/K$ sind~\isomorph{$L$}.
+\end{proposition}
+
+
+
+
+
+\section{Seperable Körpererweiterungen}
+
+
+
+\subsection{Mehrfache Nullstellen}
+
+\begin{definition}
+  Die \defemph{(formale) Ableitung} eines Polynoms~$f \in K[X]$ mit~$f = \sum_{i=0}^n a_i X^i$ ist das Polynom~$f' \defined \sum_{i=1}^n i a_i X^{i-1}$.
+\end{definition}
+
+\begin{lemma}
+  Für alle Polynome~$f, g \in K[X]$ und Skalare~$\lambda \in K$ gelten die Identitäten
+  \[
+    (f + g)' = f' + g' \,,
+    \quad
+    (\lambda f)' = \lambda f' \,,
+    \quad
+    (fg)' = f' g + f g' \,.
+  \]
+\end{lemma}
+
+\begin{proposition}
+  Für ein Element~$\alpha$ des Erweiterungskörpers~$L$ sind die folgenden Bedingungen äquivalent.
+  \begin{equivlist}
+    \item
+      Das Element~$\alpha$ ist eine mehrfache Nullstelle von~$f$.
+    \item
+      Das Element~$\alpha$ ist eine gemeinsame Nullstelle von~$f$ und~$f'$.
+    \item
+      Das Element~$\alpha$ ist eine Nullstelle von~$\ggT(f,f')$.
+  \end{equivlist}
+\end{proposition}
+
+
+
+\subsection{Seperable Polynome}
+
+\begin{definition}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Ein irreduzibles Polynom~$f \in K[X]$ ist \defemph{seperabel} falls~$f$ keine mehrface Nullstelle in~$\closure{K}$ hat.
+    \item
+      Ein Polynom~$f \in K[X]$ ist \defemph{seperabel} falls jeder irreduzible Faktor von~$f$ irreduzibel ist.
+  \end{enumerate}
+  Ein nicht-seperables Polynom ist \defemph{inseperabel}.
+\end{definition}
+
+\begin{lemma}
+  Ein irreduzibles Polynom~$f \in K[X]$ ist genau dann inseperabel wenn~$f' = 0$ gilt.
+\end{lemma}
+
+\begin{proposition}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Gilt~$\ringchar(K) = 0$ so ist jedes Polynom~$f \in K[X]$ seperabel.
+    \item
+      Gilt~$\ringchar(K) = p > 0$ so ist ein Polynom~$f \in K[X]$ genau dann inseperabel, wenn es ein Polynom~$g \in K[X]$ mit~$f(X) = g(X^p)$ gibt.
+  \end{enumerate}
+\end{proposition}
+
+\begin{example}
+  Für den Körper~$K \defined \Finite_p(t)$ ist das Polynom~$X^p - t \in K[X]$ irreduzibel und inseperabel.
+\end{example}
+
+
+
+\subsection{Seperable Element}
+
+\begin{definition}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Ein Element~$\alpha$ von~$L$ ist \defemph{seperabel} über~$K$, falls~$\alpha$ algebraisch über~$K$ ist und das Minimimalpolynom~$\mu_\alpha$ seperabel ist.
+    \item
+      Ein nicht-seperables Element ist \defemph{inseperabel}.
+  \end{enumerate}
+\end{definition}
+
+\begin{definition}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Die Körpererweiterung~$L/K$ ist \defemph{seperabel} falls sie algebraisch ist und jedes Element von~$L$ seperabel über~$K$ ist.
+    \item
+      Eine nicht-seperable Körpererweiterung ist \defemph{inseperabel}.
+  \end{enumerate}
+\end{definition}
+
+
+
+\subsection{Perfekte Körper}
+
+\begin{proposition}
+  \label{characterizations of seperable field extensions}
+  Für einen Körper~$K$ sind die folgenden beiden Bedingungen äquivalent.
+  \begin{equivlist}
+    \item
+      Jedes Polynom~$f \in K[X]$ ist seperabel.
+    \item
+      Jede algebraische Körpererweiterung~$L/K$ ist seperabel.
+  \end{equivlist}
+\end{proposition}
+
+\begin{definition}
+  Ein Körper~$K$ ist \defemph{perfekt} falls er die äquivalenten Bedingungen von \cref{characterizations of seperable field extensions} erfüllt. 
+\end{definition}
+
+\begin{example}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Jeder Körper von Charakteristik~$0$ ist perfekt.
+    \item
+      Jeder algebraisch abgeschlossene Körper ist perfekt.
+    \item
+      Der Körper~$\Finite_q(t)$ ist nicht perfekt.
+  \end{enumerate}
+\end{example}
+
+
+
+\subsection{Der Frobenius-Homomorphismus}
+
+\begin{definition}
+  Es sei~$R$ ein Ring von primer Charakteristik~$p$.
+  Die Abbildung
+  \[
+    R \to R
+    \quad
+    r \mapsto r^p
+  \]
+  ist der \defemph{Frobenius-Homomorphismus} von~$R$.
+\end{definition}
+
+\begin{lemma}
+  Es sei~$R$ ein Ring von primer Charakteristik~$p$.
+  Der Frobenius-\hspace{0pt}Homomorphismus~$R \to R$ ist ein Ringhomomorphismus.
+\end{lemma}
+
+\begin{proposition}
+  Es sei~$K$ ein Körper von primer Charakteristik~$p$.
+  Der Körper~$K$ ist genau dann perfekt wenn der Frobenius-Homomorphismus~$K \to K$ surjektiv (und somit bijektiv) ist. 
+\end{proposition}
+
+\begin{corollary}
+  Jeder endliche Körper ist perfekt.
+\end{corollary}
+
+
+
+\subsection{Der Satz vom Primitiven Element}
+
+\begin{definition}
+  Ist die Körpererweiterung~$L/K$ endlich und seperabel, so ist die Erweiterung~$L/K$ einfach, d.h. die es gibt ein primitves ELement für die Erweiterung~$L/K$, d.h. es gibt ein Element~$\alpha \in L$ mit~$L = K(\alpha)$.
+\end{definition}
+
+
+
+
+
+\section{Klassifikation Endlicher Körper}
+
+%TODO: Write this.
+
+
+
+
+

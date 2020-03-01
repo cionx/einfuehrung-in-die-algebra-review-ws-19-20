@@ -1,14 +1,22 @@
 % text shortcuts
 \newcommand{\defemph}{\textbf}
 
+\newcommand{\Automorphismen}[1]{#1\nobreakdash-\hspace{0pt}Automorphismen}
+\newcommand{\Automorphismus}[1]{#1\nobreakdash-\hspace{0pt}Automorphismus}
 \newcommand{\Bahn}[1]{#1\nobreakdash-\hspace{0pt}Bahn}
 \newcommand{\Bahnen}[1]{#1\nobreakdash-\hspace{0pt}Bahnen}
+\newcommand{\Basis}[1]{#1\nobreakdash-\hspace{0pt}Basis}
 \newcommand{\Gruppe}[1]{#1\nobreakdash-\hspace{0pt}Gruppe}
 \newcommand{\Gruppen}[1]{#1\nobreakdash-\hspace{0pt}Gruppen}
 \newcommand{\Homomorphismus}[1]{#1\nobreakdash-\hspace{0pt}Homomorphismus}
-\newcommand{\Menge}[1]{#1\nobreakdash-Menge}
+\newcommand{\isomorph}[1]{#1\nobreakdash-\hspace{0pt}isomorph}
+\newcommand{\Isomorphismus}[1]{#1\nobreakdash-\hspace{0pt}Isomorphismus}
+\newcommand{\linear}[1]{#1\nobreakdash-\hspace{0pt}linear}
+\newcommand{\linearer}[1]{#1\nobreakdash-\hspace{0pt}linearer}
+\newcommand{\Menge}[1]{#1\nobreakdash-\hspace{0pt}Menge}
 \newcommand{\Sylow}[1]{#1\nobreakdash-Sylow}
 \newcommand{\Untergruppe}[1]{#1\nobreakdash-\hspace{0pt}Untergruppe}
+
 
 
 % math shortcuts
@@ -69,9 +77,11 @@
 
 
 % spaces and such
+\DeclareMathOperator{\Alg}{A}
 \DeclareMathOperator{\Alt}{A}
 \DeclareMathOperator{\Aut}{Aut}
 \DeclareMathOperator{\Borel}{B}
+\DeclareMathOperator{\Gal}{Gal}
 \DeclareMathOperator{\GL}{GL}
 \DeclareMathOperator{\im}{im}
 \DeclareMathOperator{\Inn}{Inn}
@@ -86,10 +96,12 @@
 \DeclareMathOperator{\zentralizer}{Z}
 
 
+
 % ideals
 \newcommand{\pideal}{\mathfrak{p}}
 \newcommand{\qideal}{\mathfrak{q}}
 \newcommand{\mideal}{\mathfrak{m}}
+
 
 
 % relation symbols
@@ -101,6 +113,10 @@
 
 
 % functions
+\DeclareMathOperator{\ringchar}{char}
+\DeclareMathOperator{\ev}{ev}
+\DeclareMathOperator{\ggT}{ggT}
+\newcommand{\id}{\mathrm{id}}
 \newcommand{\Mod}[1]{\,(\operatorname{mod} #1)}
 \DeclareMathOperator{\ord}{ord}
 \DeclareMathOperator{\sgn}{sgn}
@@ -117,6 +133,9 @@
 
 
 % decorations
+\AtBeginDocument{%
+  \renewcommand{\closure}{\overline}
+}
 \newcommand{\induced}{\overline}
 
 
