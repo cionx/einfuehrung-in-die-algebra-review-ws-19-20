@@ -119,7 +119,7 @@ Hierdurch wird~$H$ ebenfalls zu einer Gruppe.
     \mapsto
     (gH)^{-1}
     =
-    Hg^{1}
+    Hg^{-1}
   \]
   ist eine wohldefinierte Bijektion.
 \end{proposition}
@@ -234,6 +234,8 @@ Hierdurch wird~$H$ ebenfalls zu einer Gruppe.
 \begin{example}
   \leavevmode
   \begin{enumerate}
+    \item
+      Für jedes Gruppenelement~$g \in G$ ist die erzeugte Untergruppe~$\gen{g}$ zyklisch.
     \item
       Die Gruppe~$\Integer$ ist zyklisch.
       Die möglichen Erzeuger sind~$1$ und~$-1$.
@@ -403,7 +405,7 @@ Diese beiden Konstruktionen sind inverse zueinander, und wir erhalten das folgen
     \left\{
       \begin{tabular}{@{}c@{}}
         Gruppenhomomorphismen\\
-        $G \to \Sym(X)$
+        $G \to \Sym_X$
       \end{tabular}
     \right\} \,,
     \\
@@ -443,7 +445,7 @@ Diese beiden Konstruktionen sind inverse zueinander, und wir erhalten das folgen
   \leavevmode
   \begin{enumerate}
     \item
-      Die Gruppe~$G$ operiert auf einer beliebigen Menge~$x$ vermöge~$g.x = x$ für alle~$g \in G$,~$x \in X$.
+      Die Gruppe~$G$ operiert auf einer beliebigen Menge~$X$ vermöge~$g.x = x$ für alle~$g \in G$,~$x \in X$.
       (Diese Gruppenaktion entspricht dem trivialen Gruppenhomomorphismus~$G \to \Sym_X$.)
       Für diese Aktion sind Bahnen sind einelementig, und alle Stabilisatoren sind ganz~$G$.
     \item
@@ -858,7 +860,7 @@ ist eine wohldefinierte Gruppenstruktur auf~$G/N$, und die Abbildung
   \quad
   g \mapsto \class{g}
 \]
-ist ein Gruppenhomomorphismus.
+ist ein Gruppenhomomorphismus mit~$\ker(\pi) = N$.
 
 \begin{definition}
   In der obigen Situation ist~$G/N$ die \defemph{Faktorgruppe} von~$G$ nach~$N$, und die Abbildung~$\pi$ ist die \defemph{kanonische Projektion}.
