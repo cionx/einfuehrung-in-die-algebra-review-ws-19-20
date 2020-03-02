@@ -27,7 +27,6 @@
 % TODO: Burnside.
 
 \begin{exercise}
-  \leavevmode
   \begin{enumerate}
     \item
       Zeigen Sie, dass jede echte Untergruppe der symmetrischen Gruppe~$\Sym_3$ zyklisch ist.
@@ -36,15 +35,96 @@
   \end{enumerate}
 \end{exercise}
 
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Ist~$H$ eine Untergruppe von~$\Sym_3$, so ist~$\card{H}$ nach dem Satz von Lagrange ein Teiler von~$\card{\Sym_3} = 6$.
+      Ist~$H$ zudem eine echte Untergruppe, so ist~$\card{H}$ ein echter Teiler von~$6$.
+      Es gilt dann also~$\card{H} \in \{1, 2, 3\}$.
+
+      Im Fall~$\card{H} = 1$ gilt~$H = 1$;
+      insbesondere ist~$H$ in diesem Fall zyklisch.
+      In den Fällen~$\card{H} = 2$ und~$\card{H} = 3$ ist~$\card{H}$ prim und~$H$ somit zyklisch.
+    \item
+      Es gilt~$\Sym_3 = \{ 1, \tau_{12}, \tau_{13}, \tau_{23}, \rho_1, \rho_2 \}$, wobei~$\tau_{ij} \defined (i,j)$ die Transpositonen sind und~$\rho_1 \defined (1, 2, 3)$ und~$\rho_2 \defined (3, 2, 1)$ zwei Dreierzykel sind.
+      Es gilt~$\tau_{ij}^2 = 1$, sowie~$\rho_i^3 = 1$ und~$\rho_1 = \rho_2^{-1}$.
+      Da nach dem vorherigen Aufgabenteil jede echte Untergruppe von~$G$ bereits zyklisch ist, ergeben sich für~$\Sym_3$ die folgenden Untergruppen:
+      \begin{align*}
+        \Sym_3 &{} {}
+        \\
+        \gen{1} &= 1
+        \\
+        \gen{ \tau_{12} } &= \{ 1, \tau_{12} \} \,,
+        \\
+        \gen{ \tau_{13} } &= \{ 1, \tau_{13} \} \,,
+        \\
+        \gen{ \tau_{23} } &= \{ 1, \tau_{23} \} \,,
+        \\
+        \gen{ \rho_1 } &= \gen{ \rho_2 } = \{ 1, \rho_1, \rho_2 \} \,.
+      \end{align*}
+  \end{enumerate}
+\end{solution}
+
 \begin{exercise}
   Es seien~$G$,~$H$ zwei endliche Gruppen deren Ordnungen~$\card{G}$,~$\card{H}$ teilerfremd sind.
   Zeigen Sie, dass jeder Gruppenhomomorphismus~$\varphi \colon G \to H$ bereits trivial ist.
 \end{exercise}
 
+\begin{solution}
+  Das Bild~$\im(\varphi)$ ist eine Untergruppe von~$H$.
+  Nach dem Satz von Lagrange ist deshalb~$\card{\im(\varphi)}$ ein Teiler von~$\card{H}$.
+  Andererseits gilt~$\im(\varphi) \cong G / \ker(\varphi)$ und deshalb
+  \[
+    \card{ \im(\varphi) }
+    =
+    \card{ G / {\ker(\varphi)} }
+    =
+    [G : \ker(\varphi)] \,.
+  \]
+  Der Index~$[G : \ker(\varphi)]$ ist nach dem Satz von Lagrange ein Teiler von~$\card{G}$.
+  Also ist~$\card{ \im(\varphi) }$ auch ein Teiler von~$\card{G}$.
+
+  Wir haben nun gezeigt, dass~$\card{ \im(\varphi) }$ ein gemeinsamer Teiler von~$\card{G}$ und~$\card{H}$ ist.
+  Es folgt, dass~$\card{ \im(\varphi) } = 1$ gilt, da~$\card{G}$ und~$\card{H}$ teilerfremd sind.
+  Also gilt~$\im(\varphi) = 1$, weshalb~$\varphi$ der triviale Gruppenhomomorphismus ist.
+\end{solution}
+
 \begin{exercise}
   Es sei~$G$ eine Gruppe mit~$\card{G} = 77$, und es sei~$X$ eine Menge mit~$\card{X} = 17$.
   Zeigen Sie, dass jede Gruppenaktion von~$G$ auf~$X$ mindestens fünf Bahnen und mindestens drei Fixpunkte besitzt.
 \end{exercise}
+
+\begin{solution}~
+  Für jedes Element~$x \in X$ gilt~$\card{G.x} = [G : G_x]$, wobei der Index~$[G : G_x]$ nach dem Satz von Lagrange ein Teiler von~$\card{G} = 77$ ist.
+  Die Kardinalität der Bahn~$G.x$ kann also nur einer der Werte
+  \[
+    1 \,,
+    \quad
+    7 \,,
+    \quad
+    11 \,,
+    \quad
+    77
+  \]
+  sein.
+  Da~$X$ die disjunkte Vereinigung der~\Bahnen{$G$} ist, erhalten wir die folgenden möglichen Bahnengrößen:
+  \begin{align*}
+    17
+    &=
+    11 + \underbrace{1 + \dotsb + 1}_{6}
+    \\
+    &=
+    7 + 7 + 1 + 1 + 1
+    \\
+    &=
+    7 + \underbrace{1 + \dotsb + 1}_{10}
+    \\
+    &=
+    \underbrace{1 + \dotsb + 1}_{17} \,.
+  \end{align*}
+  Die Anzahl der Bahnen entspricht jeweils der Anzahl der auftretenden Summanden, und die Anzahl der Fixpunkte der Vielfachheit des Summanden~$1$.
+  Wir erhalten, dass es mindestens fünf Bahnen gibt, da jede Zerlegung aus mindestens fünf Summanden besteht, und es mindestens drei Fixpunkte gibt, da in jeder Zerlegung der Summand~$1$ mindestens dreimal vorkommt.
+\end{solution}
 
 \begin{exercise}
   Es sei~$G$ eine Gruppe und~$X$ eine~\Menge{$G$}.
@@ -57,17 +137,120 @@
   \end{enumerate}
 \end{exercise}
 
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Wir zeigen zunächst die Inklusion~$g G_x g^{-1} \subseteq G_{g.x}$.
+      Hierfür sei~$h \in g G_x g^{-1}$.
+      Dann gibt es ein Element~$h' \in G_x$ mit~$h = g h' g^{-1}$.
+      Deshalb gilt
+      \[
+        h.g.x
+        =
+        g h' g^{-1} . g.x
+        =
+        g h ' . x
+        =
+        g . x \,.
+      \]
+      Das zeigt, dass~$h \in G_{g.x}$ gilt.
+
+      Für die umgekehrte Inklusion~$G_{g.x} \subseteq g G_x g^{-1}$ geben wir zwei Beweise an.
+      \begin{enumerate}
+        \item
+          Es sei~$h \in G_{g.x}$.
+          Wir wollen zeigen, dass~$h \in g G_x g^{-1}$ gilt.
+          Wir müssen also ein Element~$h' \in G_x$ finden, so dass~$h = g h' g^{-1}$ gilt.
+          Durch Umstellen dieser gewollten Gleichung erhalten wir, dass wir~$h'$ als~$h' \defined g^{-1} h g$ definieren müssen.
+          Dieses Element~$h'$ hat die gewünschten Eigenschaften, denn
+          \begin{gather*}
+            g h' g^{-1}
+            =
+            g g^{-1} h g g^{-1}
+            =
+            h \,,
+          \shortintertext{sowie}
+            h' . x
+            =
+            g^{-1} h g . x
+            =
+            g^{-1} h. (g.x)
+            =
+            g^{-1} . (g.x)
+            =
+            x
+          \end{gather*}
+          und somit~$h' \in G_{g.x}$.
+        \item
+          Es gilt~$x = g^{-1}.(g.x)$.
+          Durch Awenden der bereits gezeigten Inklusion erhalten wir somit, dass
+          \[
+            G_x
+            =
+            G_{g^{-1}.(g.x)}
+            \supseteq
+            g^{-1} G_{g.x} g \,,
+          \]
+          gilt und somit~$g G_x g^{-1} \supseteq G_{g.x}$, also~$G_{g.x} \subseteq g G_x g^{-1}$.
+      \end{enumerate}
+  \end{enumerate}
+\end{solution}
+
 \begin{exercise}
   Es sei~$G$ eine endliche Gruppe, die aus genau zwei Konjugationsklassen besteht.
-  Zeigen Sie, dass bereits~$G \cong \Integer/2$ gilt.
+  Zeigen Sie, dass bereits~$G \cong \Integer_2$ gilt.
 
   (\emph{Tipp}: Bestimmen Sie die Größen der beiden Konjugationsklassen.)
 \end{exercise}
+
+\begin{solution}
+  Es seien~$x_1$,~$x_2$ ein Repräsentantensystem für die Konjugationsklassen von~$G$.
+  Es ist~$G$ die disjunkte Vereinigung der beiden Konjugationsklassen~$x_1^G$ und~$x_2^G$.
+  Für~$n \defined \card{G}$ gilt somit
+  \[
+    n
+    =
+    \card{x_1^G} + \card{x_2^G}
+  \]
+  Die Konjugationsklasse des neutralen Elements ist gegeben durch~$1^G = \{ 1 \}$.
+  Somit ist eine der beiden Konjugationsklassen~$x_i^G$ einelementig (und dann gilt~$x_i = 1$).
+  Wir können davon ausgehen, dass~$x_1^G = \{ 1 \}$ (also~$x_1 = 1$).
+  Damit gilt
+  \[
+    \card{ x_2^G }
+    =
+    \card{G} - \card{ x_1^G }
+    =
+    n - 1 \,.
+  \]
+  Dabei gilt
+  \[
+    \card{ x_2^G }
+    =
+    [G : \zentralizer_G(x_2)] \,,
+  \]
+  wobei nach dem Satz von Lagrange der Index~$[G : \zentralizer_G(x_2)]$ ein Teiler der Ordnung~$\card{G} = n$ ist.
+  Wir erhalten somet, dass
+  \[
+    (n-1) \divides n \,.
+  \]
+  Dies gilt nur für~$n = 2$.
+
+  Wir haben nun gezeugt, dass~$\card{G} = 2$ gilt.
+  Da~$2$ eine Primzahl ist, folgt ferner, dass~$G \cong \Integer_2$.
+\end{solution}
 
 \begin{exercise}
   Es sei~$G$ eine Gruppe und~$N$ eine normale Untergruppe von~$G$, so dass die Faktorgruppe~$G/N$ abelsch ist.
   Zeigen Sie, dass jede Untergruppe von~$G$, die~$N$ enthält, ebenfalls normal in~$G$ ist.
 \end{exercise}
+
+\begin{solution}
+  Es sei~$H$ eine Untergruppe von~$G$, welche den Normalteiler~$N$ enthält.
+  Die Untergruppe~$H$ entspricht der Untergruppe~$H/N$ von~$G/N$, und wir wissen, dass die Untergruppe~$H$ genau dann ein Normalteiler in~$G$ ist, wenn~$H/N$ ein Normalteiler in~$G/N$ ist.
+  Da die Faktorgruppe~$G/N$ abelsch ist, ist jede Untergruppe von~$G/N$ ein Normalteiler, also insbesonder auch~$H/N$.
+  Also ist~$H$ ein Normalteiler in~$G$.
+\end{solution}
 
 \begin{exercise}
   Es sei~$G$ eine Gruppe und~$H$ eine Untergruppe von~$G$ vom endlichen Index.
@@ -75,6 +258,76 @@
 
   (\emph{Tipp}: Konstruieren Sie für~$n \defined [G : H]$ einen Gruppenhomomorphismus~$G \to \Sym_n$, dessen Kern in~$H$ enthalten ist.)
 \end{exercise}
+
+\begin{solution}
+  Es sei~$X \defined G/H$ die Menge der Linksnebenklassen von~$G$ bzgl.~$H$.
+  Die Gruppe~$G$ wirkt auf der Menge~$X$ vermöge
+  \[
+    g . (g' H)
+    \defined
+    (g g') H
+    \qquad
+    \text{für alle~$g \in G$,~$g'H \in X$.}
+  \]
+  Diese Gruppenaktion von~$G$ auf~$X$ entspricht einem Gruppenhomomorphismus
+  \[
+    \varphi
+    \colon
+    G \to \Sym_X \,.
+  \]
+  Dieser Gruppenhomomorphismus ist dadurch gegeben, dass
+  \[
+    g.x = \varphi(g)(x)
+    \qquad
+    \text{für alle~$g \in G$,~$x \in X$.}
+  \]
+  Wir behaupten, dass~$N \defined \ker(\varphi)$ die gewünschten Eigenschaften hat.
+
+  Es ist~$N$ ein Normalteiler in~$G$, da es sich um den Kern eines Gruppenhomomorphismus handelt.
+
+  Es sei~$g \in \ker(\varphi)$.
+  Für die Nebenklasse~$x \in X$ gegeben durch~$x = 1H$ gilt zum einen
+  \[
+    g.x
+    =
+    g . (1H)
+    =
+    (g \cdot 1) H
+    =
+    gH \,,
+  \]
+  und zum anderen
+  \[
+    g.x
+    =
+    \varphi(g)(x)
+    =
+    \id_X(x)
+    =
+    x
+    =
+    1H \,.
+  \]
+  Es gilt also~$gH = 1H$.
+  Dies ist äquivalent dazu, dass~$1^{-1} g \in H$ gilt, also~$g \in H$.
+  Wir haben somit gezeigt, dass~$\ker(\varphi) \subseteq H$ gilt.
+
+  Es gilt~$\card{X} = \card{G/H} = [G : H]$.
+  Nach Annahmen ist der Index~$[G : H]$ endlich, weshalb die Menge~$X$ endlich ist.
+  Somit ist auch auch die Gruppe~$\Sym_X$ endlich.
+  (Für~$n \defined \card{X}$ gilt~$\Sym_X \cong \Sym_n$ und somit~$\card{ \Sym_X } = n!$.)
+  Es gilt~$G / {\ker(\varphi)} \cong \im(\varphi)$ und somit
+  \[
+    [G : \ker(\varphi)]
+    =
+    \card{ G / {\ker(\varphi)} }
+    =
+    \card{ \im(\varphi) }
+    \leq
+    \card{ \Sym_X } \,.
+  \]
+  Wir haben somit gezeigt, dass~$\ker(\varphi)$ endlichen Index in~$G$ hat.
+\end{solution}
 
 %\begin{exercise}
 %  Es sei~$G$ eine Gruppen.
@@ -92,5 +345,15 @@
 %  Man bezeichnet die Elemente von~$\Inn(G) \defined \im(c)$ als \emph{innere Automorphismen} von~$G$.
 %  Die Faktorgruppe~$G/{\Inn(G)}$ ist die \emph{Gruppe der äußeren Automorphismen} von~$G$.
 %\end{exercise}
+
+
+
+
+
+\printsolutions
+
+
+
+
 
 \end{document}
