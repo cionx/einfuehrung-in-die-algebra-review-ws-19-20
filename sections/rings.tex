@@ -2,7 +2,7 @@
 
 
 \begin{convention}
-  Im Folgenden ist~$R$, sofern nicht anders angegeben, ein Ring.
+  Im Folgenden ist~$R$ ein Ring, sofern nicht anders angegeben.
 \end{convention}
 
 
@@ -47,17 +47,18 @@
 \subsection{Einheiten}
 
 \begin{definition}
-  Ein Element~$r \in R$ ist eine \defemph{Einheit}, bzw. ist \defemph{invertierbar}, falls es ein Element~$r' \in R$ gibt, so dass~$r r' = 1$ und~$r' r = 1$ gilt.
-  Die Menge der Einheiten in~$R$ wird mit~$R^\times$ notiert.
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Ein Element~$r \in R$ ist eine \defemph{Einheit}, bzw. ist \defemph{invertierbar}, falls es ein Element~$r' \in R$ gibt, so dass~$r r' = 1$ und~$r' r = 1$.
+    \item
+      Die Menge der Einheiten in~$R$ ist die \defemph{Einheitengruppe} von~$R$ und wird mit~$R^\times$ notiert.
+  \end{enumerate}
 \end{definition}
 
 \begin{proposition}
-  Die Menge~$R^\times$ zusammen mit der Multiplikation von~$R$ ist eine Gruppe.
+  Zusammen mit der Multiplikation von~$R$ ist~$R^\times$ eine Gruppe.
 \end{proposition}
-
-\begin{definition}
-  Die Gruppe~$R^\times$ ist die \defemph{Einheitengruppe} von~$R$.
-\end{definition}
 
 \begin{example}
   \leavevmode
@@ -110,6 +111,9 @@
     \item
       $\Integer$ ist ein Integritätsbereich.
     \item
+      Für~$n \in \Natural_1$ ist~$\Integer_n$ genau dann ein Integritätsbereich, wenn~$n$ prim ist.
+      Dann ist~$\Integer_n$ bereits ein Körper.
+    \item
       Ist~$R$ ein Integritätsbereich, so ist jeder Unterring von~$R$ ebenfalls ein Integritätsbereich.
   \end{enumerate}
 \end{example}
@@ -128,7 +132,7 @@
   Ist~$R$ ein Integritätsbereich, so gilt~$R[X]^\times = R^\times$.%
   \footnote{
     Ist allgemeiner~$R$ ein beliebiger kommutativer Ring, so ist ein Polynom~$f \in R[X]$ mit~$f = a_n X^n + \dotsb + a_1 X + a_0$ genau dann eine Einheit in~$R[X]$, wenn~$a_0$ eine Einheit in~$R$ ist und die restlichen Koeffizienten~$a_1, \dotsc, a_n$ nilpotent in~$R$ sind.
-    Für einen kommutativen Ring~$R$ gilt somit genau dann~$R[X]^\times = R^\times$ wenn~$R$ außer~$0$ keine nilpotenen Elemente besitzt.
+    Für einen kommutativen Ring~$R$ gilt somit genau dann~$R[X]^\times = R^\times$ wenn~$R$ außer~$0$ keine nilpotenten Elemente besitzt.
   }
   
 \end{proposition}
@@ -144,13 +148,7 @@
 \subsection{Ideale}
 
 \begin{definition}
-  \leavevmode
-  \begin{enumerate}
-    \item
-      Eine Teilmenge~$I$ von~$R$ ist ein \defemph{Ideal} falls~$I$ eine additive Untergruppe von~$R$ ist, so dass~$RI \subseteq I$ und~$IR \subseteq I$ gelten.
-    \item
-      Gilt zusätzlich~$I \neq R$, so ist~$I$ ein \defemph{echtes Ideal}.
-  \end{enumerate}
+  Eine Teilmenge~$I$ von~$R$ ist ein \defemph{Ideal} falls~$I$ eine additive Untergruppe von~$R$ ist, so dass~$RI \subseteq I$ und~$IR \subseteq I$ gelten.
 \end{definition}
 
 \begin{example}
@@ -191,7 +189,7 @@
       Es ist~$\genideal{X}$ ein Ideal in~$R$ mit~$X \subseteq \genideal{X}$.
     \item
       Das Ideal~$\genideal{X}$ ist eindeutig minimal unter allen Idealen von~$R$, welche die Menge~$X$ enthalten:
-      Ist~$I$ ein Ideal in~$R$ dass~$\genideal{X}$ enthält, so gilt~$\genideal{X} \subseteq I$.
+      Ist~$I$ ein Ideal in~$R$, das~$\genideal{X}$ enthält, so gilt~$\genideal{X} \subseteq I$.
   \end{enumerate}
 \end{proposition}
 
@@ -201,98 +199,62 @@
 
 
 
+
+
 \subsection{Faktorringe}
 
-\begin{lemma}
-  \label{construction of quotient rings}
-  Es sei~$I$ ein Ideal in~$R$.
-  \begin{enumerate}
-    \item
-      Dann wird auf der Faktorgruppe~$R/I$ durch
-      \[
-        \class{r_1} \cdot \class{r_2}
-        \defined
-        \class{r_1 r_2}
-      \]
-      eine Ringstruktur definiert.
-    \item
-      Dies ist die eindeutige Ringstruktur auf~$R/I$, so dass die Abbildung~$\pi \colon R \to R/I$ gegeben durch~$\pi(r) = \class{r}$ ein Ringhomomorphismus ist.
-  \end{enumerate}
-\end{lemma}
+\begin{convention}
+  Im Folgenden ist~$I$, sofern nicht anders angegeben, ein Ideal in~$R$.
+\end{convention}
+
+Auf der Faktorgruppe~$R/I$ wird durch
+\[
+  \class{r_1} \cdot \class{r_2}
+  \defined
+  \class{r_1 r_2}
+\]
+eine Ringstruktur definiert, und die kanonische Projektion~$R \to R/I$ wird hierdurch zu einem Ringhomomorphismus.
 
 \begin{definition}
-  Es sei~$I$ ein Ideal in~$R$.
-  Der Ring~$R/I$ aus \cref{construction of quotient rings} ist der \defemph{Faktorring} von~$R$ nach~$I$.
-  Die Abbildung~$\pi \colon R \to R/I$ ist die \defemph{kanonische Projektion}.
+  Der obige Ring~$R/I$ ist der \defemph{Faktorring} von~$R$ nach~$I$.
 \end{definition}
+
+\begin{example}
+  Für alle~$n \in \Natural_1$ gilt~$\Integer / n \Integer \cong \Integer_n$.
+\end{example}
 
 
 
 \subsection{Homomorphiesatz und Isomorphiesatz}
 
-\begin{convention}
-  Im Folgenden sei~$I$, sofern nicht anders angegeben, ein Ideal in~$R$.
-\end{convention}
 
 \begin{theorem}[Homomorphiesatz]
   Es sei~$\pi \colon R \to R/I$ die kanonische Projektion, und es sei~$S$ ein weiterer Ring.
-  \begin{enumerate}
-    \item
-      Es gilt~$\ker(\pi) = I$.
-    \item
-      Ist~$\psi \colon R/I \to S$ ein Ringhomomorphismus, so gilt für den entstehenden Ringhomomorphismus~$\psi \circ \pi \colon R \to S$, dass~$I \subseteq \ker(\psi \circ \pi)$.
-    \item
-      Ist andererseits~$\varphi \colon R \to S$ ein Gruppenhomomorphismus mit~$I \subseteq \ker(\varphi)$, so ist
-      \[
-        \induced{\varphi}
-        \colon
-        R/I \to S \,,
-        \quad
-        \class{r} \mapsto \varphi(r)
-      \]
-      ein wohldefinierter Gruppenhomorphisms.
-      Dies ist der eindeutige Gruppenhomomorphismus, der das folgende Diagramm zum kommutieren bringt:
-      \[
-        \begin{tikzcd}
-          R
-          \arrow{r}[above]{\varphi}
-          \arrow{d}[left]{\pi}
-          &
-          S
-          \\
-          R/I
-          \arrow[dashed]{ur}[below right]{\induced{\varphi}}
-          &
-          {}
-        \end{tikzcd}
-      \]
-      Dabei gilt~$\im(\induced{\varphi}) = \im(\varphi)$ sowie~$\ker(\induced{\varphi}) = \ker(\varphi)/N$.
-    \item
-      Die beiden obigen Konstruktionen sind invers zueinander, und liefern somit eine Eins-zu-eins-Korrespondenz gegeben durch
-      \begin{align*}
-        \left\{
-          \begin{tabular}{@{}c@{}}
-            Ringhomomorphismen \\
-            $\varphi \colon R \to S$ mit~$I \subseteq \ker(\varphi)$
-          \end{tabular}
-        \right\}
-        &\onetoone
-        \left\{
-          \begin{tabular}{@{}c@{}}
-            Ringhomomorphismen \\
-            $\psi \colon R/I \to S$
-          \end{tabular}
-        \right\}
-        \\
-        \varphi
-        &\mapsto
-        \induced{\varphi} \,,
-        \\
-        \psi \circ \pi
-        &\mapsfrom
-        \psi \,.
-      \end{align*}
-  \end{enumerate}
+  Ein Ringhomomorphismus~$\varphi \colon R \to R/I$ induziert genau dann einen Ringisomorphismus~$\induced{\varphi} \colon R/I \to R$, der das Diagram
+  \[
+    \begin{tikzcd}
+      R
+      \arrow{r}[above]{\varphi}
+      \arrow{d}[left]{\pi}
+      &
+      S
+      \\
+      R/I
+      \arrow[dashed]{ur}[below right]{\induced{\varphi}}
+      &
+      {}
+    \end{tikzcd}
+  \]
+  zum kommutieren bringt, wenn~$I \subseteq \ker(\varphi)$ gilt.
+  Es gilt dann
+  \[
+    \induced{\varphi}( \class{r} )
+    \defined
+    \varphi(r)
+    \qquad
+    \text{für alle~$r \in R$,}
+  \]
+  sowie~$\im(\induced{\varphi}) = \im(\varphi)$ und~$\ker(\induced{\varphi}) = \ker(\varphi)/I$.
 \end{theorem}
 
 \begin{corollary}
@@ -312,7 +274,7 @@
 
 \begin{theorem}[Noetherscher Isomorphiesatz]
   Es sei~$J$ ein Ideal in~$R$, das~$I$ enthält.
-  Dann ist~$J/I$ ein Ideal in~$R$, und die kanonische Projektion~$\pi \colon R \to R/I$ induziert einen Ringisomorphismus
+  Dann ist~$J/I$ ein Ideal in~$R/I$, und die kanonische Projektion~$\pi \colon R \to R/I$ induziert einen Ringisomorphismus
   \[
     (R/I) / (J/I)
     \to
@@ -337,7 +299,7 @@
 \end{definition}
 
 \begin{proposition}
-  Ein Ideal~$\pideal$ in~$R$ ist genau dann ein Primideal wenn der Faktorring~$R/\pideal$ ein Integritätsbereich ist.
+  Ein Ideal~$\pideal$ in~$R$ ist genau dann ein Primideal, wenn der Faktorring~$R/\pideal$ ein Integritätsbereich ist.
 \end{proposition}
 
 
@@ -349,7 +311,7 @@
 \end{definition}
 
 \begin{proposition}
-  Ein Ideal~$\mideal$ in~$R$ ist genau dann ein maximales Ideal wenn der Faktorring~$R/\mideal$ ein Körper ist.
+  Ein Ideal~$\mideal$ in~$R$ ist genau dann ein maximales Ideal, wenn der Faktorring~$R/\mideal$ ein Körper ist.
 \end{proposition}
 
 \begin{corollary}
@@ -357,7 +319,7 @@
 \end{corollary}
 
 \begin{proposition}
-  Jedes echte Ideal von~$R$ ist in einem maximalen Ideal enthalten.
+  Jedes echte Ideal von~$R$ ist in einem maximalen Ideal, und somit auch Primideal, enthalten.
 \end{proposition}
 
 
@@ -387,39 +349,23 @@
     \item
       In der obigen Korrespondenz ist das Ideal~$J$ genau dann prim in~$R$, wenn das Ideal~$J/I$ prim in~$R/I$ ist.
       Durch Einschränkung der obigen Korrespondenz ergibt sich somit eine Eins-zu-eins-Korrespondenz, gegeben durch
-      \begin{align*}
+      \[
         \{
           \text{Primideale in~$R$, die~$I$ enthalten}
         \}
-        &\onetoone
+        \onetoone
         \{ \text{Primideale in~$R/I$} \}
-        \\
-        \pideal
-        &\mapsto
-        \pideal/I \,,
-        \\
-        \pi^{-1}(\qideal)
-        &\mapsfrom
-        \qideal \,.
-      \end{align*}
+      \]
     \item
       In der obigen Korrespondenz ist das Ideal~$J$ genau dann maximal in~$R$, wenn das Ideal~$J/I$ maximal in~$R/I$ ist.
       Durch Einschränkung der obigen Korrespondenz ergibt sich somit eine Eins-zu-eins-Korrespondenz, gegeben durch
-      \begin{align*}
+      \[
         \{
           \text{maximale Ideale in~$R$, die~$I$ enthalten}
         \}
-        &\onetoone
+        \onetoone
         \{ \text{maximale Ideale in~$R/I$} \}
-        \\
-        \mideal
-        &\mapsto
-        \mideal/I \,,
-        \\
-        \pi^{-1}(\mideal')
-        &\mapsfrom
-        \mideal' \,.
-      \end{align*}
+      \]
   \end{enumerate}
 \end{theorem}
 
@@ -438,7 +384,7 @@
 \end{definition}
 
 \begin{definition}
-  Ein Integritätsbereich~$R$ ist \defemph{eukldisch} falls es im folgenden Sinne ein \enquote{Teilen mit Rest} in~$R$ gibt:
+  Ein Integritätsbereich~$R$ ist \defemph{euklidisch} falls es im folgenden Sinne ein \enquote{Teilen mit Rest} in~$R$ gibt:
   Es gibt eine Gradabbildung
   \[
     \deg
@@ -447,7 +393,12 @@
     \to
     \Natural \,,
   \]
-  so dass es für alle element~$a, b \in R$ mit~$b \neq 0$ Elemente~$q, r \in R$ gibt, so dass~$a = qb + r$ mit~$r = 0$ oder~$\deg(r) < \deg(b)$.
+  so dass es für alle Element~$a, b \in R$ mit~$b \neq 0$ Elemente~$q, r \in R$ gibt, so dass~
+  \[
+    a = qb + r
+    \quad\text{mit}\quad
+    \text{$r = 0$ oder~$\deg(r) < \deg(b)$.}
+  \]
 \end{definition}
 
 \begin{proposition}
@@ -455,8 +406,17 @@
 \end{proposition}
 
 \begin{example}
-  Der Ring~$\Integer$ ist euklidisch mit~$\deg(n) \defined \abs{n}$.
-  Inbesondere ist~$\Integer$ ein Hauptidealring.
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Der Ring~$\Integer$ ist euklidisch mit~$\deg(n) \defined \abs{n}$.
+    \item
+      Ist~$K$ ein Körper, so ist der Polynomring~$K[X]$ euklidisch, durch die übliche Gradabbildung.
+      Das \enquote{Teilen mit Rest} in~$K[X]$ lässt sich durch Polynomdivision berechnen.
+    \item
+      Jeder Körper~$K$ ist euklidisch mit~$\deg(x) = 0$ für alle~$x \in K$ (denn in~$K$ kann man auch schon \enquote{ohne Rest} teilen).
+  \end{enumerate}
+  Diese Ringe sind inbesondere Hauptidealringe.
 \end{example}
 
 \begin{proposition}
@@ -474,10 +434,6 @@
 \begin{example}
   Ist~$K$ ein Körper, so ist der Polynomring~$K[X]$ ein Hauptidealring, der Polynomring~$K[X,Y]$ allerdings nicht.
 \end{example}
-
-\begin{remark}
-  Ist~$K$ ein Körper, so lässt sich das \enquote{Teilen mit Rest} in~$K[X]$ durch Polynomdivision berechnen.
-\end{remark}
 
 \begin{example}[Die Gausschen Zahlen]
   Der Unterring~$\Integer[i] \defined \{a + bi \suchthat a, b \in \Integer\}$ des Körpers~$\Complex$ ist der \defemph{Ring der Gausschen Zahlen}.
@@ -694,6 +650,8 @@
   Ein Ringhomomorphismus zwischen zwei Körpern ist ein \defemph{Körperhomomorphismus}.
 \end{definition}
 
+%TODO: Make the following an exercise.
+
 \begin{corollary}
   Es sei~$R$ ein Integritätsbereich.
   Es sei~$K$ ein Körper und~$\varphi \colon R \to K$ ein injektiver Ringhomomorphismus.
@@ -721,7 +679,7 @@
 \section{Faktorielle Ringe}
 
 \begin{convention}
-  Im Folgenden sei~$R$, sofern nicht anders angegeben, ein Integritätsbereich.
+  Im Folgenden sei~$R$ ein Integritätsbereich, sofern nicht anders angegeben.
 \end{convention}
 
 \begin{definition}
