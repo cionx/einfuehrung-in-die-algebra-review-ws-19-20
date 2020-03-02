@@ -13,7 +13,7 @@
   \hfill
   2. März 2020
 }
-\title{Tag 1}
+\title{\vspace{-1em}Tag 1}
 \author{}
 \date{}
 
@@ -22,7 +22,9 @@
 \begin{document}
 
 \maketitle
-\vspace{-6em}
+\vspace{-7em}
+
+% TODO: Burnside.
 
 \begin{exercise}
   \leavevmode
@@ -36,17 +38,12 @@
 
 \begin{exercise}
   Es seien~$G$,~$H$ zwei endliche Gruppen deren Ordnungen~$\card{G}$,~$\card{H}$ teilerfremd sind.
-  Zeigen Sie, dass der jeder Gruppenhomomorphismus~$\varphi \colon G \to H$ bereits trivial ist.
+  Zeigen Sie, dass jeder Gruppenhomomorphismus~$\varphi \colon G \to H$ bereits trivial ist.
 \end{exercise}
 
 \begin{exercise}
-  Es sei~$G$ eine endliche Gruppe mit~$\card{G} = 77$, und es sei~$X$ eine endliche Menge mit~$\card{X} = 17$.
-  Zeigen Sie, dass jede Gruppenaktion von~$G$ auf~$X$ mindestens drei Fixpunkte besitzt.
-\end{exercise}
-
-\begin{exercise}
-  Es sei~$G$ eine endliche Gruppe mit~$\card{G} = 55$ und es sei~$X$ eine endliche Menge mit~$\card{X} = 20$.
-  Zeigen Sie, dass jede Gruppenaktion von~$G$ auf~$X$ mindestens vier Bahnen hat.
+  Es sei~$G$ eine Gruppe mit~$\card{G} = 77$, und es sei~$X$ eine Menge mit~$\card{X} = 17$.
+  Zeigen Sie, dass jede Gruppenaktion von~$G$ auf~$X$ mindestens fünf Bahnen und mindestens drei Fixpunkte besitzt.
 \end{exercise}
 
 \begin{exercise}
@@ -55,13 +52,13 @@
     \item
       Zeigen Sie, dass~$G_{g.x} = g G_x g^{-1}$ für jedes Element~$x \in X$ und jedes Gruppenelement~$g \in G$.
     \item
-      Die obige Gleichheit zeigt, dass je zwei Elemente in der gleichen~\Bahn{$G$} von~$X$ konjugierte Stabilisatoren haben.
+      Die obige Gleichheit zeigt, dass je zwei Elemente in der gleichen~\Bahn{$G$} konjugierte Stabilisatoren haben.
       Entscheiden Sie ob auch die Umkehrung dieser Aussage gilt, d.h. ob Element von~$X$ mit konjugierten Stabilisatoren bereits in der gleichen~\Bahn{$G$} liegen müssen.
   \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-  Es sei~$G$ eine endliche Gruppe, die as genau zwei Konjugationsklassen besteht.
+  Es sei~$G$ eine endliche Gruppe, die aus genau zwei Konjugationsklassen besteht.
   Zeigen Sie, dass bereits~$G \cong \Integer/2$ gilt.
 
   (\emph{Tipp}: Bestimmen Sie die Größen der beiden Konjugationsklassen.)
@@ -79,21 +76,21 @@
   (\emph{Tipp}: Konstruieren Sie für~$n \defined [G : H]$ einen Gruppenhomomorphismus~$G \to \Sym_n$ dessen Kern in~$H$ enthalten ist.)
 \end{exercise}
 
-\begin{exercise}
-  Es sei~$G$ eine Gruppen.
-  Für jedes Element~$g \in G$ sei~$c_g \colon G \to G$ die Konjugation mit~$g$, d.h. es sel~$c_g(x) = g x g^{-1}$ für jedes~$x \in G$.
-  \begin{enumerate}
-    \item
-      Zeigen Sie, dass~$c_g$ für jedes~$g \in G$ ein Gruppenautomorphismus von~$G$ ist.
-    \item
-      Zeigen Sie, dass die Abbildung~$c \colon G \to \Aut(G)$ gegeben durch~$g \mapsto c_g$ ein Gruppenhomomorphismus ist.
-    \item
-      Zeigen Sie, dass~$\ker(c) = \zenter(G)$.
-    \item
-      Zeigen Sie, dass~$\im(c)$ eine normale Untergruppe von~$\Aut(G)$ ist.
-  \end{enumerate}
-  Man bezeichnet die Elemente von~$\Inn(G) \defined \im(c)$ als \emph{innere Automorphismen} von~$G$.
-  Die Faktorgruppe~$G/{\Inn(G)}$ ist die \emph{Gruppe der äußeren Automorphismen} von~$G$.
-\end{exercise}
+%\begin{exercise}
+%  Es sei~$G$ eine Gruppen.
+%  Für jedes Element~$g \in G$ sei~$c_g \colon G \to G$ die Konjugation mit~$g$, d.h. es sel~$c_g(x) = g x g^{-1}$ für jedes~$x \in G$.
+%  \begin{enumerate}
+%    \item
+%      Zeigen Sie, dass~$c_g$ für jedes~$g \in G$ ein Gruppenautomorphismus von~$G$ ist.
+%    \item
+%      Zeigen Sie, dass die Abbildung~$c \colon G \to \Aut(G)$ gegeben durch~$g \mapsto c_g$ ein Gruppenhomomorphismus ist.
+%    \item
+%      Zeigen Sie, dass~$\ker(c) = \zenter(G)$.
+%    \item
+%      Zeigen Sie, dass~$\im(c)$ eine normale Untergruppe von~$\Aut(G)$ ist.
+%  \end{enumerate}
+%  Man bezeichnet die Elemente von~$\Inn(G) \defined \im(c)$ als \emph{innere Automorphismen} von~$G$.
+%  Die Faktorgruppe~$G/{\Inn(G)}$ ist die \emph{Gruppe der äußeren Automorphismen} von~$G$.
+%\end{exercise}
 
 \end{document}
