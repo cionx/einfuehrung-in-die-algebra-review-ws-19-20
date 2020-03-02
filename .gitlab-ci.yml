@@ -19,7 +19,6 @@ pages:
   - latexmk sheet_1.tex
   - latexmk sheet_2.tex
   - latexmk sheet_3.tex
-  - cd ..
     # extract the results
   - mkdir public
   - mv notes.pdf public/einfalg1920_notes.pdf
