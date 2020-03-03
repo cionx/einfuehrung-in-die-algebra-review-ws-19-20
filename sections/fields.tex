@@ -8,12 +8,12 @@
       Es ist dann~$L$ eine \defemph{Körpererweiterung} von~$K$.
       Diese Körpererweiterung wird mit~$L/K$ notiert.
     \item
-      Ist ferner~$Z$ ein Unterkörper von~$L$ mit~$K \subseteq Z$, so ist~$Z$ ein \defemph{Zwischenkörper} der Körpererweiterung~$L/K$.
+      Ist~$Z$ ein Unterkörper von~$L$ mit~$K \subseteq Z$, so ist~$Z$ ein \defemph{Zwischenkörper} der Erweiterung~$L/K$.
   \end{enumerate}
 \end{definition}
 
 \begin{convention}
-  Im Folgenden sei, sofern nicht anders angegeben,~$L/K$ eine Körpererweiterung.
+  Im Folgenden ist~$L/K$ eine Körpererweiterung, sofern nicht anders angegeben.
 \end{convention}
 
 
@@ -52,8 +52,8 @@
 \end{theorem}
 
 \begin{corollary}
-  Die Erweiterung~$L/K$ sei endlich und~$Z$ sei ein Zwischenkörper der Erweiterung~$L/K$.
-  Die beiden Grade~$[L : Z]$ und~$[Z : K]$ sind Teiler des Grades~$[L : K]$.
+  Die Erweiterung~$L/K$ sei endlich und~$Z$ sei ein Zwischenkörper dieser Erweiterung.
+  Dann sind die beiden Grade~$[L : Z]$ und~$[Z : K]$ jeweils Teiler des Grades~$[L : K]$.
 \end{corollary}
 
 \begin{example}
@@ -74,13 +74,18 @@
         K(A)
         \defined
         \bigcap
-        \{
+        \left\{
           Z
-        \suchthat
-          \text{$Z$ ist ein Zwischenkörper der Körpererweiterung~$L/K$ mit~$A \subseteq Z$}
-        \}
+        \suchthat*
+          \begin{tabular}{@{}c@{}}
+             $Z$ ist ein Zwischenkörper\\
+             der Erweiterung~$L/K$ mit~$A \subseteq Z$
+          \end{tabular}
+        \right\}
       \]
       der von~$A$ \defemph{erzeugte Zwischenkörper} der Körpererweiterung~$L/K$.
+    \item
+      Die Körpererweiterung~$L/K$ wird von der Menge~$A$ \defemph{erzeugt}, und~$A$ ist ein \defemph{Erzeugendensystem} der Erweiterung~$L/K$, falls~$L = K(A)$ gilt.
     \item
       Für jede Familie~$(\alpha_i)_{i \in I}$ von Elementen~$\alpha_i \in L$ sei~$K(\alpha_i \suchthat i \in I) \defined K( \{ \alpha_i \suchthat i \in I \})$.
   \end{enumerate}
@@ -229,7 +234,7 @@ Da~$K[X]$ ein Hauptidealring ist, gibt es ein eindeutiges normiertes Polynom~$\m
     \item
       Die irreduziblen Polynome in~$K[X]$ sind genau die Polynome vom Grad~$1$.
     \item
-      Jedes normierte Polynom~$f \in K[X]$ perfällt in Linearfaktoren.
+      Jedes normierte Polynom~$f \in K[X]$ zerfällt in Linearfaktoren.
     \item
       Für jede algebraische Körpererweiterung~$L/K$ gilt~$L = K$.
   \end{equivlist}
