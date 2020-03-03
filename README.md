@@ -7,6 +7,7 @@ Direct downloads of the compiled pdf files are available via the following links
 
 - [Notes][2]
 - [Sheet 1][3]
+- [Sheet 2][4]
 
 This review course is organized by the [Fachschaft Mathematik][8]. 
 

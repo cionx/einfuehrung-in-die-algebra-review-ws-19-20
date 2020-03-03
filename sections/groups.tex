@@ -940,6 +940,7 @@ ist ein Gruppenhomomorphismus mit~$\ker(\pi) = N$.
     \text{für alle~$g \in G$,}
   \]
   sowie~$\im(\induced{\varphi}) = \im(\varphi)$ und~$\ker(\induced{\varphi}) = \ker(\varphi)/N$.
+  Insbesondere ist der Gruppenhomomorphismus~$\induced{\varphi}$ eindeutig.
 %  \begin{enumerate}
 %    \item
 %      Es gilt~$\ker(\pi) = N$.
@@ -1062,7 +1063,7 @@ ist ein Gruppenhomomorphismus mit~$\ker(\pi) = N$.
 %          \]
       \end{enumerate}
     \item
-      Es seien~$N$,~$K$ zwei Normalteiler in~$G$ mit~$K \subgroupeq N \subgroupeq G$.
+      Es seien~$N$,~$K$ zwei Normalteiler in~$G$ mit~$K \subseteq N \subseteq G$.
       \begin{enumerate}
         \item
           Es ist~$N$ normal in~$K$, und es ist~$K/N$ normal in~$G/N$.
@@ -1109,12 +1110,41 @@ ist ein Gruppenhomomorphismus mit~$\ker(\pi) = N$.
 \section{\texorpdfstring{$p$}{p}-Gruppen und Sylowsätze}
 
 \begin{convention}
-  Im Folgenden ist~$p$, sofern nicht anders angegeben, eine Primzahl.
+  Im Folgenden ist~$p$ eine Primzahl, sofern nicht anders angegeben.
 \end{convention}
 
 \begin{definition}
-  Eine~\Gruppe{$p$} ist eine endliche Gruppe~$G$, so dass~$\card{G} = p^n$ für ein~$n \in \Natural$.
+  Eine~\defemph{\Gruppe{$p$}} ist eine endliche Gruppe~$G$, so dass~$\card{G} = p^n$ für ein~$n \in \Natural$ gilt.
 \end{definition}
+
+\begin{example}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Die triviale Gruppe~$1$ ist eine~\Gruppe{$p$}.
+    \item
+      Die Gruppen~$\Integer_{p^2}$ und~$\Integer_p \times \Integer_p$ sind~\Gruppen{$p$}.%
+      \footnote{
+        Dies sind tätsächlich schon die einzigen Gruppen von Ordnung~$p^2$.
+      }
+    \item
+      Die Heisenberg-Gruppe
+      \[
+        G
+        \defined
+        \left\{
+          \begin{bsmallmatrix}
+            1 & a & b \\
+            0 & 1 & c \\
+            0 & 0 & 1
+          \end{bsmallmatrix}
+        \suchthat*
+          a, b, c \in \Finite_p
+        \right\}
+      \]
+      ist eine nicht-abelsche~\Gruppe{$p$} von Ordnung~$p^3$.
+  \end{enumerate}
+\end{example}
 
 \begin{proposition}
   Es sei~$G$ eine~\Gruppe{$p$} und~$X$ eine endliche~\Menge{$G$}.
@@ -1134,13 +1164,13 @@ ist ein Gruppenhomomorphismus mit~$\ker(\pi) = N$.
 \end{definition}
 
 \begin{theorem}[Erster Sylowsatz]
-  Es sei~$G$ eine endliche Gruppe und~$\card{G} = p^r m$ mit~$p \ndivides m$.
+  Es sei~$G$ eine endliche Gruppe, und es sei~$\card{G} = p^r m$ mit~$p \ndivides m$.
   \begin{enumerate}
     \item
       Für jede Potenz~$s = 0, \dotsc, r$ enthält~$G$ eine Untergruppe der Ordnung~$p^s$.
       Insbesondere (für~$s = r$) enthält~$G$ eine~\Sylow{$p$}-Untergruppe.
     \item
-      Für jede Untergruppe~$H$ von~$G$ der Ordnung~$p^s$ mit~$0 \leq s \leq r+1$ gibt es eine Untergruppe~$K$ von~$G$ der Ordnung~$p^{s+1}$, so dass~$H$ eine normale Untergruppe von~$K$ ist.
+      Für jede Untergruppe~$H$ von~$G$ der Ordnung~$p^s$ mit~$0 \leq s \leq r-1$ gibt es eine Untergruppe~$K$ von~$G$ der Ordnung~$p^{s+1}$, so dass~$H$ eine normale Untergruppe von~$K$ ist.
   \end{enumerate}
 \end{theorem}
 
@@ -1149,11 +1179,15 @@ ist ein Gruppenhomomorphismus mit~$\ker(\pi) = N$.
   \begin{enumerate}
     \item
       Es sei~$H$ eine~\Untergruppe{$p$} von~$G$ und~$P$ eine~\Sylow{$p$}-Untergruppe von~$G$.
-      Dann gibt es ein Gruppenelement~$g \in G$, so dass~$g H g^{-1} \subseteq P$.
+      Dann gibt es ein Gruppenelement~$g \in G$, so dass~$g H g^{-1} \subseteq P$ gilt.
     \item
       Je zwei~\Sylow{$p$}-Untergruppen von~$G$ sind konjugiert zueinander.
   \end{enumerate}
 \end{theorem}
+
+\begin{corollary}
+  Eine~\Sylow{$p$}-Untergruppe~$P$ von~$G$ ist genau dann eine normale Untergruppe von~$G$, wenn~$P$ die einzige~\Sylow{$p$}-Untergruppe von~$G$ ist.
+\end{corollary}
 
 \begin{theorem}[Dritter Sylowsatz]
   Es sei~$G$ eine endliche Gruppe, und es sei~$\card{G} = p^r m$ mit~$p \ndivides m$.
@@ -1166,5 +1200,45 @@ ist ein Gruppenhomomorphismus mit~$\ker(\pi) = N$.
   \end{enumerate}
 \end{theorem}
 
+\begin{example}[Erstklausur 19/20]
+  Es sei~$G$ eine endliche Gruppe mit~$\card{G} = 30$.
+  Dann gibt es für eine passende Primzahl~$p$ eine nicht-triviale~\Sylow{$p$}-Untergruppe~$N$ von~$G$, die normal in~$G$ ist:
+
+  Es gilt~$30 = 2 \cdot 3 \cdot 5$.
+  Für jede Primzahl~$p \notin \{ 2, 3, 5 \}$ ist deshalb die triviale Untergruppe~$1$ die eindeutige~\Sylow{$p$}-Untergruppe von~$G$.
+  Für alle Primzahlen~$p \in \{2, 3, 5\}$ gilt~$n_p \divides \card{G} = 30$, und somit
+  \[
+    n_p \in \{ 1, 2, 3, 5, 6, 10, 15, 30 \} \,.
+  \]
+  Außerdem gilt~$n_p \equiv 1 \Mod{p}$.
+  Hieraus ergibt sich, dass
+  \[
+    n_2 \in \{ 1, 3, 5, 15 \} \,,
+    \quad
+    n_3 \in \{ 1, 10 \} \,,
+    \quad
+    n_5 \in \{ 1, 6 \} \,.
+  \]
+  Wir wollen zeigen, dass~$n_3 = 1$ oder~$n_5 = 1$ gilt.
+  Dann gibt es eindeutige~\Sylow{$3$}-Untergruppe, bzw.~\Sylow{$5$}-Untergruppe in~$G$, und diese Sylow-Untergruppe ist dann normal.
+  (Denn Konjugate von~\Sylow{$p$}-Untergruppen sind wieder~\Sylow{$p$}-Untergruppen.)
+  
+  Wir nehmen an, dass~$n_3, n_5 \neq 1$ gilt.
+  Dann gilt~$n_3 = 10$ und~$n_5 = 6$.
+
+  Da~$n_3 = 10$ gilt, gibt es zehn~\Sylow{$3$}-Untegruppen~$P_1, \dotsc, P_{10}$ in~$G$.
+  Für alle~$i = 1, \dotsc, n$ gilt~$\card{P_i} = 3$ und somit~$P_i \cong \Integer_3$.
+  Somit enthält jedes~$P_i$ genau zwei Element von Ordnung~$3$.
+  Für~$i \neq j$ gilt~$P_i \nsubseteq P_j$, weshalb~$P_i \cap P_j$ eine echte Untergruppe von~$P_i$ ist.
+  Da~$P_i$ prim ist, ist dann~$P_i \cap P_j = 1$.
+  Deshalb haben die~$P_i$ keine gemeinsamen nicht-trivialen Element.
+  Wir somit deshalb, dass die Gruppe~$G$ mindestens~$20$ Element von Ordnung~$3$ enthält.
+
+  Wir erhalten auf gleiche Weise aus der Annahme~$n_5 = 6$, dass die Gruppe~$G$ mindestens~$24$ Elemente von Ordnung~$5$ enthält.
+
+  Es gilt aber~$20 + 24 = 44 > 30 = \card{G}$, weshalb wir einen Widerspruch erhalten.
+  Es muss somit~$n_3 = 1$ oder~$n_5 = 1$ gelten.
+
+\end{example}
 
 

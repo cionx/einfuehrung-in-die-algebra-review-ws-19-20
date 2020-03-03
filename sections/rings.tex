@@ -8,7 +8,7 @@
 
 \begin{definition}
   Es sei~$S$ ein weiterer Ring.
-  Eine Abbilung~$\varphi \colon R \to S$ ist ein \defemph{Ringhomomorphismus} falls für alle Elemente~$r_1, r_2 \in R$ die folgenden Bedingungen gelten:
+  Eine Abbildung~$\varphi \colon R \to S$ ist ein \defemph{Ringhomomorphismus} falls für alle Elemente~$r_1, r_2 \in R$ die folgenden Bedingungen gelten:
   \[
     \varphi(1) = 1 \,,
     \quad
@@ -19,123 +19,28 @@
 \end{definition}
 
 \begin{definition}
-  Eine Teilmenge~$S$ von~$R$ ist ein Unterring, falls sie die folgenden Bedingungen erfüllt.
+  Eine Teilmenge~$S$ von~$R$ ist ein \defemph{Unterring}, falls sie die folgenden Bedingungen erfüllt:
   \begin{itemize}
     \item
-      Es gilt~$0 \in S$.
+      Die Menge~$S$ eine additive Untergruppe von~$R$.
     \item
-      Für alle Elemente~$s_1, s_2 \in R$ gilt auch~$s_1 + s_2 \in S$.
-    \item
-      Für jedes Element~$s \in S$ gilt auch~$-s \in S$.
+      Es gilt~$1 \in S$.
     \item
       Für alle Element~$s_1, s_2 \in S$ gilt auch~$s_1 s_2 \in S$.
   \end{itemize}
 \end{definition}
 
 \begin{example}
-  Ist~$\varphi \colon R \to S$ ein Ringhomomorphismus, so ist~$\im(\varphi)$ ein Unterring von~$S$.
-\end{example}
-
-
-
-
-
-\section{Einheiten und Nullteiler}
-
-
-
-\subsection{Einheiten}
-
-\begin{definition}
   \leavevmode
   \begin{enumerate}
     \item
-      Ein Element~$r \in R$ ist eine \defemph{Einheit}, bzw. ist \defemph{invertierbar}, falls es ein Element~$r' \in R$ gibt, so dass~$r r' = 1$ und~$r' r = 1$.
+      Es sind~$\Integer \subseteq \Rational \subseteq \Real \subseteq \Complex$ jeweils Unterringe.
     \item
-      Die Menge der Einheiten in~$R$ ist die \defemph{Einheitengruppe} von~$R$ und wird mit~$R^\times$ notiert.
-  \end{enumerate}
-\end{definition}
-
-\begin{proposition}
-  Zusammen mit der Multiplikation von~$R$ ist~$R^\times$ eine Gruppe.
-\end{proposition}
-
-\begin{example}
-  \leavevmode
-  \begin{enumerate}
+      Es ist~$\Integer[i] \defined \{ a + ib \suchthat a, b \in \Integer \}$ ein Unterring von~$\Complex$, der Ring der \defemph{Gaußschen Zahlen}.
     \item
-      Ein kommutativer Ring~$R$ ist ein Körper, genau dann wenn~$R^\times = R \setminus \{ 0 \}$.
-    \item
-      Ist~$K$ ein Körper, so gilt~$\Mat(n, K)^\times = \GL(n,K)$.
-    \item
-      Es gilt~$\Integer^\times = \{1, -1\}$.
-    \item
-      Es gilt~$\Integer_n^\times = \{ \class{k} \in \Integer_n \suchthat \text{$k$ und~$n$ sind teierfremd} \}$.
+      Ist~$\varphi \colon R \to S$ ein Ringhomomorphismus, so ist~$\im(\varphi)$ ein Unterring von~$S$.
   \end{enumerate}
 \end{example}
-
-
-
-\subsection{Nullteiler}
-
-\begin{definition}
-  Es sei~$r$ ein Element von~$R$.
-  \begin{enumerate}
-    \item
-      Es ist~$r$ ist ein \defemph{Linksnullteiler} wenn es ein Element~$x \in R$ mit~$x \neq 0$ gibt, so dass~$rx = 0$.
-    \item
-      Es ist~$r$ ist ein \defemph{Rechtsnullteiler} wenn es ein Element~$x \in R$ mit~$x \neq 0$ gibt, so dass~$xr = 0$.
-    \item
-      Es ist~$r$ ist ein \defemph{(beidseitiger) Nullteiler} wenn~$r$ ein Links- und auch ein Rechtsnullteiler ist.
-  \end{enumerate}
-\end{definition}
-
-\begin{example}
-  Es sei~$n \in \Natural_1$.
-  Ein Element~$\class{k} \in \Integer_n$ ist ein genau dann ein Nullteiler wenn~$k$ und~$n$ nicht teilerfremd sind.
-\end{example}
-
-\begin{proposition}
-  Ist~$r$ eine Einheit in~$R$, so ist~$R$ weder ein Rechts- noch ein Linksnullteiler.
-\end{proposition}
-
-\begin{definition}
-  Ein kommutativer Ring~$R$ ist ein \defemph{Integritätsbereich} falls~$R \neq 0$ gilt und~$0$ der einzige Nullteiler in~$R$ ist.
-\end{definition}
-
-\begin{example}
-  \leavevmode
-  \begin{enumerate}
-    \item
-      Jeder Körper ist ein Integritätsbereich.
-    \item
-      $\Integer$ ist ein Integritätsbereich.
-    \item
-      Für~$n \in \Natural_1$ ist~$\Integer_n$ genau dann ein Integritätsbereich, wenn~$n$ prim ist.
-      Dann ist~$\Integer_n$ bereits ein Körper.
-    \item
-      Ist~$R$ ein Integritätsbereich, so ist jeder Unterring von~$R$ ebenfalls ein Integritätsbereich.
-  \end{enumerate}
-\end{example}
-
-
-
-
-
-\section{Polynomringe}
-
-\begin{proposition}
-  Ist~$R$ ein Integritätsberich, so für jede Indexmenge~$A$ auch der Polynomring~$R[X_\alpha \suchthat \alpha \in A]$ ein Integritätsbereich.
-\end{proposition}
-
-\begin{proposition}
-  Ist~$R$ ein Integritätsbereich, so gilt~$R[X]^\times = R^\times$.%
-  \footnote{
-    Ist allgemeiner~$R$ ein beliebiger kommutativer Ring, so ist ein Polynom~$f \in R[X]$ mit~$f = a_n X^n + \dotsb + a_1 X + a_0$ genau dann eine Einheit in~$R[X]$, wenn~$a_0$ eine Einheit in~$R$ ist und die restlichen Koeffizienten~$a_1, \dotsc, a_n$ nilpotent in~$R$ sind.
-    Für einen kommutativen Ring~$R$ gilt somit genau dann~$R[X]^\times = R^\times$ wenn~$R$ außer~$0$ keine nilpotenten Elemente besitzt.
-  }
-  
-\end{proposition}
 
 
 
@@ -148,7 +53,13 @@
 \subsection{Ideale}
 
 \begin{definition}
-  Eine Teilmenge~$I$ von~$R$ ist ein \defemph{Ideal} falls~$I$ eine additive Untergruppe von~$R$ ist, so dass~$RI \subseteq I$ und~$IR \subseteq I$ gelten.
+  Eine Teilmenge~$I$ von~$R$ ist ein \defemph{Ideal}, falls die folgenden beiden Bedingungen gelten:
+  \begin{enumerate}
+    \item
+      Die Menge $I$ ist eine eine additive Untergruppe von~$R$.
+    \item
+      Es gilt~$RI \subseteq I$ und~$IR \subseteq I$.
+  \end{enumerate}
 \end{definition}
 
 \begin{example}
@@ -159,7 +70,7 @@
     \item
       Ist~$\varphi \colon R \to R'$ ein Ringhomomorphismus, so ist~$\ker(\varphi) = \{ r \in R \suchthat \varphi(r) = 0 \}$ ein Ideal in~$R$.
     \item
-      Ein kommutative Ring~$R$ ist genau dann ein Körper, wenn~$R \neq 0$ gilt und~$R$,~$0$ die einzigen beiden Ideale in~$R$ sind.
+      Ein kommutativer Ring~$R$ ist genau dann ein Körper, wenn~$R \neq 0$ gilt, und~$R$,~$0$ die einzigen beiden Ideale in~$R$ sind.
   \end{enumerate}
 \end{example}
 
@@ -176,8 +87,8 @@
       r_1 x_1 r'_1 + \dotsb + r_n x_n r'_n
     \suchthat
       n \in \Natural,
-      r_i, r'_i \in R,
       x_i \in X
+      r_i, r'_i \in R,
     \} \,.
   \]
 \end{definition}
@@ -190,21 +101,17 @@
     \item
       Das Ideal~$\genideal{X}$ ist eindeutig minimal unter allen Idealen von~$R$, welche die Menge~$X$ enthalten:
       Ist~$I$ ein Ideal in~$R$, das~$\genideal{X}$ enthält, so gilt~$\genideal{X} \subseteq I$.
+    \item
+      Es gilt~$\genideal{X} = \bigcap \{ I \subseteq R \suchthat \text{$I$ ist ein Ideal, das~$X$ enthält} \}$.
   \end{enumerate}
 \end{proposition}
-
-\begin{proposition}
-  Ein Element~$x$ von~$R$ ist genau dann eine Einheit, wenn~$\genideal{x} = R$ gilt.
-\end{proposition}
-
-
 
 
 
 \subsection{Faktorringe}
 
 \begin{convention}
-  Im Folgenden ist~$I$, sofern nicht anders angegeben, ein Ideal in~$R$.
+  Im Folgenden ist~$I$ ein Ideal in~$R$, sofern nicht anders angegeben.
 \end{convention}
 
 Auf der Faktorgruppe~$R/I$ wird durch
@@ -230,7 +137,7 @@ eine Ringstruktur definiert, und die kanonische Projektion~$R \to R/I$ wird hier
 
 \begin{theorem}[Homomorphiesatz]
   Es sei~$\pi \colon R \to R/I$ die kanonische Projektion, und es sei~$S$ ein weiterer Ring.
-  Ein Ringhomomorphismus~$\varphi \colon R \to R/I$ induziert genau dann einen Ringisomorphismus~$\induced{\varphi} \colon R/I \to R$, der das Diagram
+  Ein Ringhomomorphismus~$\varphi \colon R \to R/I$ induziert genau dann einen Ringhomomorphismus~$\induced{\varphi} \colon R/I \to R$, der das Diagram
   \[
     \begin{tikzcd}
       R
@@ -255,6 +162,7 @@ eine Ringstruktur definiert, und die kanonische Projektion~$R \to R/I$ wird hier
     \text{für alle~$r \in R$,}
   \]
   sowie~$\im(\induced{\varphi}) = \im(\varphi)$ und~$\ker(\induced{\varphi}) = \ker(\varphi)/I$.
+  Inbesondere ist der Ringhomomorphismus~$\induced{\varphi}$ eindeutig.
 \end{theorem}
 
 \begin{corollary}
@@ -288,14 +196,288 @@ eine Ringstruktur definiert, und die kanonische Projektion~$R \to R/I$ wird hier
 
 
 
-\subsection{Primideale}
+\subsection{Korrespondenz von Idealen}
 
-\begin{convention}
-  Im Folgenden sei~$R$, sofern nicht anders angegeben, ein kommutativer Ring.
-\end{convention}
+\begin{theorem}
+  \label{ideal correspondence}
+  Es sei~$\pi \colon R \to R/I$ die kanonische Projektion.
+  Es gibt eine Eins-zu-eins-\hspace{0pt}Korrespondenz von Idealen, gegeben durch
+  \begin{align*}
+    \{
+      \text{Ideale in~$R$, die~$I$ enthalten}
+    \}
+    &\onetoone
+    \{ \text{Ideale in~$R/I$} \}
+    \\
+    J
+    &\mapsto
+    J/I \,,
+    \\
+    \pi^{-1}(J')
+    &\mapsfrom
+    J' \,.
+  \end{align*}
+\end{theorem}
+
+
+
+
+
+\section{Einheiten und Nullteiler}
+
+
+
+\subsection{Einheiten}
 
 \begin{definition}
-  Ein Ideal~$\pideal$ in~$R$ ist ein \defemph{Primideal} falls~$\pideal$ ein echtes Ideal ist, und für je zwei Element~$r_1, r_2 \in R$ mit~$r_1 r_2 \in \pideal$ bereits~$r_1 \in \pideal$ oder~$r_2 \in \pideal$ gilt.
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Ein Element~$r \in R$ ist eine \defemph{Einheit}, bzw. ist \defemph{invertierbar}, falls es ein Element~$r' \in R$ gibt, so dass~$r r' = 1$ und~$r' r = 1$ gilt.
+    \item
+      Die Menge der Einheiten in~$R$ ist die \defemph{Einheitengruppe} von~$R$ und wird mit~$R^\times$ notiert.
+  \end{enumerate}
+\end{definition}
+
+\begin{proposition}
+  Zusammen mit der Multiplikation von~$R$ ist~$R^\times$ eine Gruppe.
+\end{proposition}
+
+\begin{example}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Ein kommutativer Ring~$R$ ist genau dann ein Körper, wenn~$R^\times = R \setminus \{ 0 \}$ gilt.
+    \item
+      Ist~$K$ ein Körper, so gilt~$\Mat(n, K)^\times = \GL(n,K)$.
+    \item
+      Es gilt~$\Integer^\times = \{1, -1\}$.
+    \item
+      Es gilt~$\Integer_n^\times = \{ \class{k} \in \Integer_n \suchthat \text{$k$ und~$n$ sind teilerfremd} \}$.
+  \end{enumerate}
+\end{example}
+
+\begin{example}
+  \label{units in gaussian integers}
+  Für jedes Element~$z \in \Integer[i]$ mit~$z = a + ib$ für~$a, b \in \Integer$ sei
+  \[
+    N(z)
+    \defined
+    \abs{z}^2
+    =
+    a^2 + b^2
+    \in \Natural
+  \]
+  die \defemph{Norm} von~$z$.
+  Für alle~$z_1, z_2 \in \Integer[i]$ gilt
+  \[
+    N(z_1 z_2)
+    =
+    N(z_1) N(z_2) \,,
+  \]
+  und es gilt~$N(1) = 1$.
+  Für~$z \in \Integer[i]^\times$ gilt somit
+  \[
+    N(z) N(z^{-1})
+    =
+    N(z z^{-1})
+    =
+    N(1)
+    =
+    1 \,.
+  \]
+  Dabei gilt~$N(z), N(z^{-1}) \in \Natural$, weshalb bereits~$N(z) = 1$ gelten muss.
+  Wir erhalten somit, dass~$z \in \{1, -1, i, -i\}$.
+  Andererseits sind~$1$,~$-1$,~$i$,~$-i$ Einheiten in~$\Integer[i]^\times$ (denn~$1/i = -i$).
+  Ingesamt gilt somit
+  \[
+    \Integer[i]^\times
+    =
+    \{ 1, -1, i, -i \} \,.
+  \]
+\end{example}
+
+\begin{convention}
+  Im Folgenden sei~$R$ ein kommutativer Ring, sofern nicht anders angegeben.
+\end{convention}
+
+\begin{proposition}
+  \label{unit via generated ideal}
+  Ein Element~$x$ von~$R$ ist genau dann eine Einheit, wenn~$\genideal{x} = R$ gilt.
+\end{proposition}
+
+\begin{warning}
+  Für nicht-kommutative Ringe gilt \cref{unit via generated ideal} im Allgemeinen nicht.
+  So gilt etwa für jede Matrix~$A \in \Mat(n,K)$ mit~$A \neq 0$, dass~$\genideal{A} = \Mat(n,K)$, sofern~$K$ ein Körper ist.%
+  \footnote{
+    Ist allgemeiner~$R$ ein beliebiger Grundring, so ist die Abbildung
+    \[
+      \{ \text{Ideale in~$R$} \}
+      \to
+      \{ \text{Ideale in~$\Mat(n,R)$} \} \,,
+      \quad
+      I
+      \mapsto
+      \Mat(n,I)
+    \]
+    eine wohldefinierte Bijektion.
+    Ein Körper~$K$ besitzt nur die beiden Ideal~$0$ und~$K$, also besitzt der Matrizenring~$\Mat(n,K)$ nur die beiden Ideale~$\Mat(n,0) = 0$ und~$\Mat(n,K)$.
+  }
+\end{warning}
+
+
+\subsection{Nullteiler}
+
+\begin{definition}
+  Ein Element~$r$ von~$R$ ist ein \defemph{Nullteiler}, falls es ein Element~$x \in R$ mit~$x \neq 0$ aber~$rx = 0$ gibt.
+\end{definition}
+
+\begin{example}
+  Es sei~$n \in \Natural_1$.
+  Ein Element~$\class{k} \in \Integer_n$ ist ein genau dann ein Nullteiler wenn~$k$ und~$n$ nicht teilerfremd sind.
+\end{example}
+
+\begin{proposition}
+  Ist~$r$ eine Einheit in~$R$, so ist~$R$ kein Nullteiler.
+\end{proposition}
+
+\begin{definition}
+  Der kommutative Ring~$R$ ist ein \defemph{Integritätsbereich} falls~$R \neq 0$ gilt und~$0$ der einzige Nullteiler in~$R$ ist.
+\end{definition}
+
+\begin{example}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Jeder Körper ist ein Integritätsbereich.
+    \item
+      $\Integer$ ist ein Integritätsbereich.
+    \item
+      Für~$n \in \Natural_1$ ist~$\Integer_n$ genau dann ein Integritätsbereich, wenn~$n$ prim ist.
+      Dann ist~$\Integer_n$ bereits ein Körper.
+    \item
+      Allgemeiner ist jeder endliche Integritätsbereich bereits ein Körper.
+    \item
+      Ist~$R$ ein Integritätsbereich, so ist jeder Unterring von~$R$ ebenfalls ein Integritätsbereich.
+  \end{enumerate}
+\end{example}
+
+
+
+
+
+\section{Polynomringe}
+
+Es sei~$I$ eine Indexmenge.
+Dann ist
+\[
+  \Natural^{(I)}
+  \defined
+  \{
+    ( n_i )_{i \in I}
+  \suchthat
+    n_i \in \Natural \,,
+    \text{$n_i = 0$ für alle bis auf endlich viele~$i \in I$}
+  \}
+\]
+ein abelsches Monoid bezüglich der Addition
+\[
+  ( n_i )_{i \in I}
+  +
+  ( m_i )_{i \in I}
+  \defined
+  (n_i + m_i)_{i \in I} \,.
+\]
+Der Polynomring~$R[X_i \suchthat i \in I]$ ist die Menge der formalen Linearkombinationen
+\[
+  \sum_{\alpha \in \Natural^{(I)}} r_\alpha X^\alpha
+\]
+mit~$r_\alpha \in R$ für alle~$\alpha \in \Natural^{(I)}$ und~$r_\alpha = 0$ für alle bis auf endlich viele~$\alpha \in \Natural^{(I)}$.
+Die Ringoperationen von~$R[X_i \suchthat i \in I]$ sind gegeben durch
+\begin{align*}
+  \sum_{\alpha \in \Natural^{(I)}} r_\alpha X^\alpha
+  +
+  \sum_{\alpha \in \Natural^{(I)}} s_\alpha X^\alpha
+  &\defined
+  \sum_{\alpha \in \Natural^{(I)}} (r_\alpha + s_\alpha) X^\alpha \,,
+  \\
+  \sum_{\alpha \in \Natural^{(I)}} r_\alpha X^\alpha
+  \cdot
+  \sum_{\beta \in \Natural^{(I)}} s_\beta X^\beta
+  &\defined
+  \sum_{\alpha, \beta \in \Natural^{(I)}} r_\alpha s_\beta X^{\alpha + \beta} \,.
+\end{align*}
+Wir können~$R$ als einen Unterring von~$R[X_i \suchthat i \in I]$ auffassen, indem wir jedes Ringelement~$r \in R$ mit dem \defemph{konstanten} Polynom~$r X^0$ identifizieren.
+
+Ist die Indexmenge~$I$ endlich mit~$I = \{ 1, \dotsc, r \}$, so schreiben wir
+\[
+  K[X_i \suchthat i \in \{1, \dotsc, n\}]
+  \defines
+  K[X_1, \dotsc, X_n] \,,
+  \quad
+  X^{(n_1, \dotsc, n_r)}
+  \defines
+  X_1^{n_1} \dotsm X_r^{n_r} \,.
+\]
+
+\begin{proposition}
+  Ist~$R$ ein Integritätsberich, so ist auch~$R[X_i \suchthat i \in I]$ ein Integritätsbereich.
+\end{proposition}
+
+\begin{proposition}
+  Ist~$R$ ein Integritätsbereich, so gilt~$R[X_i \suchthat i \in I]^\times = R^\times$.%
+  \footnote{
+    Ist allgemeiner~$R$ ein beliebiger kommutativer Ring, so ist ein Polynom~$f \in R[X_i \suchthat i \in I]$ genau dann eine Einheit in~$R[X_i \suchthat \in I]$, wenn der konstante Term von~$f$ ein Einheit in~$R$ ist, und alle anderen Koeffiezienten von~$f$ nilpotent in~$R$ sind.
+  }
+\end{proposition}
+
+\begin{theorem}[Universelle Eigenschaft des Polynomrings]
+  Es sei~$S$ ein weiterer kommutativer Ring.
+  Dann gibt es für jede Familie~$(s_i)_{i \in I}$ von Elementen~$s_i \in S$ und jeden Ringhomomorphismus~$\varphi \colon R \to S$ einen eindeutigen Ringhomomorphismus~$\Phi \colon R[X_i \suchthat i \in I] \to S$ mit~$\Phi(X_i) = s_i$ für jeden  Index~$i \in I$, und~$\restrict{\Phi}{R} = \varphi$.
+\end{theorem}
+
+\begin{example}
+  Es seien~$R$,~$S$ kommutative Ringe, und es sei~$R$ ein Unterring von~$S$.
+  Dann ist die Inklusion~$R \to S$ ein Ringhomomorphismus, und für jede Familie~$(s_i)_{i \in I}$ von Elementen~$s_i \in S$ erhalten wir einen \defemph{Einsetzhomomorphismus}
+  \[
+    \ev_{(s_i)_{i \in I}}
+    \colon
+    R[X_i \suchthat i \in I]
+    \to
+    S
+  \]
+  der durch~$r \mapsto r$ und~$X_i \mapsto s_i$ gegeben ist.
+  Wir setzen in den Polynomen aus~$R[X_i \suchthat i \in I]$ also die Elemente~$s_i$ für die Variablen~$X_i$ ein.
+\end{example}
+
+\begin{proposition}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Es gilt~$R[X_1, \dotsc, X_n][X_{n+1}] \cong R[X_1, \dotsc, X_n, X_{n+1}]$
+    \item
+      Es gilt~$R[X_1, \dotsc, X_n] / \genideal{X_n} \cong R[X_1, \dotsc, X_{n-1}]$.
+  \end{enumerate}
+\end{proposition}
+
+
+
+
+
+\section{Primideale und Maximale Ideale}
+
+
+
+\subsection{Primideale}
+
+\begin{definition}
+  Ein Ideal~$\pideal$ in~$R$ ist \defemph{prim}, bzw. ein \defemph{Primideal}, falls die folgenden Bedingungen gelten:
+  \begin{itemize}
+    \item
+      Für alle Elemente~$r_1, r_2 \in R$ mit~$r_1 r_2 \in \pideal$ gilt bereits~$r_1 \in \pideal$ oder~$r_2 \in \pideal$.
+    \item
+      Das Ideal~$\pideal$ ist echt.
+  \end{itemize}
 \end{definition}
 
 \begin{proposition}
@@ -307,11 +489,17 @@ eine Ringstruktur definiert, und die kanonische Projektion~$R \to R/I$ wird hier
 \subsection{Maximale Ideale}
 
 \begin{definition}
-  Ein Ideal~$\mideal$ in~$R$ ist ein \defemph{maximales Ideal} fall~$\mideal$ ein echtes Ideal ist, und für jedes Ideal~$I$ in~$R$ mit~$\mideal \subseteq I \subseteq R$ bereits~$I = \mideal$ oder~$I = R$ gilt.
+  Ein Ideal~$\mideal$ in~$R$ ist ein \defemph{maximal}, falls die folgenden Bedingungen gelten:
+  \begin{itemize}
+    \item
+     Für jedes Ideal~$I$ in~$R$ mit~$\mideal \subseteq I \subseteq R$ gilt bereits~$I = \mideal$ oder~$I = R$.
+    \item
+      Das Ideal~$\mideal$ ist echt.
+  \end{itemize}
 \end{definition}
 
 \begin{proposition}
-  Ein Ideal~$\mideal$ in~$R$ ist genau dann ein maximales Ideal, wenn der Faktorring~$R/\mideal$ ein Körper ist.
+  Ein Ideal~$\mideal$ in~$R$ ist genau dann maximal, wenn~$R/\mideal$ ein Körper ist.
 \end{proposition}
 
 \begin{corollary}
@@ -319,7 +507,7 @@ eine Ringstruktur definiert, und die kanonische Projektion~$R \to R/I$ wird hier
 \end{corollary}
 
 \begin{proposition}
-  Jedes echte Ideal von~$R$ ist in einem maximalen Ideal, und somit auch Primideal, enthalten.
+  Jedes echte Ideal von~$R$ ist in einem maximalen Ideal enthalten.
 \end{proposition}
 
 
@@ -330,24 +518,7 @@ eine Ringstruktur definiert, und die kanonische Projektion~$R \to R/I$ wird hier
   Es sei~$\pi \colon R \to R/I$ die kanonische Projektion.
   \begin{enumerate}
     \item
-      Es gibt eine Eins-zu-eins-\hspace{0pt}Korrespondenz von Idealen, gegeben durch
-      \begin{align*}
-        \{
-          \text{Ideale in~$R$, die~$I$ enthalten}
-        \}
-        &\onetoone
-        \{ \text{Ideale in~$R/I$} \}
-        \\
-        J
-        &\mapsto
-        J/I \,,
-        \\
-        \pi^{-1}(K)
-        &\mapsfrom
-        K \,.
-      \end{align*}
-    \item
-      In der obigen Korrespondenz ist das Ideal~$J$ genau dann prim in~$R$, wenn das Ideal~$J/I$ prim in~$R/I$ ist.
+      In der Ideal-Korrespondenz aus \cref{ideal correspondence} ist das Ideal~$J$ genau dann prim in~$R$, wenn das Ideal~$J/I$ prim in~$R/I$ ist.
       Durch Einschränkung der obigen Korrespondenz ergibt sich somit eine Eins-zu-eins-Korrespondenz, gegeben durch
       \[
         \{
@@ -357,7 +528,7 @@ eine Ringstruktur definiert, und die kanonische Projektion~$R \to R/I$ wird hier
         \{ \text{Primideale in~$R/I$} \}
       \]
     \item
-      In der obigen Korrespondenz ist das Ideal~$J$ genau dann maximal in~$R$, wenn das Ideal~$J/I$ maximal in~$R/I$ ist.
+      In der Ideal-Korrespondenz aus \cref{ideal correspondence} ist das Ideal~$J$ genau dann maximal in~$R$, wenn das Ideal~$J/I$ maximal in~$R/I$ ist.
       Durch Einschränkung der obigen Korrespondenz ergibt sich somit eine Eins-zu-eins-Korrespondenz, gegeben durch
       \[
         \{
@@ -375,13 +546,37 @@ eine Ringstruktur definiert, und die kanonische Projektion~$R \to R/I$ wird hier
 
 \section{Hauptidealringe und Euklidische Ringe}
 
+
+
+\subsection{Hauptidealringe}
+
 \begin{definition}
   Ein Ideal~$I$ in~$R$ ist ein \defemph{Hauptideal} falls~$I = \genideal{a}$ für ein Element~$a \in R$ gilt.
 \end{definition}
 
 \begin{definition}
-  Ein kommutativer Ring~$R$ ist ein \defemph{Hauptidealring} falls~$R$ ein Integritätsbereich ist und jedes Ideal in~$R$ ein Hauptideal ist.
+  Ein kommutativer Ring~$R$ ist ein \defemph{Hauptidealring}, falls die folgenden Bedingungen gelten:
+  \begin{itemize}
+    \item
+      Jedes Ideal in~$R$ ist ein Hauptideal.
+    \item
+      Der Ring~$R$ ist ein Integritätsbereich.
+  \end{itemize}
 \end{definition}
+
+\begin{example}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Der Ring~$\Integer$ ist ein Hauptidealring.
+    \item
+      Jeder Körper ist ein Hauptidealring.
+  \end{enumerate}
+\end{example}
+
+
+
+\subsection{Euklidische Ringe}
 
 \begin{definition}
   Ein Integritätsbereich~$R$ ist \defemph{euklidisch} falls es im folgenden Sinne ein \enquote{Teilen mit Rest} in~$R$ gibt:
@@ -409,35 +604,20 @@ eine Ringstruktur definiert, und die kanonische Projektion~$R \to R/I$ wird hier
   \leavevmode
   \begin{enumerate}
     \item
-      Der Ring~$\Integer$ ist euklidisch mit~$\deg(n) \defined \abs{n}$.
+      Der Ring~$\Integer$ ist euklidisch mit Gradabbildung~$\deg(n) \defined \abs{n}$.
     \item
       Ist~$K$ ein Körper, so ist der Polynomring~$K[X]$ euklidisch, durch die übliche Gradabbildung.
       Das \enquote{Teilen mit Rest} in~$K[X]$ lässt sich durch Polynomdivision berechnen.
     \item
       Jeder Körper~$K$ ist euklidisch mit~$\deg(x) = 0$ für alle~$x \in K$ (denn in~$K$ kann man auch schon \enquote{ohne Rest} teilen).
   \end{enumerate}
-  Diese Ringe sind inbesondere Hauptidealringe.
+  Diese Ringe sind also inbesondere Hauptidealringe.
 \end{example}
-
-\begin{proposition}
-  Für einen kommutativen Ring~$K$ sind die folgenden Bedingungen äquivalent.
-  \begin{equivlist}
-    \item
-      Der Ring~$K$ ist ein Körper.
-    \item
-      Der Polynomring~$K[X]$ ist euklidisch.
-    \item
-      Der Polynomring~$K[X]$ ist ein Hauptidealring.
-  \end{equivlist}
-\end{proposition}
 
 \begin{example}
-  Ist~$K$ ein Körper, so ist der Polynomring~$K[X]$ ein Hauptidealring, der Polynomring~$K[X,Y]$ allerdings nicht.
-\end{example}
+  Der Ring der Gaußschen Zahlen~$\Integer[i]$ ist euklidisch:
 
-\begin{example}[Die Gausschen Zahlen]
-  Der Unterring~$\Integer[i] \defined \{a + bi \suchthat a, b \in \Integer\}$ des Körpers~$\Complex$ ist der \defemph{Ring der Gausschen Zahlen}.
-  Die \defemph{Norm} eines Elements~$z \in \Integer$ gegeben durch~$z = a + bi$ mit~$a, b \in \Integer$ ist
+  Wie schon in \cref{units in gaussian integers} ist die Norm eines Elements~$z \in \Integer$, das durch~$z = a + bi$ mit~$a, b \in \Integer$ gegeben ist, definiert als
   \[
     N(z)
     \defined
@@ -445,7 +625,6 @@ eine Ringstruktur definiert, und die kanonische Projektion~$R \to R/I$ wird hier
     =
     a^2 + b^2 \,.
   \]
-
   Es seien~$a, b \in \Integer[i]$ mit~$b \neq 0$.
   In~$\Complex$ können wir das Element~$a/b$ betrachten, und es gibt ein Element~$q \in \Integer[i]$ mit
   \[
@@ -471,6 +650,43 @@ eine Ringstruktur definiert, und die kanonische Projektion~$R \to R/I$ wird hier
   Das zeigt, dass~$\Integer[i]$ zusammen mit~$N$ als Gradabbildung ein euklidischer Ring ist.
 \end{example}
 
+\begin{proposition}
+  Für einen kommutativen Ring~$K$ sind die folgenden Bedingungen äquivalent.
+  \begin{equivlist}
+    \item
+      Der Ring~$K$ ist ein Körper.
+    \item
+      Der Polynomring~$K[X]$ ist euklidisch.
+    \item
+      Der Polynomring~$K[X]$ ist ein Hauptidealring.
+  \end{equivlist}
+\end{proposition}
+
+\begin{example}
+  Ist~$K$ ein Körper, so ist der Polynomring~$K[X]$ ein Hauptidealring, der Polynomring~$K[X,Y]$ allerdings nicht.
+\end{example}
+
+\begin{remark}
+  Es sei~$R \neq 0$.
+  Ein Element~$a \in R$ ist genau dann keine Einheit, wenn das Ideal~$\genideal{X, a}$ in~$R[X]$ kein Hauptideal ist.
+\end{remark}
+
+\begin{example}
+  Das Ideal~$\genideal{X, 2}$ in~$\Integer[X]$ ist kein Hauptideal, da~$2$ keine Einheit in~$\Integer$ ist.
+\end{example}
+
+\begin{remark}
+  Ist~$K$ ein Körper, so unterscheidet man häufig zwischen den folgenden drei Klassen an Polynomringen:
+  \[
+    K[X] \,,
+    \quad
+    \text{$K[X_1, \dotsc, X_n]$ mit~$n \geq 2$} \,,
+    \quad
+    \text{$K[X_i \suchthat i \in I]$ mit~$I$ unendlich} \,.
+  \]
+  Diese drei Klassen an Ringen verhalten sich untereinander recht unterschiedlich, aber die Ringe in jeder Klasse verhalten sich relativ gleich.
+\end{remark}
+
 
 
 
@@ -482,60 +698,66 @@ eine Ringstruktur definiert, und die kanonische Projektion~$R \to R/I$ wird hier
 \subsection{Lokalisierungen}
 
 \begin{definition}
-  Eine Teilmenge~$S$ von~$R$ ist \defemph{multiplikativ abgeschlossen} falls~$1 \in S$ gilt, aund für alle Element~$s_1, s_2 \in S$ auch~$s_1 s_2 \in S$ gilt.
+  Eine Teilmenge~$S$ von~$R$ ist \defemph{multiplikativ abgeschlossen} falls die folgenden beiden Bedingungen gelten:
+  \begin{itemize}
+    \item
+      Für alle Element~$s_1, s_2 \in S$ gilt auch~$s_1 s_2 \in S$.
+    \item
+      Es gilt~$1 \in S$.
+  \end{itemize}
 \end{definition}
 
 \begin{convention}
-  Im Folgenden sei~$S$, sofern nicht anders angegeben, eine multiplikativ abgeschlossene Teilmenge von~$R$.
+  Im Folgenden sei~$S$ eine multiplikativ abgeschlossene Teilmenge von~$R$, sofern nicht anders angegeben.
 \end{convention}
 
-\begin{proposition}
-  \label{construction of localization}
-  \leavevmode
-  \begin{enumerate}
-    \item
-      Auf der Menge~$R \times S$ wird durch
-      \[
-        (r_1, s_1) \sim (r_2, s_2)
-        \iff
-        \text{es gibt~$t \in S$ mit~$t(r_1 s_2 - r_2 s_1) = 0$}
-      \]
-      eine Äquivalenzrelation definiert.
-  \end{enumerate}
-  Es sei im Folgenden~$S^{-1} R \defined (R \times S) / {\sim}$, und für jedes Paar~$(r,s) \in R \times S$ sei~$r/s \defined \class{(r,s)}$ die Äquivalenzklasse von~$(r,s)$ in~$S^{-1} R$.
-  \begin{enumerate}[resume*]
-    \item
-      Auf~$R^{-1} S$ wird durch
-      \[
-        \frac{r_1}{s_1} + \frac{r_2}{s_2}
-        \defined
-        \frac{r_1 s_2 + r_2 s_1}{s_1 s_2} \,,
-        \quad
-        \frac{r_1}{s_1} \cdot \frac{r_1}{s_1}
-        \defined
-        \frac{r_1 r_2}{s_1 s_2}
-      \]
-      eine Ringstruktur definiert.
-      Dabei gelten~$0_{S^{-1} R} = 0/1$ und~$1_{S^{-1} R} = 1/1$.
-    \item
-      Für jedes Element~$s \in S$ ist~$s/1$ eine Einheit in~$S^{-1} R$ mit~$(s/1)^{-1} = 1/s$.
-    \item
-      Die Abbildung~$i \colon R \to S^{-1} R$ gegeben durch~$i(r) = r/1$ ist ein Ringhomomorphismus.
-  \end{enumerate}
-\end{proposition}
+Auf der Menge~$R \times S$ wird durch
+\[
+  (r_1, s_1) \sim (r_2, s_2)
+  \iff
+  \text{es gibt~$t \in S$ mit~$t(r_1 s_2 - r_2 s_1) = 0$}
+\]
+eine Äquivalenzrelation definiert.
+Es sei
+\[
+  S^{-1} R \defined (R \times S) / {\sim} \,,
+\]
+und für jedes Paar~$(r,s) \in R \times S$ sei~$r/s \defined \class{(r,s)}$ die Äquivalenzklasse von~$(r,s)$ in~$S^{-1} R$.
+Durch die Vorschriften
+\[
+  \frac{r_1}{s_1} + \frac{r_2}{s_2}
+  \defined
+  \frac{r_1 s_2 + r_2 s_1}{s_1 s_2} \,,
+  \quad
+  \frac{r_1}{s_1} \cdot \frac{r_1}{s_1}
+  \defined
+  \frac{r_1 r_2}{s_1 s_2}
+\]
+wird~$S^{-1} R$ zu einem Ring.
+Dabei gelten~$0_{S^{-1} R} = 0/1$ und~$1_{S^{-1} R} = 1/1$.
+Für jedes Element~$s \in S$ ist~$s/1$ eine Einheit in~$S^{-1} R$ mit~$(s/1)^{-1} = 1/s$.
+Die Abbildung
+\[
+  \iota
+  \colon
+  R \to S^{-1} R \,,
+  \quad
+  r \mapsto \frac{r}{1}
+\]
+ist ein Ringhomomorphismus.
 
 \begin{definition}
-  In der Situation von \cref{construction of localization} ist~$S^{-1} R$ die \defemph{Lokalisierung} von~$R$ an~$S$.
-  Die Abbildung~$i$ ist der \defemph{kanonische Homomorphismus}.
+  In der obigen Situation ist~$S^{-1} R$ die \defemph{Lokalisierung} von~$R$ an~$S$.
+  Die Abbildung~$\iota$ ist der \defemph{kanonische Homomorphismus}.
 \end{definition}
 
 \begin{proposition}
-  Es sei~$i \colon R \to S^{-1} R$ der kanonische Homomorphismus.
+  Es sei~$\iota \colon R \to S^{-1} R$ der kanonische Homomorphismus.
   \begin{enumerate}
     \item
-      Es gilt~$\ker(i) = \{ r \in R \suchthat \text{es gibt~$s \in S$ mit~$sr = 0$} \}$.
+      Es gilt~$\ker(\iota) = \{ r \in R \suchthat \text{es gibt~$s \in S$ mit~$sr = 0$} \}$.
     \item
-      Es gilt genau dann~$S^{-1} R = 0$ wenn~$0 \in S$.
+      Es gilt genau dann~$S^{-1} R = 0$, wenn~$0 \in S$.
   \end{enumerate}
 \end{proposition}
 
@@ -546,7 +768,7 @@ eine Ringstruktur definiert, und die kanonische Projektion~$R \to R/I$ wird hier
 \begin{example}
   \label{construction of field of fractions}
   Ist~$R$ ein Integritätsbereich, so ist~$S \defined R \setminus \{ 0 \}$ eine multiplikativ abgeschlossene Teilmenge von~$R$ und die Lokalisierung~$S^{-1} R$ ist ein Körper.
-  Der kanonische Homomorphismus~$i \colon R \to \Quot(R)$ ist injektiv, weshalb sich~$R$ als ein Unterring von~$\Quot(R)$ auffassen lässt.
+  Der kanonische Homomorphismus~$\iota \colon R \to \Quot(R)$ ist injektiv, weshalb sich~$R$ als ein Unterring von~$\Quot(R)$ auffassen lässt.
 \end{example}
 
 \begin{definition}
@@ -582,95 +804,67 @@ eine Ringstruktur definiert, und die kanonische Projektion~$R \to R/I$ wird hier
 \subsection{Universelle Eigenschaft der Lokalisierung}
 
 \begin{theorem}[Universelle Eigenschaft der Lokalisierung]
-  Es sei~$S$ eine multiplikativ abgeschlossene Teilmenge von~$R$ und es sei~$i \colon R \to S^{-1} R$ der kanonische Homomorphismus.
-  Es sei~$R'$ ein weiterer Ring.
-  \begin{enumerate}
-    \item
-      Ist~$\psi \colon S^{-1} R \to R'$ ein Ringhomomorphismus, so bildet der resultierende Ringhomomorphismus~$\psi \circ i \colon R \to S^{-1} R$ die Elemente von~$S$ auf Einheiten in~$R'$ ab, d.h. es gilt~$(\psi \circ i)(S) \subseteq (R')^\times$.
-    \item
-      Ist andererseits~$\varphi \colon R \to R'$ ein Ringhomomorphismus mit~$\varphi(S) \subseteq (R')^\times$, so ist die Abbildung
-      \[
-        \induced{\varphi}
-        \colon
-        S^{-1} R
-        \to
-        R' \,,
-        \quad
-        \frac{r}{s}
-        \mapsto
-        \varphi(r) \spacing \varphi(s)^{-1}
-      \]
-      ein wohldefinierter Ringhomomorphismus.
-      Dieser Ringhomomorphismus ist eindeutig dadurch bestimmt, dass er das folgende Diagramm zum kommutieren bringt.
-      \[
-        \begin{tikzcd}
-          R
-          \arrow{r}[above]{\varphi}
-          \arrow{d}[left]{i}
-          &
-          R'
-          \\
-          S^{-1} R
-          \arrow[dashed]{ur}[below right]{\induced{\varphi}}
-          &
-          {}
-        \end{tikzcd}
-      \]
-    \item
-      Die beiden obigen Konstruktionen sind invers zueinander, und ergeben die Eins-zu-eins-Korrespondenz
-      \begin{align*}
-        \left\{
-          \begin{tabular}{@{}c@{}}
-            Ringhomomorphismen\\
-            $\varphi \colon R \to R'$ mit~$\varphi(S) \subseteq (R')^\times$
-          \end{tabular}
-        \right\}
-        &\onetoone
-        \left\{
-          \begin{tabular}{@{}c@{}}
-            Ringhomomorphismen\\
-            $\psi \colon S^{-1}R \to R'$
-          \end{tabular}
-        \right\}
-        \\
-        \varphi
-        &\mapsto
-        \induced{\varphi} \,,
-        \\
-        \psi \circ i
-        &\mapsfrom
-        \psi \,.
-      \end{align*}
-  \end{enumerate}
-\end{theorem}
+  Es sei~$\iota \colon R \to S^{-1} R$ der kanonische Homomorphismus.
+  Es sei~$R'$ ein weiterer Ring und es sei~$\varphi \colon R \to R'$ ein Ringhomomorphismus.
 
-% TODO: UP of field of fractions as a corollary
-
-\begin{definition}
-  Ein Ringhomomorphismus zwischen zwei Körpern ist ein \defemph{Körperhomomorphismus}.
-\end{definition}
-
-%TODO: Make the following an exercise.
-
-\begin{corollary}
-  Es sei~$R$ ein Integritätsbereich.
-  Es sei~$K$ ein Körper und~$\varphi \colon R \to K$ ein injektiver Ringhomomorphismus.
-  Der Homomorphismus~$\varphi$ setzt sich eindeutig zu einem Körperhomomorphismus~$\Quot(R) \to K$ fort, d.h. es gibt einen eindeutigen Körperhomomorphismus~$\induced{\varphi} \colon \Quot(R) \to K$, der das folgende Diagramm zum kommutieren bringt:
+  Der Ringhomomorphismus~$\varphi \colon R \to R'$ induziert genau dann einen Ringhomomorphismus~$\induced{\varphi} \colon S^{-1} R \to R'$, der das Diagram
   \[
     \begin{tikzcd}
       R
       \arrow{r}[above]{\varphi}
-      \arrow{d}[left]{i}
+      \arrow{d}[left]{\iota}
       &
-      K
+      R'
       \\
-      \Quot(R)
+      S^{-1} R
       \arrow[dashed]{ur}[below right]{\induced{\varphi}}
       &
       {}
     \end{tikzcd}
   \]
-\end{corollary}
+  zum kommutieren bringt, wenn für jedes Element~$s \in S$ das Bild~$\varphi(s)$ eine Einheit in~$R'$ ist, d.h. falls~$\varphi(S) \subseteq (R')^\times$ gilt.
+  Der Ringhomomorphismus ist dann eindeutig, und er ist gegeben durch
+  \[
+    \induced{\varphi}\biggl( \frac{r}{s} \biggr)
+    =
+    \varphi(r) \varphi(s)^{-1}
+    \qquad
+    \text{für alle~$r/s \in S^{-1} R$.}
+  \]
+\end{theorem}
+
+%TODO: Make the following an exercise.
+
+%\begin{definition}
+%  Ein Ringhomomorphismus zwischen zwei Körpern ist ein \defemph{Körperhomomorphismus}.
+%\end{definition}
+%
+%
+%\begin{corollary}
+%  Es sei~$R$ ein Integritätsbereich.
+%  Es sei~$K$ ein Körper und~$\varphi \colon R \to K$ ein injektiver Ringhomomorphismus.
+%  Der Homomorphismus~$\varphi$ setzt sich eindeutig zu einem Körperhomomorphismus~$\Quot(R) \to K$ fort, d.h. es gibt einen eindeutigen Körperhomomorphismus~$\induced{\varphi} \colon \Quot(R) \to K$, der das folgende Diagramm zum kommutieren bringt:
+%  \[
+%    \begin{tikzcd}
+%      R
+%      \arrow{r}[above]{\varphi}
+%      \arrow{d}[left]{i}
+%      &
+%      K
+%      \\
+%      \Quot(R)
+%      \arrow[dashed]{ur}[below right]{\induced{\varphi}}
+%      &
+%      {}
+%    \end{tikzcd}
+%  \]
+%\end{corollary}
+
+
+
+
+
+\clearpage
 
 
 

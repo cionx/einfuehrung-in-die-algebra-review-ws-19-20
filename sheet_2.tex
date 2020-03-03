@@ -13,7 +13,7 @@
   \hfill
   3. März 2020
 }
-\title{Tag 2}
+\title{\vspace{-1em}Tag 2}
 \author{}
 \date{}
 
@@ -22,12 +22,29 @@
 \begin{document}
 
 \maketitle
-\vspace{-6em}
+\vspace{-7em}
 
 \begin{exercise}
-  Es sei~$p$ eine Primzahl es sei~$n \in \Natural_1$.
-  Es sei~$\Borel(n, \Finite_p)$ die Untergruppe von~$\GL(n, \Finite_p)$ der den invertierbaren oberen Dreiecksmatrizen.
-  Bestimmen Sie eine~\Sylow{$p$}-Untergruppe von~$\Borel(n, \Finite_p)$.
+  Es sei~$G$ eine~\Gruppe{$p$}.
+  \begin{enumerate}
+    \item
+      Es sei~$X$ eine endliche~\Menge{$G$}.
+      Zeigen Sie, dass~$\card{X} \equiv \card{ X^G } \Mod{p}$ gilt.
+    \item
+      Es gelte~$G \neq 1$.
+      Zeigen Sie, dass auch~$\zenter(G) \neq 1$ gilt.
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+  \begin{enumerate}
+    \item
+      Bestimmen Sie für jede Primzahl~$p$ jeweils alle~\Sylow{$p$}-Untergruppen von~$\Sym_3$.
+    \item
+      Es sei~$p$ eine Primzahl es sei~$n \in \Natural_1$.
+      Es sei~$\Borel(n, \Finite_p)$ die Untergruppe von~$\GL(n, \Finite_p)$ der invertierbaren oberen Dreiecksmatrizen.
+      Bestimmen Sie eine~\Sylow{$p$}-Untergruppe von~$\Borel(n, \Finite_p)$.
+  \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -35,36 +52,30 @@
   Zeigen Sie, dass~$G$ mindestens zwei echte, nicht-triviale Normalteiler besitzt.
 \end{exercise}
 
-\begin{exercise}
-  Es sei~$G$ eine endliche Menge mit~$\card{G} = 54$.
-  Zeigen Sie, dass es genau zwei Gruppenhomomorphismen~$G \to \Integer/2$ gibt.
-
-  (\emph{Tipp}: Bestimmen Sie zunächst den Kern eines nicht-trivialen Gruppenhomomorphismus~$G \to \Integer/2$.)
+\begin{exercise}[subtitle = {Erstklausur 18/19}]
+  Es sei~$G$ eine Gruppe.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass jeder Gruppenhomomorphismus~$G \to \Integer_2$ durch seinen Kern bestimmt ist.
+    \item
+      Zeigen Sie, dass es für jede Untergruppe~$N$ von~$G$ vom Index~$2$ einen Gruppenhomomorphismus~$\varphi \colon G \to \Integer_2$ gibt, so dass~$N = \ker(\varphi)$ gilt.
+  \end{enumerate}
+  Die Gruppe~$G$ sei nun endlich mit~$\card{G} = 54$.
+  \begin{enumerate}[resume*]
+    \item
+      Bestimmen Sie, wieviele Gruppenhomomorphismen~$G \to \Integer_2$ es gibt.
+  \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-  Es sei~$R$ ein koummtativer Ring.
-  Es sei~$r$ ein Element von~$R$ und es sei~$\lambda_r \colon R \to R$ die Multiplikation mit~$r$, d.h. es gelte~$\lambda_r(x) = rx$ für jedes Element~$x \in R$.
+  \leavevmode
   \begin{enumerate}
     \item
-      Zeigen Sie, dass die folgenden Bedingungen äquivalent sind.
-      \begin{equivlist}
-        \item
-          Das Element~$r$ ist eine Einheit in~$R$.
-        \item
-          Die Abbildung~$\lambda_r$ ist bijektiv.
-        \item
-          Die Abbildung~$\lambda_r$ ist surjektiv.
-      \end{equivlist}
+      Es sei~$d \in \Natural$ mit~$d \geq 2$.
+      Zeigen Sie für den Unterring~$\Integer[\sqrt{-d}] \defined \{ a + i b \sqrt{d} \suchthat a, b \in \Integer \}$ von~$\Complex$, dass~$\Integer[\sqrt{-d}]^\times = \{1, -1\}$ gilt.
     \item
-      Zeigen Sie, dass das Element~$r$ genau dann ein Nullteiler ist, wenn die Abbildung~$\lambda_r$ nicht injektiv ist.
-  \end{enumerate}
-  Der kommutative Ring~$R$ sei nun endlich.
-  \begin{enumerate}[resume*]
-    \item
-      Folgern Sie, dass jedes Element von~$R$ entweder eine Einheit oder ein Nullteiler ist.
-    \item
-      Folgern Sie ferner, dass jeder endliche Integritätsbereich ein Körper ist.
+      Zeigen Sie für den Unterring~$\Integer[\sqrt{2}] \defined \{ a + b \sqrt{2} \suchthat a, b \in \Integer \}$ von~$\Real$, dass~$1 + \sqrt{2}$ eine Einheit in~$\Integer[\sqrt{2}]$ ist.
+      Folgern Sie, dass die Einheitengruppe~$\Integer[\sqrt{2}]^\times$ unendlich ist.
   \end{enumerate}
 \end{exercise}
 
@@ -92,15 +103,61 @@
   \end{enumerate}
 \end{exercise}
 
-
 \begin{exercise}
-  Zeigen Sie, dass der Ring~$\Integer\bigl[ \sqrt{-2} \bigr] \defined \{ a + i b \sqrt{2} \suchthat a, b \in \Integer \}$ euklidisch ist.
+  Es sei~$R$ ein kommutativer Ring und~$I$ ein Ideal in~$R$.
+  \begin{enumerate}
+    \item
+      Es sei~$\pideal$ ein Ideal in~$R$, das~$I$ enthält.
+      Zeigen Sie, dass das Ideal~$\pideal$ genau dann prim in~$R$ ist, wenn das Ideal~$\pideal/I$ prim in~$R/I$ ist.
+    \item
+      Es sei~$\mideal$ ein Ideal in~$R$, das~$I$ enthält.
+      Zeigen Sie, dass das Ideal~$\mideal$ genau dann maximal in~$R$ ist, wenn das Ideal~$\pideal/I$ maximal in~$R/I$ ist.
+  \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-  Es sei~$I$ ein Ideal in einem kommutativen Ring~$R$, und es sei~$S \defined R \setminus I$ das Komplement von~$I$.
+  Zeigen Sie, dass der Unterring~$\Integer\bigl[ \sqrt{-2} \bigr] \defined \{ a + i b \sqrt{2} \suchthat a, b \in \Integer \}$ von~$\Complex$ euklidisch ist.
+\end{exercise}
+
+\begin{exercise}
+  Zeigen Sie, dass jeder endliche Integritätsbereich bereits ein Körper ist.
+\end{exercise}
+
+\begin{exercise}
+  Es sei~$R$ ein kommutativer Ring und~$I$ ein Ideal in~$R$ mit Komplement~$S \defined R \setminus I$.
   Zeigen Sie, dass das Ideal~$I$ genau dann prim ist, wenn die Menge~$S$ multiplikativ abgeschlossen ist.
 \end{exercise}
+
+%\begin{exercise}
+%  Es sei~$R$ ein kommutativer Ring.
+%  Es sei~$r$ ein Element von~$R$ und es sei~$\lambda_r \colon R \to R$ die Multiplikation mit~$r$, d.h. es gelte~$\lambda_r(x) = rx$ für jedes Element~$x \in R$.
+%  \begin{enumerate}
+%    \item
+%      Zeigen Sie, dass die folgenden Bedingungen äquivalent sind.
+%      \begin{equivlist}
+%        \item
+%          Das Element~$r$ ist eine Einheit in~$R$.
+%        \item
+%          Die Abbildung~$\lambda_r$ ist bijektiv.
+%        \item
+%          Die Abbildung~$\lambda_r$ ist surjektiv.
+%      \end{equivlist}
+%    \item
+%      Zeigen Sie, dass~$r$ genau dann ein Nullteiler ist, wenn die Abbildung~$\lambda_r$ nicht injektiv ist.
+%  \end{enumerate}
+%  Der kommutative Ring~$R$ sei nun endlich.
+%  \begin{enumerate}[resume*]
+%    \item
+%      Folgern Sie, dass jedes Element von~$R$ entweder eine Einheit oder ein Nullteiler ist.
+%    \item
+%      Folgern Sie ferner, dass jeder endliche Integritätsbereich bereits ein Körper ist.
+%  \end{enumerate}
+%\end{exercise}
+
+%\begin{exercise}
+%  Es sei~$R$ ein kommutativer Ring.
+%  Zeigen Sie, dass~$R[X,Y] / (Y - X^2) \cong R[X]$ gilt.
+%\end{exercise}
 
 \begin{exercise}
   Es sei~$R$ ein kommutativer Ring und es sei~$\pideal$ ein Ideal in~$R$.

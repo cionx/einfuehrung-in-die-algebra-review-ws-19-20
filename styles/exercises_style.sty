@@ -1,2 +1,28 @@
 \DeclareExerciseTranslation{German}{exercise}{Aufgabe}
 \DeclareExerciseTranslation{German}{exercises}{Aufgaben}
+
+\DeclareExerciseEnvironmentTemplate{custom}{%
+  \GetExerciseHeadingF{\subsection*}%
+  {%
+    \XSIMmixedcase{\GetExerciseName}\nobreakspace
+    \GetExerciseProperty{counter}%
+    \IfInsideSolutionF
+    {%
+      \GetExercisePropertyT{subtitle}
+      { {\normalsize\normalfont(\PropertyValue)}}%
+    }%
+  }
+  \GetExercisePropertyT{points}
+  {%
+    \marginpar
+    {%
+      \IfInsideSolutionF{\rule{1.2cm}{1pt}\slash}%
+      \printgoal{\PropertyValue}
+      \GetExercisePropertyT{bonus-points}{~(+\printgoal{\PropertyValue})}%
+      ~\XSIMtranslate {point-abbr}%
+    }%
+  }%
+}
+{\par}
+
+\SetExerciseParameter{exercise}{exercise-template}{custom}
