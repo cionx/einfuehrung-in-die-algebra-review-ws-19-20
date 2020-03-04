@@ -113,7 +113,7 @@ Für eine Familie~$(\alpha_i)_{i \in I}$ von Elementen~$\alpha_i \in K$ ist
 \[
   K[\alpha_i \suchthat \in I]
   \defined
-  \im( \ev_{(\alpha_i)_{i \in I} )
+  \im( \ev_{(\alpha_i)_{i \in I}} )
 \]
 die Menge aller Polynomausdrücke in den~$\alpha_i$, mit Koeffienten in~$K$.
 
@@ -217,9 +217,30 @@ Dabei gilt insbesondere~$\mu_\alpha \neq 0$.
       Es ist~$\mu_\alpha$ das eindeutige normierte, irreduzible Polynom in~$K[X]$, das~$\alpha$ als Nullstelle hat.
     \item
       Die Elemente~$1, \alpha, \dotsc, \alpha^{n-1}$ sind eine~\Basis{$K$} von~$K(\alpha)$.
+    \item
+      Es gilt~$[K(\alpha) : K] = \deg(\mu_\alpha)$.
   \end{enumerate}
 \end{proposition}
 
+\begin{example}
+  Für das Element~$\alpha \defined \sqrt[5]{3} \in \Real$ gilt~$f(\alpha) = 0$ für das Polynom~$f = X^5 - 3 \in \Rational[X]$.
+  Nach dem Eisenstein-Kriterium (mit~$p = 3$) ist das Polynom~$f$ irreduzibel.
+  Es ist außerdem normiert.
+  Also ist~$f$ das Minimalpolynom von~$\alpha$ über~$\Rational$.
+  Es folgt, dass~$[\Rational(\alpha) : \Rational] = \deg(f) = 5$, und dass die Elemente
+  \[
+    1 \,,
+    \quad
+    \sqrt[5]{3} \,,
+    \quad
+    \sqrt[5]{3}^2 \,,
+    \quad
+    \sqrt[5]{3}^3 \,,
+    \quad
+    \sqrt[5]{3}^4
+  \]
+  eine~\Basis{$\Rational$} von~$\Rational(\alpha)$ bilden.
+\end{example}
 
 
 
