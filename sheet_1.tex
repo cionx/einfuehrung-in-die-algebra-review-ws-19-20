@@ -38,21 +38,23 @@
 \begin{solution}
   \begin{enumerate}
     \item
-      Ist~$H$ eine Untergruppe von~$\Sym_3$, so ist~$\card{H}$ nach dem Satz von Lagrange ein Teiler von~$\card{\Sym_3} = 6$.
-      Ist~$H$ zudem eine echte Untergruppe, so ist~$\card{H}$ ein echter Teiler von~$6$.
-      Es gilt dann also~$\card{H} \in \{1, 2, 3\}$.
+      Ist~$H$ eine Untergruppe von~$\Sym_3$, so ist die Ordnung~$\card{H}$ nach dem Satz von Lagrange ein Teiler von~$\card{\Sym_3} = 6$.
+      Ist~$H$ zudem eine echte Untergruppe, so ist~$\card{H}$ bereits ein echter Teiler von~$6$.
+      Es gilt dann~$\card{H} \in \{1, 2, 3\}$.
 
       Im Fall~$\card{H} = 1$ gilt~$H = 1$;
       insbesondere ist~$H$ in diesem Fall zyklisch.
       In den Fällen~$\card{H} = 2$ und~$\card{H} = 3$ ist~$\card{H}$ prim und~$H$ somit zyklisch.
     \item
-      Es gilt~$\Sym_3 = \{ 1, \tau_{12}, \tau_{13}, \tau_{23}, \rho_1, \rho_2 \}$, wobei~$\tau_{ij} \defined (i,j)$ die Transpositonen sind und~$\rho_1 \defined (1, 2, 3)$ und~$\rho_2 \defined (3, 2, 1)$ zwei Dreierzykel sind.
+      Es gilt~$\Sym_3 = \{ 1, \tau_{12}, \tau_{13}, \tau_{23}, \rho_1, \rho_2 \}$, wobei~$\tau_{ij} \defined (i,j)$ die Transpositonen sind und~$\rho_1 \defined (1, 2, 3)$ und~$\rho_2 \defined (3, 2, 1)$ zwei Dreierzykel.
       Es gilt~$\tau_{ij}^2 = 1$, sowie~$\rho_i^3 = 1$ und~$\rho_1 = \rho_2^{-1}$.
-      Da nach dem vorherigen Aufgabenteil jede echte Untergruppe von~$G$ bereits zyklisch ist, ergeben sich für~$\Sym_3$ die folgenden Untergruppen:
+      Da nach dem vorherigen Aufgabenteil jede echte Untergruppe von~$G$ bereits zyklisch ist, ergeben sich für~$\Sym_3$ somit die folgenden Untergruppen:
       \begin{align*}
-        \Sym_3 &{} {}
+        \Sym_3
+        &=
+        \{ 1, \tau_{12}, \tau_{13}, \tau_{23}, \rho_1, \rho_2 \} \,,
         \\
-        \gen{1} &= 1
+        \gen{1} &= 1 \,,
         \\
         \gen{ \tau_{12} } &= \{ 1, \tau_{12} \} \,,
         \\
@@ -109,12 +111,13 @@
   sein.
   Da~$X$ die disjunkte Vereinigung der~\Bahnen{$G$} ist, erhalten wir die folgenden möglichen Bahnengrößen:
   \begin{align*}
+    \SwapAboveDisplaySkip
     17
     &=
     11 + \underbrace{1 + \dotsb + 1}_{6}
     \\
     &=
-    7 + 7 + 1 + 1 + 1
+    7 + 7 + \underbrace{ 1 + 1 + 1 }_{3}
     \\
     &=
     7 + \underbrace{1 + \dotsb + 1}_{10}
@@ -161,7 +164,7 @@
           Es sei~$h \in G_{g.x}$.
           Wir wollen zeigen, dass~$h \in g G_x g^{-1}$ gilt.
           Wir müssen also ein Element~$h' \in G_x$ finden, so dass~$h = g h' g^{-1}$ gilt.
-          Durch Umstellen dieser gewollten Gleichung erhalten wir, dass wir~$h'$ als~$h' \defined g^{-1} h g$ definieren müssen.
+          Durch Umstellen dieser gewollten Gleichung erhalten wir, dass wir das Element~$h'$ als~$h' \defined g^{-1} h g$ definieren müssen.
           Dieses Element~$h'$ hat die gewünschten Eigenschaften, denn
           \begin{gather*}
             g h' g^{-1}
@@ -215,7 +218,7 @@
   Die Konjugationsklasse des neutralen Elements ist gegeben durch~$1^G = \{ 1 \}$.
   Somit ist eine der beiden Konjugationsklassen~$x_i^G$ einelementig (und dann gilt~$x_i = 1$).
   Wir können davon ausgehen, dass~$x_1^G = \{ 1 \}$ (also~$x_1 = 1$).
-  Damit gilt
+  Wir erhalten somit, dass
   \[
     \card{ x_2^G }
     =
@@ -223,14 +226,14 @@
     =
     n - 1 \,.
   \]
-  Dabei gilt
+  Anderseits gilt
   \[
     \card{ x_2^G }
     =
     [G : \zentralizer_G(x_2)] \,,
   \]
   wobei nach dem Satz von Lagrange der Index~$[G : \zentralizer_G(x_2)]$ ein Teiler der Ordnung~$\card{G} = n$ ist.
-  Wir erhalten somet, dass
+  Wir erhalten somit, dass
   \[
     (n-1) \divides n \,.
   \]
@@ -283,9 +286,10 @@
   \]
   Wir behaupten, dass~$N \defined \ker(\varphi)$ die gewünschten Eigenschaften hat.
 
-  Es ist~$N$ ein Normalteiler in~$G$, da es sich um den Kern eines Gruppenhomomorphismus handelt.
+  Dass~$N$ ein Normalteiler von~$G$ ist, ergibt sich daraus, dass~$N$ der Kern eines Gruppenhomomorphismus ist.
 
-  Es sei~$g \in \ker(\varphi)$.
+  Wir müssen zeigen, dass~$N$ in~$H$ enthalten ist.
+  Hierfür sei~$g \in N = \ker(\varphi)$.
   Für die Nebenklasse~$x \in X$ gegeben durch~$x = 1H$ gilt zum einen
   \[
     g.x
@@ -310,14 +314,16 @@
   \]
   Es gilt also~$gH = 1H$.
   Dies ist äquivalent dazu, dass~$1^{-1} g \in H$ gilt, also~$g \in H$.
-  Wir haben somit gezeigt, dass~$\ker(\varphi) \subseteq H$ gilt.
+  Die zeigt, dass tatsächlich~$N \subseteq H$ gilt.
 
   Es gilt~$\card{X} = \card{G/H} = [G : H]$.
-  Nach Annahmen ist der Index~$[G : H]$ endlich, weshalb die Menge~$X$ endlich ist.
+  Dass der Index~$[G : H]$ nach Annahme endlich ist, bedeuted also, dass die Menge~$X$ endlich ist.
   Somit ist auch auch die Gruppe~$\Sym_X$ endlich.
   (Für~$n \defined \card{X}$ gilt~$\Sym_X \cong \Sym_n$ und somit~$\card{ \Sym_X } = n!$.)
   Es gilt~$G / {\ker(\varphi)} \cong \im(\varphi)$ und somit
   \[
+    [G : N]
+    =
     [G : \ker(\varphi)]
     =
     \card{ G / {\ker(\varphi)} }
@@ -326,7 +332,7 @@
     \leq
     \card{ \Sym_X } \,.
   \]
-  Wir haben somit gezeigt, dass~$\ker(\varphi)$ endlichen Index in~$G$ hat.
+  Das zeigt, dass der Normalteiler~$N$ endlichen Index in~$G$ hat.
 \end{solution}
 
 %\begin{exercise}
