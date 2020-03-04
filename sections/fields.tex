@@ -24,7 +24,7 @@
 
 
 
-\subsection{Grad einer Körpererweiterung}
+\subsection{Der Grad einer Körpererweiterung}
 
 \begin{definition}
   \leavevmode
@@ -32,7 +32,7 @@
     \item
       Der \defemph{Grad} der Körpererweiterung~$L/K$ ist~$[L : K] \defined \dim_K(L) \in \Natural_1 \cup \{ \infty \}$.
     \item
-      Die Körpererweiterung~$L/K$ ist \defemph{endlich} wenn~$[L : K]$ endlich ist.
+      Die Körpererweiterung~$L/K$ ist \defemph{endlich} wenn ihr Grad~$[L : K]$ endlich ist, wenn also~$L$ endlichdimensional als~\Vektorraum{$K$} ist.
   \end{enumerate}
 \end{definition}
 
@@ -86,8 +86,6 @@
       der von~$A$ \defemph{erzeugte Zwischenkörper} der Körpererweiterung~$L/K$.
     \item
       Die Körpererweiterung~$L/K$ wird von der Menge~$A$ \defemph{erzeugt}, und~$A$ ist ein \defemph{Erzeugendensystem} der Erweiterung~$L/K$, falls~$L = K(A)$ gilt.
-    \item
-      Für jede Familie~$(\alpha_i)_{i \in I}$ von Elementen~$\alpha_i \in L$ sei~$K(\alpha_i \suchthat i \in I) \defined K( \{ \alpha_i \suchthat i \in I \})$.
   \end{enumerate}
 \end{definition}
 
@@ -95,7 +93,10 @@
   Es sei~$A$ eine Teilmenge von~$L$.
   \begin{enumerate}
     \item
-      
+      Die Menge~$K(A)$ ist ein Zwischenkörper der Erweiterung~$L/K$.
+    \item
+      Der Körper~$K(A)$ der kleinste Zwischenkörper der Erweiterung~$L/K$, der die Menge~$A$ enthält:
+      Es gilt~$A \subseteq K(A)$, und ist~$Z$ ein Zwischenkörper von~$L/K$ mit~$A \subseteq Z$, so gilt bereits~$K(A) \subseteq Z$.
   \end{enumerate}
 \end{proposition}
 
@@ -106,17 +107,55 @@
 
 
 
-
-\section{Primkörper}
-
-% TODO: Write this.
-
-
-
-
-
 \section{Algebraizität}
 
+Für eine Familie~$(\alpha_i)_{i \in I}$ von Elementen~$\alpha_i \in K$ ist
+\[
+  K[\alpha_i \suchthat \in I]
+  \defined
+  \im( \ev_{(\alpha_i)_{i \in I} )
+\]
+die Menge aller Polynomausdrücke in den~$\alpha_i$, mit Koeffienten in~$K$.
+
+\begin{example}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Für die imaginäre Einheit~$i \in \Complex$ gilt~$i^2 = -1$ und somit
+      \[
+        \Rational[i]
+        =
+        \{
+          f(i)
+        \suchthat
+          f \in \Rational[X]
+        \}
+        =
+        \{
+          a + b i
+        \suchthat
+          a, b \in \Rational
+        \} \,.
+      \]
+    \item
+      Für die Elemente~$i, \sqrt{2} \in \Complex$ gilt
+      \[
+        \Rational[i, \sqrt{2}]
+        =
+        \{
+          f(i, \sqrt{2})
+        \suchthat
+          f \in \Rational[X, Y]
+        \}
+        =
+        \{
+          a + i b + \sqrt{2} c + i \sqrt{2} d
+        \suchthat
+          a, b, c, d \in \Rational
+        \} \,.
+      \]
+  \end{enumerate}
+\end{example}
 
 
 \subsection{Algebraische Elemente}
@@ -130,6 +169,8 @@
     \item
       Es gilt~$K[\alpha] = K(\alpha)$.
     \item
+      Es ist~$K[\alpha]$ ein Körper.
+    \item
       Es gilt~$\alpha^{-1} \in K[\alpha]$.
     \item
       Es gibt ein Polynom~$f \in K[X]$ mit~$f \neq 0$, so dass~$f(\alpha) = 0$.
@@ -137,10 +178,10 @@
 \end{proposition}
 
 \begin{definition}
-  Es sei~$\alpha$ ein Element von~$\alpha$.
+  Es sei~$\alpha$ ein Element von~$K$.
   \begin{enumerate}
     \item
-      Das Element~$\alpha$ ist \defemph{algebraisch} über~$K$ falls es die Bedingungen von \cref{characterizations of algebraic elements} erfüllt.
+      Das Element~$\alpha$ ist \defemph{algebraisch} über~$K$, falls es die Bedingungen von \cref{characterizations of algebraic elements} erfüllt.
     \item
       Ist das Element~$\alpha$ nicht algebraisch über~$K$, so ist es \defemph{transzendent} über~$K$.
   \end{enumerate}
@@ -156,9 +197,9 @@ Dann ist der Einsetzhomomorphisums
   f \mapsto f(\alpha)
 \]
 ein surjektiver Ringhomomorphismus.
-Aus der Endlichkeit der Körpererweiterung~$K(\alpha)/K$ folgt, dass~$\ev_\alpha$ nicht injektiv ist, und somit~$\ker(\ev_\alpha) \neq 0$ gilt.
+Aus der Endlichkeit der Körpererweiterung~$K(\alpha)/K$ folgt, dass der Homomorphismus~$\ev_\alpha$ nicht injektiv ist, und somit~$\ker(\ev_\alpha) \neq 0$ gilt.
 Da~$K[X]$ ein Hauptidealring ist, gibt es ein eindeutiges normiertes Polynom~$\mu_\alpha \in K[X]$ mit~$\ker(\ev_\alpha) = \genideal{ \mu_\alpha }$.
-(Insbesondere gilt~$\mu_\alpha \neq 0$.)
+Dabei gilt insbesondere~$\mu_\alpha \neq 0$.
 
 \begin{definition}
   In der obigen Situation ist~$\mu_\alpha$ das \defemph{Minimalpolynom} von~$\alpha$ über~$K$.
@@ -179,10 +220,14 @@ Da~$K[X]$ ein Hauptidealring ist, gibt es ein eindeutiges normiertes Polynom~$\m
   \end{enumerate}
 \end{proposition}
 
-\begin{proposition}
-  Es seien~$M/L/K$ Körpererweiterungen und es sei~$\alpha$ ein Element von~$M$.
-  Ist das Element~$\alpha$ algebraisch über~$L$ und die Erweiterung~$L/K$ algebraisch, so ist das Element~$\alpha$ auch algebraisch über~$K$.
-\end{proposition}
+
+
+
+
+\clearpage
+
+
+
 
 
 \subsection{Algebraische Körpererweiterungen}
@@ -196,6 +241,11 @@ Da~$K[X]$ ein Hauptidealring ist, gibt es ein eindeutiges normiertes Polynom~$\m
       Ist die Erweiterung~$L/K$ nicht algebraisch, so ist sie \defemph{transzendent}.
   \end{enumerate}
 \end{definition}
+
+\begin{lemma}
+  Es seien~$M/L/K$ Körpererweiterungen und es sei~$\alpha$ ein Element von~$M$.
+  Ist das Element~$\alpha$ algebraisch über~$L$ und die Erweiterung~$L/K$ algebraisch, so ist das Element~$\alpha$ auch algebraisch über~$K$.
+\end{lemma}
 
 \begin{proposition}
   Für Körpererweiterungen~$M/L/K$ ist die Erweiterung~$M/K$ genau dann algebraisch, wenn die Erweiterungen~$M/L$ und~$L/K$ beide algebraisch sind.
@@ -258,6 +308,20 @@ Durch ein geschicktes, gleichzeitiges Dazuadjungieren von unendlichen vielen Wur
 \begin{theorem}[Steinitz]
   Für jeden Körper~$K$ gibt einen algebraischen Abschluss~$\closure{K}$ von~$K$.
 \end{theorem}
+
+
+
+
+
+\clearpage
+
+
+
+
+
+\section{Primkörper}
+
+% TODO: Write this.
 
 
 

@@ -16,4 +16,5 @@
 *.synctex.gz
 *.toc
 
-*-exercise-body.tex
+# temporary files for xsim
+xsim_tmp/*.tex

@@ -13,7 +13,7 @@
   \hfill
   4. März 2020
 }
-\title{Tag 3}
+\title{\vspace{-1em}Tag 3}
 \author{}
 \date{}
 
@@ -22,13 +22,167 @@
 \begin{document}
 
 \maketitle
-\vspace{-6em}
+\vspace{-7em}
 
 \begin{exercise}
-  Es sei~$L/K$ eine algebraische Körpererweiterung und~$\varphi \colon L \to L$ ein~\Homomorphismus{$K$}.
-  Zeigen Sie, dass~$\varphi$ bereits bijektiv ist.
-
-  (\emph{Tipp}: Betrachten Sie für~$f \in K[X]$ die Wirkung von~$\varphi$ auf den Nullstellen von~$f$.)
+  Zeigen Sie, dass die folgenden Polynome irreduzibel sind.
+  \begin{enumerate}
+    \item
+      $5 X^3 + 35 X^2 - 210 X + 63 \in \Integer[X]$.
+    \item
+      $2 X^7 + 8 X^5 + 4 X^3 - 8 X + 12 \in \Rational[X]$.
+    \item
+      $X^3 + 2 X^2 + X + 1 \in \Integer[X]$.
+    \item
+      $X^3 + 3 X^2 - 3X + 2 \in \Integer[X]$.
+    \item
+      $X^2 Y + X Y^2 - X - Y + 1 \in \Rational[X, Y]$.
+  \end{enumerate}
 \end{exercise}
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Nach Eisenstein (mit~$p = 7$) ist das gegebene Polynom irreduzibel in~$\Rational[X]$.
+      Das Polynom ist primitv, und somit bereits irreduzibel in~$\Integer[X]$.
+    \item
+      Da~$2$ in~$\Rational$ eine Einheit ist, dürfen wir das gegebene Polynom~$f$ durch das Polynom~$f/2$ ersetzen.
+      Es gilt
+      \[
+        \frac{f}{2}
+        =
+        X^7 + 4 X^5 + 2 X^3 - 4 X + 6 \,.
+      \]
+      Dieses Polynom ist nun nach dem Eisenstein-Kriterium (mit~$p = 2$) irreduzibel in~$\Rational[X]$.
+    \item
+     Reduktion bezüglich~$p = 2$ ergibt das Polynom
+     \[
+       X^3 + X + 1 \in \Integer_2[X] \,.
+     \]
+     Dieses Polynom ist kubisch und hat keine Nullstelle in~$\Integer_2$, ist also irreduzibel in~$\Integer_2[X]$ (denn~$\Integer_2$ ist ein Körper).
+     Nach dem Reduktionskriterium ist somit auch das ursprüngliche Polynom irreduzibel in~$\Rational[X]$.
+     Da es normiert, und somit primitiv, ist, ist es bereits irreduzibel in~$\Integer[X]$.
+   \item
+     Wir bezeichnen das gegebene Polynom mit~$f$.
+     Es gilt
+     \begin{align*}
+       f(X + 1)
+       &=
+       (X+1)^3 + 3 (X+1)^2 - 3 (X+1) + 2
+       \\
+       &=
+       (X^3 + 3 X^2 + 3 X + 1) + (3 X^2 + 6 X + 3) - (3X + 3) + 2
+       \\
+       &=
+       X^3 + 6 X^2 + 6 X + 3 \,.
+     \end{align*}
+     Dieses Polynom ist normiert und somit primitiv, und wir erhalten aus dem Eisenstein-\hspace{0pt}Kriterium (mit~$p = 3$), dass es irreduzibel in~$\Integer[X]$ ist.
+     Somit ist auch~$f$ irreduzibel.
+   \item
+     Wir nutzen den Isomorphismus~$\Rational[X,Y] \cong \Rational[X][Y]$, und schreiben das gegebene Polynom als
+     \[
+       X Y^2 + (X^2 - 1) Y + (-X + 1) \,.
+     \]
+     Als Element von~$\Rational[X][Y]$ ist dieses Polynom primitiv, denn die Koeffiezenten~$X$ und~$-X+1$ sind teilerfremd in~$\Rational[X]$.
+     Es gilt~$(-X+1) \divides (X^2 - 1)$ da~$1$ eine Nullstelle von~$X^2 - 1$ ist, aber es gilt auch~$(-X+1) \ndivides X$.
+     Dabei ist das Polynom~$-X+1$ prim in~$\Rational[X]$ es Grad~$1$ hat.
+     Wir können daher das Eisensteinkriterium (mit~$p = -X+1$) anwenden, um die gewünschte Irreduziblität zu beweisen.
+  \end{enumerate}
+\end{solution}
+
+\begin{exercise}[subtitle = {Erstklausur~19/20}]
+  \begin{enumerate}
+    \item
+      Entscheiden Sie, ob der Faktorring~$\Rational[X] / \genideal{X^3 - 4X + 2}$ ein Körper ist.
+    \item
+      Geben Sie eine~\Basis{$\Rational$} von~$\Rational(\sqrt[4]{2})$ an.
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}[subtitle = {Erstklausur~18/19, Zweitklausur~18/19}]
+  Es sei~$n \in \Natural_1$ und es sei~$\zeta_n \defined e^{2 \pi i / n}$.
+  Beweisen oder widerlegen Sie, dass~$[\Rational(\zeta_n) : \Rational] = n-1$.
+\end{exercise}
+
+\begin{exercise}
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass für alle~$n, m \geq 1$ der Körper~$\Rational(\sqrt[n]{2})$ genau dann ein Unterkörper von~$\Rational(\sqrt[m]{2})$ ist, wenn~$n \divides m$ gilt.
+    \item
+      Es sei~$p$ eine Primzahl und~$L/K$ eine Körpererweiterung vom Grad~$[L : K] = p$.
+      Zeigen Sie, dass die Erweiterung~$L/K$ einfach ist, und bestimmen sie alle Elemente~$\alpha \in L$ mit~$L = K(\alpha)$.
+    \item
+      Es sei~$K(\alpha)/K$ eine einfache Körpererweiterung deren Grad~$[K(\alpha) : K]$ ungerade ist.
+      Zeigen Sie, dass~$K(\alpha) = K(\alpha^2)$ gilt.
+    \item
+      Es sei~$L/K$ eine Körpererweiterung vom Grad~$[L : K] = 2^n$ für ein~$n \in \Natural$.
+      Es sei~$f \in K[X]$ ein kubisches Polynom, das eine Nullstelle in~$L$ hat.
+      Zeigen Sie, dass~$f$ bereits eine Nullstelle in~$K$ hat.
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+  \begin{enumerate}
+    \item
+      Bestimmen Sie das Minimalpolynom von~$\sqrt[3]{2}$ über~$\Rational$.
+    \item
+      Bestimmen Sie das Minimalpolynom von~$\zeta_3 \defined e^{2 \pi i / 3}$ über~$\Rational(\sqrt[3]{2})$.
+    \item
+      Bestimmen Sie den Grad der Körpererweiterung~$\Rational(\sqrt[3]{2}, \zeta_3) / \Rational$.
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}[subtitle = {Erstklausur~19/20}]
+  Es sei~$f = X^5 - 14 X^3 - 21 X^2 + 49 X + 28 \in \Rational[X]$.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass das Polyom~$f$ irreduzibel ist.
+    \item
+      Bestimmen Sie den Grad der Körpererweiterung~$\Rational(\sqrt[4]{3}, i) / \Rational$.
+    \item
+      Entscheiden Sie, ob~$f$ eine Nullstelle in~$\Rational(\sqrt[4]{3}, i)$ hat.
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}[subtitle = {Erstklausur~18/19}]
+  Es sei~$L \defined \Rational(\sqrt[4]{2}, \omega)$ mit~$\omega \defined e^{2 \pi i / 8}$.
+  Bestimmen Sie~$[L : \Rational]$.
+  (\emph{Tipp}: Es gilt~$\omega + \omega^{-1} = \sqrt{2}$.)
+\end{exercise}
+
+\begin{exercise}
+  Zeigen Sie, dass die folgenden Polynome irreduzibel sind.
+  \begin{enumerate}
+    \item
+      $X Y^3 + X^2 Y + 3 X Y^2 + X^2 + 3 X Y + 2 X + Y + 2 \in \Rational[X]$.
+    \item
+      $X^3 + Y^3 + X^2 Y + X Y^2 + XY + 6X + 6Y \in \Rational[X,Y]$.
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+  Es sei~$R$ ein kommutativer Ring und~$I$ ein Ideal in~$R$ mit Komplement~$S \defined R \setminus I$.
+  Zeigen Sie, dass das Ideal~$I$ genau dann prim ist, wenn die Menge~$S$ multiplikativ abgeschlossen ist.
+\end{exercise}
+
+\begin{exercise}
+  Es sei~$R$ ein kommutativer Ring und es sei~$\pideal$ ein Ideal in~$R$.
+  Zeigen Sie, dass das Ideal~$\pideal$ genau dann prim ist, wenn es einen Körper~$K$ und einen Ringhomomorphismus~$\varphi \colon R \to K$ gibt, so dass~$\pideal = \ker(\varphi)$ gilt.
+\end{exercise}
+
+
+
+
+
+\clearpage
+
+
+
+
+\printsolutions
+
+
+
+
 
 \end{document}

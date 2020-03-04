@@ -53,13 +53,13 @@
 \subsection{Ideale}
 
 \begin{definition}
-  Eine Teilmenge~$I$ von~$R$ ist ein \defemph{Ideal}, falls die folgenden beiden Bedingungen gelten:
-  \begin{enumerate}
+  Eine Teilmenge~$I$ von~$R$ ist ein \defemph{Ideal}, falls die folgenden Bedingungen gelten:
+  \begin{itemize}
     \item
       Die Menge $I$ ist eine eine additive Untergruppe von~$R$.
     \item
       Es gilt~$RI \subseteq I$ und~$IR \subseteq I$.
-  \end{enumerate}
+  \end{itemize}
 \end{definition}
 
 \begin{example}
@@ -700,6 +700,12 @@ Ist die Indexmenge~$I$ endlich mit~$I = \{ 1, \dotsc, r \}$, so schreiben wir
 
 
 
+\clearpage
+
+
+
+
+
 \section{Lokalisierung und Quotientenkörper}
 
 
@@ -742,9 +748,7 @@ Durch die Vorschriften
   \defined
   \frac{r_1 r_2}{s_1 s_2}
 \]
-wird~$S^{-1} R$ zu einem Ring.
-Dabei gelten~$0_{S^{-1} R} = 0/1$ und~$1_{S^{-1} R} = 1/1$.
-Für jedes Element~$s \in S$ ist~$s/1$ eine Einheit in~$S^{-1} R$ mit~$(s/1)^{-1} = 1/s$.
+wird~$S^{-1} R$ zu einem Ring, wobei~$0_{S^{-1} R} = 0/1$ und~$1_{S^{-1} R} = 1/1$.
 Die Abbildung
 \[
   \iota
@@ -759,6 +763,16 @@ ist ein Ringhomomorphismus.
   In der obigen Situation ist~$S^{-1} R$ die \defemph{Lokalisierung} von~$R$ an~$S$.
   Die Abbildung~$\iota$ ist der \defemph{kanonische Homomorphismus}.
 \end{definition}
+
+\begin{proposition}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Für jedes Element~$s \in S$ ist der Bruch~$s/1$ eine Einheit in~$S^{-1} R$ mit~$(s/1)^{-1} = 1/s$.
+    \item
+      Für jeden Bruch~$r/s \in S^{-1} R$ und jedes Element~$t \in S$ gilt~$r/s = (tr)/(ts)$, d.\,h. Brüche in~$S^{-1} R$ lassen sich durch Element aus~$S$ erweitern und kürzen.
+  \end{enumerate}
+\end{proposition}
 
 \begin{proposition}
   Es sei~$\iota \colon R \to S^{-1} R$ der kanonische Homomorphismus.
@@ -781,13 +795,13 @@ ist ein Ringhomomorphismus.
 \end{example}
 
 \begin{definition}
-  In der Situation von \cref{construction of field of fractions} ist~$S^{-1} R$ der \defemph{Quotientenkörper} von~$R$.
+  In der Situation von \cref{construction of field of fractions} ist der Körper~$S^{-1} R$ der \defemph{Quotientenkörper} von~$R$.
   Er wird mit~$\Quot(R)$ notiert.
 \end{definition}
-
-\begin{corollary}
-  Ein Ring~$R$ ist genau dann ein Integritätsbereich, wenn er Unterring eines Körpers ist.
-\end{corollary}
+ 
+%\begin{corollary}
+%  Integritätsbereiche sind genau die Unterringe von Körpern.
+%\end{corollary}
 
 \begin{example}
   \leavevmode
@@ -795,13 +809,13 @@ ist ein Ringhomomorphismus.
     \item
       Es gilt~$\Quot(\Integer) = \Rational$.
     \item
-      Der Quotientenkörper~$K(X) \defined \Quot(K[X])$ der \defemph{Körper der rationalen Funktionen} über~$K$.
+      Für jede Indexmenge~$I$ ist~$K(X_i \suchthat i \in I) \defined \Quot( K[X_i \suchthat i \in I] )$ der \defemph{Körper der rationalen Funktionen} in den Variablen~$X_i$ mit Koeffizienten in~$K$.
   \end{enumerate}
 \end{example}
 
 \begin{example}
   Ist allgemeiner~$\pideal$ ein Primideal in~$R$, so ist das Komplement~$S \defined R \setminus \pideal$ eine multiplikativ abgeschlossene Teilmenge von~$R$.
-  Die Lokalisierung~$S^{-1} R$ ist die \defemph{Lokalisierung von~$R$ an~$\pideal$} und wird mit~$R_{\pideal}$ notiert.
+  Die Lokalisierung~$S^{-1} R$ wird mit~$R_{\pideal}$ notiert.
 \end{example}
 
 %\begin{example}
@@ -815,7 +829,6 @@ ist ein Ringhomomorphismus.
 \begin{theorem}[Universelle Eigenschaft der Lokalisierung]
   Es sei~$\iota \colon R \to S^{-1} R$ der kanonische Homomorphismus.
   Es sei~$R'$ ein weiterer Ring und es sei~$\varphi \colon R \to R'$ ein Ringhomomorphismus.
-
   Der Ringhomomorphismus~$\varphi \colon R \to R'$ induziert genau dann einen Ringhomomorphismus~$\induced{\varphi} \colon S^{-1} R \to R'$, der das Diagram
   \[
     \begin{tikzcd}
@@ -831,12 +844,12 @@ ist ein Ringhomomorphismus.
       {}
     \end{tikzcd}
   \]
-  zum kommutieren bringt, wenn für jedes Element~$s \in S$ das Bild~$\varphi(s)$ eine Einheit in~$R'$ ist, d.h. falls~$\varphi(S) \subseteq (R')^\times$ gilt.
-  Der Ringhomomorphismus ist dann eindeutig, und er ist gegeben durch
+  zum kommutieren bringt, wenn für jedes Element~$s \in S$ das Bild~$\varphi(s)$ eine Einheit in~$R'$ ist, d.\,h. falls~$\varphi(S) \subseteq (R')^\times$ gilt.
+  Der Ringhomomorphismus~$\induced{\varphi}$ ist eindeutig, und gegeben durch
   \[
     \induced{\varphi}\biggl( \frac{r}{s} \biggr)
     =
-    \varphi(r) \varphi(s)^{-1}
+    \varphi(r) \spacing \varphi(s)^{-1}
     \qquad
     \text{für alle~$r/s \in S^{-1} R$.}
   \]
@@ -873,12 +886,6 @@ ist ein Ringhomomorphismus.
 
 
 
-\clearpage
-
-
-
-
-
 \section{Faktorielle Ringe}
 
 \begin{convention}
@@ -894,14 +901,14 @@ ist ein Ringhomomorphismus.
   Es seien~$r_1, r_2 \in R$.
   \begin{enumerate}
     \item
-      Es gilt genau dann~$r_1 \divides r_2$ wenn~$\genideal{r_1} \subseteq \genideal{r_2}$.
+      Es gilt genau dann~$r_1 \divides r_2$ wenn~$\genideal{r_1} \supseteq \genideal{r_2}$.
     \item
-      Es gilt genau dann~$\genideal{r_1} = \genideal{r_2}$, wenn es eine Einheit~$\varepsilon \in R^\times$ mit~$r_1 = \varepsilon r_2$ gibt.
+      Es gilt genau dann~$\genideal{r_1} = \genideal{r_2}$ wenn es eine Einheit~$\varepsilon \in R^\times$ mit~$r_1 = \varepsilon r_2$ gibt.
   \end{enumerate}
 \end{proposition}
 
 \begin{example}
-  Der Polynomring~$K[X]$ ein Hauptidealring und es gilt~$K[X]^\times = K^\times = K \setminus \{0\}$.
+  Der Polynomring~$K[X]$ ist ein Hauptidealring und es gilt~$K[X]^\times = K^\times = K \setminus \{0\}$.
   Jedes Ideal in~$K[X]$ ist deshalb von der Form~$\genideal{f}$ für~$f = 0$ oder ein eindeutiges normiertes Polynom~$f \in K[X]$.
 \end{example}
 
@@ -910,7 +917,8 @@ ist ein Ringhomomorphismus.
 \subsection{Primelemente und Irreduzible Elemente}
 
 \begin{definition}
-  Es sei~$p$ ein Element von~$R$ mit~$p \neq 0$, und~$p$ sei keine Einheit.
+  Es sei~$p$ ein Element von~$R$.
+  Es gelte~$p \neq 0$ und~$p$ sei keine Einheit.
   \begin{enumerate}
     \item
       Das Element~$p$ ist \defemph{prim} falls für alle Elemente~$r_1, r_1 \in R$ mit~$p \divides (r_1 r_2)$ bereits~$p \divides r_1$ oder~$p \divides r_2$.
@@ -926,7 +934,7 @@ ist ein Ringhomomorphismus.
     \item
       Das Element~$p$ ist genau dann prim, wenn~$\genideal{p} \neq 0$ gilt und~$\genideal{p}$ ein Primideal ist.
     \item
-      Ein Element~$p$ ist genau dann irreduzibel, wenn~$\genideal{p} \neq 0, R$ gilt, und für jedes Hauptideal~$I$ in~$R$ mit~$\genideal{p} \subseteq I \subseteq R$ gilt bereits~$I = \genideal{p}$ oder~$I = R$ gilt.
+      Ein Element~$p$ ist genau dann irreduzibel, wenn~$\genideal{p} \neq 0, R$ gilt, und für jedes Hauptideal~$I$ in~$R$ mit~$\genideal{p} \subseteq I \subseteq R$ bereits~$I = \genideal{p}$ oder~$I = R$ gilt.
   \end{enumerate}
 \end{lemma}
 
@@ -936,47 +944,59 @@ ist ein Ringhomomorphismus.
   \begin{enumerate}
     \item
       Ist~$p$ prim, so ist~$p$ auch irreduzibel.
-    \item
-      Ist~$R$ ein Hauptidealring, so sind die folgenden Bedingungen an~$p \neq 0$ äquivalent.
+      Allgemeiner impliziert jede der folgenden Aussagen die jeweils nächste:
       \begin{equivlist}
         \item
-          Das Element~$p$ ist irreduzibel.
-        \item
+          \label{principal ideal is maximal}
           Das Hauptideal~$\genideal{p}$ ist maximal.
         \item
           Das Hauptideal~$\genideal{p}$ ist prim.
         \item
           Das Element~$p$ ist prim.
+        \item
+          \label{element is irreducible}
+          Das Element~$p$ ist irreduzibel.
       \end{equivlist}
-      Inbesondere ist ein Ideal~$I \neq 0$ in~$R$ genau dann prim, wen es maximal ist.
-      (Das Nullideal ist prim, aber nur genau dann maximal, wenn~$R$ bereits ein Körper ist.)
+    \item
+      Ist~$R$ ein Hauptidealring, so gilt auch die Implikation~\ref{element is irreducible}~$\implies$~\ref{principal ideal is maximal}, d.\,h. für~$R$ sind die obigen Aussagen äquivalent.
   \end{enumerate}
 \end{proposition}
+
+\begin{corollary}
+  Es sei~$R$ ein Hauptidealring.
+  \begin{enumerate}
+    \item
+      Ein Ideal~$I$ in~$R$ ist genau dann prim, wenn es bereits maximal ist.
+    \item
+      Ist~$p$ ein irreduzibles Element von~$R$, so ist~$R / \genideal{p}$ ein Körper.
+  \end{enumerate}
+\end{corollary}
 
 \begin{example}
   \leavevmode
   \begin{enumerate}
-    \item
-      Da~$\Integer$ ein Integritätsbereich ist, ist ein Ideal~$I \neq 0$ in~$\Integer$ genau dann prim, wenn es maximal ist.
-      Wir haben dies bereits zuvor gesehen:
-      Das Ideal~$I$ ist von der Form~$I = \genideal{p}$ für ein Element~$p \in \Integer$ mit~$p \neq 0$.
-      Es gilt dabei~$\Integer / I \cong \Integer_p$ und somit
-      \begin{align*}
-        \text{$I$ ist prim}
-        &\iff
-        \text{$\Integer_p$ ist ein Integritätsbereich}
-        \\
-        &\iff
-        \text{$p$ ist prim}
-        \\
-        &\iff
-        \text{$\Integer_p$ ist ein Körper}
-        \\
-        &\iff
-        \text{$I$ is maximal} \,.
-       \end{align*}
+%    \item
+%      Da~$\Integer$ ein Integritätsbereich ist, ist ein Ideal~$I \neq 0$ in~$\Integer$ genau dann prim, wenn es maximal ist.
+%      Wir haben dies bereits zuvor gesehen:
+%      Das Ideal~$I$ ist von der Form~$I = \genideal{p}$ für ein Element~$p \in \Integer$ mit~$p \neq 0$.
+%      Es gilt~$\Integer / I \cong \Integer_p$ und somit
+%      \begin{align*}
+%        {}&
+%        \text{$I$ ist prim}
+%        \\
+%        \iff&{}
+%        \text{$\Integer_p$ ist ein Integritätsbereich}
+%        \\
+%        \iff&{}
+%        \text{$\Integer_p$ ist ein Körper}
+%        \\
+%        \iff&{}
+%        \text{$I$ is maximal} \,.
+%       \end{align*}
      \item
-       Das Ideal~$I = \genideal{Y}$ in~$K[X,Y]$ ist prim aber nicht nicht maximal.
+       Ist~$f$ ein irreduzibles Polynom in~$K[X]$, so ist~$K[X] / \genideal{f}$ ein Körper.
+     \item
+       Das Ideal~$I = \genideal{Y}$ in~$K[X,Y]$ ist prim aber nicht maximal.
        Dies ist kein Widerspruch zu \cref{connection between prime and irreducible}, da~$K[X,Y]$ kein Hauptidealring ist.
   \end{enumerate}
 \end{example}
@@ -1001,7 +1021,7 @@ ist ein Ringhomomorphismus.
       \[
         r = \varepsilon' p'_1 \dotsm p'_m
       \]
-      eine weiter Zerlegung, wobei~$\varepsilon'$ eine Einheit ist und~$p'_1, \dotsc, p'_m$ irreduzibel sind.
+      eine weitere Zerlegung, wobei~$\varepsilon'$ eine Einheit ist und~$p'_1, \dotsc, p'_m$ irreduzibel sind.
       Dann gilt bereits~$n = m$, und es gibt eine Permutation~$\sigma \in \Sym_n$ und Einheiten~$\delta_1, \dotsc, \delta_n$ mit
       \[
         p'_i = \delta_i p_{\sigma(i)} \,.
@@ -1012,20 +1032,12 @@ ist ein Ringhomomorphismus.
 \end{definition}
 
 \begin{proposition}
-  Ist der Ring~$R$ faktoriell, so sind ist ein Element von~$R$ genau dann prim, wenn es irreduzibel ist.
+  Ist der Ring~$R$ faktoriell, so ist ein Element von~$R$ genau dann prim, wenn es irreduzibel ist.
 \end{proposition}
 
 \begin{proposition}
   Jeder Hauptidealring ist faktoriell.
 \end{proposition}
-
-\begin{corollary}
-  Jeder euklidische Ring ist faktoriell.
-\end{corollary}
-
-\begin{corollary}
-  Ist~$R$ ein Hauptidealring und ist~$p \in R$ irreduzibel, so ist~$R / \genideal{p}$ ein Körper.
-\end{corollary}
 
 \begin{example}
   \leavevmode
@@ -1037,7 +1049,6 @@ ist ein Ringhomomorphismus.
       Der Ring der Gaußschen Zahlen,~$\Integer[i]$, ist faktoriell.
     \item
       Der Polynomring~$K[X]$ faktoriell.
-      Ist ein Polynom~$f \in K[X]$ irreduzibel, so ist~$K[X] / \genideal{f}$ ein Körper.
   \end{enumerate}
 \end{example}
 
@@ -1054,7 +1065,7 @@ ist ein Ringhomomorphismus.
     \in
     \Natural \,.
   \]
-  Wie in \cref{units in gaussian integers} erhalten wir aus der Multiplikativität der Norm, dass
+  Wie in \cref{units in gaussian integers} erhalten wir mithilfe der Multiplikativität der Norm, dass
   \[
     \Integer[\sqrt{-5}]^\times
     =
@@ -1073,16 +1084,11 @@ ist ein Ringhomomorphismus.
     =
     N(z_1) N(z_2) \,.
   \]
-  Es gibt kein Element~$z' \in \Integer[\sqrt{-5}]$ mit~$N(z') = 2$ oder~$N(z)' = 3$.
-  Somit gilt enweder
-  \[
-    N(z_1) = 6 \,,
-    N(z_2) = 1 \,,
-    \quad\text{oder}\quad
-    N(z_1) = 1 \,,
-    N(z_2) = 6 \,.
-  \]
-  In jedem Fall gilt für eines der~$z_i$, dass~$N(z_i) = 1$, weshalb~$z_i$ eine Einheit in~$\Integer[\sqrt{-5}]$ ist.
+  Es gibt kein Element~$z' \in \Integer[\sqrt{-5}]$ mit~$N(z') = 2$ oder~$N(z') = 3$.
+  Somit gilt entweder~$N(z_1) = 6$ und~$N(z_2) = 1$, oder~$N(z_1) = 1$ und~$N(z_2) = 6$.
+  In jedem Fall gilt für eines der~$z_i$, dass~$N(z_i) = 1$, so dass dieses~$z_i$ eine Einheit in~$\Integer[\sqrt{-5}]$ ist.
+  Das zeigt, dass~$z$ tatsächlich irreduzibel ist.
+
   Wir erhalten auf ähnliche Weise, dass auch die Elemente
   \[
     1 - i \sqrt{5} \,,
@@ -1091,15 +1097,15 @@ ist ein Ringhomomorphismus.
     \quad
     3
   \]
-  irreduzibel in~$\Integer[-\sqrt{-5}]$ sind.
+  irreduzibel in~$\Integer[\sqrt{-5}]$ sind.
 
-  Wir betrachten nun für~$z = 6$ die beiden Zerlegungen
+  Wir betrachten nun für~$6 \in \Integer[\sqrt{-5}]$ die beiden Zerlegungen
   \[
-    z = 2 \cdot 3 \,,
+    6 = 2 \cdot 3 \,,
     \quad
-    z = ( 1 + i \sqrt{5} ) ( 1 - i \sqrt{5} ) \,.
+    6 = ( 1 + i \sqrt{5} ) ( 1 - i \sqrt{5} ) \,.
   \]
-  Dies sind zwei Zerlegungen von~$z$ in irreduzibel Element von~$\Integer[\sqrt{-5}]$.
+  Dies sind zwei Zerlegungen von~$6$ in irreduzibel Element von~$\Integer[\sqrt{-5}]$.
   Da~$\Integer[\sqrt{-5}]^\times = \{1, -1\}$ gilt, sehen wir aber, dass sich diese beiden Zerlegungen nicht \enquote{gleich bis auf Einheiten} sind.
   Also ist~$\Integer[\sqrt{-5}]$ nicht faktoriell.
 \end{example}
@@ -1123,16 +1129,16 @@ ist ein Ringhomomorphismus.
     \item
       Jedes normierte Polynom ist primitiv.
     \item
-      Ein Polynom~$f \in R[X]$ ist genau dann primitv, wenn für jede Einheit~$\varepsilon \in R^\times$ das Polynom~$\varepsilon f$ primitiv ist.
+      Ein Polynom~$f \in R[X]$ ist genau dann primitiv, wenn für jede Einheit~$\varepsilon \in R^\times$ das Polynom~$\varepsilon f$ primitiv ist.
     \item
       Jedes Polynom in~$K[X]$ ist primitiv.
     \item
-      Das Polynom~$2X + 4$ ist nicht primitiv in~$\Integer[X]$, aber primitiv in~$\Rational[X]$.
+      Das Polynom~$4X + 2$ ist nicht primitiv in~$\Integer[X]$, aber primitiv in~$\Rational[X]$.
   \end{enumerate}
 \end{example}
 
 \begin{proposition}[Lemma von Gauß]
-  Sind~$f, g \in R[X]$ zwei primitive Polynome, so ist auch ihr Produkt~$fg$ primitiv.
+  Sind~$f, g \in R[X]$ zwei primitive Polynome, so ist auch ihr Produkt~$fg$ wieder primitiv.
 \end{proposition}
 
 \begin{theorem}[Satz von Gauß]
@@ -1145,6 +1151,16 @@ ist ein Ringhomomorphismus.
       Die primitiven Polynome, welche irreduzibel in~$\Quot(R)[X]$ ist.
   \end{itemize}
 \end{theorem}
+
+\begin{corollary}
+  Es sei~$f \in R[X]$ ein Polynom vom Grad~$\deg(f) \geq 1$.
+  \begin{enumerate}
+    \item
+      Ist~$f$ irreduzibel in~$R[X]$, so ist es auch irreduzibel in~$\Quot(R)[X]$.
+    \item
+      Die Umkehrung gilt genau dann, wenn~$f$ primitiv ist.
+  \end{enumerate}
+\end{corollary}
 
 \begin{corollary}
   \label{polynomial rings in multiple variables are ufd}
@@ -1162,16 +1178,45 @@ ist ein Ringhomomorphismus.
   \end{enumerate}
 \end{example}
 
-\begin{remark}
-  \Cref{polynomial rings in multiple variables are ufd} gilt auch für allgemeiner für Polynomringe~$R[X_i \suchthat i \in I]$ in beliebig vielen Variablen.
-  Dies kann man mithilfe der obigen Formulierung von \cref{polynomial rings in multiple variables are ufd} zeigen, da jedes Polynom~$f \in R[X_i \suchthat i \in I]$ nur endlich viele Variablen~$X_{i_1}, \dotsc, X_{i_n}$ enthält, und daher bereits in dem faktoriellen Unterring~$R[X_{i_1}, \dotsc, X_{i_n}]$ von~$R[X_i \suchthat i \in I]$ enthalten ist.
-\end{remark}
+%\begin{remark}
+%  \Cref{polynomial rings in multiple variables are ufd} gilt auch allgemeiner für Polynomringe~$R[X_i \suchthat i \in I]$ in beliebig vielen Variablen.
+%  Dies kann man mithilfe der obigen Formulierung von \cref{polynomial rings in multiple variables are ufd} zeigen, da jedes Polynom~$f \in R[X_i \suchthat i \in I]$ nur endlich viele Variablen~$X_{i_1}, \dotsc, X_{i_n}$ enthält, und daher bereits in dem faktoriellen Unterring~$R[X_{i_1}, \dotsc, X_{i_n}]$ von~$R[X_i \suchthat i \in I]$ enthalten ist.
+%\end{remark}
 
 
 \subsection{Irreduziblitätskriterien}
 
+\begin{proposition}
+  Es sei~$f \in K[X]$.
+  \begin{enumerate}
+    \item
+      Gilt~$\deg(f) = 1$, so ist~$f$ irreduzibel.
+    \item
+      Gilt~$\deg(f) = 2$ oder~$\deg(f) = 3$, so ist~$f$ genau dann irreduzibel in~$K[X]$, wenn~$f$ keine Nullstelle in~$K$ hat.
+  \end{enumerate}
+\end{proposition}
+
+\begin{example}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Das Polynom~$X^2 - 2 \in \Rational[X]$ hat keine Nullstelle in~$\Rational$ und ist somit irreduzibel.
+    \item
+      Das Polynom~$X^3 - X + 1 \in \Finite_3[X]$ hat keine Nullstelle in~$\Finite_3$, ist also irreduzibel.
+    \item
+      Das Polynom~$X^4 + 4 \in \Rational[X]$ besitzt zwar keine Nullstelle in~$\Rational$, ist aber nicht irreduzibel, da
+      \[
+        X^4 + 4
+        =
+        (X^2 + 2X + 2) (X^2 - 2X + 2) \,.
+      \]
+    \item
+      Das Polynom~$4X + 2 \in \Integer[X]$ ist vom Grad~$1$ und hat auch keine Nullstelle in~$\Integer$, ist aber dennoch nicht irreduzibel.
+  \end{enumerate}
+\end{example}
+
 \begin{proposition}[Eisenstein-Kriterium]
-  Es sei~$f \in R[X]$ ein Polynom vom Grad~$n \geq 1$ gegeben durch~$f = a_n X^n + \dotsb + a_1 X + a_0$.
+  Es sei~$f \in R[X]$ ein Polynom vom Grad~$n \geq 1$, gegeben durch~$f = a_n X^n + \dotsb + a_1 X + a_0$.
   Es gebe ein Primelement~$p \in R$ mit
   \[
     p \ndivides a_n \,,
@@ -1180,14 +1225,40 @@ ist ein Ringhomomorphismus.
     \quad
     p^2 \ndivides a_0 \,.
   \]
-  Dann ist das Polynom~$f$ irreduzibel in~$\Quot(R)[X]$.
-  Ist das Polynom zusätzlicherweise~$f$ primitiv, so ist es außerdem irreduzibel in~$R[X]$.
+  \begin{enumerate}
+    \item
+      Das Polynom~$f$ ist irreduzibel in~$\Quot(R)[X]$.
+    \item
+      Ist das Polynom~$f$ zusätzlicherweise primitiv, so ist es außerdem irreduzibel in~$R[X]$.
+  \end{enumerate}
 \end{proposition}
+
+\begin{example}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Das Polynom~$5X^6 + 4 X^4 - 6 X^2 - 18 \in \Integer[X]$ ist primitiv, und nach dem Eisenstein-Kriterium mit~$p = 2$ ist es irreduzibel.
+    \item
+      Das Polynom~$X^5 - t \in \Rational(t)[X]$ ist nach dem Eisenstein-Kriterium mit~$p = t$ irreduzibel, denn es gilt~$\Rational(t) = \Quot(\Rational[t])$ und~$t$ ist prim in~$\Rational[t]$.
+  \end{enumerate}
+\end{example}
 
 \begin{proposition}
   Es sei~$f \in R[X]$ ein Polynom und es sei~$a \in R$.
   Das Polynom~$f$ ist genau dann irreduzibel, wenn das verschobene Polynom~$f(X + a)$ irreduzibel ist.
 \end{proposition}
+
+\begin{example}
+  Das Polynom~$f \defined X^4 + 1 \in \Rational[X]$ ist irreduzibel, denn das verschobene Polynom
+  \[
+    f(X+1)
+    =
+    (X + 1)^4 + 1
+    =
+    X^4 + 4 X^3 + 6 X^2 + 4 X + 2
+  \]
+  ist nach dem Eisenstein-Kriterium (mit~$p = 2$) irreduzibel.
+\end{example}
 
 \begin{proposition}[Reduktionskriterium]
   Es sei~$f \in R[X]$ ein Polynom vom Grad~$n \geq 1$ gegeben durch~$f = a_n X^n + \dotsb + a_1 X + a_0$.
@@ -1209,3 +1280,15 @@ ist ein Ringhomomorphismus.
       Ist~$f$ zusätzlicherweise primitiv, so ist~$f$ bereits irreduzibel in~$R[X]$.
   \end{enumerate}
 \end{proposition}
+
+\begin{example}
+  Das Polynom~$f = X^3 + 9 X^2 - 4 X + 8 \in \Integer[X]$ wird in~$\Finite_3[X]$ zu dem Polynom~$X^3 - X + 2$.
+  Dieses Polynom ist vom Grad~$3$ und hat keine Nullstelle in~$\Finite_3$, ist also irreduzibel in~$\Finite_3[X]$.
+  Nach dem Reduktionskriterium ist~$f$ irreduzibel in~$\Rational[X]$.
+  Das Polynom~$f$ ist außerdem primitiv, da es normiert ist, und somit bereits irreduzibel in~$\Integer[X]$.
+\end{example}
+
+
+
+
+
