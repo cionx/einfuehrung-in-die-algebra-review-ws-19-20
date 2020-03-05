@@ -25,10 +25,105 @@
 \vspace{-6em}
 
 \begin{exercise}
+  \begin{enumerate}
+    \item
+      Es sei~$L/K$ eine algebraische Körpererweiterung und~$\closure{L}$ ein algebraischer Abschluss von~$L$.
+      Zeigen Sie, dass~$\closure{L}$ auch ein algebraischer Abschluss von~$L$ ist.
+    \item
+      Geben Sie ein Beispiel für eine Körpererweiterung~$L/K$ an, so dass~$L$ zwar algebraisch abgeschlossen ist, aber kein algebraischer Abschluss von~$K$ ist.
+    \item
+      Es sei~$L/K$ eine Körpererweiterung, so dass~$L$ algebraisch abgeschlossen ist.
+      Zeigen Sie, dass dann~$\Alg_{L/K}$ ein algebraischer Abschluss von~$K$ ist.
+%    \item
+%      Zeigen Sie, dass~$[\closure{\Rational} : \Rational] = \infty$.
+%      (\emph{Tipp:} Betrachten Sie die Polynome~$X^n - 2 \in \Rational[X]$.)
+  \end{enumerate}
+\end{exercise}
+
+%\begin{exercise}
+%  Es sei~$K$ ein endlicher Körper.
+%  \begin{enumerate}
+%    \item
+%      Geben Sie ein Beispiel für ein Polynom~$f \in K[X]$ an, so dass zwar~$f \neq 0$ gilt, aber dennoch~$f(x) = 0$ für alle~$x \in K$.
+%    \item
+%      Folgern Sie, dass~$K$ nicht algebraisch abgeschlossen ist.
+%  \end{enumerate}
+%\end{exercise}
+%
+%\begin{exercise}
+%  \begin{enumerate}
+%    \item
+%      Es sei~$L/K$ eine algebraische Körpererweiterung, so dass jedes nicht-konstante Polynom~$f \in K[X]$ über~$L$ in Linearfaktoren zerfällt.
+%      Zeigen Sie, dass~$L$ ein algebraischer Abschluss von~$K$ ist.
+%  \end{enumerate}
+%  Wir wollen im Folgenden einen algebraischen Abschluss von~$\Finite_p$ konstruieren.
+%  \begin{enumerate}
+%    \item
+%      Es sei~$f \in \Finite_p[X]$ ein nicht-konstantes Polynom.
+%      Zeigen Sie, dass~$f$ in~$\Finite_{p^n}$ 
+%  \end{enumerate}
+%\end{exercise}
+
+\begin{exercise}
   Es sei~$L/K$ eine algebraische Körpererweiterung und~$\varphi \colon L \to L$ ein~\Homomorphismus{$K$}.
   Zeigen Sie, dass~$\varphi$ bereits bijektiv ist.
 
-  (\emph{Tipp}: Betrachten Sie für~$f \in K[X]$ die Wirkung von~$\varphi$ auf den Nullstellen von~$f$.)
+  (\emph{Tipp:} Betrachten Sie für~$f \in K[X]$ die Wirkung von~$\varphi$ auf den Nullstellen von~$f$.)
+\end{exercise}
+
+\begin{exercise}[subtitle = {Erstklausur~18/19, Erstklausur~19/20}]
+  Eine Körpererweiterung~$L/K$ ist eine Galois-Erweiterung, falls sie endlich, normal und separabel ist.
+  Entscheiden Sie, ob die folgenden Körpererweiterungen Galois-Erweiterungen sin,.
+  \begin{enumerate}
+    \item
+      $\Rational( \sqrt{2}, \sqrt{3}, i ) / \Rational$.
+    \item
+      $\Rational(\sqrt[4]{3}, i) / \Rational$
+    \item
+      $\Rational(\sqrt[5]{2}) / \Rational$
+    \item
+      $L / \Finite_2$, wobei~$L \defined \Finite_2[X] / (X^2 - X - 1)$.
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}[subtitle = {Erstklausur~18/19}]
+  Es sei~$p$ eine Primzahl und~$\alpha \defined \sqrt[p]{p} \in \Real$.
+  \begin{enumerate}
+    \item
+      Bestimmen Sie das Minimalpolynom von~$\alpha$ über~$\Rational$.
+    \item
+      Bestimmen Sie in Abhängigkeit von~$p$, ob die Erweiterung~$\Rational(\alpha) / \Rational$ normal ist.
+    \item
+      Bestimmen Sie in Abhängigkeit von~$p$, ob die Erweiterung~$\Rational(\alpha) / \Rational$ eine Galois-Erweiterung ist.
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}[subtitle = {Erstklausur~18/19}]
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass die Körpererweiterung~$\Rational(\sqrt[3]{2}) / \Rational$ nicht normal ist.
+    \item
+      Zeigen Sie, dass~$\Gal( \Rational(\sqrt[3]{2}) / \Rational ) = 1$.
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+  \begin{enumerate}
+    \item
+      Es sei~$L/K$ eine Körpererweiterung vom Grad~$[L : K] = 2$.
+      Zeigen Sie, dass~$L$ der Zerfällungskörper eines quadratischen Polynoms aus~$K[X]$ ist.
+      Folgern Sie, dass die Erweiterung~$L/K$ normal ist.
+    \item
+      Zeigen Sie, dass die Erweiterungen~$\Rational(\sqrt[4]{2}) / \Rational(\sqrt{2})$ und~$\Rational(\sqrt{2}) / \Rational$ beide normal sind.
+    \item
+      Zeigen Sie, dass die Erweiterung~$\Rational(\sqrt[4]{2}) / \Rational$ jedoch nicht normal ist.
+  \end{enumerate}
+  Dies zeigt, dass Normalität von Körpererweiterungen nicht transitiv ist.
+\end{exercise}
+
+\begin{exercise}
+  Es sei~$K$ ein perfekter Körper und~$L/K$ eine endliche Körpererweiterung.
+  Zeigen Sie, dass auch~$L$ perfekt ist, indem Sie zeigen, dass jede algebraische Körpererweiterung~$M/L$ separabel ist.
 \end{exercise}
 
 \end{document}
