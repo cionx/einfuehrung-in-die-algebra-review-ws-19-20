@@ -36,6 +36,41 @@
   \end{enumerate}
 \end{exercise}
 
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Es sei~$x_1, \dotsc, x_n$ ein Repräsentantensystem der~\Bahnen{$G$} von~$X$.
+      Nach der Bahnenformel gilt
+      \begin{equation}
+        \label{orbit formula}
+        \card{X}
+        =
+        \card{ X^ G }
+        +
+        \sum_{\substack{ i = 1, \dotsc, n \\ x_i \in X^G }}
+        [G : G_{x_i}] \,,
+      \end{equation}
+      wobei der Index~$[G : G_{x_i}]$ für jeden Repräsentanten~$x_i$ mit~$x_i \notin X^G$ ein Teiler von~$\card{G}$ ist, der verschieden von~$1$ ist.
+      Da~$G$ eine~\Gruppe{$p$} ist, gilt dabei~$p \divides [G : G_{x_i}]$ für jeden Repräsentanten~$x_i$ mit~$x_i \notin X^G$.
+      Aus~\eqref{orbit formula} folgt somit, dass~$\card{X} \equiv \card{X^G} \Mod{p}$.
+    \item
+      Die Gruppe~$G$ wird auf~$X \defined G$ durch Konjugation, also vermöge~$g.x \defined g x g^{-1}$ für alle~$g \in G$,~$x \in X$.
+      Es gilt~$\zenter(G) = X^G$ und somit nach dem vorherigen Aufgabenteil
+      \[
+        \card{\zenter(G)}
+        =
+        \card{X^G}
+        \equiv
+        \card{X}
+        =
+        \card{G}
+        \equiv
+        0
+        \pmod{p} \,.
+      \]
+  \end{enumerate}
+\end{solution}
+
 \begin{exercise}
   \begin{enumerate}
     \item
@@ -47,10 +82,77 @@
   \end{enumerate}
 \end{exercise}
 
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Es ist~$\Sym_3 = \{ 1, \tau_{12}, \tau_{13}, \tau_{23}, \rho_1, \rho_2 \}$ wobeit~$\tau_{ij} = (i,j)$ Transpositionen sind und~$\rho_1 = (1,2,3)$ und~$\rho_2 = (3,2,1)$ zwei Dreierzykel sind.
+      Die Untergruppen von~$\Sym_3$ sind gegeben durch
+      \[
+        \Sym_3 \,,
+        \quad
+        \gen{ \tau_{ij} } = \{ 1, \tau_{ij} \} \,,
+        \quad
+        \gen{ \rho_1 } = \gen{ \rho_2 } = \{ 1, \rho_1, \rho_2 \} \,,
+        \quad
+        1 \,.
+      \]
+      Für~$p \neq 2, 3$ ist~$1$ die eindeutige~\Sylow{$p$}-Untergruppe von~$\Sym_3$, die~\Sylow{$2$}-Untergruppen von~$\Sym_3$ sind~$\gen{ \tau_{ij} }$ und die eindeutige~\Sylow{$3$}-Untergruppe ist~$\gen{\rho_1} = \gen{\rho_2}$.
+    \item
+      Eine obere Dreicksmatrix in~$\Mat(n, \Finite_p)$ ist genau invertierbar, wenn ihre Diagonaleinträge nicht verschwinden, also Elemente von~$\Finite_p^\times$ sind.
+      Die Einträge oberhalb der Diagonalen dürfen beliebig sein, und es gibt~$\binom{n}{2} = n(n-1)/2$ viele solche Einträge.
+      Wir erhalten somit, dass
+      \[
+        \card{ \Borel(n, \Finite_p) }
+        =
+        (p-1)^n p^{n(n-1)/2} \,.
+      \]
+      Es sei~$\Uni(n, \Finite_p)$ die Untergruppe von~$\Borel(n, \Finite_p)$ all jener oberen Dreicksmatrizen, deren Diagonaleinträge alle Eins sind.
+      Es gilt
+      \[
+        \card{ \Uni(n, \Finite_p) }
+        =
+        p^{n(n-1)/2} \,.
+      \]
+      Da~$p \ndivides (p-1)$ gilt, ist~$\Uni(n, \Finite_p)$ eine~\Sylow{$p$}-Untergruppe von~$\Borel(n, \Finite_p)$.
+
+      Die Gruppe~$\Uni(n, \Finite_p)$ ist der Kern des Gruppenhomomorphismus
+      \[
+        \Borel(n, \Finite_p)
+        \to
+        ( \Finite_p^\times )^n \,,
+        \quad
+        \begin{bsmallmatrix}
+          a_1 & *       & \cdots  & *       \\
+              & \ddots  & \ddots  & \vdots  \\
+              &         & \ddots  & *       \\
+              &         &         & a_n
+        \end{bsmallmatrix}
+        \mapsto
+        (a_1, \dotsc, a_n)
+      \]
+      und somit bereits eine normale Untergruppe von~$\Borel(n, \Finite_p)$.
+      Insbesondere ist~$\Uni(n, \Finite_p)$ deshalb bereits die einzige~\Sylow{$p$}-Untergruppe von~$\Borel(n, \Finite_p)$.
+  \end{enumerate}
+\end{solution}
+
 \begin{exercise}
   Es sei~$G$ eine endliche Gruppe mit~$\card{G} = 231$.
   Zeigen Sie, dass~$G$ mindestens zwei echte, nicht-triviale Normalteiler besitzt.
 \end{exercise}
+
+
+\begin{solution}
+  Es gilt~$\card{G} = 231 = 3 \cdot 7 \cdot 11$.
+  Für jede Primzahl~$p$ sei~$n_p$ die Anzahl der~\Sylow{$p$}-Untergruppen von~$G$.
+  Nach dem dritten Sylowsatz ist~$n_p$ ein Teiler von~$\card{G}$, und somit
+  \[
+    n_p \in \{ 1, 3, 7, 11, 21, 33, 77, 231 \} \,.
+  \]
+  Nach dem driten Sylowsatz gilt außerdem~$n_p \equiv 1 \Mod{p}$.
+  Wir erhalten damit, dass~$n_7 = 1$ und~$n_{11} = 1$.
+  Die~\Sylow{$7$}- und~\Sylow{$11$}-Untergruppen von~$G$ sind also eindeutig, und somit normal.
+  Diese Normalteiler sind nicht-trivial, da~$7$ und~$11$ Teiler von~$\card{G}$ sind.
+\end{solution}
 
 \begin{exercise}[subtitle = {Erstklausur 18/19}]
   Es sei~$G$ eine Gruppe.
@@ -67,6 +169,83 @@
   \end{enumerate}
 \end{exercise}
 
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Es sei~$\Integer_2 = \{1, s\}$, und es sei~$\varphi \colon G \to \Integer_2$ ein Gruppenhomomorphismus.
+      Für~$g \in G$ gilt~$\varphi(g) = 1$ falls~$g \in \ker(\varphi)$, und~$\varphi(g) \neq 1$, und somit~$\varphi(g) = s$, falls~$g \notin \ker(\varphi)$.
+      Der Funktionswert~$\varphi(g)$ ist also eindeutig durch~$\ker(\varphi)$ bestimmt.
+    \item
+      Die Untergruppe~$N$ ist bereits ein Normalteiler in~$G$, da~$[G : N] = 2$ gilt.
+      Für die Faktorgruppe~$G/N$ gilt
+      \[
+        \card{G/N}
+        =
+        [G : N]
+        =
+        2
+      \]
+      und somit~$G/N \cong \Integer_2$.
+      Wir fixieren einen Isomorphismus~$\psi \colon G/N \to \Integer_2$ und definieren~$\varphi \defined \psi \circ \pi$, wobei~$\pi \colon G \to G/N$ die kanonische Projektion bezeichnet.%
+      \footnote{
+        Es gibt tatsächlich nur genau einen Gruppenisomorphismus~$G/N \to \Integer_2$, weshalb~$\psi$ bereits eindeutig ist.
+      }
+      Es gilt
+      \[
+        \ker(\varphi) = \ker(\pi) = N \,,
+      \]
+      da~$\psi$ ein Isomorphismus ist.
+    \item
+      Ist~$\varphi \colon G \to \Integer_2$ ein nicht-trivialer Gruppenhomomorphismus, so gilt~$\im(\varphi) = \Integer_2$.
+      Es gilt
+      \[
+        G / {\ker(\varphi)}
+        \cong
+        \im(\varphi)
+      \]
+      und somit
+      \[
+        [G : \ker(\varphi)]
+        =
+        \card{ G / {\ker(\varphi)} }
+        =
+        { \im(\varphi) }
+        =
+        2 \,.
+      \]
+      Zusammen mit den vorherigen beiden Aufgabenteilen erhalten wir somit eine Bijektion
+      \begin{align*}
+        \left\{
+          \begin{tabular}{c}
+            nicht-triviale Gruppenhomo-\\
+            morphismen~$G \to \Integer_2$
+          \end{tabular}
+       \right\}
+        &\to
+        \left\{
+          \begin{tabular}{c}
+            Untergruppen von~$G$\\
+            von Index~$2$
+          \end{tabular}
+        \right\} \,,
+        \\
+        \varphi
+        &\mapsto
+        \ker(\varphi) \,.
+      \end{align*}
+      Die Untergruppen von~$G$ von Index~$2$ sind genau die Untergruppen von Kardinalität~$27$, also die~\Sylow{$3$}-Untergruppen von~$G$.
+      Es sei~$n_3$ die Anzahl dieser Untergruppen.
+      Nach dem dritten Sylowsatz gilt~$n_3 \divides \card{G} = \{ 54 \}$ und somit
+      \[
+        n_3 \in \{ 1, 2, 3, 6, 9, 18, 27, 54 \} \,.
+      \]
+      Außerdem gilt~$n_3 \equiv 1 \Mod{3}$, und somit bereits~$n_3 = 1$.
+
+      Wir haben nun insgesamt gezeigt, dass es nur einen nicht-trivialen Gruppenhomomorphismus~$G \to \Integer_2$ gibt.
+      Zusammen mit dem trivialen Homomorphismus erhalten wir somit genau zwei Gruppenhomomorphismen~$G \to \Integer_2$.
+  \end{enumerate}
+\end{solution}
+
 \begin{exercise}
   \leavevmode
   \begin{enumerate}
@@ -78,6 +257,57 @@
       Folgern Sie, dass die Einheitengruppe~$\Integer[\sqrt{2}]^\times$ unendlich ist.
   \end{enumerate}
 \end{exercise}
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Wie gehen analog zur Bestimmung der Einheitengruppe von~$\Integer[i]$ vor:
+      Die Norm eines Elements~$z \in \Integer[\sqrt{-d}]$ mit~$z = a + i b \sqrt{d}$ für~$a, b \in \Integer$ ist
+      \[
+        N(z)
+        \defined
+        \abs{z}^2
+        =
+        a^2 + b d^2
+        \in 
+        \Natural \,.
+      \]
+      Die Norm ist multiplikativ und erfült~$N(1) = 1$.
+      Für~$z \in \Integer[\sqrt{-d}]^\times$ gilt deshalb
+      \[
+        N(z) N(z^{-1})
+        =
+        N(z z^{-1})
+        =
+        N(1)
+        =
+        1 \,.
+      \]
+      Da~$N(z)$,~$N(z^{-1})$ zwei natürliche Zahlen sind, muss bereits~$N(z) = 1$ gelten.
+      Da~$d \geq 2$ gilt, erhalten wir, dass bereits~$z = \pm 1$
+      Andererseits sind~$1$ und~$-1$ Einheiten in~$\Integer[\sqrt{-d}]$.
+    \item
+      In~$\Real$ können wir das Inverse von~$1 + \sqrt{2}$ betrachten, und es gilt
+      \[
+        \frac{1}{1 + \sqrt{2}}
+        =
+        \frac{ 1 - \sqrt{2} }{ (1 + \sqrt{2}) (1 - \sqrt{2}) }
+        =
+        \frac{1 - \sqrt{2}}{1 - 2}
+        =
+        \frac{1 - \sqrt{2}}{-1}
+        =
+        -1 + \sqrt{2}
+        \in
+        \Integer[\sqrt{2}] \,,
+      \]
+      Deshalb ist~$1 + \sqrt{2}$ eine Einheit in~$\Integer[\sqrt{2}]$.
+
+      Es gilt~$1 + \sqrt{2} > 1$ weshalb die Potenzen~$(1 + \sqrt{2})^n$ für~$n \in \Natural_1$ paarweise verschieden sind.
+      Da~$1 + \sqrt{2}$ eine Einheit in~$\Integer[\sqrt{2}]$ ist, sind auch diese Potenzen Einheiten in~$\Integer[\sqrt{2}]$.
+      Wir haben somit unendlich Elemente von~$\Integer[\sqrt{2}]^\times$ konstruiert.
+  \end{enumerate}
+\end{solution}
 
 \begin{exercise}
   Es sei~$R$ ein kommutativer Ring.
@@ -103,6 +333,43 @@
   \end{enumerate}
 \end{exercise}
 
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Die kanonische Projektion~$\pi \colon R \to R/I$ induziert durch koeffizientenweises Anwenden einen Ringhomomorphismus
+      \[
+        \pi_*
+        \colon
+        R[X]
+        \to
+        (R/I)[X] \,,
+        \quad
+        \sum_i r_i X^i
+        \mapsto
+        \sum_i \class{r_i} X^i \,.
+      \]
+      Aus der Surjektivität von~$\pi$ und~$\pi(0) = 0$ ergibt sich, dass der Homomorphismus~$\pi_*$ ebenfalls surjektiv ist.
+      Außerdem gilt~$\ker(\pi_*) = I[X]$.
+      Es folgt, dass~$I[X]$ ein Ideal in~$R[X]$ ist, und dass
+      \[
+        R[X] / I[X]
+        =
+        R[X] / {\ker(\pi_*)}
+        \cong
+        \im(\pi_*)
+        =
+        (R/I)[X] \,.
+      \]
+    \item
+      Der Faktorring~$R / \pideal$ ist ein Integritätsbereich, da~$\pideal$ ein Primideal ist.
+      Also ist auch der Faktorring~$R[X] / \pideal[X] \cong (R/\pideal)[X]$ ein Integritätsbereich.
+      Deshalb ist~$\pideal[X]$ ein Primideal in~$R[X]$.
+    \item
+      Die Maximalität von~$R$ bedeutet, dass der Faktorring~$R / \mideal$ ein Körper ist.
+      Aber der Faktorring~$R[X] / \mideal[X] \cong (R/\mideal)[X]$ ist kein Körper mehr, weshalb das Ideal~$\mideal[X]$ nicht maximal ist.
+  \end{enumerate}
+\end{solution}
+
 \begin{exercise}
   Es sei~$R$ ein kommutativer Ring und~$I$ ein Ideal in~$R$.
   \begin{enumerate}
@@ -115,43 +382,93 @@
   \end{enumerate}
 \end{exercise}
 
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Nach dem Noetherschen Isomorphiesatz gilt~$(R/I) / (\pideal/I) \cong R/\pideal$.
+      Das Ideal~$\pideal$ ist genau dann prim wenn der Faktorring~$R / \pideal$ ein Integritätsbereich ist, und das Ideal~$\pideal/I$ ist genau dann prim wenn der Faktorring~$(R/I) / (\pideal/I)$ ein Integritätsbereich ist.
+      Dank des obigen Isomorphismus’ erhalten wir hieraus die gewünschte Äquivalenz.
+    \item
+      Wir können wie im vorherigen Aufgabenteil vorgehen, indem wir \enquote{Integritätsbreich} durch \enquote{Körper} ersetzen.
+  \end{enumerate}
+\end{solution}
+
 \begin{exercise}
   Zeigen Sie, dass der Unterring~$\Integer\bigl[ \sqrt{-2} \bigr] \defined \{ a + i b \sqrt{2} \suchthat a, b \in \Integer \}$ von~$\Complex$ euklidisch ist.
 \end{exercise}
+
+\begin{solution}
+  Wir gehen wie für~$\Integer[i]$ vor:
+  Die Norm von~$z \in \Integer[\sqrt{-2}]$ mit~$z = a + i b \sqrt{2}$ für~$a, b \in \Integer$ ist
+  \[
+    N(z)
+    =
+    \abs{z}^2
+    =
+    a^2 + 2 b^2
+    \in
+    \Natural \,.
+  \]
+  Es seien~$a, b \in \Integer[\sqrt{-2}]$ mit~$b \neq 0$.
+  Für die komplexe Zahl~$a/b$ gibt ein Element~$q \in \Integer[\sqrt{-2}]$ mit
+  \[
+    \abs*{ \frac{a}{b} - q }
+    <
+    \frac{ \sqrt{3} }{2} \,.
+  \]
+  (Denn~$\Integer[\sqrt{-2}$ ist ein Gitter in~$\Complex$, mit Breite~$1$ und Höhe~$\sqrt{2}$.)
+  Es sei~$r \defined a - bq$.
+  Per Definition von~$r$ gilt~$a = qb + r$, und durch die Wahl von~$q$ erhalten wir
+  \[
+    N(r)
+    =
+    N(a - bq)
+    =
+    \abs{a - bq}^2
+    =
+    \abs*{ \frac{a}{b} - q }^2 \abs{b}^2
+    \leq
+    \frac{3}{4} N(b)
+  \]
+  mit~$3/4 < 1$.
+  Das zeigt, dass der Ring~$\Integer[-\sqrt{2}]$ zusammen mit der Norm~$N$ als Gradabbildung euklidisch ist.
+\end{solution}
 
 \begin{exercise}
   Zeigen Sie, dass jeder endliche Integritätsbereich bereits ein Körper ist.
 \end{exercise}
 
-%\begin{exercise}
-%  Es sei~$R$ ein kommutativer Ring.
-%  Es sei~$r$ ein Element von~$R$ und es sei~$\lambda_r \colon R \to R$ die Multiplikation mit~$r$, d.h. es gelte~$\lambda_r(x) = rx$ für jedes Element~$x \in R$.
-%  \begin{enumerate}
-%    \item
-%      Zeigen Sie, dass die folgenden Bedingungen äquivalent sind.
-%      \begin{equivlist}
-%        \item
-%          Das Element~$r$ ist eine Einheit in~$R$.
-%        \item
-%          Die Abbildung~$\lambda_r$ ist bijektiv.
-%        \item
-%          Die Abbildung~$\lambda_r$ ist surjektiv.
-%      \end{equivlist}
-%    \item
-%      Zeigen Sie, dass~$r$ genau dann ein Nullteiler ist, wenn die Abbildung~$\lambda_r$ nicht injektiv ist.
-%  \end{enumerate}
-%  Der kommutative Ring~$R$ sei nun endlich.
-%  \begin{enumerate}[resume*]
-%    \item
-%      Folgern Sie, dass jedes Element von~$R$ entweder eine Einheit oder ein Nullteiler ist.
-%    \item
-%      Folgern Sie ferner, dass jeder endliche Integritätsbereich bereits ein Körper ist.
-%  \end{enumerate}
-%\end{exercise}
+\begin{solution}
+  Es sei~$K$ ein endlicher Integritätsbereich.
+  Es sei~$x \in K$ mit~$x \neq 0$.
+  Die Multiplikationsabbildung
+  \[
+    \lambda
+    \colon
+    K \to K \,,
+    \quad
+    y \mapsto xy
+  \]
+  ist ein Homomorphismus von additiven Gruppen, und es gilt~$\ker(\lambda) = 0$ da~$K$ ein Integritätsbereich ist.
+  Aus der Endlichkeit von~$K$ folgt, dass~$\lambda$ auch surjektiv ist.
+  Also gibt es ein Element~$y \in K$ mit~$\lambda(y) = 1$, also~$x y = 1$.
+  Somit ist~$x$ eine Einheit in~$K$.
+\end{solution}
 
-%\begin{exercise}
-%  Es sei~$R$ ein kommutativer Ring.
-%  Zeigen Sie, dass~$R[X,Y] / (Y - X^2) \cong R[X]$ gilt.
-%\end{exercise}
+
+
+
+
+\clearpage
+
+
+
+
+
+\printsolutions
+
+
+
+
 
 \end{document}
