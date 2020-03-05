@@ -43,25 +43,25 @@
 \begin{solution}
   \begin{enumerate}
     \item
-      Nach Eisenstein (mit~$p = 7$) ist das gegebene Polynom irreduzibel in~$\Rational[X]$.
+      Nach Eisenstein mit~$p = 7$ ist das gegebene Polynom irreduzibel in~$\Rational[X]$.
       Das Polynom ist primitv, und somit bereits irreduzibel in~$\Integer[X]$.
     \item
-      Da~$2$ in~$\Rational$ eine Einheit ist, dürfen wir das gegebene Polynom~$f$ durch das Polynom~$f/2$ ersetzen.
-      Es gilt
+      Da~$2$ eine Einheit in~$\Rational$ ist, dürfen wir das gegebene Polynom~$f$ durch das Polynom
       \[
         \frac{f}{2}
         =
         X^7 + 4 X^5 + 2 X^3 - 4 X + 6 \,.
       \]
-      Dieses Polynom ist nun nach dem Eisenstein-Kriterium (mit~$p = 2$) irreduzibel in~$\Rational[X]$.
+      ersetzen.
+      Dieses Polynom ist nun nach dem Eisenstein-Kriterium mit~$p = 2$ irreduzibel in~$\Rational[X]$.
     \item
-     Reduktion bezüglich~$p = 2$ ergibt das Polynom
+     Reduktion bezüglich des Primelements~$p = 2$ von~$\Integer$ ergibt das Polynom
      \[
-       X^3 + X + 1 \in \Integer_2[X] \,.
+       X^3 + X + 1 \in \Finite_2[X] \,.
      \]
-     Dieses Polynom ist kubisch und hat keine Nullstelle in~$\Integer_2$, ist also irreduzibel in~$\Integer_2[X]$ (denn~$\Integer_2$ ist ein Körper).
+     Dieses Polynom ist kubisch und hat keine Nullstelle in~$\Finite_2$, ist also irreduzibel in~$\Finite_2[X]$ (denn~$\Finite_2$ ist ein Körper).
      Nach dem Reduktionskriterium ist somit auch das ursprüngliche Polynom irreduzibel in~$\Rational[X]$.
-     Da es normiert, und somit primitiv, ist, ist es bereits irreduzibel in~$\Integer[X]$.
+     Es ist bereits irreduzibel in~$\Integer[X]$, denn es primitiv ist, da es normiert ist.
    \item
      Wir bezeichnen das gegebene Polynom mit~$f$.
      Es gilt
@@ -76,17 +76,19 @@
        &=
        X^3 + 6 X^2 + 6 X + 3 \,.
      \end{align*}
-     Dieses Polynom ist normiert und somit primitiv, und wir erhalten aus dem Eisenstein-\hspace{0pt}Kriterium (mit~$p = 3$), dass es irreduzibel in~$\Integer[X]$ ist.
-     Somit ist auch~$f$ irreduzibel.
+     Wir erhalten aus dem Eisenstein-Kriterium mit~$p = 3$, dass~$f(X+1)$ irreduzibel in~$\Rational[X]$.
+     Das Polynom~$f(X+1)$ ist primitiv, da es normiert ist, und deshalb auch schon irreduzibel in~$\Integer[X]$.
+     Es folgt, dass auch~$f$ irreduzibel in~$\Integer[X]$ ist.
    \item
-     Wir nutzen den Isomorphismus~$\Rational[X,Y] \cong \Rational[X][Y]$, und schreiben das gegebene Polynom als
+     Wir nutzen den Isomorphismus~$\Rational[X,Y] \cong R[Y]$ für den faktoriellen Ring~$R \defined \Rational[X]$, und schreiben das gegebene Polynom als
      \[
        X Y^2 + (X^2 - 1) Y + (-X + 1) \,.
      \]
-     Als Element von~$\Rational[X][Y]$ ist dieses Polynom primitiv, denn die Koeffiezenten~$X$ und~$-X+1$ sind teilerfremd in~$\Rational[X]$.
-     Es gilt~$(-X+1) \divides (X^2 - 1)$ da~$1$ eine Nullstelle von~$X^2 - 1$ ist, aber es gilt auch~$(-X+1) \ndivides X$.
-     Dabei ist das Polynom~$-X+1$ prim in~$\Rational[X]$ es Grad~$1$ hat.
-     Wir können daher das Eisensteinkriterium (mit~$p = -X+1$) anwenden, um die gewünschte Irreduziblität zu beweisen.
+     Als Element von~$R[Y]$ ist dieses Polynom primitiv, denn die Koeffizienten~$X$ und~$-X+1$ sind teilerfremd in~$\Rational[X]$.
+     Das Element~$p \defined X-1$ von~$R$ ist prim und es gilt~$p \divides (-X+1)$.
+     Es gilt~$p \divides (X^2 - 1)$ da~$1$ eine Nullstelle von~$X^2 - 1$ ist, bzw. da~$X^2 - 1 = (X+1)(X-1)$ gilt.
+     Aber es gilt auch~$p \ndivides X$.
+     Es folgt nun aus dem Eisenstein-Kriterium, dass das Polynom~$f$ irreduzibel in~$R[Y]$ ist, und somit auch irreduzibel in~$K[X,Y]$.
   \end{enumerate}
 \end{solution}
 
@@ -99,10 +101,58 @@
   \end{enumerate}
 \end{exercise}
 
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Das Polynom~$X^3 - 4X + 2 \in \Rational[X]$ ist irreduzibel nach dem Eisenstein-Kriterium mit~$p = 2$.
+      Da~$\Rational[X]$ ein Hauptidealring ist, ist der Faktorring~$\Rational[X] / \genideal{X^3 - 4X + 2}$ deshalb ein Körper.
+    \item
+      Das gegebene Element~$\sqrt[4]{2}$ ist eine Nullstelle des Polynoms~$X^4 - 2 \in \Rational[X]$.
+      Dieses Polynom ist normiert und ist nach dem Eisenstein-Kriterium mit~$p = 2$ auch irreduzibel.
+      Es ist also bereits das Minimalpolynom von~$\sqrt[4]{2}$ über~$\Rational$.
+      Es folgt, dass
+      \[
+        [\Rational(\sqrt[4]{2}) : \Rational]
+        =
+        \deg(X^4 - 2)
+        =
+        4 \,.
+      \]
+      Hieraus folgt ferner, dass die Elemente
+      \[
+        1 \,,
+        \quad
+        \sqrt[4]{2} \,,
+        \quad
+        \sqrt[4]{2}^2 = \sqrt{2} \,,
+        \quad
+        \sqrt[4]{2}^3 \,,
+      \]
+      eine~\Basis{$\Rational$} von~$\Rational(\sqrt[4]{2})$ sind.
+  \end{enumerate}
+\end{solution}
+
+
 \begin{exercise}[subtitle = {Erstklausur~18/19, Zweitklausur~18/19}]
   Es sei~$n \in \Natural_1$ und es sei~$\zeta_n \defined e^{2 \pi i / n}$.
   Beweisen oder widerlegen Sie, dass~$[\Rational(\zeta_n) : \Rational] = n-1$.
 \end{exercise}
+
+\begin{solution}
+  Für~$n = 4$ gilt~$\zeta_4 = i$.
+  Das Minimalpolynom von~$i$ über~$\Rational$ ist~$X^2 + 1 \in \Rational[X]$, denn dieses Polynom ist normiert, hat~$i$ als Nullstelle, und ist irreduzibel in~$\Rational[X]$, da es quadratisch ist und keine Nullstelle in~$\Rational$ hat.
+  Deshalb gilt
+  \[
+    [\Rational(\zeta_4) : \Rational]
+    =
+    [\Rational(i) : \Rational]
+    =
+    \deg(X^2 + 1)
+    =
+    2 \,.
+  \]
+  Die gegebene Behauptung ist also falsch.
+\end{solution}
 
 \begin{exercise}
   \begin{enumerate}
@@ -121,6 +171,28 @@
   \end{enumerate}
 \end{exercise}
 
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Gilt~$n \divides m$, so gilt~$\sqrt[n]{2} = ( \sqrt[m]{2} )^{m/n} \in \Rational( \sqrt[m]{2} )$ und somit auch~$\Rational( \sqrt[n]{2} ) \subseteq \Rational( \sqrt[m]{2} )$.
+
+      Das Element~$\sqrt[n]{2}$ ist eine Nullstelle des Polynoms~$X^n - 2 \in \Rational[X]$.
+      Dieses Polynom ist normiert, und es ist irreduzibel nach dem Eisenstein-Kriterium mit~$p = 2$.
+      Also ist es das Minimalpolynom von~$\sqrt[n]{2}$ über~$\Rational$.
+      Wir erhalten somit, dass
+      \[
+        [\Rational(\sqrt[n]{2}) : \Rational]
+        =
+        \deg(X^n - 2)
+        =
+        n \,.
+      \]
+
+      Gilt nun~$\Rational( \sqrt[n]{2} ) \subseteq \Rational( \sqrt[m]{2} )$, so ist der Körper~$\Rational( \sqrt[n]{2} )$ ein Zwischenkörper der Körpererweiterung~$\Rational( \sqrt[m]{2} ) / \Rational$.
+      Der Grad~$n = [ \Rational( \sqrt[n]{2} ) : \Rational ]$ ist damit nach der Gradformel ein Teiler des Grads~$m = [ \Rational( \sqrt[m]{2} ) : \Rational ]$.
+  \end{enumerate}
+\end{solution}
+
 \begin{exercise}
   \begin{enumerate}
     \item
@@ -131,6 +203,58 @@
       Bestimmen Sie den Grad der Körpererweiterung~$\Rational(\sqrt[3]{2}, \zeta_3) / \Rational$.
   \end{enumerate}
 \end{exercise}
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Das Element~$\sqrt[3]{2}$ ist eine Nullstelle des Polynoms~$X^3 - 2 \in \Rational[X]$.
+      Dieses Polynom ist normiert, und es ist irreduzibel nach dem Eisenstein-Kriterium mit~$p = 2$.
+      Also ist es bereits das Minimalpolynom von~$\sqrt[3]{2}$ über~$\Rational$.
+    \item
+      Es sei~$Z \defined \Rational(\sqrt[3]{2})$.
+      Die Einheitswurzel~$\zeta_3$ ist eine Nulllstelle des Polynoms~$X^3 - 1 \in Z[X]$, und es gilt
+      \[
+        X^3 - 1
+        =
+        (X - 1)(X^2 + X + 1) \,.
+      \]
+      Also ist~$\zeta_3$ bereits eine Nullstelle des Polynoms~$f = X^2 + X + 1 \in Z[X]$.
+      Dieses Polynom hat keine Nullstellen in~$Z$, denn~$Z$ ist ein Unterkörper von~$\Real$, aber
+      \[
+        f = \biggl( X + \frac{1}{2} \biggr)^2 + \frac{3}{4}
+      \]
+      hat keine reellen Nullstellen.
+      Es folgt, dass~$f$ irreduzibel ist, da~$f$ quadratisch ist.
+      Da~$f$ außerdem normiert ist, folgt nun, dass es bereits das Minimalpolynom von~$\zeta_3$ über~$Z$ ist.
+    \item
+      Es gelten
+      \[
+        [\Rational(\sqrt[3]{2}) : \Rational]
+        =
+        \deg(X^3 - 2)
+        =
+        3 \,,
+        \quad
+        [\Rational(\sqrt[3]{2}, \zeta_3) : \Rational(\sqrt[3]{2})]
+        =
+        \deg(X^2 + X + 1)
+        =
+        2 \,,
+      \]
+      und somit nach der Gradformel
+      \[
+        [\Rational(\sqrt[3]{2}, \zeta_3) : \Rational]
+        =
+        [\Rational(\sqrt[3]{2}, \zeta_3) : \Rational(\sqrt[3]{2})]
+        \cdot
+        [\Rational( \sqrt[3]{2} ) : \Rational]
+        =
+        2 \cdot 3
+        =
+        6 \,.
+      \]
+  \end{enumerate}
+\end{solution}
 
 \begin{exercise}[subtitle = {Erstklausur~19/20}]
   Es sei~$f = X^5 - 14 X^3 - 21 X^2 + 49 X + 28 \in \Rational[X]$.
@@ -143,6 +267,64 @@
       Entscheiden Sie, ob~$f$ eine Nullstelle in~$\Rational(\sqrt[4]{3}, i)$ hat.
   \end{enumerate}
 \end{exercise}
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Das Polynom~$f$ ist irreduzibel nach dem Eisenstein-Kriterium mit~$p = 7$.
+    \item
+      Das Element~$\sqrt[4]{3}$ ist eine Nullstelle des Polynoms~$X^4 - 3 \in \Rational[X]$.
+      Dieses Polynom ist irreduzibel nach dem Eisenstein-Kriterium mit~$p = 3$, und es ist normiert.
+      Also ist es bereits das Minimalpolynom von~~$\sqrt[4]{3}$ über~$\Rational$.
+
+      Es sei~$Z \defined \Rational( \sqrt[4]{3} )$.
+      Die imaginäre Einheit~$i$ ist eine Nullstelle des Polynoms~$X^2 + 1 \in Z[X]$.
+      Dieses Polynom hat keine Nullstelle in~$Z$, denn es hat keine Nullstelle in~$\Real$, und~$Z$ ist ein Unterkörper von~$\Real$.
+      Es folgt, dass~$X^2 + 1$ irreduzibel in~$Z[X]$ ist, da es sich um ein quadratisches Polynom handelt. 
+      Außerdem ist das Polynom normiert.
+      Es folgt, dass~$X^2 + 1$ das Minimalpolynom von~$i$ über~$Z$ ist.
+
+      Es folgt nun, dass
+      \[
+        [\Rational(\sqrt[4]{3}, i) : Z]
+        =
+        \deg(X^2 + 1)
+        =
+        2 \,,
+        \quad
+        [Z : \Rational]
+        =
+        \deg(X^4 - 3)
+        = 4 \,,
+      \]
+      und deshalb nach der Gradformel
+      \[
+        [ \Rational(\sqrt[4]{3}, i) : \Rational ]
+        =
+        [ \Rational(\sqrt[4]{3}, i) : Z ]
+        \cdot
+        [ Z : \Rational ]
+        =
+        2 \cdot 4
+        =
+        8 \,.
+      \]
+    \item
+      Wir nehmen an, dass~$f$ eine Nullstelle~$\alpha$ in~$\Rational(\sqrt[4]{3})$ hat.
+      Dann ist~$f$ bereits das Minimalpolynom von~$\alpha$ über~$\Rational$, denn~$f$ ist irreduzibel und normiert.
+      Also gilt
+      \[
+        [\Rational(\alpha) : \Rational]
+        =
+        \deg(f)
+        =
+        5 \,.
+      \]
+      Andererseits ist~$\Rational(\alpha)$ ein Zwischenkörper der Erweiterung~$\Rational(\sqrt[4]{3}, i) / \Rational$.
+      Wir erhalten deshalb aus der Gradformel, dass der Grad~$[\Rational(\alpha) : \Rational] = 5$ ein Teiler des Grades~$[\Rational(\sqrt[4]{3}, i) : \Rational] = 8$ ist.
+      Das stimmt aber nicht!
+  \end{enumerate}
+\end{solution}
 
 \begin{exercise}[subtitle = {Erstklausur~18/19}]
   Es sei~$L \defined \Rational(\sqrt[4]{2}, \omega)$ mit~$\omega \defined e^{2 \pi i / 8}$.
@@ -161,15 +343,71 @@
 \end{exercise}
 
 \begin{exercise}
-  Es sei~$R$ ein kommutativer Ring und~$I$ ein Ideal in~$R$ mit Komplement~$S \defined R \setminus I$.
-  Zeigen Sie, dass das Ideal~$I$ genau dann prim ist, wenn die Menge~$S$ multiplikativ abgeschlossen ist.
+  Es sei~$R$ ein kommutativer Ring und~$\pideal$ ein Ideal in~$R$ mit Komplement~$S \defined R \setminus \pideal$.
+  Zeigen Sie, dass das Ideal~$\pideal$ genau dann prim ist, wenn die Menge~$S$ multiplikativ abgeschlossen ist.
 \end{exercise}
+
+\begin{solution}
+  Das Ideal~$\pideal$ ist genau dann prim, wenn~$\pideal \neq R$ gilt, und für je zwei Elemente~$r_1, r_2 \in R$ im~$r_1 r_2 \in \pideal$ auch schon~$r_1 \in \pideal$ oder~$r_2 \in \pideal$ gilt.
+  Die Teilmenge~$S$ von~$R$ ist genau dann multiplikativ abgeschlossen, wenn~$1 \in S$ gilt, und für je zwei Elemente~$s_1, s_2 \in S$ auch~$s_1 s_2 \in S$.
+
+  Die Bedingung~$\pideal \neq R$ ist äquivalent dazu, dass~$1 \notin \pideal$, dass also~$1 \in S$.
+  Die Bedingung
+  \[
+    r_1 r_2 \in \pideal
+    \implies
+    \text{$r_1 \in \pideal$ oder~$r_2 \in \pideal$}
+  \]
+  lässt sich äquivalenterweise als
+  \[
+    r_1, r_2 \notin \pideal \implies r_1 r_2 \notin \pideal
+  \]
+  formulieren, und somit als
+  \[
+    s_1, s_2 \in S \implies s_1 s_2 \in S \,.
+  \]
+  Insgesamt haben wir somit gezeigt, dass das Ideal~$\pideal$ genau dann prim ist, wenn das Komplement~$S = R \setminus \pideal$ eine multiplikativ abgeschlossene Teilmenge von~$R$ ist.
+\end{solution}
 
 \begin{exercise}
   Es sei~$R$ ein kommutativer Ring und es sei~$\pideal$ ein Ideal in~$R$.
   Zeigen Sie, dass das Ideal~$\pideal$ genau dann prim ist, wenn es einen Körper~$K$ und einen Ringhomomorphismus~$\varphi \colon R \to K$ gibt, so dass~$\pideal = \ker(\varphi)$ gilt.
 \end{exercise}
 
+\begin{solution}
+  Ist das Ideal~$\pideal$ prim, so ist der Faktorring~$R/\pideal$ eine Integritätsbereich und die kanonische Projektion~$\pi \colon R \to R/\pideal$ ist ein Ringhomomorphismus mit~$\ker(\pi) = \pideal$.
+  Da~$R/\pideal$ ein Integritätsbereich ist, können wir seinen Quotientenkörper~$\Quot(R/\pideal)$ bilden, sowie die Inklusion~$\iota \colon R/\pideal \to \Quot(R/\pideal)$ betrachten.
+  Die Verknüpfung
+  \[
+    \iota \circ \pi
+    \colon
+    R
+    \to
+    \Quot(R/\pideal)
+  \]
+  ist ein Ringhomomorphismus, und aufgrund der Injektivität von~$\iota$ gilt, dass
+  \[
+    \ker(\iota \circ \pi)
+    =
+    \ker(\pi)
+    =
+    \pideal
+  \]
+  Wir können also~$K = \Quot(R/\pideal)$ und~$\varphi = \iota \circ \pi$ wählen.
+
+  Umgekehrterweise gebe es nun einen Körper~$K$ und einen Ringhomomorphismus~$\varphi \colon R \to K$ mit~$\pideal = \ker(\varphi)$.
+  Dann ist~$\im(\varphi)$ ist ein Unterring des Körpers~$K$, und somit ein Integritätsbereich.
+  Es gilt
+  \[
+    R / \pideal
+    =
+    R / {\ker(\varphi)}
+    \cong
+    \im(\varphi) \,,
+  \]
+  weshalb auch~$R/\pideal$ ein Integritätsbereich ist.
+  Dies ist äquivalent dazu, dass~$\pideal$ ein Primideal ist.
+\end{solution}
 
 
 
