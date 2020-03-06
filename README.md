@@ -2,13 +2,14 @@ This repository contains material for a review course for the lecture course *Ei
 The [course itself][1] was held by Prof. Dr. Schröer in the winter term of 2019/20 at the University of Bonn.
 This review course is currently being held.
 As such, the materials in this repository are still subject to (frequent) change.
+All materials are in German.
 
 Direct downloads of the compiled pdf files are available via the following links:
 
 - [Notes][2]
-- [Sheet 1][3]
-- [Sheet 2][4]
-- [Sheet 3][5]
+- [Sheet 1][3] (with solutions)
+- [Sheet 2][4] (with solutions)
+- [Sheet 3][5] (with partial solutions)
 - [Sheet 4][6]
 - [Sheet 5][7]
 
