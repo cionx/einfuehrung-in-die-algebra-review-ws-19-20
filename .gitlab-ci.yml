@@ -19,12 +19,15 @@ pages:
   - latexmk sheet_1.tex
   - latexmk sheet_2.tex
   - latexmk sheet_3.tex
+  - latexmk sheet_4.tex
+  - latexmk sheet_5.tex
     # extract the results
   - mkdir public
   - mv notes.pdf public/einfalg1920_notes.pdf
   - mv sheet_1.pdf public/einfalg1920_sheet1.pdf
   - mv sheet_2.pdf public/einfalg1920_sheet2.pdf
   - mv sheet_3.pdf public/einfalg1920_sheet3.pdf
+  - mv sheet_4.pdf public/einfalg1920_sheet4.pdf
   - mv sheet_4.pdf public/einfalg1920_sheet4.pdf
   artifacts:
     paths:
