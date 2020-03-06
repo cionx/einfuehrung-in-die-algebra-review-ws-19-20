@@ -1029,7 +1029,7 @@ Hierdurch lässt sich die Erweiterung~$L/K$ auf möglichst kleine Weise durch ei
 \end{definition}
 
 \begin{proposition}
-  Der Primkörper~$\Prim(K)$ ist ein Unterkörper von~$K$, und zwar der kleinste Unterkörper von~$K$.
+  Der Primkörper~$\Prim(K)$ ist ein Unterkörper von~$K$, und zwar der kleinste solche Unterkörper.
 \end{proposition}
 
 Der eindeutige Ringhomomorphismus~$\Integer \to K$, gegeben durch
@@ -1041,7 +1041,7 @@ Der eindeutige Ringhomomorphismus~$\Integer \to K$, gegeben durch
   k \mapsto k \cdot 1_K \,,
 \]
 erfüllt~$\ker(i) = \genideal{n}$ für~$n = \ringchar(K)$.
-Ist~$\ringchar(K) = p$ prim, so folgt, dass~$i$ einen Körperhomomorphismus induziert
+Ist~$\ringchar(K) = p$ prim, so folgt, dass~$i$ einen Körperhomomorphismus
 \[
   \Finite_p \to K \,,
   \quad
@@ -1091,13 +1091,16 @@ Wir identifizieren im Folgenden den Primkörper von~$K$ stets mit~$\Finite_p$ od
 Ist~$K$ ein endlicher Körper mit~$\ringchar(K) = p$, so ist~$K / \Finite_p$ eine endliche Körpererweiterung.
 
 \begin{proposition}
-  Ist~$K$ ein endlicher Körper mit~$\ringchar(K) = p$, so ist gilt~$\card{K} = p^n$ für eine passende Potenz~$n \in \Natural_1$.
+  Ist~$K$ ein endlicher Körper mit~$\ringchar(K) = p$, so ist gilt~$\card{K} = p^n$ für einen passenden Exponenten~$n \in \Natural_1$.
 \end{proposition}
 
 \begin{lemma}
   \label{trick lemma for finite fields}
   Ist~$K$ ein endlicher Körper mit~$\card{K} = q$, so gilt~$x^q = x$ für alle~$x \in K$.
 \end{lemma}
+
+Wir zeigen im Folgenden die Umkehrung von \cref{trick lemma for finite fields}:
+Für jede Potenz~$p^n$ gibt es einen Körper mit~$p^n$ Elementen, und dieser ist eindeutig bis auf Isomorphie.
 
 \begin{proposition}
   Ist~$K$ ein endlicher Körper mit~$\ringchar(K) = p$ und~$\card{K} = q$, so ist~$K$ ein Zerfällungskörper des Polynoms~$X^q - X \in \Finite_p[X]$, und jedes Element von~$K$ ist eine Nullstelle dieses Polynoms.
@@ -1107,12 +1110,18 @@ Wir können diese Beobachtung auch umkehren.
 Mithilfe des Frobenius-Homomorpismus ergibt sich das folgende Resultat.
 
 \begin{lemma}
-  Ist~$K$ ein Körper mit~$\ringchar(K) = p$ prim, so ist für alle~$n \in \Natural_1$ für~$q \defined p^n$ die Teilmenge
+  Ist~$K$ ein Körper mit~$\ringchar(K) = p$ prim, und ist~$n \in \Natural_1$, so ist für~$q \defined p^n$ die Teilmenge
   \[
     \{
       x \in K
     \suchthat
       x^q = x
+    \}
+    =
+    \{
+      x \in K
+    \suchthat
+      \Fr^n(x) = x
     \}
   \]
   ein Unterkörper von~$K$.
@@ -1154,15 +1163,10 @@ Wir könen nun beide Resultate kombinieren, und außerdem nutzen, dass Zerfällu
 \end{proposition}
 
 \begin{proposition}
-  Die Galois-Gruppe~$\Gal(\Finite_{p^(} / \Finite_p)$ ist zyklisch von Ordnung~$n$, und wird vom Frobenius-Homomorphismus~$\Fr$ erzeugt.
+  Die Galois-Gruppe~$\Gal(\Finite_{p^n} / \Finite_p)$ ist zyklisch von Ordnung~$n$, und wird vom Frobenius-Homomorphismus~$\Fr \colon \Finite_{p^n} \to \Finite_{p^n}$ erzeugt.
 \end{proposition}
 
 
-\subsection{Galois-Gruppe}
 
 
-% TODO: Auflösbarkeit
 
-% TODO: Lösbarkeit durch Radikale
-
-% TODO: Konstruierbarkeit

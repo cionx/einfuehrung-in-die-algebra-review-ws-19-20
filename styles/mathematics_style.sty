@@ -21,6 +21,7 @@
 \newcommand{\Menge}[1]{#1\nobreakdash-\hspace{0pt}Menge}
 \newcommand{\Mengen}[1]{#1\nobreakdash-\hspace{0pt}Mengen}
 \newcommand{\Sylow}[1]{#1\nobreakdash-Sylow}
+\newcommand{\te}[1]{#1\nobreakdash-te}
 \newcommand{\ten}[1]{#1\nobreakdash-ten}
 \newcommand{\Untergruppe}[1]{#1\nobreakdash-\hspace{0pt}Untergruppe}
 \newcommand{\Vektorraum}[1]{#1\nobreakdash-\hspace{0pt}Vektorraum}
@@ -90,6 +91,7 @@
 \DeclareMathOperator{\Aut}{Aut}
 \DeclareMathOperator{\Borel}{B}
 \DeclareMathOperator{\Derived}{D}
+\DeclareMathOperator{\Ein}{\mathbb{E}}
 \DeclareMathOperator{\Gal}{Gal}
 \DeclareMathOperator{\GL}{GL}
 \DeclareMathOperator{\im}{im}
@@ -130,10 +132,10 @@
 \DeclareMathOperator{\Fr}{Fr}
 \DeclareMathOperator{\ggT}{ggT}
 \newcommand{\id}{\mathrm{id}}
-\renewcommand{\Im}{\operatorname{Im}}
+\AtBeginDocument{\renewcommand{\Im}{\operatorname{Im}}}
 \newcommand{\Mod}[1]{\,(\operatorname{mod} #1)}
 \DeclareMathOperator{\ord}{ord}
-\renewcommand{\Re}{\operatorname{Re}}
+\AtBeginDocument{\renewcommand{\Re}{\operatorname{Re}}}
 \DeclareMathOperator{\sgn}{sgn}
 
 

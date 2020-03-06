@@ -147,11 +147,11 @@
   Es sei nun~$H$ eine Untergruppe von~$G$ und~$Z$ der zugehörige Zwischenkörper von~$L/K$, d.\,h. es gelten~$H = \Gal(L/Z)$ und~$Z = L^H$.
   \begin{enumerate}[resume*]
     \item
-      Es gilt~$\card{H} = [L : Z]$.
+      Es gilt~$\card{H} = [L : Z]$ und~$[G : H] = [Z : K]$.
     \item
       Für jedes~$\varphi \in G$ gilt~$\Gal(L / \varphi(Z)) = \varphi H \varphi^{-1}$.
     \item
-      Die Erweiterung~$L/Z$ ist ebenfalls eine Galois-Erweiterung, mit Galois Gruppe~$H$.
+      Die Erweiterung~$L/Z$ ist ebenfalls eine Galois-Erweiterung, mit Galois-Gruppe~$H$.
     \item
       Die Erweiterung~$Z/K$ ist genau dann normal, wenn~$H$ ein Normalteiler in~$G$ ist.
       Es ist dann
@@ -254,7 +254,7 @@
         =
         G \,,
       \]
-      so dass die Faktorgruppen~$N_i / N_{i-1}$ für alle~$i = 1, \dotsc, n$ zyklisch (und endlich) sind.
+      so dass die Faktorgruppen~$N_i / N_{i-1}$ für alle~$i = 1, \dotsc, n$ zyklisch und endlich sind.
     \item
       Es gibt eine Normalenreihe
       \[
@@ -305,12 +305,23 @@
 \end{example}
 
 \begin{remark}
-  Jede Gruppe von Ordnung~$< 60$ auflösbar (die kleinste nicht-auflösbare Gruppe ist~$\Alt_5$), jede Gruppe der Ordnung~$p^n q^m$ mit~$p$,~$q$ prim ist auflösbar, und jede Gruppe ungerader Ordnung ist auflösbar.
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Jede Gruppe von Ordnung~$< 60$ ist auflösbar (die kleinste nicht-auflösbare Gruppe ist~$\Alt_5$);
+      dies zeigt man mithilfe der Sylowsätze.
+    \item
+      Jede Gruppe der Ordnung~$p^n q^m$ mit~$p$,~$q$ prim ist auflösbar;
+      dies zeigt man mithilfe von Darstellungstheorie.
+    \item
+      Jede Gruppe ungerader Ordnung ist auflösbar;
+      dies zeigt man nicht selber, sondern zitiert den entsprechenden Beweis von Feit-Thompson.
+  \end{enumerate}
 \end{remark}
 
 
 
-\subsection{Radikalerweiterugnen}
+\subsection{Radikalerweiterungen}
 
 \begin{convention}
   Im Folgenden ist~$L/K$ eine Körpererweiterung, sofern nicht anders angegeben.
@@ -342,11 +353,11 @@ Im Allgemeinen können Galois-Gruppen sehr viele mögliche Werte annehmen.
     \item
       Die Erweiterung~$L/K$ entsteht durch \defemph{Adjunktion einer Wurzel}, fall es ein Element~$\alpha \in L$ mit~$L = K(\alpha)$ gibt, so dass~$\alpha^n \in K$ für einen passenden Exponenten~$n \in \Natural_1$.
     \item
-      Die Körperweiterung~$L/K$ ist eine \defemph{Radikalerweiterung}, falls es eine Kette von Körperweiterungen
+      Die Körperweiterung~$L/K$ ist eine \defemph{Radikalerweiterung}, falls es eine aufsteigende Kette von Körperweiterungen
       \[
         K = Z_0 \subseteq Z_1 \subseteq Z_2 \subseteq \dotsb \subseteq Z_n = L
       \]
-      gibt, so dass es für jedes~$i = 1, \dotsc, n$ die Erweiterung~$Z_i / Z_{i-1}$ durch Adjunktion einer Wurzel entsteht.
+      gibt, so dass es für jede Erweiterung~$Z_i / Z_{i-1}$ durch Adjunktion einer Wurzel entsteht.
   \end{enumerate}
 \end{definition}
 
@@ -371,7 +382,7 @@ Bis auf Probleme mit Einheitswurzeln und folgt aus \cref{cyclic iff simple} für
   Ein Polynom~$f \in K[X]$ ist \defemph{durch Radikale auflösbar}, falls es eine Radikalerweiterung~$L/K$ gibt, so dass~$f$ über~$L$ in Linearfaktoren zerfällt. 
 \end{definition}
 
-Anschaulich gesehen ist~$f$ durch Radikale auflösbar, wenn sich die Nullstellen von~$f$ mithilfe der üblichen Körperoperationen, sowie Wurzeln ausdrücken lassen. 
+Anschaulich gesehen ist~$f$ durch Radikale auflösbar, wenn sich die Nullstellen von~$f$ mithilfe der üblichen Körperoperationen, sowie Wurzeln, ausdrücken lassen. 
 
 \begin{definition}
   Es sei~$f \in K[X]$ und es sei~$L$ ein Zerfällungskörper von~$f$ über~$K$.
@@ -387,7 +398,7 @@ Anschaulich gesehen ist~$f$ durch Radikale auflösbar, wenn sich die Nullstellen
   \leavevmode
   \begin{enumerate}
     \item
-      Es gibt für jede endliche Gruppe~$G$ einen Körper~$K$ von Charakteristik~$0$ und ein Polynom~$f \in K[X]$ mit~$L(f)$
+      Es gibt für jede endliche Gruppe~$G$ einen Körper~$K$ von Charakteristik~$0$ und ein Polynom~$f \in K[X]$ mit~$\Gal(f) \cong G$.
     \item
       Für jedes~$n \geq 1$ gibt es ein Polynom~$f \in \Rational[X]$ vom Grad~$n$ mit~$\Gal(f) \cong \Sym_5$.
   \end{enumerate}
@@ -436,7 +447,7 @@ Hierfür identifzieren wir~$E$ mit~$\Complex$, wobei wir annehmen können, dass~
     \item
       Die Menge der konstruierbaren Punkte,~$M_{\infty}$, ist ein Zwischenkörper der Erweiterung~$\Complex / \Rational$.
     \item
-      Die Erweiterung~$M_{\infty} / \Rational$ ist algebraisch abgeschlossen.
+      Die Erweiterung~$M_{\infty} / \Rational$ ist algebraisch.
     \item
       Der Körper~$M_{\infty}$ ist quadratisch abgeschlossen, d.\,h. für jedes Element~$z \in Z$ und jede komplexe Zahl~$w \in \Complex$ mit~$z = w^2$ gilt auch~$w \in M_{\infty}$.
     \item
@@ -482,7 +493,7 @@ Ist es möglich, aus einen Kreis und seinem Mittelpunkt mithilfe von Zirkel und 
 Algebraisch übersetzt sich dieses Problem in die Konstruierbarkeit von~$\pi \in \Complex$, welche nach Lindemann nicht möglich ist.
 
 \begin{theorem}[Lindemann]
-  Die Zahl~$\pi$ is transzendent über~$\Rational$.
+  Die reelle Zahl~$\pi$ is transzendent über~$\Rational$.
 \end{theorem}
 
 \begin{corollary}
@@ -493,9 +504,9 @@ Algebraisch übersetzt sich dieses Problem in die Konstruierbarkeit von~$\pi \in
 
 \subsection{Würfelverdoppelung}
 
-Ist es möglich, aus einem Würfel mithilfe von Zirkel und Lineal einen Würfel von doppelten Volumen zu konstruieren?
+Ist es möglich, aus einem Würfel mithilfe von Zirkel und Lineal einen Würfel vom doppelten Volumen zu konstruieren?
 Algebraisch übersetzt sich dieses Problem in die Konstruierbarkeit von~$\sqrt[3]{2}$.
-Da~$[\Rational( \sqrt[3]{2} ) : \Rational]$ ist~$\sqrt[3]{2}$ allerdings nicht konstruierbar, die Würfeldoppelung also nicht möglich.
+Da~$[\Rational( \sqrt[3]{2} ) : \Rational] = 3$ gilt, ist~$\sqrt[3]{2}$ allerdings nicht konstruierbar, die Würfeldoppelung also nicht möglich.
 
 
 
@@ -527,13 +538,13 @@ Algebraisch übersetzt sich dies in dieses Problem in die Konstruierbarkeit von~
   Für jede Anzahl an Ecken~$n \geq 3$ sind die folgenden Aussagen äquivalent.
   \begin{equivlist}
     \item
-      Das regelmäßige~\Eck{$n$} ist mit Zirkel und Lineal konstruierbar, d.\,h.~$e^{2 \pi i / n}$ ist konstruierbar.
+      Das regelmäßige~\Eck{$n$} ist mit Zirkel und Lineal konstruierbar.
     \item
       Es gilt
       \[
         n = 2^m p_1 p_2 \dotsm p_r
       \]
-      für eine Potenz~$m \in \Natural$ und paarweise verschiedene Fermat-Primzahlen~$p_1, \dotsc, p_r$.
+      für einen Exponenten~$m \in \Natural$ und paarweise verschiedene Fermat-Primzahlen~$p_1, \dotsc, p_r$.
   \end{equivlist}
 \end{theorem}
 
@@ -553,6 +564,136 @@ Es stellt sich nun die Frage, wann sich ein gegebener Winkel durch Zirkel und Li
   \]
 \end{proposition}
 
+
+
+
+
+\section{Kreisteilungskörper und Kreisteilungspolynome}
+
+
+
+\subsection{Eulersche~\texorpdfstring{$\varphi$}{phi}-Funktion}
+
+\begin{definition}
+  Die \defemph{Eulersche~\Funktion{$\varphi$}}~$\varphi \colon \Natural_1 \to \Natural_1$ ist gegeben durch
+  \[
+    \varphi(n)
+    \defined
+    \{
+      0 \leq d \leq n-1
+    \suchthat
+      \text{$d$ und~$n$ sind teilerfremd}
+    \} \,.
+  \]
+\end{definition}
+
+\begin{proposition}
+  Es sei~$n \in \Natural_1$.
+  \begin{enumerate}
+    \item
+      Es gilt~$\varphi(n) = \card{ \Integer_n^\times }$.
+    \item
+      Es ist~$\varphi(n)$ die Anzahl der Erzeuger der Gruppe~$(\Integer_n, +)$.
+  \end{enumerate}
+\end{proposition}
+
+\begin{lemma}
+  Sind~$n, m \in \Natural_1$ teilerfremd, so gilt~$\Integer_{nm} \cong \Integer_n \times \Integer_m$ als Ringe.
+\end{lemma}
+
+\begin{proposition}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Ist~$\varphi$ prim und~$k \in \Natural$, so gilt~$\varphi(p^k) = p^k - p^{k-1} = (p-1) p^{k-1}$.
+    \item
+      Sind~$n, m \in \Natural_1$ teilerfremd, so gilt~$\varphi(nm) = \varphi(n) \varphi(m)$.
+  \end{enumerate}
+\end{proposition}
+
+\begin{example}
+  Es gilt~$\varphi(6125) = \varphi(5^3 \cdot 7^2) = \varphi(5^3) \cdot \varphi(7^2) = 4 \cdot 5^2 \cdot 6 \cdot 7 = 4200$.
+\end{example}
+
+
+
+\subsection{Kreisteilung}
+
+\begin{convention}
+  Im Folgenden sei~$n \in \Natural_1$, und es gelte~$\ringchar(K) \ndivides n$ (etwa~$\ringchar(K) = 0$).
+\end{convention}
+
+\begin{definition}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Es ist~$\Ein_n \defined \{ x \in \closure{K} \suchthat x^n = 1 \}$ die Menge der~\ten{$n$} Einheitswurzeln über~$K$, eine multiplikative Untergruppe von~$\closure{K}^\times$.
+    \item
+      Der~\te{$n$} \defemph{Kreisteilungskörper} ist~$K(\Ein_n(K))$.
+    \item
+      Eine Einheitswurzel~$\zeta \in \Ein_n$ ist \defemph{primitiv} falls sie die Gruppe~$\Ein_n$ erzeugt.
+    \item
+      Das~\te{$n$} \defemph{Kreisteilungspolynom} ist~$\Phi_n \defined \prod_{\zeta} (X - \zeta) \in K[X]$, wobei~$\zeta$ die primitiven~\ten{$n$} Einheitswurzeln durchläuft.
+  \end{enumerate}
+\end{definition}
+
+\begin{proposition}
+  Die folgenden Körper sind gleich.
+  \begin{equivlist}
+    \item
+      $K( \Ein_n )$, der~\te{$n$} Kreisteilungskörper, also der Zerfällungskörper von~$X^n - 1$.
+    \item
+      $K( \zeta )$, wobei~$\zeta \in \Ein_n$ eine primitive~\te{$n$} Einheitswurzel ist.
+    \item
+      $K( \Phi_n )$, der Zerfällungskörper des Kreisteilungspolynomes~$\Phi_n$.
+  \end{equivlist}
+\end{proposition}
+
+\begin{proposition}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Es gilt~$\card{ \Ein_n } = n$.
+    \item
+      Es gilt~$X^n - 1 = \prod_{d \divides n} \Phi_d$.
+    \item
+      Es gilt~$\deg( \Phi_n ) = \varphi(n)$.
+    \item
+      Ist~$\zeta \in \Ein_n(K)$ primitiv, so gilt~$K( \Ein_n ) = K( \zeta )$.
+    \item
+      Es gilt~$[ K(\Ein_n) : K ] = \varphi(n)$.
+  \end{enumerate}
+\end{proposition}
+
+\begin{proposition}
+  Es sei~$K = \Rational$.
+  \begin{enumerate}
+    \item
+      Das Kreisteilungspolynom~$\Phi$ ist normiert, und es gilt bereits~$\Phi \in \Integer[X]$.
+    \item
+      Das Kreisteilungspolnom~$\Phi$ ist irreduzibel.
+    \item
+      Ist~$p$ prim, so gilt~$\Phi_p = X^{p-1} + X^{p-2} + \dotsb + X + 1$.
+    \item
+      Ist~$L$ ein beliebiger Körper, so ergibt sich das~\te{$n$} Kreisteilungspolynom über~$L$ aus dem~\ten{$n$} Kreisteilungspolynom über~$\Rational$ durch Anwenden des Ringhomomorphismus~$\Integer[X] \to K[X]$, der durch den eindeutigen Ringhommorphismus~$\Integer \to K$ induziert wird.
+
+      Gilt insbesondere~$\ringchar(L) = 0$ (ist also~$\Rational$ ein Unterkörper von~$L$), so sind die~\ten{$n$} Kreisteilungspolynome über~$L$ und über~$\Rational$ bereits gleich.
+  \end{enumerate}
+\end{proposition}
+
+\begin{remark}
+  Für~$K = \Rational$ lassen sich die Kreisteilungspolynome induktiv durch Polynomdivision berechnen.
+\end{remark}
+
+\begin{corollary}
+  Es sei~$K = \Rational$.
+  \begin{enumerate}
+    \item
+      Für jede zwei primitive~\te{$n$} Einheitswurzeln~$\zeta, \xi \in \Ein_n$ gibt es ein eindeutiges Element~$\varphi$ der Galois-Gruppe~$\Gal( \Rational(\Ein_n) / \Rational )$ mit~$\varphi(\zeta) = \xi$.
+    \item
+      Es gilt~$\Gal( \Phi_n ) = \Gal( \Rational(\Ein_n) / \Rational ) \cong (\Integer/n)^\times$.
+  \end{enumerate}
+\end{corollary}
 
 
 
