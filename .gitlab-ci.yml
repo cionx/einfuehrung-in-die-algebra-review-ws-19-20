@@ -28,7 +28,7 @@ pages:
   - mv sheet_2.pdf public/einfalg1920_sheet2.pdf
   - mv sheet_3.pdf public/einfalg1920_sheet3.pdf
   - mv sheet_4.pdf public/einfalg1920_sheet4.pdf
-  - mv sheet_4.pdf public/einfalg1920_sheet4.pdf
+  - mv sheet_5.pdf public/einfalg1920_sheet5.pdf
   artifacts:
     paths:
     - public
