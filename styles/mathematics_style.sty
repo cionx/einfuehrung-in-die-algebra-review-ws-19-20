@@ -6,6 +6,9 @@
 \newcommand{\Bahn}[1]{#1\nobreakdash-\hspace{0pt}Bahn}
 \newcommand{\Bahnen}[1]{#1\nobreakdash-\hspace{0pt}Bahnen}
 \newcommand{\Basis}[1]{#1\nobreakdash-\hspace{0pt}Basis}
+\newcommand{\Eck}[1]{#1\nobreakdash-Eck}
+\newcommand{\Ecks}[1]{#1\nobreakdash-Ecks}
+\newcommand{\Funktion}[1]{#1\nobreakdash-\hspace{0pt}Funktion}
 \newcommand{\Gruppe}[1]{#1\nobreakdash-\hspace{0pt}Gruppe}
 \newcommand{\Gruppen}[1]{#1\nobreakdash-\hspace{0pt}Gruppen}
 \newcommand{\Homomorphismen}[1]{#1\nobreakdash-\hspace{0pt}Homomorphismen}
@@ -18,6 +21,7 @@
 \newcommand{\Menge}[1]{#1\nobreakdash-\hspace{0pt}Menge}
 \newcommand{\Mengen}[1]{#1\nobreakdash-\hspace{0pt}Mengen}
 \newcommand{\Sylow}[1]{#1\nobreakdash-Sylow}
+\newcommand{\ten}[1]{#1\nobreakdash-ten}
 \newcommand{\Untergruppe}[1]{#1\nobreakdash-\hspace{0pt}Untergruppe}
 \newcommand{\Vektorraum}[1]{#1\nobreakdash-\hspace{0pt}Vektorraum}
 
@@ -85,6 +89,7 @@
 \DeclareMathOperator{\Alt}{A}
 \DeclareMathOperator{\Aut}{Aut}
 \DeclareMathOperator{\Borel}{B}
+\DeclareMathOperator{\Derived}{D}
 \DeclareMathOperator{\Gal}{Gal}
 \DeclareMathOperator{\GL}{GL}
 \DeclareMathOperator{\im}{im}
@@ -100,6 +105,7 @@
 \DeclareMathOperator{\Uni}{U}
 \DeclareMathOperator{\zenter}{Z}
 \DeclareMathOperator{\zentralizer}{Z}
+\DeclareMathOperator{\ZL}{ZL}
 
 
 
@@ -124,8 +130,10 @@
 \DeclareMathOperator{\Fr}{Fr}
 \DeclareMathOperator{\ggT}{ggT}
 \newcommand{\id}{\mathrm{id}}
+\renewcommand{\Im}{\operatorname{Im}}
 \newcommand{\Mod}[1]{\,(\operatorname{mod} #1)}
 \DeclareMathOperator{\ord}{ord}
+\renewcommand{\Re}{\operatorname{Re}}
 \DeclareMathOperator{\sgn}{sgn}
 
 
@@ -143,8 +151,22 @@
 \AtBeginDocument{%
   \renewcommand{\closure}{\overline}
 }
+\newcommand{\conjugate}{\overline}
 \newcommand{\induced}{\overline}
 \newcommand{\sep}{\mathrm{sep}}
+
+% cocolon
+\newcommand*{\cocolon}{%
+  \nobreak
+  \mskip6mu plus1mu
+  \mathpunct{}%
+  \nonscript
+  \mkern-\thinmuskip
+  {:}%
+  \mskip2mu
+  \relax
+}
+
 
 
 % restrict

@@ -17,17 +17,543 @@
     L^G
     \defined
     \{
-      x \in L
+      \alpha \in L
     \suchthat
-      \text{$\varphi(x) = x$ für alle~$\varphi \in H$}
+      \text{$\varphi(\alpha) = \alpha$ für alle~$\varphi \in H$}
     \}
   \]
   der \defemph{Fixkörper} von~$H$.
 \end{definition}
 
+\begin{lemma}
+  Es sei~$G \defined \Gal(L/K)$.
+  \begin{enumerate}
+    \item
+      Für jede Untergruppe~$H$ von~$G$ ist~$L^H$ ein Zwischenkörper der Erweiterung~$L/K$.
+    \item
+      Für jeden Zwischenkörper~$Z$ der Erweiterung~$L/K$ ist~$\Gal(L/Z)$ eine Untergruppe von~$G$.
+  \end{enumerate}
+\end{lemma}
+
 \begin{proposition}
-  Für jede Untergruppe~$H$ von~$\Gal(L/K)$ ist~$L^H$ ein Zwischenkörper der Erweiterung~$L/K$.
+  \label{general galois}
+  Es sei~$L/K$ ein Körpererweiterung mit Galois-Gruppe~$G \defined \Gal(L/K)$.
+  Wir betrachten die beiden Abbildungen
+  \begin{align*}
+    \Phi
+    \colon
+    \{ \text{Untergruppen von~$\Gal(L/K)$} \}
+    &\onetoone
+    \{ \text{Zwischenkörper von~$L/K$} \}
+    \cocolon
+    \Psi
+    \\
+    H
+    &\mapsto
+    L^H \,,
+    \\
+    \Gal(L/Z)
+    &\mapsfrom
+    Z \,.
+  \end{align*}
+  \begin{enumerate}
+    \item
+      Sind~$H$,~$H'$ zwei Untergruppen von~$G$ mit~$H \subseteq H'$ so gilt~$L^H \supseteq L^{H'}$.
+      Die Abbildung~$\Phi$ ist also ordnungsumkehrend.
+    \item
+      Sind~$Z$,~$Z'$ zwei Zwischenkörper von~$L/K$ mit~$Z \subseteq Z'$ so gilt~$\Gal(L/Z) \supseteq \Gal(L/Z')$.
+      Die Abbildung~$\Psi$ ist also ordnungsumkehrend.
+    \item
+      Für jede Untergruppe~$H$ von~$\Gal(L/K)$ und jeden Zwischenkörper~$Z$ von~$L/K$ gilt
+      \[
+        L^H \supseteq Z
+        \iff
+        \text{$\varphi(\alpha) = \alpha$ für alle~$\varphi \in H$,~$\alpha \in Z$}
+        \iff
+        H \subseteq \Gal(L/Z) \,.
+      \]
+      Es ist also genau dann~$\Phi(H) \supseteq Z$, wenn~$H \subseteq \Psi(Z)$.
+    \item
+      Für jede Untergruppe~$H$ von~$G$ und jeden Zwischenkörper~$Z$ von~$L/K$ gilt
+      \[
+        H \subseteq \Gal(L / L^H) \,,
+        \quad
+        Z \subseteq L^{\Gal(L/Z)} \,.
+      \]
+      Die Abbildungen~$\Psi \Phi$ und~$\Phi \Psi$ sind also ordnungserhaltend.
+    \item
+      Für jede Untergruppe~$H$ von~$G$ und jeden Zwischenkörper~$Z$ von~$L/K$ gilt
+      \[
+        L^{\Gal(L / L^H)} = L^H \,,
+        \quad
+        \Gal( L / L^{\Gal(L / Z)} ) = \Gal(L / Z) \,.
+      \]
+      Es gilt also~$\Phi \Psi \Phi = \Phi$ und~$\Psi \Phi \Psi = \Psi$.
+    \item
+      Die Abbildungen~$\Phi$ und~$\Psi$ schränken sich zu zueinander inversen Bijektionen zwischen den Bildern von~$\Psi$ und~$\Phi$ ein.
+  \end{enumerate}
 \end{proposition}
 
-Ist~$Z$ ein Zwischenkörper der Erweiterugn~$L/K$, ist ist die Galois-Gruppe~$\Gal(L/Z)$ eine Untergruppe von~$\Gal(L/K)$.
-Wir haben also die folgenden Abbildungen:
+\begin{proposition}
+  \label{galois galois}
+  Es sei~$L/K$ eine endliche Körpererweiterung, und~$\Phi$ und~$\Psi$ seien wie in \cref{general galois}.
+  \begin{enumerate}
+    \item
+      Die Abbildung~$\Psi$ ist surjektiv.
+    \item
+      Es gilt~$\Psi \Phi = \id$.
+    \item
+      Die Abbildung~$\Phi$ ist injektiv.
+  \end{enumerate}
+\end{proposition}
+
+\begin{proposition}
+  \label{characterizations of galois extensions}
+  Die Erweiterung~$L/K$ sei endlich mit Galois-Gruppe~$G \defined \Gal(L/K)$.
+  Die folgenden Aussagen sind äquivalent:
+  \begin{equivlist}
+    \item
+      Die Erweiterung~$L/K$ ist normal und separabel.
+    \item
+      Es gilt~$\card{ \Gal(L/K) } = [L : K]$.
+    \item
+      Für jedes Element~$\alpha \in L$ ist das Minimalpolynom von~$\alpha$ über~$K$ gegeben durch
+      \[
+        \mu_\alpha
+        =
+        \prod_{\beta \in G.\alpha}
+        (X - \beta) \,.
+      \]
+    \item
+      Es gilt~$K = L^G$.
+  \end{equivlist}
+\end{proposition}
+
+\begin{definition}
+  Eine endliche Körpererweiterung~$L/K$, welche die äquivalenten Bedingungen aus \cref{characterizations of galois extensions} erfüllt, ist eine \defemph{Galois-Erweiterung}.
+\end{definition}
+
+\begin{remark}
+  Nach dem Satz vom primitven Element ist jede Galois-Erweiterung bereits einfach.
+\end{remark}
+
+\begin{theorem}[Galois-Korrespondenz, Hauptsatz der Galois-Theorie]
+  Es sei~$L/K$ eine Galois-\hspace{0pt}Erweiterung mit Galois-Gruppe~$L/K$.
+  Es seien~$\Phi$ und~$\Psi$ wie in \cref{general galois}.
+  \begin{enumerate}
+    \item
+      Die Abbildungen~$\Phi$ und~$\Psi$ sind zueinander inverse Bijektionen.
+  \end{enumerate}
+  Es sei nun~$H$ eine Untergruppe von~$G$ und~$Z$ der zugehörige Zwischenkörper von~$L/K$, d.\,h. es gelten~$H = \Gal(L/Z)$ und~$Z = L^H$.
+  \begin{enumerate}[resume*]
+    \item
+      Es gilt~$\card{H} = [L : Z]$.
+    \item
+      Für jedes~$\varphi \in G$ gilt~$\Gal(L / \varphi(Z)) = \varphi H \varphi^{-1}$.
+    \item
+      Die Erweiterung~$L/Z$ ist ebenfalls eine Galois-Erweiterung, mit Galois Gruppe~$H$.
+    \item
+      Die Erweiterung~$Z/K$ ist genau dann normal, wenn~$H$ ein Normalteiler in~$G$ ist.
+      Es ist dann
+      \[
+        G / H
+        \to
+        \Gal(Z/K) \,,
+        \quad
+        \class{\varphi}
+        \mapsto
+        \restrict{\varphi}{Z}
+      \]
+      ein wohldefinierter Gruppenisomorphismus.
+  \end{enumerate}
+\end{theorem}
+
+
+
+
+
+\section{Lösbarkeit durch Radikale}
+
+
+
+\subsection{Auflösbarkeit von Gruppen}
+
+\begin{convention}
+  Im Folgenden sei~$G$ eine Gruppe.
+\end{convention}
+
+\begin{definition}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Der \defemph{Kommutator} zweier Elemente~$g, h \in G$ ist~$[g,h] \defined g h g^{-1} h^{-1}$.
+    \item
+      Die \defemph{Kommutator-Untergruppe} von~$G$ ist~$[G,G] \defined \gen{ [g,h] \suchthat g, h \in G }$.
+    \item
+      Die \defemph{abgeleiteten Untergruppen} von~$G$ sind rekursiv gegeben durch
+      \[
+        \Derived^0(G) \defined G \,,
+        \quad
+        \Derived^{i+1}(G) \defined [\Derived^i(G), \Derived^i(G)] \,.
+      \]
+  \end{enumerate}
+\end{definition}
+
+\begin{warning}
+  Im Allgemeinen gilt~$[G,G] \neq \{ [g,h] \suchthat g, h \in G \}$.
+  Die kleinsten Gegenspiele sind von Ordnung~$96$.
+\end{warning}
+
+\begin{proposition}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Die Kommutatoruntergruppe~$[G,G]$ ist normal in~$G$.
+    \item
+      Ist~$N$ ein Normalteiler in~$G$, so ist die Faktorgruppe~$G/N$ genau dann abelsch, wenn die Inklusion~$N \supseteq [G,G]$ gilt.
+  \end{enumerate}
+\end{proposition}
+
+\begin{proposition}
+  \label{characterization of solvable groups}
+  Die folgenden Bedingungen sind äquivalent.
+  \begin{enumerate}
+    \item
+      Es gibt eine Normalenreihe
+      \[
+        1
+        =
+        N_0
+        \normgroupeq
+        N_1
+        \normgroupeq
+        \dotsb
+        \normgroupeq
+        N_n
+        =
+        G \,,
+      \]
+      so dass die Faktorgruppen~$N_i / N_{i-1}$ für alle~$i = 1, \dotsc, n$ abelsch sind.
+    \item
+      Es gilt~$\Derived^i(G) = 1$ für genügend großes~$i$.
+  \end{enumerate}
+  Ist die Gruppe~$G$ endlich, so ergeben sich außerdem die folgenden äquivalenten Bedingungen.
+  \begin{enumerate}[resume*]
+    \item
+      Es gibt eine Normalenreihe
+      \[
+        0
+        =
+        N_0
+        \normgroupeq
+        N_1
+        \normgroupeq
+        \dotsb
+        \normgroupeq
+        N_n
+        =
+        G \,,
+      \]
+      so dass die Faktorgruppen~$N_i / N_{i-1}$ für alle~$i = 1, \dotsc, n$ zyklisch (und endlich) sind.
+    \item
+      Es gibt eine Normalenreihe
+      \[
+        0
+        =
+        N_0
+        \normgroupeq
+        N_1
+        \normgroupeq
+        \dotsb
+        \normgroupeq
+        N_n
+        =
+        G \,,
+      \]
+      so dass die Faktorgruppen~$N_i / N_{i-1}$ für alle~$i = 1, \dotsc, n$ Primordnung haben.
+  \end{enumerate}
+\end{proposition}
+
+\begin{definition}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Die Gruppe~$G$ ist \defemph{auflösbar}, falls sie die äquivalenten Bedingungen aus~\cref{characterization of solvable groups} erfüllt.
+    \item
+      Die Gruppe~$G$ ist \defemph{perfekt}, falls~$[G, G] = G$ gilt.
+  \end{enumerate}
+\end{definition}
+
+\begin{lemma}
+  \label{solveable via ses}
+  Ist~$N$ ein Normalteiler in~$G$, so ist~$G$ genau dann auflösbar, wenn~$N$ und~$G/N$ beide auflösbar sind.
+\end{lemma}
+
+\begin{example}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Jede abelsche Gruppe ist auflösbar, da~$\Derived^1(G) = [G,G] = 1$.
+    \item
+      Ist~$p$ eine Primzahl, so ist jede~\Gruppe{$p$} auflösbar.
+    \item
+      Für alle~$n \in \Natural$ gilt~$[\Sym_n, \Sym_n] = \Alt_n$.
+      Die alternierende Gruppe~$\Alt_n$ ist für alle~$n \geq 5$ perfekt.
+      Für~$n = 4$ gilt~$[\Alt_4, \Alt_4] \cong \Integer_2 \times \Integer_2$, und für~$n = 1, 2, 3$ ist~$\Alt_n$ abelsch, also~$[\Alt_n, \Alt_n] = 0$.
+      Wir erhalten somit, dass~$\Sym_n$ und~$\Alt_n$ für~$n \leq 4$ auflösbar sind, und für~$n \geq 5$ nicht.
+  \end{enumerate}
+\end{example}
+
+\begin{remark}
+  Jede Gruppe von Ordnung~$< 60$ auflösbar (die kleinste nicht-auflösbare Gruppe ist~$\Alt_5$), jede Gruppe der Ordnung~$p^n q^m$ mit~$p$,~$q$ prim ist auflösbar, und jede Gruppe ungerader Ordnung ist auflösbar.
+\end{remark}
+
+
+
+\subsection{Radikalerweiterugnen}
+
+\begin{convention}
+  Im Folgenden ist~$L/K$ eine Körpererweiterung, sofern nicht anders angegeben.
+\end{convention}
+
+Im Allgemeinen können Galois-Gruppen sehr viele mögliche Werte annehmen.
+
+\begin{theorem}
+  Für jede endliche Gruppe~$G$ gibt es für eine Galois-Erweiterung~$L/K$ mit
+  \[
+    \Gal(L/K) \cong G \,.
+  \]
+  Dies gilt sowohl in Charakteristik~$0$ als auch in primer Charakteristik.
+\end{theorem}
+
+\begin{definition}
+  Die Erweiterung~$L/K$ ist \defemph{zyklisch}, \defemph{abelsch}, \defemph{auflösber}, etc., falls die folgenden Bedingungen gelten.
+  \begin{itemize}
+    \item
+      Die Erweiterung~$L/K$ ist eine Galois-Erweiterung.
+    \item
+      Die Galois-Gruppe~$\Gal(L/K)$ hat die entsprechende Eigenschaft.
+  \end{itemize}
+\end{definition}
+
+\begin{definition}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Die Erweiterung~$L/K$ entsteht durch \defemph{Adjunktion einer Wurzel}, fall es ein Element~$\alpha \in L$ mit~$L = K(\alpha)$ gibt, so dass~$\alpha^n \in K$ für einen passenden Exponenten~$n \in \Natural_1$.
+    \item
+      Die Körperweiterung~$L/K$ ist eine \defemph{Radikalerweiterung}, falls es eine Kette von Körperweiterungen
+      \[
+        K = Z_0 \subseteq Z_1 \subseteq Z_2 \subseteq \dotsb \subseteq Z_n = L
+      \]
+      gibt, so dass es für jedes~$i = 1, \dotsc, n$ die Erweiterung~$Z_i / Z_{i-1}$ durch Adjunktion einer Wurzel entsteht.
+  \end{enumerate}
+\end{definition}
+
+\begin{proposition}
+  \label{cyclic iff simple}
+  Es sei~$n \in \Natural_1$, es gelte~$\ringchar(K) \ndivides n$ (etwa~$\ringchar(K) = 0$) und~$K$ enthalte alle~\ten{$n$} Einheitswurzeln (aus~$\closure{K}$).
+  Dann sind für eine Körperweiterung~$L/K$ die folgenden beiden Bedingungen äquivalent.
+  \begin{equivlist}
+    \item
+      Es gibt ein Element~$\alpha \in L$ mit~$L = K(\alpha)$ und~$\alpha^n \in K$.
+    \item
+      Die Erweiterung~$L/K$ ist zyklisch vom Grad~$n$, d.\,h.~$L/K$ ist galoisch mit~$\Gal(L/K) \cong \Integer_n$.
+  \end{equivlist}
+\end{proposition}
+
+Bis auf Probleme mit Einheitswurzeln und folgt aus \cref{cyclic iff simple} für~$\ringchar(K) = 0$ mithilfe der Galois-Korrespondenz, dass eine Körpererweiterung~$L/K$ genau dann durch Radikale auflösbar ist, wenn~$L/K$ auflösbar ist.
+
+
+\subsection{Auflösbarkeit durch Radikale}
+
+\begin{definition}
+  Ein Polynom~$f \in K[X]$ ist \defemph{durch Radikale auflösbar}, falls es eine Radikalerweiterung~$L/K$ gibt, so dass~$f$ über~$L$ in Linearfaktoren zerfällt. 
+\end{definition}
+
+Anschaulich gesehen ist~$f$ durch Radikale auflösbar, wenn sich die Nullstellen von~$f$ mithilfe der üblichen Körperoperationen, sowie Wurzeln ausdrücken lassen. 
+
+\begin{definition}
+  Es sei~$f \in K[X]$ und es sei~$L$ ein Zerfällungskörper von~$f$ über~$K$.
+  Die Gruppe~$\Gal(f) \defined \Gal(L/K)$ die \defemph{Galois-Gruppe} von~$f$.
+\end{definition}
+
+\begin{theorem}
+  Es sei~$f \in K[X]$ und es gelte~$\ringchar(K) = 0$.
+  Dann ist das Polynom~$f$ genau dann durch Radikale auflösbar, falls die Gruppe~$\Gal(f)$ auflösbar ist.
+\end{theorem}
+
+\begin{lemma}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Es gibt für jede endliche Gruppe~$G$ einen Körper~$K$ von Charakteristik~$0$ und ein Polynom~$f \in K[X]$ mit~$L(f)$
+    \item
+      Für jedes~$n \geq 1$ gibt es ein Polynom~$f \in \Rational[X]$ vom Grad~$n$ mit~$\Gal(f) \cong \Sym_5$.
+  \end{enumerate}
+\end{lemma}
+
+\begin{theorem}[Abel, Ruffini]
+  Nicht jedes Polynom~$f \in \Rational[X]$ vom Grad~$\deg(f) \geq 5$ ist durch Radikale auflösbar.
+\end{theorem}
+
+
+
+
+
+\section{Konstruierbarkeit}
+
+
+
+\subsection{Konstruierbare Punkte}
+
+\begin{convention}
+  Im folgenden ist~$E$ die euklidische Ebene, sofern nicht anders angegeben.
+\end{convention}
+
+\begin{definition}
+  Es sei~$M$ eine Teilmenge von~$E$.
+  \begin{enumerate}
+    \item
+      Es ist~$G(M)$ die Menge aller Geraden in~$E$, die durch zwei verschieden Punkte von~$M$ gehen.
+    \item
+      Es ist~$C(M)$ die Menge aller Kreise in~$E$, deren Mittelpunkt in~$M$ liegt, und deren Radius der Abstand zweier Punkte von~$M$ ist.
+    \item
+      Es ist~$\ZL(M)$ die Menge aller Schnittpunkte zweier verschiedener Elemente aus~$G(M) \cup C(M)$.
+    \item
+      Es seien induktiv~$M_0 \defined M$ und~$M_{i+1} \defined \ZL(M_i)$ für alle~$i \geq 0$.
+    \item
+      Es ist~$M_{\infty} \defined \bigcup_{i=0}^\infty M_i$ die Menge aller aus~$M$ \defemph{(durch Zirkel und Lineal) konstruierbarer Punkte}.
+  \end{enumerate}
+\end{definition}
+
+Wir wollen verstehen, welche Punkte der Ebene~$E$ sich ausgehend von zwei verschiedenen Punkten~$x \neq y$ durch Zirkel und Lineal konstruieren lassen.
+Hierfür identifzieren wir~$E$ mit~$\Complex$, wobei wir annehmen können, dass~$M = \{ x, y \} = \{ 0, 1 \}$.
+
+\begin{theorem}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      Die Menge der konstruierbaren Punkte,~$M_{\infty}$, ist ein Zwischenkörper der Erweiterung~$\Complex / \Rational$.
+    \item
+      Die Erweiterung~$M_{\infty} / \Rational$ ist algebraisch abgeschlossen.
+    \item
+      Der Körper~$M_{\infty}$ ist quadratisch abgeschlossen, d.\,h. für jedes Element~$z \in Z$ und jede komplexe Zahl~$w \in \Complex$ mit~$z = w^2$ gilt auch~$w \in M_{\infty}$.
+    \item
+      Es gilt~$i \in M_{\infty}$.
+    \item
+      Es gilt~$\conjugate{M_{\infty}} = M_{\infty}$, wobei~$\conjugate{(-)}$ die komplexe Konjugation bezeichnet.
+    \item
+      Für~$z \in \Complex$ gilt genau dann dann~$z \in M_{\infty}$, wenn~$\Re(z), \Im(z) \in M_{\infty}$.
+    \item
+      Für~$z \in Z$ mit~$z \neq 0$ gilt für~$z = r e^{i \varphi}$ mit~$r \in \Real_{>0}$ und~$\varphi \in \Real$ genau dann~$z \in M_{\infty}$, wenn~$r, e^{i \varphi} \in M_{\infty}$.
+  \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+  Für~$z \in \Complex$ sind die folgenden Bedingungen äquivalent:
+  \begin{equivlist}
+    \item
+      Es gilt $z \in M_{\infty}$.
+    \item
+      Es gibt einen Zwischenkörper~$L$ von~$\Complex/\Rational$, der~$z$ enthält, so das~$L$ aus~$\Rational$ durch sukzessive Adjunktion von Quadratwurzeln ensteht.
+    \item
+      Es gibt eine aufsteigende Folge
+      \[
+        \Rational = K_0 \subseteq K_1 \subseteq K_2 \subseteq \dotsb \subseteq K_n = L
+      \]
+      von~$\Complex$, so dass~$[K_i : K_{i-1}] = 2$ für alle~$i = 1, \dotsc, n$ gilt, sowie~$z \in L$.
+  \end{equivlist}
+\end{theorem}
+
+\begin{corollary}
+  Ist~$z \in \Complex$ konstruierbar, so gilt
+  \[
+    [\Rational(z) : \Rational] = 2^n
+  \] 
+  für einen passenden Exponenten~$n \in \Natural$.
+\end{corollary}
+
+
+
+\subsection{Quadratur des Kreises}
+
+Ist es möglich, aus einen Kreis und seinem Mittelpunkt mithilfe von Zirkel und Lineal ein Quadrat mit gleichen Flächeninhalt zu konstruieren?
+Algebraisch übersetzt sich dieses Problem in die Konstruierbarkeit von~$\pi \in \Complex$, welche nach Lindemann nicht möglich ist.
+
+\begin{theorem}[Lindemann]
+  Die Zahl~$\pi$ is transzendent über~$\Rational$.
+\end{theorem}
+
+\begin{corollary}
+  Die Zahl~$\pi$ ist nicht konstruierbar.
+\end{corollary}
+
+
+
+\subsection{Würfelverdoppelung}
+
+Ist es möglich, aus einem Würfel mithilfe von Zirkel und Lineal einen Würfel von doppelten Volumen zu konstruieren?
+Algebraisch übersetzt sich dieses Problem in die Konstruierbarkeit von~$\sqrt[3]{2}$.
+Da~$[\Rational( \sqrt[3]{2} ) : \Rational]$ ist~$\sqrt[3]{2}$ allerdings nicht konstruierbar, die Würfeldoppelung also nicht möglich.
+
+
+
+\subsection{Konstruierbarkeit des Regelmäßigen~\texorpdfstring{$n$}-Ecks}
+
+Ist es möglich, ein regelmäßigen~\Eck{$n$} zu konstruieren?
+Algebraisch übersetzt sich dies in dieses Problem in die Konstruierbarkeit von~$e^{2 \pi i / n}$, und hängt somit von~$n$ ab.
+
+\begin{definition}
+  Eine \defemph{Fermat-Primzahl} ist eine Primzahl der Form~$2^{2^n} + 1$ für~$n \in \Natural$.
+\end{definition}
+
+\begin{example}
+  Die ersten fünf, und einzig bekannten, Fermat-Primzahlen sind
+  \[
+    3 \,,
+    \quad
+    5 \,,
+    \quad
+    17 \,,
+    \quad
+    257 \,,
+    \quad
+    65537 \,.
+  \]
+\end{example}
+
+\begin{theorem}[Gauß]
+  Für jede Anzahl an Ecken~$n \geq 3$ sind die folgenden Aussagen äquivalent.
+  \begin{equivlist}
+    \item
+      Das regelmäßige~\Eck{$n$} ist mit Zirkel und Lineal konstruierbar, d.\,h.~$e^{2 \pi i / n}$ ist konstruierbar.
+    \item
+      Es gilt
+      \[
+        n = 2^m p_1 p_2 \dotsm p_r
+      \]
+      für eine Potenz~$m \in \Natural$ und paarweise verschiedene Fermat-Primzahlen~$p_1, \dotsc, p_r$.
+  \end{equivlist}
+\end{theorem}
+
+
+
+\subsection{Dreiteilung eines Winkels}
+
+Für alle~$z_1, z_2 \in Z$ sei~$\sphericalangle(z_1, z_2) \in [0, \alpha)$ der (unorientierte) Winkzel zwischen der Strecke~$\overline{0,z_1}$ und der Strecke~$\overline{0,z_2}$.
+Es stellt sich nun die Frage, wann sich ein gegebener Winkel durch Zirkel und Lineal dritteln lässt.
+
+\begin{proposition}
+  Die Dreiteilung eines Winkels~$\alpha \in [0, \pi)$ ist genau dann möglich, wenn
+  \[
+    [ \Rational( e^{i \alpha / 3}  ) : \Rational( e^{i \alpha} ) ]
+    \leq 2
+    \,.
+  \]
+\end{proposition}
+
+
+
+
+

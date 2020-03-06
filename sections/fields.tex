@@ -267,6 +267,7 @@ Dabei gilt insbesondere~$\mu_\alpha \neq 0$.
 
 
 \subsection{Algebraische Körpererweiterungen}
+\newday{4}
 
 \begin{definition}
   Die Menge~$\Alg_{L/K} \defined \{ \alpha \in L \suchthat \text{$\alpha$ ist algebraisch über~$K$} \}$ ist der \defemph{algebraische Abschluss} von~$K$ in~$L$.
@@ -932,6 +933,10 @@ Hierdurch lässt sich die Erweiterung~$L/K$ auf möglichst kleine Weise durch ei
   Der seperable Abschluss~$L_{\sep}$ ist ein Zwischenkörper der Erweiterung~$L/K$.
 \end{proposition}
 
+\begin{proposition}
+  Sind~$M/L/K$ Körpererweiterungen, so ist die Erweiterung~$M/K$ genau dann separabel, wenn die Erweiterungen~$M/L$ und~$L/K$ beide separabel sind.
+\end{proposition}
+
 
 
 \subsection{Perfekte Körper}
@@ -1010,7 +1015,14 @@ Hierdurch lässt sich die Erweiterung~$L/K$ auf möglichst kleine Weise durch ei
 
 
 
+\clearpage
+
+
+
+
+
 \section{Primkörper}
+\newday{5}
 
 \begin{definition}
   Der \defemph{Primkörper} von~$K$ ist~$\Prim(K) \defined \bigcap \{ K' \suchthat \text{$K' \subseteq K$ ist ein Unterkörper} \}$.
@@ -1075,14 +1087,12 @@ Wir identifizieren im Folgenden den Primkörper von~$K$ stets mit~$\Finite_p$ od
 
 \section{Klassifikation Endlicher Körper}
 
+
 Ist~$K$ ein endlicher Körper mit~$\ringchar(K) = p$, so ist~$K / \Finite_p$ eine endliche Körpererweiterung.
 
 \begin{proposition}
   Ist~$K$ ein endlicher Körper mit~$\ringchar(K) = p$, so ist gilt~$\card{K} = p^n$ für eine passende Potenz~$n \in \Natural_1$.
 \end{proposition}
-
-Wir zeigen im folgenden die Umkehrung:
-Es gibt immer einen Körper mit~$p^n$ Elementen, und dieser ist eindeutig bis auf Isomorphie.
 
 \begin{lemma}
   \label{trick lemma for finite fields}
@@ -1143,8 +1153,13 @@ Wir könen nun beide Resultate kombinieren, und außerdem nutzen, dass Zerfällu
   Es ist~$\Finite_{p^n}$ genau dann ein Unterkörper von~$\Finite_{p^m}$, bzw. es gibt genau dann einen Körperhomomorphismus~$\Finite_{p^n} \to \Finite_{p^m}$, wenn~$n \divides m$ gilt.
 \end{proposition}
 
+\begin{proposition}
+  Die Galois-Gruppe~$\Gal(\Finite_{p^(} / \Finite_p)$ ist zyklisch von Ordnung~$n$, und wird vom Frobenius-Homomorphismus~$\Fr$ erzeugt.
+\end{proposition}
 
-% TODO: Hauptsatz der Galois-Theorie
+
+\subsection{Galois-Gruppe}
+
 
 % TODO: Auflösbarkeit
 
