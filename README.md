@@ -10,7 +10,7 @@ Direct downloads of the compiled pdf files are available via the following links
 - [Sheet 1][3] (with solutions)
 - [Sheet 2][4] (with solutions)
 - [Sheet 3][5] (with solutions)
-- [Sheet 4][6]
+- [Sheet 4][6] (with partial solutions)
 - [Sheet 5][7]
 
 This review course is organized by the [Fachschaft Mathematik][8]. 
