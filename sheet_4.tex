@@ -34,35 +34,35 @@
     \item
       Es sei~$L/K$ eine Körpererweiterung, so dass~$L$ algebraisch abgeschlossen ist.
       Zeigen Sie, dass dann~$\Alg_{L/K}$ ein algebraischer Abschluss von~$K$ ist.
-%    \item
-%      Zeigen Sie, dass~$[\closure{\Rational} : \Rational] = \infty$.
-%      (\emph{Tipp:} Betrachten Sie die Polynome~$X^n - 2 \in \Rational[X]$.)
   \end{enumerate}
 \end{exercise}
 
-%\begin{exercise}
-%  Es sei~$K$ ein endlicher Körper.
-%  \begin{enumerate}
-%    \item
-%      Geben Sie ein Beispiel für ein Polynom~$f \in K[X]$ an, so dass zwar~$f \neq 0$ gilt, aber dennoch~$f(x) = 0$ für alle~$x \in K$.
-%    \item
-%      Folgern Sie, dass~$K$ nicht algebraisch abgeschlossen ist.
-%  \end{enumerate}
-%\end{exercise}
-%
-%\begin{exercise}
-%  \begin{enumerate}
-%    \item
-%      Es sei~$L/K$ eine algebraische Körpererweiterung, so dass jedes nicht-konstante Polynom~$f \in K[X]$ über~$L$ in Linearfaktoren zerfällt.
-%      Zeigen Sie, dass~$L$ ein algebraischer Abschluss von~$K$ ist.
-%  \end{enumerate}
-%  Wir wollen im Folgenden einen algebraischen Abschluss von~$\Finite_p$ konstruieren.
-%  \begin{enumerate}
-%    \item
-%      Es sei~$f \in \Finite_p[X]$ ein nicht-konstantes Polynom.
-%      Zeigen Sie, dass~$f$ in~$\Finite_{p^n}$ 
-%  \end{enumerate}
-%\end{exercise}
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Da die Erweiterungen~$\closure{L} / L$ und~$L / K$ beide algebraisch sind, ist auch die Erweiterung~$\closure{L} / K$ algebraisch.
+      Außerdem ist~$\closure{L}$ algebraisch abgeschlossen.
+      Somit ist~$\closure{L}$ ein algebraischer Abschluss von~$K$.
+    \item
+      Die Körpererweiterung~$\Complex / \Rational$ ist nicht algebraisch, also ist~$\Complex$ kein algebraischer Abschluss von~$\Rational$.
+      Aber~$\Complex$ ist nach dem Fundamentalsatz der Algebra algebraisch abgeschlossen.
+    \item
+      Wir setzen abkürzend~$A \defined \Alg_{L/K}$.
+      Wir wissen (aus der Vorlesung), dass~$A$ ein Zwischenkörper der Erweiterung~$L/K$ ist.
+      Per Definition von~$A$ ist diese Erweiterung algebraisch.
+      Es bleibt also nur noch zu zeigen, dass~$A$ algebraisch abgeschlossen ist.
+
+      Sei hierfür~$f \in A[X]$ ein nicht-konstantes Polynom.
+      Da~$A$ ein Unterkörper von~$L$ ist, können wir~$f$ als ein Polynom in~$L[X]$ auffasen.
+      Da~$L$ algebraisch abgeschlossen ist, hat~$f$ eine Nullstelle~$\alpha$ in~$L$.
+      Dieses Element~$\alpha$ ist nun algebraisch über~$A$, und da die Erweiterung~$A / K$ algebraisch ist, somit auch algebraisch über~$K$.
+      Dies bedeutet aber, dass bereits~$\alpha \in A$ gilt.
+      Also hat~$f$ eine Nullstelle in~$A$.
+
+      Dies zeigt, dass jedes nicht-konstante Polynom in~$A[X]$ eine Nullstelle in~$A$ hat.
+      Also ist~$A$ tatsächlich algebraisch abgeschlossen.
+  \end{enumerate}
+\end{solution}
 
 \begin{exercise}
   Es sei~$L/K$ eine algebraische Körpererweiterung und~$\varphi \colon L \to L$ ein~\Homomorphismus{$K$}.
@@ -71,6 +71,30 @@
   (\emph{Tipp:} Betrachten Sie für~$f \in K[X]$ die Wirkung von~$\varphi$ auf den Nullstellen von~$f$.)
 \end{exercise}
 
+\begin{solution}
+  Die Abbildung~$\varphi$ ist injektiv, da sie ein Körperhomomorphismus ist.
+  Es gilt zu zeigen, dass~$\varphi$ bereits surjektiv ist.
+  Hierzu sei~$\alpha \in L$.
+  Es sei~$\mu_\alpha \in K[X]$ das Minimalpolynom von~$\alpha$ über~$K$.
+  Da~$\varphi$ ein~\Homomorphismus{$K$} ist, muss auch~$\varphi(\alpha)$ wieder eine Nullstelle von~$\mu_\alpha$ sein.
+  Es gilt also für die Menge~$N$ der Nullstellen von~$\mu_\alpha$ in~$L$, also
+  \[
+    N
+    \defined
+    \{
+      \beta \in L
+    \suchthat
+      \mu_\alpha( \beta ) = 0
+    \} \,,
+  \]
+  dass~$\varphi(N) \subseteq N$.
+  Deshalb schränkt sich~$\varphi$ zu einer Abbildung~$\restrict{\varphi}{N} \colon N \to N$ ein.
+  Diese Einschränkung ist injektiv, da~$\varphi$ injektiv ist.
+  Die Menge~$N$ ist allerdings endlich, weshalb die Einschränkung~$\restrict{\varphi}{N}$ bereits bijektiv ist.
+  Inbesondere gibt es, da~$\alpha \in N$ gilt, ein weiteres Element~$\beta \in N$ mit~$\restrict{\varphi}{N}(\beta) = \alpha$, also~$\varphi(\beta) = \alpha$.
+  Das zeigt die Surjektivität von~$\varphi$.
+\end{solution}
+
 \begin{exercise}[subtitle = {Erstklausur~18/19, Erstklausur~19/20}]
   Eine Körpererweiterung~$L/K$ ist eine Galois-Erweiterung, falls sie endlich, normal und separabel ist.
   Entscheiden Sie, ob die folgenden Körpererweiterungen Galois-Erweiterungen sin,.
@@ -78,13 +102,69 @@
     \item
       $\Rational( \sqrt{2}, \sqrt{3}, i ) / \Rational$.
     \item
-      $\Rational(\sqrt[4]{3}, i) / \Rational$
+      $\Rational(\sqrt[4]{3}, i) / \Rational$.
     \item
-      $\Rational(\sqrt[5]{2}) / \Rational$
+      $\Rational(\sqrt[5]{2}) / \Rational$.
     \item
       $L / \Finite_2$, wobei~$L \defined \Finite_2[X] / (X^2 - X - 1)$.
   \end{enumerate}
 \end{exercise}
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Die gegebene Erweiterung ist endlich, da sie von endlich vielen algebraischen Elementen erzeugt ist.
+      Die Erweiterung ist separabel, da~$\ringchar(\Rational) = 0$ gilt, und der Körper~$\Rational$ somit perfekt ist.
+      Es gilt
+      \[
+        \Rational( \sqrt{2}, \sqrt{3}, i )
+        =
+        \Rational( \sqrt{2}, -\sqrt{2}, \sqrt{3}, -\sqrt{3}, i, -i ) \,,
+      \]
+      weshalb~$\Rational( \sqrt{2}, \sqrt{3}, i )$ der Zerfällungskörper der Polynome~$X^2 - 2, X^2 - 3, X^2 + 1 \in \Rational[X]$ ist.
+      Deshalb ist die gegeben Erweiterung auch normal.
+      Insgesamt erhalten wir, diess die gegebene Körpererweiterung eine Galois-Erweiterung ist.
+    \item
+      Wir erhalten wie im vorherigen Beispiel, dass die gegebene Erweiterung endlich und separabel ist.
+      Wir bemerken nun, dass
+      \[
+        \Rational( \sqrt[4]{3}, i )
+        =
+        \Rational( \, \sqrt[4]{3} \,, \; i \sqrt[4]{3} \,, \; -\sqrt[4]{3} \,, \; -i \sqrt[4]{3} \, )
+      \]
+      gilt, da~$i = ( i \sqrt[4]{3} ) / \sqrt[4]{3}$.
+      Also ist~$\Rational( \sqrt[4]{3}, i )$ der Zerfällungskörper des Polynoms~$X^4 - 3 \in \Rational[X]$.
+      Die gegebene Körpererweiterung ist somit auch normal, und deshalb insgesamt eine Galois-Erweiterung.
+    \item
+      Das Polynom~$f \defined X^5 - 2 \in \Rational[X]$ ist nach dem Eisenstein-Kriterium mit~$p = 2$ irreduzibel.
+      Es hat zwar eine Nullstelle in~$\Rational( \sqrt[5]{3})$, zerfällt aber in~$\Rational( \sqrt[5]{3})[X]$ noch nicht in Linearfaktoren, denn alle anderen Nullstellen von~$f$ sind nicht-reell, während~$\Rational( \sqrt[5]{3})$ ein Unterkörper von~$\Real$ ist.
+      Das zeigt, dass die gegebene Erweiterung nicht normal ist, und somit auch keine Galois-Erweiterung ist.
+      (Es ergibt sich allerdings wie in den vorherigen Beispielen, dass die Erweiterung endlich und separabel ist.)
+    \item
+      Das gegebene Polynom~$f \defined X^2 - X - 1 \in \Finite_2[X]$ ist quadratisch und hat keine Nullstellen in~$\Finite_2$, und ist somit irreduzibel in~$\Finite_2[X]$.
+      Da~$\Finite_2[X]$ ein Hauptidealring ist, ist somit der Faktorring~$L = \Finite_2[X] / \genideal{f}$ tatsächlich ein Körper.
+
+      Für das Element~$\alpha \in L$ gegeben durch~$\alpha \defined \class{X}$ gilt~$L = \Finite_2[\alpha]$, und somit auch~$L = \Finite_2(\alpha)$.
+      Per Konstruktion von~$L$ ist~$\alpha$ eine Nullstelle des Polynoms~$f$.
+      Da~$f$ irreduzibel und normiert ist, ist~$f$ bereits das Minimalpolynom von~$f$.
+      Inbesondere ist der Grad
+      \[
+        [L : \Finite_2]
+        =
+        [\Finite_2(\alpha) : \Finite_2]
+        =
+        \deg(f)
+        =
+        2
+      \]
+      endlich, die Erweiterung~$L/\Finite_2$ also endlich.
+      Da das quadratische~(!) Polynom~$f \in \Finite_2[X]$ eine Nullstelle in~$L$ hat, muss es in~$L[X]$ bereits in zwei Linearfaktoren zerfallen.
+      Somit ist~$L$ der Zerfällungskörper von~$f$, und die Erweiterung~$L/\Finite_2$ somit normal.
+
+      Die Erweiterung ist außerdem separabel, da der Körper~$\Finite_2$ endlich ist, und somit perfekt.
+      Insgesamt ist die Erweiterung~$L/\Finite_2$ also eine Galois-Erweiterung.
+  \end{enumerate}
+\end{solution}
 
 \begin{exercise}[subtitle = {Erstklausur~18/19}]
   Es sei~$p$ eine Primzahl und~$\alpha \defined \sqrt[p]{p} \in \Real$.
@@ -97,6 +177,25 @@
       Bestimmen Sie in Abhängigkeit von~$p$, ob die Erweiterung~$\Rational(\alpha) / \Rational$ eine Galois-Erweiterung ist.
   \end{enumerate}
 \end{exercise}
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Das Element~$\alpha$ ist eine Nullstelle des Polynoms~$X^p - p \in \Rational[X]$.
+      Dieses Polynom ist irreduzibel nach dem Eisenstein-Kriterium bzgl. der Primzahl~$p$.
+      Es ist außerdem normiert.
+      Also ist es bereits das Minimalpolynom von~$\alpha$.
+    \item
+      Für~$p = 2$ gilt~$\alpha = 1$ und somit~$\Rational(\alpha) = \Rational$.
+      Die Erweiterung~$\Rational / \Rational$ ist normal, also ist~$\Rational(\alpha) / \Rational$ für~$p = 2$ normal.
+
+      Für~$p \geq 3$ hingegen hat das irreduzible Polynom~$f \defined X^p - p \in \Rational[X]$ zwar eine Nullstelle in~$\Rational(\alpha)$, nämlich~$\alpha$, zerfällt in~$\Rational(\alpha)[X]$ allerdings noch nicht in Linearfaktoren, da~$f$ in diesem Fall auch auch nicht-reelle Nullstellen hat,~$\Rational(\alpha)$ aber ein Unterkörper von~$\Real$ ist.
+      Da~$f$ irreduzibel ist, zeigt dies, dass die Erweiterung~$\Rational(\alpha) / \Rational$ für~$p \geq 3$ nicht normal ist.
+    \item
+      Für~$p \geq 3$ ist die Erweiterung nicht normal, und somit auch keine Galois-Erweiterung.
+      Für~$p = 2$ erhalten wir die Erweiterung~$\Rational/\Rational$, welche eine Galois-Erweiterung ist.
+  \end{enumerate}
+\end{solution}
 
 \begin{exercise}[subtitle = {Erstklausur~18/19}]
   \begin{enumerate}
@@ -125,5 +224,29 @@
   Es sei~$K$ ein perfekter Körper und~$L/K$ eine endliche Körpererweiterung.
   Zeigen Sie, dass auch~$L$ perfekt ist, indem Sie zeigen, dass jede algebraische Körpererweiterung~$M/L$ separabel ist.
 \end{exercise}
+
+\begin{solution}
+  Es gilt zu zeigen, dass jede algebraische Körpererweiterung~$M/L$ bereits separabel ist.
+  Hierfür beobachten wir, dass die Erweiterung~$L/K$ algebraisch ist, da sie endlich ist.
+  Also ist auch die Erweiterung~$M/K$ algebraisch.
+  Es folgt aus der Perfektheit von~$K$, dass die Erweiterung~$M/K$ seperabel ist.
+  Damit ist auch die Erweiterung~$M/L$ separabel.
+\end{solution}
+
+
+
+
+
+\clearpage
+
+
+
+
+
+\printsolutions
+
+
+
+
 
 \end{document}
