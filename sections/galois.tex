@@ -14,7 +14,7 @@
 \begin{definition}
   Für jeden Untergruppe~$H$ von~$\Gal(L/K)$ ist
   \[
-    L^G
+    L^H
     \defined
     \{
       \alpha \in L
@@ -72,7 +72,7 @@
         \iff
         H \subseteq \Gal(L/Z) \,.
       \]
-      Es ist also genau dann~$\Phi(H) \supseteq Z$, wenn~$H \subseteq \Psi(Z)$.
+      Es gilt also genau dann~$\Phi(H) \supseteq Z$, wenn~$H \subseteq \Psi(Z)$ gilt.
     \item
       Für jede Untergruppe~$H$ von~$G$ und jeden Zwischenkörper~$Z$ von~$L/K$ gilt
       \[
@@ -122,8 +122,9 @@
         \mu_\alpha
         =
         \prod_{\beta \in G.\alpha}
-        (X - \beta) \,.
+        (X - \beta) \,,
       \]
+      wobei~$G.\alpha = \{ \varphi(\alpha) \suchthat \varphi \in G \}$.
     \item
       Es gilt~$K = L^G$.
   \end{equivlist}
@@ -134,7 +135,7 @@
 \end{definition}
 
 \begin{remark}
-  Nach dem Satz vom primitven Element ist jede Galois-Erweiterung bereits einfach.
+  Nach dem Satz vom primitven Element ist jede Galois-Erweiterung einfach.
 \end{remark}
 
 \begin{theorem}[Galois-Korrespondenz, Hauptsatz der Galois-Theorie]
@@ -144,7 +145,7 @@
     \item
       Die Abbildungen~$\Phi$ und~$\Psi$ sind zueinander inverse Bijektionen.
   \end{enumerate}
-  Es sei nun~$H$ eine Untergruppe von~$G$ und~$Z$ der zugehörige Zwischenkörper von~$L/K$, d.\,h. es gelten~$H = \Gal(L/Z)$ und~$Z = L^H$.
+  Es sei nun~$H$ eine Untergruppe von~$G$ und~$Z$ der zugehörige Zwischenkörper von~$L/K$, d.\,h. es gilt~$H = \Gal(L/Z)$ und~$Z = L^H$.
   \begin{enumerate}[resume*]
     \item
       Es gilt~$\card{H} = [L : Z]$ und~$[G : H] = [Z : K]$.
@@ -278,7 +279,7 @@
   \leavevmode
   \begin{enumerate}
     \item
-      Die Gruppe~$G$ ist \defemph{auflösbar}, falls sie die äquivalenten Bedingungen aus~\cref{characterization of solvable groups} erfüllt.
+      Die Gruppe~$G$ ist \defemph{auflösbar}, falls sie die Bedingungen aus~\cref{characterization of solvable groups} erfüllt.
     \item
       Die Gruppe~$G$ ist \defemph{perfekt}, falls~$[G, G] = G$ gilt.
   \end{enumerate}
@@ -300,7 +301,7 @@
       Für alle~$n \in \Natural$ gilt~$[\Sym_n, \Sym_n] = \Alt_n$.
       Die alternierende Gruppe~$\Alt_n$ ist für alle~$n \geq 5$ perfekt.
       Für~$n = 4$ gilt~$[\Alt_4, \Alt_4] \cong \Integer_2 \times \Integer_2$, und für~$n = 1, 2, 3$ ist~$\Alt_n$ abelsch, also~$[\Alt_n, \Alt_n] = 0$.
-      Wir erhalten somit, dass~$\Sym_n$ und~$\Alt_n$ für~$n \leq 4$ auflösbar sind, und für~$n \geq 5$ nicht.
+      Wir erhalten somit, dass die Gruppen~$\Sym_n$ und~$\Alt_n$ für~$n \leq 4$ auflösbar sind, und für~$n \geq 5$ nicht.
   \end{enumerate}
 \end{example}
 
@@ -337,8 +338,10 @@ Im Allgemeinen können Galois-Gruppen sehr viele mögliche Werte annehmen.
   Dies gilt sowohl in Charakteristik~$0$ als auch in primer Charakteristik.
 \end{theorem}
 
+Es ergibt deshalb Sinn, sich solche Galois-Erweiterungen anzuschauen, für welche die Galois-Gruppen besondere Eigenschaften hat.
+
 \begin{definition}
-  Die Erweiterung~$L/K$ ist \defemph{zyklisch}, \defemph{abelsch}, \defemph{auflösber}, etc., falls die folgenden Bedingungen gelten.
+  Die Erweiterung~$L/K$ ist \defemph{zyklisch}, \defemph{abelsch}, \defemph{auflösbar}, etc., falls die folgenden Bedingungen gelten.
   \begin{itemize}
     \item
       Die Erweiterung~$L/K$ ist eine Galois-Erweiterung.
@@ -351,7 +354,7 @@ Im Allgemeinen können Galois-Gruppen sehr viele mögliche Werte annehmen.
   \leavevmode
   \begin{enumerate}
     \item
-      Die Erweiterung~$L/K$ entsteht durch \defemph{Adjunktion einer Wurzel}, fall es ein Element~$\alpha \in L$ mit~$L = K(\alpha)$ gibt, so dass~$\alpha^n \in K$ für einen passenden Exponenten~$n \in \Natural_1$.
+      Die Erweiterung~$L/K$ entsteht durch \defemph{Adjunktion einer Wurzel}, falls es ein Element~$\alpha \in L$ mit~$L = K(\alpha)$ gibt, so dass~$\alpha^n \in K$ für einen passenden Exponenten~$n \in \Natural_1$.
     \item
       Die Körperweiterung~$L/K$ ist eine \defemph{Radikalerweiterung}, falls es eine aufsteigende Kette von Körperweiterungen
       \[
@@ -373,7 +376,7 @@ Im Allgemeinen können Galois-Gruppen sehr viele mögliche Werte annehmen.
   \end{equivlist}
 \end{proposition}
 
-Bis auf Probleme mit Einheitswurzeln und folgt aus \cref{cyclic iff simple} für~$\ringchar(K) = 0$ mithilfe der Galois-Korrespondenz, dass eine Körpererweiterung~$L/K$ genau dann durch Radikale auflösbar ist, wenn~$L/K$ auflösbar ist.
+Bis auf Probleme mit Einheitswurzeln und folgt aus \cref{cyclic iff simple} für~$\ringchar(K) = 0$ mithilfe der Galois-Korrespondenz, dass eine Körpererweiterung~$L/K$ genau dann durch Radikale auflösbar ist, wenn sie auflösbar ist.
 
 
 \subsection{Auflösbarkeit durch Radikale}
@@ -386,7 +389,7 @@ Anschaulich gesehen ist~$f$ durch Radikale auflösbar, wenn sich die Nullstellen
 
 \begin{definition}
   Es sei~$f \in K[X]$ und es sei~$L$ ein Zerfällungskörper von~$f$ über~$K$.
-  Die Gruppe~$\Gal(f) \defined \Gal(L/K)$ die \defemph{Galois-Gruppe} von~$f$.
+  Die Gruppe~$\Gal(f) \defined \Gal(L/K)$ ist die \defemph{Galois-Gruppe} von~$f$.
 \end{definition}
 
 \begin{theorem}
@@ -400,7 +403,7 @@ Anschaulich gesehen ist~$f$ durch Radikale auflösbar, wenn sich die Nullstellen
     \item
       Es gibt für jede endliche Gruppe~$G$ einen Körper~$K$ von Charakteristik~$0$ und ein Polynom~$f \in K[X]$ mit~$\Gal(f) \cong G$.
     \item
-      Für jedes~$n \geq 1$ gibt es ein Polynom~$f \in \Rational[X]$ vom Grad~$n$ mit~$\Gal(f) \cong \Sym_5$.
+      Für jedes~$n \geq 1$ gibt es ein Polynom~$f \in \Rational[X]$ vom Grad~$n$ mit~$\Gal(f) \cong \Sym_n$.
   \end{enumerate}
 \end{lemma}
 
@@ -419,7 +422,7 @@ Anschaulich gesehen ist~$f$ durch Radikale auflösbar, wenn sich die Nullstellen
 \subsection{Konstruierbare Punkte}
 
 \begin{convention}
-  Im folgenden ist~$E$ die euklidische Ebene, sofern nicht anders angegeben.
+  Im Folgenden ist~$E$ die euklidische Ebene, sofern nicht anders angegeben.
 \end{convention}
 
 \begin{definition}
@@ -449,7 +452,7 @@ Hierfür identifzieren wir~$E$ mit~$\Complex$, wobei wir annehmen können, dass~
     \item
       Die Erweiterung~$M_{\infty} / \Rational$ ist algebraisch.
     \item
-      Der Körper~$M_{\infty}$ ist quadratisch abgeschlossen, d.\,h. für jedes Element~$z \in Z$ und jede komplexe Zahl~$w \in \Complex$ mit~$z = w^2$ gilt auch~$w \in M_{\infty}$.
+      Der Körper~$M_{\infty}$ ist quadratisch abgeschlossen, d.\,h. für jedes Element~$z \in M_{\infty}$ und jede komplexe Zahl~$w \in \Complex$ mit~$z = w^2$ gilt auch~$w \in M_{\infty}$.
     \item
       Es gilt~$i \in M_{\infty}$.
     \item
@@ -457,7 +460,7 @@ Hierfür identifzieren wir~$E$ mit~$\Complex$, wobei wir annehmen können, dass~
     \item
       Für~$z \in \Complex$ gilt genau dann dann~$z \in M_{\infty}$, wenn~$\Re(z), \Im(z) \in M_{\infty}$.
     \item
-      Für~$z \in Z$ mit~$z \neq 0$ gilt für~$z = r e^{i \varphi}$ mit~$r \in \Real_{>0}$ und~$\varphi \in \Real$ genau dann~$z \in M_{\infty}$, wenn~$r, e^{i \varphi} \in M_{\infty}$.
+      Für~$z \in M_{\infty}$ mit~$z \neq 0$ gilt für~$z = r e^{i \varphi}$ mit~$r \in \Real_{>0}$ und~$\varphi \in \Real$ genau dann~$z \in M_{\infty}$, wenn~$r, e^{i \varphi} \in M_{\infty}$.
   \end{enumerate}
 \end{theorem}
 
@@ -469,11 +472,11 @@ Hierfür identifzieren wir~$E$ mit~$\Complex$, wobei wir annehmen können, dass~
     \item
       Es gibt einen Zwischenkörper~$L$ von~$\Complex/\Rational$, der~$z$ enthält, so das~$L$ aus~$\Rational$ durch sukzessive Adjunktion von Quadratwurzeln ensteht.
     \item
-      Es gibt eine aufsteigende Folge
+      Es gibt eine aufsteigende Folge von Körpern
       \[
         \Rational = K_0 \subseteq K_1 \subseteq K_2 \subseteq \dotsb \subseteq K_n = L
       \]
-      von~$\Complex$, so dass~$[K_i : K_{i-1}] = 2$ für alle~$i = 1, \dotsc, n$ gilt, sowie~$z \in L$.
+      mit~$[K_i : K_{i-1}] = 2$ für alle~$i = 1, \dotsc, n$, so dass~$z \in L$.
   \end{equivlist}
 \end{theorem}
 
@@ -490,7 +493,7 @@ Hierfür identifzieren wir~$E$ mit~$\Complex$, wobei wir annehmen können, dass~
 \subsection{Quadratur des Kreises}
 
 Ist es möglich, aus einen Kreis und seinem Mittelpunkt mithilfe von Zirkel und Lineal ein Quadrat mit gleichen Flächeninhalt zu konstruieren?
-Algebraisch übersetzt sich dieses Problem in die Konstruierbarkeit von~$\pi \in \Complex$, welche nach Lindemann nicht möglich ist.
+Algebraisch übersetzt sich dieses Problem in die Konstruierbarkeit der Kreiszahl~$\pi \in \Complex$, welche nach Lindemann nicht möglich ist.
 
 \begin{theorem}[Lindemann]
   Die reelle Zahl~$\pi$ is transzendent über~$\Rational$.
@@ -510,13 +513,13 @@ Da~$[\Rational( \sqrt[3]{2} ) : \Rational] = 3$ gilt, ist~$\sqrt[3]{2}$ allerdin
 
 
 
-\subsection{Konstruierbarkeit des Regelmäßigen~\texorpdfstring{$n$}-Ecks}
+\subsection{Konstruierbarkeit des Regelmäßigen~\texorpdfstring{$n$}{n}-Ecks}
 
 Ist es möglich, ein regelmäßigen~\Eck{$n$} zu konstruieren?
-Algebraisch übersetzt sich dies in dieses Problem in die Konstruierbarkeit von~$e^{2 \pi i / n}$, und hängt somit von~$n$ ab.
+Algebraisch übersetzt sich dieses Problem in die Konstruierbarkeit von~$e^{2 \pi i / n}$, und hängt somit von~$n$ ab.
 
 \begin{definition}
-  Eine \defemph{Fermat-Primzahl} ist eine Primzahl der Form~$2^{2^n} + 1$ für~$n \in \Natural$.
+  Eine \defemph{Fermat-Primzahl} ist eine Primzahl der Form~$2^{2^n} + 1$ mit~$n \in \Natural$.
 \end{definition}
 
 \begin{example}
@@ -605,9 +608,9 @@ Es stellt sich nun die Frage, wann sich ein gegebener Winkel durch Zirkel und Li
   \leavevmode
   \begin{enumerate}
     \item
-      Ist~$\varphi$ prim und~$k \in \Natural$, so gilt~$\varphi(p^k) = p^k - p^{k-1} = (p-1) p^{k-1}$.
+      Ist~$p$ prim und~$k \in \Natural$, so gilt~$\varphi(p^k) = p^k - p^{k-1} = (p-1) p^{k-1}$.
     \item
-      Sind~$n, m \in \Natural_1$ teilerfremd, so gilt~$\varphi(nm) = \varphi(n) \varphi(m)$.
+      Sind~$n, m \in \Natural_1$ teilerfremd, so gilt~$\varphi(nm) = \varphi(n) \cdot \varphi(m)$.
   \end{enumerate}
 \end{proposition}
 
@@ -627,13 +630,13 @@ Es stellt sich nun die Frage, wann sich ein gegebener Winkel durch Zirkel und Li
   \leavevmode
   \begin{enumerate}
     \item
-      Es ist~$\Ein_n \defined \{ x \in \closure{K} \suchthat x^n = 1 \}$ die Menge der~\ten{$n$} Einheitswurzeln über~$K$, eine multiplikative Untergruppe von~$\closure{K}^\times$.
+      Es ist~$\Ein_n \defined \{ x \in \closure{K} \suchthat x^n = 1 \}$ die Menge der~\ten{$n$} Einheitswurzeln über~$K$, eine multiplikative Untergruppe von~$\bigl( \closure{K} \bigr){}^\times$.
     \item
-      Der~\te{$n$} \defemph{Kreisteilungskörper} ist~$K(\Ein_n(K))$.
+      Der~\te{$n$} \defemph{Kreisteilungskörper} ist~$K(\Ein_n)$.
     \item
       Eine Einheitswurzel~$\zeta \in \Ein_n$ ist \defemph{primitiv} falls sie die Gruppe~$\Ein_n$ erzeugt.
     \item
-      Das~\te{$n$} \defemph{Kreisteilungspolynom} ist~$\Phi_n \defined \prod_{\zeta} (X - \zeta) \in K[X]$, wobei~$\zeta$ die primitiven~\ten{$n$} Einheitswurzeln durchläuft.
+      Das~\te{$n$} \defemph{Kreisteilungspolynom} ist~$\Phi_n \defined \prod_{\zeta} (X - \zeta) \in \closure{K}[X]$, wobei~$\zeta$ die primitiven~\ten{$n$} Einheitswurzeln durchläuft.
   \end{enumerate}
 \end{definition}
 
@@ -649,37 +652,41 @@ Es stellt sich nun die Frage, wann sich ein gegebener Winkel durch Zirkel und Li
   \end{equivlist}
 \end{proposition}
 
+\begin{lemma}
+  Es gilt~$\card{ \Ein_n } = n$.
+\end{lemma}
+
 \begin{proposition}
   \leavevmode
   \begin{enumerate}
     \item
-      Es gilt~$\card{ \Ein_n } = n$.
+      Es gilt~$\deg( \Phi_n ) = \varphi(n)$.
     \item
       Es gilt~$X^n - 1 = \prod_{d \divides n} \Phi_d$.
     \item
-      Es gilt~$\deg( \Phi_n ) = \varphi(n)$.
-    \item
-      Ist~$\zeta \in \Ein_n(K)$ primitiv, so gilt~$K( \Ein_n ) = K( \zeta )$.
-    \item
-      Es gilt~$[ K(\Ein_n) : K ] = \varphi(n)$.
+      Es gilt bereits~$\Phi_n \in K[X]$.
   \end{enumerate}
 \end{proposition}
 
 \begin{proposition}
-  Es sei~$K = \Rational$.
+  Es sei nun~$K = \Rational$.
   \begin{enumerate}
     \item
       Das Kreisteilungspolynom~$\Phi$ ist normiert, und es gilt bereits~$\Phi \in \Integer[X]$.
     \item
-      Das Kreisteilungspolnom~$\Phi$ ist irreduzibel.
+      Das Kreisteilungspolynom~$\Phi$ ist irreduzibel.
     \item
       Ist~$p$ prim, so gilt~$\Phi_p = X^{p-1} + X^{p-2} + \dotsb + X + 1$.
     \item
-      Ist~$L$ ein beliebiger Körper, so ergibt sich das~\te{$n$} Kreisteilungspolynom über~$L$ aus dem~\ten{$n$} Kreisteilungspolynom über~$\Rational$ durch Anwenden des Ringhomomorphismus~$\Integer[X] \to K[X]$, der durch den eindeutigen Ringhommorphismus~$\Integer \to K$ induziert wird.
+      Ist~$L$ ein beliebiger Körper, so ergibt sich das~\te{$n$} Kreisteilungspolynom über~$L$ aus dem~\ten{$n$} Kreisteilungspolynom über~$\Rational$ durch Anwenden des Ringhomomorphismus~$\Integer[X] \to K[X]$, der durch den eindeutigen Ringhomomorphismus~$\Integer \to K$ induziert wird.
 
       Gilt insbesondere~$\ringchar(L) = 0$ (ist also~$\Rational$ ein Unterkörper von~$L$), so sind die~\ten{$n$} Kreisteilungspolynome über~$L$ und über~$\Rational$ bereits gleich.
   \end{enumerate}
 \end{proposition}
+
+\begin{corollary}
+  Es gilt~$[K(\Ein_n) : K] = \varphi(n)$.
+\end{corollary}
 
 \begin{remark}
   Für~$K = \Rational$ lassen sich die Kreisteilungspolynome induktiv durch Polynomdivision berechnen.
@@ -689,7 +696,7 @@ Es stellt sich nun die Frage, wann sich ein gegebener Winkel durch Zirkel und Li
   Es sei~$K = \Rational$.
   \begin{enumerate}
     \item
-      Für jede zwei primitive~\te{$n$} Einheitswurzeln~$\zeta, \xi \in \Ein_n$ gibt es ein eindeutiges Element~$\varphi$ der Galois-Gruppe~$\Gal( \Rational(\Ein_n) / \Rational )$ mit~$\varphi(\zeta) = \xi$.
+      Für je zwei primitive~\te{$n$} Einheitswurzeln~$\zeta, \xi \in \Ein_n$ gibt es ein eindeutiges Element~$\varphi$ der Galois-Gruppe~$\Gal( \Rational(\Ein_n) / \Rational )$ mit~$\varphi(\zeta) = \xi$.
     \item
       Es gilt~$\Gal( \Phi_n ) = \Gal( \Rational(\Ein_n) / \Rational ) \cong (\Integer/n)^\times$.
   \end{enumerate}
