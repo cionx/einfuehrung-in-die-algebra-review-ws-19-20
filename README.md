@@ -4,7 +4,7 @@ The review coure was held at the beginning of March 2020.
 All materials are in German.
 
 Direct downloads of the compiled pdf files are available via the following links.
-All **exercises sheets include solutions** to the featured.
+All **exercises sheets include solutions** to the included exercises.
 
 - [Notes][2]
 - [Sheet 1][3]
