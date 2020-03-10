@@ -332,15 +332,190 @@
   (\emph{Tipp}: Es gilt~$\omega + \omega^{-1} = \sqrt{2}$.)
 \end{exercise}
 
+\begin{solution}
+  Wir betrachten den Zwischenkörper~$Z \defined \Rational(\sqrt[4]{2})$ der Erweiterungen~$L / \Rational$.
+
+  Das Minimalpolynom von~$\sqrt[4]{2}$ über~$\Rational$ ist~$X^4 - 2 \in \Rational[X]$, denn dieses Polynom ist normiert, nach dem Eisenstein-Kriterium (mit~$p = 2$) irreduzibel, und hat~$\sqrt[4]{2}$ als Nullstelle.
+  Es folgt, dass
+  \[
+    [Z : \Rational]
+    =
+    [ \Rational(\sqrt[4]{2}) : \Rational ]
+    =
+    \deg( X^4 - 2)
+    =
+    4 \,.
+  \]
+  Wir behaupten, dass außerdem~$[L : Z] = 2$ gilt.
+
+  Aus der gegebenen Gleichung~$\omega + \omega^{-1} = \sqrt{2}$ folgt (durch Multiplikation mit~$\omega$), dass
+  \[
+    \omega^2 - \sqrt{2} \omega + 1 = 0 \,.
+  \]
+  Dabei gilt~$\sqrt{2} = ( \sqrt[4]{2} )^2 \in Z$.
+  Also ist~$\omega$ eine Nullstelle das quadratischen Polynoms
+  \[
+    f
+    \defined
+    X^2 - \sqrt{2} X + 1
+    \in
+    Z[X] \,.
+  \]
+
+  Dieses Polynom ist irreduzibel in~$Z[X]$:
+  Da es quadratisch ist, genügt es zu begründen, dass es keine Nullstelle in~$Z$ hat.
+  Hätte es eine solche Nullstelle, so würde es aus Gradgründen in~$Z[X]$ bereits in zwei Linearfaktoren zerfallen.
+  Dann müssten beide komplexe Nullstellen von~$f$ in~$Z$ liegen, insbesondere müsste also~$\omega$ in~$Z$ liegen.
+  Es ist aber~$\omega$ nicht-reell, während~$Z$ ein Unterkörper von~$\Real$ ist.
+  Also kann~$f$ nicht in Linearfaktoren zerfallen, ist also irreduzibel (da quadratisch).
+
+  Das Polynom~$f$ hat also~$\omega$ as Nullstelle, ist irreduzibel, und normiert.
+  Es handelt sich deshalb bereits um das Minimalpolynom von~$\omega$ über~$Z$.
+  Wir erhalten somit, dass tatsächlich
+  \[
+    [L : Z]
+    =
+    [Z(\omega) : Z]
+    =
+    \deg(f)
+    =
+    2 \,.
+  \]
+
+  Der gesuchte Grad~$[L : \Rational]$ ergibt sich nun aus den bereits bestimmten Graden~$[Z : \Rational]$ und~$[L : Z]$ mithilfe der Gradformel.
+  Wir erhalten, dass
+  \[
+    [L : \Rational]
+    =
+    [L : Z] [Z : \Rational] 
+    =
+    2 \cdot 4
+    =
+    8 \,.
+  \]
+\end{solution}
+
 \begin{exercise}
   Zeigen Sie, dass die folgenden Polynome irreduzibel sind.
   \begin{enumerate}
     \item
-      $X Y^3 + X^2 Y + 3 X Y^2 + X^2 + 3 X Y + 2 X + Y + 2 \in \Rational[X]$.
+      $X Y^3 + X^2 Y + 3 X Y^2 + X^2 + 3 X Y + 2 X + Y + 2 \in \Rational[X, Y]$.
+      \footnote{
+        In der ausgeteilten Version war hier fälschlicherweise der Ring~$\Rational[X]$ angegeben.
+      }
     \item
-      $X^3 + Y^3 + X^2 Y + X Y^2 + XY + 6X + 6Y \in \Rational[X,Y]$.
+      $X^3 + Y^3 + X^2 Y + X Y^2 + XY + 6X + 6Y + 3 \in \Rational[X,Y]$.
+      \footnote{
+        In der ausgeteilten Version fehlte der konstante Teil~$+3$.
+      }
   \end{enumerate}
 \end{exercise}
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Wir identifizieren~$\Rational[X, Y]$ mit~$R[X]$ für~$R \defined \Rational[Y]$.
+      Das gegebene Polynom ist dann
+      \[
+        f
+        \defined
+        (Y + 1) X^2
+        +
+        (Y^3 + 3 Y^2 + 3 Y + 2) X
+        +
+        (Y + 2) \,.
+      \]
+      Der Ring~$R = \Rational[Y]$ ist faktoriell und das Polynom~$p \defined Y + 2$ ist irreduzibel in~$R$, also ein Primelement von~$R$.
+      Außerdem ist~$Y + 2$ ist Teiler von~$Y^3 + 3 Y^2 + 3 Y + 2$, da~$-2$ eine Nullstelle dieses Polynoms ist.
+      (Dies lässt sich durch direktes Einsetzen überprüfen.)
+      Aber~$Y + 2$ ist kein Teiler von~$Y + 1$.
+      Wir können also das Eisenstein-Kriterium mit dem Primelement~$p$ anwenden, und erhalten hieraus, dass das Polynom~$f$ irreduzibel in~$\Quot(R)[X]$ ist.
+      Da die Koeffizienten~$Y + 1$ und~$Y + 2$ von~$f$ teilerfremd (in~$R$) sind, ist~$f$ primitiv, und somit (nach dem Satz von Gauß) bereits irreduzibel in~$R[Y]$.
+    \item
+      Wir identifizieren~$\Rational[X, Y]$ mit~$R[Y]$ für~$R \defined \Rational[X]$.
+      Das gegebene Polynom ist dann
+      \[
+        f
+        \defined
+        Y^3
+        +
+        X Y^2
+        +
+        ( X^2 + X + 6 ) Y
+        +
+        ( X^3 + 6X + 3 )
+      \]
+
+      Das Element~$X \in R$ ist prim mit~$R / \genideal{X} = \Rational[X] / \genideal{X} \cong \Rational$.%
+      \footnote{
+        Die folgende Argumentation zeigt allgemeiner, dass~$R[X] / \genideal{X-a} \cong R$ für jedes kommutativen Ring~$R$ und jedes Element~$a$ von~$R$.
+      }
+      Es gilt nämlich für jedes Polynom~$h \in R = \Rational[X]$, dass
+      \[
+        h \in \genideal{X}
+        \iff
+        X \divides h
+        \iff
+        \text{$X$ ist eine Linearfaktor von~$h$}
+        \iff
+        h(0) = 0 \,.
+      \]
+      Also ist das Ideal~$\genideal{X}$ genau der Kern des surjektiven Ringhomomorphismus
+      \[
+        \varphi
+        \colon
+        \Rational[X]
+        \to
+        \Rational \,,
+        \quad
+        h
+        \mapsto
+        h(0) \,.
+      \]
+      Somit induziert~$\varphi$ einen Ringisomorphismus
+      \[
+        \induced{\varphi}
+        \colon
+        \Rational[X] / \genideal{X}
+        =
+        \Rational[X] / {\ker(\varphi)}
+        \to
+        \im(\varphi)
+        =
+        \Rational \,,
+        \quad
+        \class{ h }
+        \mapsto
+        h(0) \,.
+      \]
+
+      Wir reduzieren nun das Polynom~$f$ bezüglich des Primelements~$X$ von~$R$, und erhalten somit das Polynom
+      \[
+        \induced{f}
+        \defined
+        Y^3
+        +
+        \class{ X } Y^2
+        +
+        \class{ X^2 + X + 6 } Y
+        +
+        \class{ X^3 + 6X + 3 }
+        \in
+        ( R / \genideal{X} )[Y] \,.
+      \]
+      Dabei identifizieren wir den Faktorring~$R / \genideal{X}$ vermöge des obigen Isomorphismus~$\induced{\varphi}$ mit~$\Rational$, und erhalten somit das gleichnotierte Polynom
+      \[
+        \induced{f}
+        =
+        Y^3 + 6Y + 3
+        \in
+        \Rational[Y] \,.
+      \]
+      Dieses Polynom ist nach dem Eisenstein-Kriterium bzgl. der Primzahl~$3$ irreduzibel.
+      Aus dem Reduktionskriterium erhalten wir nun, dass~$f$ irreduzibel in~$\Quot(R)[Y]$ ist.
+      Das Polynom~$f$ ist primitiv in~$R[Y]$, da es normiert ist, und somit nach dem Satz von Gauß auch irreduzibel in~$R[Y]$.
+  \end{enumerate}
+\end{solution}
 
 \begin{exercise}
   Es sei~$R$ ein kommutativer Ring und~$\pideal$ ein Ideal in~$R$ mit Komplement~$S \defined R \setminus \pideal$.
