@@ -206,6 +206,35 @@
   \end{enumerate}
 \end{exercise}
 
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Wir betrachten das Polynom~$f \defined X^3 - 2 \in \Rational[X]$.
+      Dieses Polynom ist irreduzibel nach dem Eisenstein-Kriterium mit~$p = 3$.
+      (Alternativ hat~$f$ keine Nullstelle in~$\Rational$, und ist somit irreduzibel in~$\Rational[X]$, da~$f$ kubisch ist.)
+      Das irreduzible Polynom~$f$ hat eine Nullstelle in~$\Rational(\sqrt[3]{2})$, nämlich~$\sqrt[3]{2}$.
+      Aber es zerfällt über~$\Rational(\sqrt[3]{2})$ noch nicht in Linearfaktoren, denn~$f$ hat zwei nicht-reelle Nullstellen, während~$\Rational(\sqrt[3]{2})$ ein Unterkörper von~$\Real$ ist.
+      Das zeigt, dass die Erweiterung~$\Rational(\sqrt[3]{2}) / \Rational$ nicht normal ist.
+    \item
+      Das Polynom~$f = X^3 - 2$ ist nicht nur irreduzibel, sondern ist auch normiert und hat~$\sqrt[3]{2}$ als Nullstelle.
+      Es ist also somit bereits das Minimalpolynom von~$\sqrt[3]{2}$ über~$\Rational$.
+      Wir erhalten hiermit eine Bijektion
+      \[
+        \Gal\bigl( \Rational(\sqrt[3]{2}) / \Rational \bigr)
+        \to
+        \bigl\{
+          \text{Nullstellen von~$f$ in~$\Rational( \sqrt[3]{2} )$}
+        \bigr\} \,,
+        \quad
+        \varphi
+        \mapsto
+        \varphi(\alpha) \,.
+      \]
+      Da das Polynom~$f$ nur eine Nullstelle in~$\Rational(\sqrt[3]{2})$ hat, nämlich~$\sqrt[3]{2}$, erhalten wir aus dieser Bijektion, dass~$\card{ \Gal( \Rational(\sqrt[3]{2}) / \Rational ) } = 1$ gilt.
+      Also gilt~$\Gal( \Rational( \sqrt[3]{2} ) / \Rational ) = 1$.
+  \end{enumerate}
+\end{solution}
+
 \begin{exercise}
   \begin{enumerate}
     \item
@@ -219,6 +248,85 @@
   \end{enumerate}
   Dies zeigt, dass Normalität von Körpererweiterungen nicht transitiv ist.
 \end{exercise}
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Es sei~$\alpha \in L$ mit~$\alpha \notin K$.
+      Es ist~$K(\alpha)$ ein Zwischenkörper der Erweiterung~$L / K$ mit~$K(\alpha) \neq K$, also mit~$[K(\alpha) : K] \geq 2$.
+      Aus~$[L : K] = 2$ folgt, das bereits~$[K(\alpha) : K] = 2$ gilt, und somit~$K(\alpha) = L$.
+
+      Die Erweiterung~$L/K$ ist algebraisch, da sie algebraisch ist.
+      Es sei~$\mu_\alpha$ das Minimalpolynom von~$\alpha$ über~$K$.
+      Es gilt
+      \[
+        \deg(\mu_\alpha)
+        =
+        [K(\alpha) : K]
+        =
+        [L : K]
+        =
+        2 \,,
+      \]
+      weshalb das Polynom~$\mu_\alpha$ quadratisch ist.
+      Da~$\mu_\alpha$ eine Nullstelle in~$L$ hat, nämlich~$\alpha$, und quadratisch ist, zerfällt~$\mu_\alpha$ in~$K[X]$ bereits in zwei Linearfaktoren,
+      \[
+        \mu_\alpha
+        =
+        (X - \alpha) (X - \beta) \,.
+      \]
+      Für die beiden Nullstellen~$\alpha$,~$\beta$ gilt
+      \[
+        L
+        \supseteq
+        K(\alpha, \beta)
+        \supseteq
+        K(\alpha)
+        =
+        L
+      \]
+      und somit~$L = K(\alpha, \beta)$.
+      Es ist also~$L$ der Zerfällungskörper von~$\mu_\alpha$.
+      Somit ist~$L/K$ normal.
+    \item
+      Das Minimalpolynom von~$\sqrt{2}$ über~$\Rational$ ist~$f \defined X^2 - 2 \in \Rational[X]$.
+      Denn dieses Polynom ist normiert, hat~$\sqrt{2}$ als Nullstelle, und ist nach dem Eisenstein-Kriterium mit~$p = 2$ irreduzibel.
+      (Alternativ ist~$f$ quadratisch und hat keine Nullstelle in~$\Rational$, und ist somit irreduzibel.)
+      
+      Das Minimalpolynom von~$\sqrt[4]{2}$ über~$\Rational$ ist~$g \defined X^4 - 2 \in \Rational[X]$.
+      Denn dieses Polynom ist normiert, hat~$\sqrt[4]{2}$ als Nullstelle, und ist nach dem Eisenstein-Kriterium mit~$p = 2$ irreduzibel.
+
+      Wir erhalten nun, dass
+      \[
+        [\Rational(\sqrt{2}) : \Rational]
+        =
+        \deg(f)
+        =
+        2 \,,
+        \quad
+        [\Rational(\sqrt[4]{2}) : \Rational]
+        =
+        \deg(g)
+        =
+        4 \,,
+      \]
+      und somit nach der Gradformel auch, dass
+      \[
+        [\Rational(\sqrt[4]{2}) : \Rational(\sqrt{2})]
+        =
+        \frac{ [\Rational(\sqrt[4]{2}) : \Rational] }{ [\Rational(\sqrt{2}) : \Rational] }
+        =
+        \frac{4}{2}
+        =
+        2 \,.
+      \]
+      Die Erweiterungen~$\Rational(\sqrt{2}) / \Rational$ und~$\Rational(\sqrt[4]{2}) / \Rational(\sqrt{2})$ sind also beide vom Grad~$2$, und somit nach dem vorherigen Aufgabenteil normal.
+    \item
+      Das Polynom~$g = X^4 - 2 \in \Rational[X]$ ist irreduzibel und hat eine Nullstelle in~$\Rational(\sqrt[4]{2})$.
+      Es zerfällt aber über~$\Rational(\sqrt[4]{2})$ noch nicht in Linearfaktoren, denn~$g$ hat nicht-reelle Nullstellen, aber~$\Rational(\sqrt[4]{2})$ ist ein Unterkörper von~$\Real$.
+      Das zeigt, dass die Erweiterung~$\Rational(\sqrt[4]{2}) / \Rational$ nicht normal ist.
+  \end{enumerate}
+\end{solution}
 
 \begin{exercise}
   Es sei~$K$ ein perfekter Körper und~$L/K$ eine endliche Körpererweiterung.
