@@ -1,0 +1,188 @@
+\documentclass{scrartcl}
+
+\usepackage{style_general}
+\usepackage{style_sheets}
+
+
+
+\titlehead{
+  \textbf{Repetitorium: Einführung in die Algebra}%
+%  \footnote{
+%    Online verfügbar unter \url{https://gitlab.com/cionx/einfuehrung-in-die-algebra-review-ws-19-20}.
+%  }
+  \hfill
+  6. März 2020
+}
+\title{\vspace{-1em}Tag 5}
+\subtitle{Verbesserte Version}
+\author{}
+\date{}
+
+
+
+\begin{document}
+
+\maketitle
+\vspace{-7em}
+
+\begin{exercise}[subtitle = {Erstklausur~18/19, Zweitklausur~18/19}]
+  Entscheiden Sie für die folgenden natürlichen Zahlen jeweils, ob es einen Körper~$K$ mit dieser Anzahl an Elementen gibt:
+  \[
+    1 \,,
+    \quad
+    64 \,,
+    \quad
+    72 \,,
+    \quad
+    125 \,,
+    \quad
+    8192 \,,
+    \quad
+    143 \,,
+    \quad
+    343 \,,
+    \quad
+    46 \,,
+    \quad
+    12312312312312312 \,.
+  \]
+\end{exercise}
+
+\begin{solution}
+  Für eine beliebige natürliche Zahl~$q \in \Natural$ gibt es genau dann einen Körper mit~$q$ Elementen, falls~$q$ eine nicht-triviale Potenz einer Primzahl ist, d.\,h. falls es eine Primzahl~$p$ und einen Exponenten~$n \in \Natural_1$ gibt, so dass~$q = p^n$ gilt.
+  \begin{enumerate}
+    \item
+      Es gibt keinen Körper mit nur einem Element, da~$1$ keine nicht-triviale Potenz einer Primzahl ist.
+      Alternativ gilt für jeden Körper~$K$, dass~$\card{K} \geq 2$, da für die beiden Elemente~$0, 1 \in K$ bereits~$0 \neq 1$ gilt.
+    \item
+      Es gilt~$64 = 2^6$, also gibt es einen Körper mit~$64$ Elementen.
+    \item
+      Es gilt~$72 = 8 \cdot 9 = 2^3 \cdot 3^2$, also gibt es keinen Körper mit~$72$ Elementen.
+    \item
+      Es gilt~$125 = 5^3$, also gibt es einen Körper mit~$125$ Elementen.
+    \item
+      Es gilt~$8192 = 2^{13}$, also gibt es einen Körper mit~$8192$ Elementen.
+    \item
+      Es gilt~$143 = 11 \cdot 13$, also gibt es keinen Körper mit~$143$ Elementen.
+    \item
+      Es gilt~$343 = 7^3$, also gibt es einen Körper mit~$343$ Elementen.
+    \item
+      Es gilt~$46 = 2 \cdot 23$, also gibt es keinen Körper mit~$46$ Elementen.
+    \item
+      Die gegebene Zahl ist gerade, also durch~$2$ teilbar.
+      Anhand der Quersumm der gegebenen Zahl ergibt sich, dass sie auch durch~$3$ teilbar ist.
+      Also handelt es sich um keine Potenz einer Primzahl, und somit auch keinen Körper mit dieser Anzahl an Elementen.
+  \end{enumerate}
+\end{solution}
+
+\begin{exercise}[subtitle = {Erstklausur~18/19, Zweitklausur~19/20}]
+  Entscheiden Sie jeweils, ob die folgenden Aussagen wahr oder falsch sind.
+  \begin{enumerate}
+    \item
+      Es sei~$f \in \Rational[X]$ irreduzibel mit~$n \defined \deg(f)$.
+      Dann gilt~$\card{ \Gal(f) } = n$.
+    \item
+      Ist~$f \in \Rational[X]$ ein Polynom vom Grad~$n$, so ist~$\card{ \Gal(f) }$ ein Teiler von~$n!$.
+    \item
+      Ist~$K(\alpha)/K$ eine einfache Körpererweiterung, so ist~$\Gal( K(\alpha) / K )$ zyklisch.
+    \item
+      Ist~$K(\alpha)/K$ eine einfache Körpererweiterung, so ist~$\Gal( K(\alpha) / K )$ abelsch.
+    \item
+      Jede Sylow-Untergruppe einer endlichen Gruppe ist auflösbar.
+    \item
+      Ist~$K$ ein endlicher Körper und~$L/K$ eine endliche Körpererweiterung, so ist diese Erweiterung eine Galois-Erweiterung.
+  \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Dies Aussage ist falsch.
+      Wir betrachten das Polynom~$f \defined X^3 - 2 \in \Rational[X]$.
+% TODO: Continue writing.
+  \end{enumerate}
+\end{solution}
+
+\begin{exercise}[subtitle = {Erstklausur~18/19}]
+  Entscheiden Sie, für welche natürlichen Zahlen~$n$ mit~$3 \leq n \leq 34$ man das reguläre~\Eck{$n$} mit Zirkel und Lineal (aus den beiden Punkten~$0,1 \in \Complex$) konstruieren kann.
+\end{exercise}
+
+\begin{solution}
+  Des regelmäßige~\Eck{$n$} ist für~$n \geq 3$ genau dann mit Zirkel und Lineal konstruierbar, falls die Zahl~$n$ von der Form~$n = 2^m p_1 \dotsm p_r$ ist, wobei~$n \in \Natural$ und~$p_1, \dotsc, p_r$ paarweise verschiedene Fermat-Primzahlen sind.
+  Die einzigen Fermat-Primzahlen kleiner-gleich als~$34$ sind~$3$,~$5$,~$17$.
+  Wir erhalten somit für~$n$ die möglichen Werte
+  \begin{align*}
+    3 &= 3 \,,
+    \\
+    2 \cdot 3 &= 6 \,,
+    \\
+    4 \cdot 3 &= 12 \,,
+    \\
+    8 \cdot 3 &= 24 \,,
+    \\
+    5 &= 5 \,,
+    \\
+    2 \cdot 5 &= 10 \,,
+    \\
+    4 \cdot 5 &= 20 \,,
+    \\
+    17 &= 17 \,,
+    \\
+    2 \cdot 17 &= 34 \,,
+    \\
+    3 \cdot 5 &= 15 \,,
+    \\
+    2 \cdot 3 \cdot 5 &= 30 \,,
+    \\
+    3 \cdot 7 &= 21 \,,
+  \end{align*}
+\end{solution}
+
+\begin{exercise}[subtitle = {Erstklausur~18/19}]
+  Es sei~$f \in \Rational[X]$ ein irreduzibles Polynom vom Grad~$4$, so dass~$\Gal(f) \cong \Sym_4$ gilt.
+  Ferner sei~$L$ ein Zerfällungskörper von~$f$ über~$\Rational$.
+  Zeigen Sie, dass es einen Zwischenkörper~$Z$ der Erweiterung~$L / \Rational$ gibt, so dass~$[Z : \Rational] = 3$ gilt.
+\end{exercise}
+
+\begin{solution}
+  Da~$L$ ein Zerfällungskörper von~$f$ ist, gilt~$\Gal(L/\Rational) \cong \Gal(f) \cong \Sym_4$.
+\end{solution}
+
+\begin{exercise}
+  Zeigen Sie, dass jede~\Gruppe{$p$}~$G$ auflösbar ist.
+  (\emph{Tipp:} Nutzen Sie, dass~$\zenter(G) \neq 1$, falls~$G \neq 1$.)
+\end{exercise}
+
+\begin{exercise}[subtitle = {Erstklausur~19/20}]
+  Es sei~$f \defined X^5 - 14 X^3 - 21 X^2 + 49 X + 28 \in \Rational[X]$.
+  Es sei~$\alpha \in \Complex$ eine Nullstelle von~$f$.
+  Zeigen Sie, dass~$\alpha$ nicht durch Zirkel und Lineal konstruierbar ist.
+\end{exercise}
+
+\begin{exercise}
+  Es sei~$n \in \Natural_1$ und~$K$ ein Körper mit~$\ringchar(K) \ndivides n$.
+  Zeigen Sie, dass~$\card{ \Ein_n } = n$ gilt.
+\end{exercise}
+
+\begin{exercise}
+  Für jedes natürliche Zahl~$n \in \Natural_1$ sei~$\zeta_n \defined e^{2 \pi i / n} \in \Complex$.
+  Bestimmen Sie den Grad der Körpererweiterung~$\Rational(\zeta_{84}) / \Rational(\zeta_{21})$.
+\end{exercise}
+
+
+
+
+
+\clearpage
+
+
+
+
+
+\printsolutions
+
+
+
+
+
+\end{document}

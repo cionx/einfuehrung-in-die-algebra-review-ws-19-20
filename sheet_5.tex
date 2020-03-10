@@ -48,6 +48,33 @@
   \]
 \end{exercise}
 
+\begin{solution}
+  Für eine beliebige natürliche Zahl~$q \in \Natural$ gibt es genau dann einen Körper mit~$q$ Elementen, falls~$q$ eine nicht-triviale Potenz einer Primzahl ist, d.\,h. falls es eine Primzahl~$p$ und einen Exponenten~$n \in \Natural_1$ gibt, so dass~$q = p^n$ gilt.
+  \begin{enumerate}
+    \item
+      Es gibt keinen Körper mit nur einem Element, da~$1$ keine nicht-triviale Potenz einer Primzahl ist.
+      Alternativ gilt für jeden Körper~$K$, dass~$\card{K} \geq 2$, da für die beiden Elemente~$0, 1 \in K$ bereits~$0 \neq 1$ gilt.
+    \item
+      Es gilt~$64 = 2^6$, also gibt es einen Körper mit~$64$ Elementen.
+    \item
+      Es gilt~$72 = 8 \cdot 9 = 2^3 \cdot 3^2$, also gibt es keinen Körper mit~$72$ Elementen.
+    \item
+      Es gilt~$125 = 5^3$, also gibt es einen Körper mit~$125$ Elementen.
+    \item
+      Es gilt~$8192 = 2^{13}$, also gibt es einen Körper mit~$8192$ Elementen.
+    \item
+      Es gilt~$143 = 11 \cdot 13$, also gibt es keinen Körper mit~$143$ Elementen.
+    \item
+      Es gilt~$343 = 7^3$, also gibt es einen Körper mit~$343$ Elementen.
+    \item
+      Es gilt~$46 = 2 \cdot 23$, also gibt es keinen Körper mit~$46$ Elementen.
+    \item
+      Die gegebene Zahl ist gerade, also durch~$2$ teilbar.
+      Anhand der Quersumm der gegebenen Zahl ergibt sich, dass sie auch durch~$3$ teilbar ist.
+      Also handelt es sich um keine Potenz einer Primzahl, und somit auch keinen Körper mit dieser Anzahl an Elementen.
+  \end{enumerate}
+\end{solution}
+
 \begin{exercise}[subtitle = {Erstklausur~18/19, Zweitklausur~19/20}]
   Entscheiden Sie jeweils, ob die folgenden Aussagen wahr oder falsch sind.
   \begin{enumerate}
@@ -67,9 +94,139 @@
   \end{enumerate}
 \end{exercise}
 
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Dies Aussage ist falsch:
+
+      Es sei~$L$ ein Zerfällungskörper von~$f$.
+      Dann gilt~$\Gal(f) \cong \Gal(L/\Rational)$ per Definition von~$f$, und somit insbesondere~$\card{ \Gal(f) } = \card{ \Gal(L/K) }$.
+      Außerdem ist die Erweiterung~$L/\Rational$ dann eine Galois-Erweiterung:
+      Sie ist endlich und normal, da~$L$ der Zerfällungskörper des Polynoms~$f \in \Rational[X]$ ist, und separabel, da~$\ringchar(\Rational) = 0$ gilt, und~$\Rational$ somit perfekt ist.
+      Wir erhalten somit, dass
+      \[
+        [L : K]
+        =
+        \card{ \Gal(L/\Rational) }
+        =
+        \card{ \Gal(f) }
+      \]
+      gilt.
+      Würde gegebene Aussage stimmen, so würde also~$[L : \Rational] = n$ gelten.
+
+      Wählen wir aber das Polynom~$f = X^3 - 2 \in \Rational[X]$, so ist dies nicht der Fall:
+      Das Polynom ist irreduzibel nach Eisenstein mit~$p = 2$.
+      (Alternativ ist~$f$ kubisch und hat keine Nullstelle in~$\Rational$.)
+      Es sei~$L$ der Zerfällungskörper von~$\Rational$ in~$\Complex$.
+      Die Erweiterung~$L/\Rational$ hat den Zwischenkörper~$Z \defined \Rational(\sqrt[3]{2})$.
+      Das Polynom~$f$ ist irreduzibel, normiert, und hat~$\sqrt[3]{2}$ als Nullstelle, ist also das Minimalpolynom von~$\sqrt[3]{2}$ über~$\Rational$.
+      Also gilt~$[Z : \Rational] = 3$.
+      Würde auch~$[L : \Rational] = 3$ gelten, so würde sich aus der Gradformel ergeben, dass~$[L : Z] = 1$, und somit~$L = Z$.
+      Es wäre also~$Z = \Rational(\sqrt[3]{2})$ bereits ein Zerfällungskörper von~$f$ über~$\Rational$.
+      Dies ist aber nicht der Fall, denn~$f$ zerfällt über~$Z$ nicht in Linearfaktoren, da~$f$ auch nicht-reelle Nullstellen hat, während aber~$Z$ ein Unterkörper von~$\Real$ ist.
+
+    \item
+      Die Aussage ist wahr:
+
+      Es sei$~L$ ein Zerfällungskörper von~$f$ über~$K$.
+      Dann gilt~$\Gal(f) \cong \Gal(L/K)$ per Definition von~$\Gal(f)$.
+      Insbesondere gilt~$\card{ \Gal(f) } = \card{ \Gal(L/K) }$.
+
+      Per Definitionen des Zerfällungskörpers~$L$ zerfällt das Polynom~$f$ über~$L$ in Linearfaktoren.
+      Es seien~$\alpha_1, \dotsc, \alpha_n$ die nicht-notwendigerweise paarweise verschiedenen Nullstellen von~$f$ in~$L$.
+      Jedes Element~$\varphi$ von~$\Gal(L/K)$ ist ein~\Homomorphismus{$K$}~$\varphi \colon L \to L$ und bildet daher die Nullstellen von~$f$ wieder auf Nullstellen von~$f$ ab.
+      Zusammen mit der Injektivität von~$\varphi$ erhalten wir, dass~$\varphi$ die Nullstellen~$\alpha_1, \dotsc, \alpha_n$ permutiert.
+      Wir erhalten somit einen Gruppenhomomorphismus
+      \[
+        \rho
+        \colon
+        \Gal(L/K)
+        \to
+        \Sym_n
+      \]
+      der einen~\Homomorphismus{$K$}~$\varphi \in \Gal(L/K)$ auf die eindeutige Permutation~$\sigma \in \Sym_n$ schickt, so dass
+      \[
+        \varphi( \alpha_i ) = \alpha_{\sigma(i)}
+        \qquad
+        \text{für alle~$i = 1, \dotsc, n$.}
+      \]
+
+      Per Definition von~$L$ gilt~$L = K(\alpha_1, \dotsc, \alpha_n)$.
+      Deshalb ist jeder~\Homomorphismus{$K$}~$\varphi$ aus~$\Gal(L/K)$ bereits eindeutig durch seine Wirkung auf den~$\alpha_i$ bestimmt.
+      Dies bedeutet für den obigen Gruppenhomomorphismus~$\rho$, dass er injektiv ist.
+      Zusammen mit dem Satz von Lagrange erhalten wir somit, dass
+      \[
+        \card{ \Gal(L/K) }
+        =
+        \card{ \im(\rho) }
+        \divides
+        \card{ \Sym_n }
+        =
+        n! \,.
+      \]
+    \item
+      Die Aussage ist falsch:
+
+      Wir wissen aus der Vorlesung, dass es für jede endliche Gruppe~$G$ (und jede Charakteristik) eine Galois-Erweiterung~$L/K$ mit~$\Gal(L/K) \cong G$ gibt, und dass jede Galois-Erweiterung (nach dem Satz vom primitiven Element) zyklisch ist.
+      Wir erhalten somit, dass es für jede endliche Gruppe~$G$ eine einfache Körpererweiterung~$K(\alpha)/K$ mit~$\Gal(K(\alpha)/K) \cong G$ gibt.
+      Insbesondere können nun~$G$ als nicht-zyklisch wählen.
+    \item
+      Die Aussage ist falsch:
+
+      Wir können wie im vorherigen Aufgabenteil vorgehen, indem wir~$G$ außerdem als nicht-abelsch wählen.
+    \item
+      Die Aussage ist wahr:
+
+      Jede~Sylow-Untergruppe einer endlichen Gruppe ist insbesondere eine~\Gruppe{$p$}, und somit auflösbar.
+    \item
+      Die Aussage ist wahr:
+
+      Die Erweiterung~$L/K$ ist per Annahme endlich, und sie ist seperabel, da der Körper~$K$ endlich und somit perfekt ist.
+      Es bleibt zu zeigen, dass die Erweiterung~$L/K$ normal ist.
+
+      Es sei~$p$ die Charakteristik von~$K$, und somit auch die Charakteristik von~$L$.
+      Da~$K$ endlich ist, ist~$p$ eine Primzahl.
+      Es gilt~$\card{L} = \card{K} \cdot [L : K]$, und da sowohl~$K$ als auch die Erweiterung~$L/K$ beide endlich sind, ist somit auch~$L$ endlich.
+      Aus der Klassifikation endlicher Körper folgt mit~$q \defined \card{L}$ für die Erweiterung~$L/\Finite_p$, dass~$L$ der Zerfällungskörper des Polynom~$X^q - X \in \Finite_p[X]$ ist.
+      Also ist die Erweiterung~$L/\Finite_p$ normal.
+      Hieraus ergibt sich, dass auch die Erweiterung~$L/K$ normal ist.
+  \end{enumerate}
+\end{solution}
+
 \begin{exercise}[subtitle = {Erstklausur~18/19}]
   Entscheiden Sie, für welche natürlichen Zahlen~$n$ mit~$3 \leq n \leq 34$ man das reguläre~\Eck{$n$} mit Zirkel und Lineal (aus den beiden Punkten~$0,1 \in \Complex$) konstruieren kann.
 \end{exercise}
+
+\begin{solution}
+  Des regelmäßige~\Eck{$n$} ist für~$n \geq 3$ genau dann mit Zirkel und Lineal konstruierbar, falls die Zahl~$n$ von der Form~$n = 2^m p_1 \dotsm p_r$ ist, wobei~$n \in \Natural$ und~$p_1, \dotsc, p_r$ paarweise verschiedene Fermat-Primzahlen sind.
+  Die einzigen Fermat-Primzahlen kleiner-gleich als~$34$ sind~$3$,~$5$,~$17$.
+  Wir erhalten somit für~$n$ die möglichen Werte
+  \begin{align*}
+    3 &= 3 \,,
+    \\
+    2 \cdot 3 &= 6 \,,
+    \\
+    4 \cdot 3 &= 12 \,,
+    \\
+    8 \cdot 3 &= 24 \,,
+    \\
+    5 &= 5 \,,
+    \\
+    2 \cdot 5 &= 10 \,,
+    \\
+    4 \cdot 5 &= 20 \,,
+    \\
+    17 &= 17 \,,
+    \\
+    2 \cdot 17 &= 34 \,,
+    \\
+    3 \cdot 5 &= 15 \,,
+    \\
+    2 \cdot 3 \cdot 5 &= 30 \,,
+    \\
+    3 \cdot 7 &= 21 \,.
+  \end{align*}
+\end{solution}
 
 \begin{exercise}[subtitle = {Erstklausur~18/19}]
   Es sei~$f \in \Rational[X]$ ein irreduzibles Polynom vom Grad~$4$, so dass~$\Gal(f) \cong \Sym_4$ gilt.
@@ -77,10 +234,50 @@
   Zeigen Sie, dass es einen Zwischenkörper~$Z$ der Erweiterung~$L / \Rational$ gibt, so dass~$[Z : \Rational] = 3$ gilt.
 \end{exercise}
 
+\begin{solution}
+  Die Körpererweiterung~$L/\Rational$ ist eine Galois-Erweiterung:
+  Diese Erweiterung ist separabel, denn es gilt~$\ringchar(\Rational) = 0$, weshalb~$\Rational$ separabel ist.
+  Sie ist endlich, da sie der Zerfällungskörper des Polynoms~$f$ ist.
+  Sie ist normal, da~$L$ per Definition der Zerfällungskörper eines Polynoms aus~$\Rational[X]$ ist.
+
+  Es sei~$G \defined \Gal(L / \Rational)$.
+  Da~$L$ ein Zerfällungskörper von~$f$ ist, gilt~$G \cong \Gal(f) \cong \Sym_4$.
+  Da die Erweiterung~$L/\Rational$ eine Galois-Erweiterung ist, gilt somit
+  \[
+    [L : \Rational]
+    =
+    \card{ G }
+    =
+    \card{ \Sym_4 }
+    =
+    24 \,.
+  \]
+  Wir nutzen nun die Galois-Korrespondenz:
+  Die Existenz eines Zwischenkörpers~$Z$ der Erweiterung~$L / \Rational$ vom Grade~$[Z : \Rational] = 3$ ist äquivalent zur Existenz einer Untergruppe~$H$ von~$G$ mit Index~$[G : H] = 3$.
+  Dass~$[G : H] = 3$ gilt ist äquivalent zu~$\card{H} = 8$, da~$\card{G} = 24$ gilt.
+  Es wird also die Existenz einer~\Sylow{$2$}-Untergruppe von~$G$ benötigt.
+  Diese Existenz folgt aus dem ersten Sylowsatz.
+\end{solution}
+
 \begin{exercise}
   Zeigen Sie, dass jede~\Gruppe{$p$}~$G$ auflösbar ist.
   (\emph{Tipp:} Nutzen Sie, dass~$\zenter(G) \neq 1$, falls~$G \neq 1$.)
 \end{exercise}
+
+\begin{solution}
+  Wir zeigen die Aussage per Induktion über die Ordnung von~$G$.
+  Gilt~$\card{G} = 1$, so ist die Gruppe~$G$ trivial, und somit auflösbar.
+  Dies liefert den Induktionsanfang.
+
+  Für den Induktionsschritt sei nun~$\card{G} > 1$.
+  Wir betrachten das Zentrum~$\zenter(G)$.
+  Aus der Nicht-Trivialität von~$G$ folgt, dass auch~$\zenter(G)$ nicht-trivial ist, da~$G$ eine~\Gruppe{$p$} ist.
+  Da~$\zenter(G)$ ein Normalteiler in~$G$ ist, ist die Gruppe~$G$ genau dann auflösbar, wenn~$G/{\zenter(G)}$ und~$\zenter(G)$ beide auflösbar sind.
+
+  Das Zentrum~$\zenter(G)$ ist auflösbar, da es abelsch ist.
+  Die Faktorgruppe~$G/{\zenter(G)}$ ist eine~\Gruppe{$p$} von echt kleinerer Kardinalität als~$G$, und somit nach Induktion auflösbar.
+  Wir erhalten somit die Auflösbarkeit von~$G$.
+\end{solution}
 
 \begin{exercise}[subtitle = {Erstklausur~19/20}]
   Es sei~$f \defined X^5 - 14 X^3 - 21 X^2 + 49 X + 28 \in \Rational[X]$.
@@ -88,14 +285,107 @@
   Zeigen Sie, dass~$\alpha$ nicht durch Zirkel und Lineal konstruierbar ist.
 \end{exercise}
 
+\begin{solution}
+  Wäre~$\alpha$ durch Zirkel und Lineal konstruierbar, so wäre der Grad~$[\Rational(\alpha) : \Rational]$ eine Zweierpotenz.
+  Diesen Grad können wir mithilfe des Minimalpolynoms von~$\alpha$ bestimmen:
+  Das Polynom ist irreduzibel nach des Eisenstein-Kriterium mit~$p = 7$.
+  Es ist außerdem normiert und hat~$\alpha$ als Nullstelle.
+  Also ist~$f$ das Minimalpolynom von~$\alpha$.
+  Es gilt deshalb
+  \[
+    [\Rational(\alpha) : \Rational]
+    =
+    \deg(f)
+    =
+    5 \,.
+  \]
+  Dies ist keine Zweierpotenz.
+\end{solution}
+
 \begin{exercise}
   Es sei~$n \in \Natural_1$ und~$K$ ein Körper mit~$\ringchar(K) \ndivides n$.
   Zeigen Sie, dass~$\card{ \Ein_n } = n$ gilt.
 \end{exercise}
 
+\begin{solution}
+  Die Menge~$\Ein_n$ ist genau die Nullstellenmenge des Polynom~$f \defined X^n - 1 \in \Rational[X]$.
+  Für die Ableitung~$f' \defined n X^{n-1}$ gilt~$f' \neq 0$, da nach Annahme~$\ringchar(K) \ndivides n$ gilt.
+  Es ist~$0$ die einzige Nullstelle von~$f'$, und~$0$ ist keine~\te{$n$} Einheitswurzel.
+  Wir sehen somit, dass die Polynome~$f$ und~$f'$ keine gemeinsamen Nullstellen haben.
+  Dies bedeutet, dass~$f$ keine mehrfache Nullstelle hat.
+  Also gilt
+  \[
+    \card{ \Ein_n }
+    =
+    \deg(f)
+    =
+    n \,.
+  \]
+\end{solution}
+
 \begin{exercise}
   Für jedes natürliche Zahl~$n \in \Natural_1$ sei~$\zeta_n \defined e^{2 \pi i / n} \in \Complex$.
   Bestimmen Sie den Grad der Körpererweiterung~$\Rational(\zeta_{84}) / \Rational(\zeta_{21})$.
 \end{exercise}
+
+\begin{solution}
+  Für alle~$n \in \Natural_1$ gilt
+  \[
+    [\Rational(\zeta_n) : \Rational]
+    =
+    \varphi(n) \,,
+  \]
+  wobei~$\varphi$ die Eulersche~\Funktion{$\varphi$} bezeichnet.
+  (Das Minimalpolynom von~$\zeta_n$ über~$\Rational$ ist das~\te{$n$} Kreisteilungspolynom~$\Phi_n$, denn~$\Phi_n$ ist normiert und irreduzibel, und hat~$\zeta_n$ als Nullstelle.)
+  Wir erhalten für~$n = 21$, dass
+  \[
+    \varphi(21)
+    =
+    \varphi(3 \cdot 7)
+    =
+    \varphi(3) \cdot \varphi(7)
+    =
+    2 \cdot 6 
+    =
+    12 \,,
+  \]
+  und für~$n = 84$, dass
+  \[
+    \varphi(84)
+    =
+    \varphi(2^2 \cdot 3 \cdot 7)
+    =
+    \varphi(2^2) \cdot \varphi(3) \cdot \varphi(7)
+    =
+    1 \cdot 2 \cdot 2 \cdot 6
+    =
+    24 \,.
+  \]
+  Wir erhalten nun mithilfe der Gradformel, dass
+  \[
+    [ \Rational(\zeta_{84}) : \Rational(\zeta_{21}) ]
+    =
+    \frac{ [\Rational(\zeta_{84}) : \Rational] }{ [\Rational(\zeta_{21}) : \Rational] }
+    =
+    \frac{24}{12}
+    =
+    2 \,.
+  \]
+\end{solution}
+
+
+
+
+\clearpage
+
+
+
+
+
+\printsolutions
+
+
+
+
 
 \end{document}
