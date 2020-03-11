@@ -408,6 +408,11 @@ Die Ringoperationen von~$R[X_i \suchthat i \in I]$ sind gegeben durch
   \sum_{\alpha, \beta \in \Natural^{(I)}} r_\alpha s_\beta X^{\alpha + \beta} \,.
 \end{align*}
 Wir können~$R$ als einen Unterring von~$R[X_i \suchthat i \in I]$ auffassen, indem wir jedes Ringelement~$r \in R$ mit dem \defemph{konstanten} Polynom~$r X^0$ identifizieren.
+Für jeden Index~$i \in I$ setzen wir außerdem
+\[
+  X_i \defined X^{e_i}
+\]
+wobei~$e_i \in \Natural^{(I)}$ das Tupel mit Einträgen~$(e_i)_j = \delta_{ij}$ für~$j \in I$ ist.
 
 Ist die Indexmenge~$I$ endlich mit~$I = \{ 1, \dotsc, r \}$, so schreiben wir
 \[
@@ -945,7 +950,7 @@ ist ein Ringhomomorphismus.
   \begin{enumerate}
     \item
       Ist~$p$ prim, so ist~$p$ auch irreduzibel.
-      Allgemeiner impliziert jede der folgenden Aussagen die jeweils nächste:
+      Allgemeiner impliziert für~$p \neq 0$ jede der folgenden Aussagen die jeweils nächste:
       \begin{equivlist}
         \item
           \label{principal ideal is maximal}
@@ -967,7 +972,7 @@ ist ein Ringhomomorphismus.
   Es sei~$R$ ein Hauptidealring.
   \begin{enumerate}
     \item
-      Ein Ideal~$I$ in~$R$ ist genau dann prim, wenn es bereits maximal ist.
+      Ein Ideal~$I$ in~$R$ mit~$I \neq 0$ ist genau dann prim, wenn es bereits maximal ist.
     \item
       Ist~$p$ ein irreduzibles Element von~$R$, so ist~$R / \genideal{p}$ ein Körper.
   \end{enumerate}
@@ -1132,7 +1137,7 @@ ist ein Ringhomomorphismus.
     \item
       Ein Polynom~$f \in R[X]$ ist genau dann primitiv, wenn für jede Einheit~$\varepsilon \in R^\times$ das Polynom~$\varepsilon f$ primitiv ist.
     \item
-      Jedes Polynom in~$K[X]$ ist primitiv.
+      Jedes Polynom~$f \in K[X]$ mit~$f \neq 0$ ist primitiv.
     \item
       Das Polynom~$4X + 2$ ist nicht primitiv in~$\Integer[X]$, aber primitiv in~$\Rational[X]$.
   \end{enumerate}
