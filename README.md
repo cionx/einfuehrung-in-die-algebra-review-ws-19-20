@@ -1,17 +1,17 @@
 This repository contains material for a review course for the lecture course *Einführung in die Algebra*.
-The [course itself][1] was held by Prof. Dr. Schröer in the winter term of 2019/20 at the University of Bonn.
-The review coure was held at the beginning of March 2020.
+The [course itself][1] was given by Prof. Dr. Jan Schröer in the winter term of 2019/20 at the University of Bonn.
+The review course took place at the beginning of March 2020, over the course of five days. 
 All materials are in German.
 
 Direct downloads of the compiled pdf files are available via the following links.
-All **exercises sheets include solutions** to the included exercises.
-
 - [Notes][2]
 - [Sheet 1][3]
 - [Sheet 2][4]
 - [Sheet 3][5]
 - [Sheet 4][6]
 - [Sheet 5][7]
+
+All exercises sheets include solutions.
 
 This review course is organized by the [Fachschaft Mathematik][8]. 
 
